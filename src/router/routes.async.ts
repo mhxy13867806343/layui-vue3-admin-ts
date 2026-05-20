@@ -117,6 +117,36 @@ export const asyncRoutes: RouteRecordRaw[] = [
             component: () => import('@/views/example/advanced/ai-chat.vue'),
             meta: { title: 'AI 对话' },
           },
+          {
+            path: 'advanced/third-party',
+            name: 'ExampleThirdParty',
+            component: () => import('@/views/example/advanced/third-party.vue'),
+            meta: { title: '第三方绑定' },
+          },
+          {
+            path: 'advanced/payment',
+            name: 'ExamplePayment',
+            component: () => import('@/views/example/advanced/payment.vue'),
+            meta: { title: '支付方式' },
+          },
+          {
+            path: 'advanced/websocket',
+            name: 'ExampleWebSocket',
+            component: () => import('@/views/example/advanced/websocket.vue'),
+            meta: { title: 'WebSocket' },
+          },
+          {
+            path: 'advanced/calendar',
+            name: 'ExampleCalendar',
+            component: () => import('@/views/example/advanced/calendar.vue'),
+            meta: { title: '日历' },
+          },
+          {
+            path: 'advanced/visualization',
+            name: 'ExampleVisualization',
+            component: () => import('@/views/example/advanced/visualization.vue'),
+            meta: { title: '可视化图形' },
+          },
         ],
       },
 
@@ -147,6 +177,12 @@ export const asyncRoutes: RouteRecordRaw[] = [
         name: 'Error',
         meta: { title: '异常页', icon: 'layui-icon-face-cry' },
         children: [
+          {
+            path: '200',
+            name: 'Success200',
+            component: () => import('@/views/error/200.vue'),
+            meta: { title: '200 操作成功' },
+          },
           {
             path: '400',
             name: 'Error400',
