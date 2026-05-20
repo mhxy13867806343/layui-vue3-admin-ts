@@ -105,6 +105,18 @@ export const asyncRoutes: RouteRecordRaw[] = [
             component: () => import('@/views/example/advanced/integration.vue'),
             meta: { title: '第三方库集成' },
           },
+          {
+            path: 'advanced/rich-editor',
+            name: 'ExampleRichEditor',
+            component: () => import('@/views/example/advanced/rich-editor.vue'),
+            meta: { title: '富文本编辑器' },
+          },
+          {
+            path: 'advanced/ai-chat',
+            name: 'ExampleAiChat',
+            component: () => import('@/views/example/advanced/ai-chat.vue'),
+            meta: { title: 'AI 对话' },
+          },
         ],
       },
 

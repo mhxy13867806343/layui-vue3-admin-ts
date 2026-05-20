@@ -16,6 +16,8 @@
   "dependencies": {
     "@layui/icons-vue": "^1.0.0",
     "@layui/layui-vue": "^2.0.0",
+    "@wangeditor/editor": "^5.1.23",
+    "@wangeditor/editor-for-vue": "^5.1.12",
     "axios": "^1.7.0",
     "dayjs": "^1.11.20",
     "echarts": "^5.5.1",
@@ -41,6 +43,7 @@
     "@vitest/coverage-v8": "^2.0.0",
     "@vue/test-utils": "^2.4.6",
     "axios-mock-adapter": "^2.0.0",
+    "esbuild": "^0.28.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-vue": "^9.27.0",
