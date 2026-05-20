@@ -37,10 +37,10 @@ const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/gif',
 const ALLOWED_EXTS = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.pdf', '.doc', '.docx']
 
 function validateFile(file: File, maxMb = 10): string | null {
-  if (isFolder(file)) return '不支持上传文件夹，请选择文件'
+  // 注意：通过 webkitGetAsEntry 遍历得到的文件已经是真实文件，不会是文件夹
   const ext = file.name.slice(file.name.lastIndexOf('.')).toLowerCase()
   if (!ALLOWED_EXTS.includes(ext) && !ALLOWED_TYPES.includes(file.type)) {
-    return `不支持的文件类型：${ext || '未知'}`
+    return `不支持的文件类型：${ext || file.name}`
   }
   if (file.size > maxMb * 1024 * 1024) return `文件大小超过 ${maxMb}MB`
   return null
@@ -104,9 +104,64 @@ function onDragInputChange(e: Event): void {
 async function onDrop(e: DragEvent): Promise<void> {
   e.preventDefault()
   dragOver.value = false
-  const file = e.dataTransfer?.files[0]
-  if (!file) return
-  handleDragFile(file)
+  const items = e.dataTransfer?.items
+  if (!items || items.length === 0) return
+
+  // 收集所有文件（递归遍历文件夹）
+  const files: File[] = []
+  const entries: FileSystemEntry[] = []
+  for (let i = 0; i < items.length; i++) {
+    const entry = items[i].webkitGetAsEntry?.()
+    if (entry) entries.push(entry)
+  }
+  if (entries.length > 0) {
+    for (const entry of entries) {
+      await collectFiles(entry, files)
+    }
+  } else {
+    // 兜底：直接读 files
+    const fls = e.dataTransfer?.files
+    if (fls) for (let i = 0; i < fls.length; i++) files.push(fls[i])
+  }
+
+  if (files.length === 0) {
+    layer.msg('文件夹为空或无可上传文件', { icon: 2 })
+    return
+  }
+
+  // 单文件夹/单文件：使用单文件展示；多文件提示
+  if (files.length === 1) {
+    handleDragFile(files[0])
+  } else {
+    layer.msg(`检测到 ${files.length} 个文件，将逐个上传`, { icon: 1 })
+    for (const f of files) {
+      await handleDragFile(f)
+    }
+  }
+}
+
+/** 递归遍历 FileSystemEntry，把所有文件追加到 acc */
+async function collectFiles(entry: FileSystemEntry, acc: File[]): Promise<void> {
+  if (entry.isFile) {
+    const fileEntry = entry as FileSystemFileEntry
+    return new Promise<void>((resolve) => {
+      fileEntry.file((file) => { acc.push(file); resolve() }, () => resolve())
+    })
+  }
+  if (entry.isDirectory) {
+    const dirEntry = entry as FileSystemDirectoryEntry
+    const reader = dirEntry.createReader()
+    return new Promise<void>((resolve) => {
+      const readBatch = (): void => {
+        reader.readEntries(async (subEntries) => {
+          if (subEntries.length === 0) { resolve(); return }
+          for (const sub of subEntries) await collectFiles(sub, acc)
+          readBatch()
+        }, () => resolve())
+      }
+      readBatch()
+    })
+  }
 }
 
 async function handleDragFile(file: File): Promise<void> {
@@ -288,7 +343,7 @@ function onPickExcel(e: Event): void {
     <!-- 拖拽上传 -->
     <section class="lva-example__section">
       <h3>拖拽上传</h3>
-      <p class="lva-example__tip">将文件拖入下方区域或点击选择文件。限制 10MB，不支持文件夹。图片文件自动预览。</p>
+      <p class="lva-example__tip">将文件或文件夹拖入下方区域或点击选择文件。限制 10MB，支持递归遍历文件夹。图片文件自动预览。</p>
       <input ref="dragInputRef" type="file" style="display:none" accept="image/*,.pdf,.doc,.docx" @change="onDragInputChange" />
       <div
         class="lva-dropzone"
@@ -318,9 +373,9 @@ function onPickExcel(e: Event): void {
         </template>
         <template v-else>
           <i class="layui-icon layui-icon-upload" style="font-size: 40px; color: #bbb" />
-          <p>将文件拖到此处，或 <em>点击选择文件</em></p>
+          <p>将文件或文件夹拖到此处，或 <em>点击选择文件</em></p>
           <p class="lva-dropzone__hint">支持 jpg/png/gif/webp/pdf/doc，单文件不超过 10MB</p>
-          <p class="lva-dropzone__hint">⚠️ 不支持上传文件夹</p>
+          <p class="lva-dropzone__hint">📁 拖入文件夹会自动递归遍历所有文件</p>
         </template>
       </div>
     </section>
