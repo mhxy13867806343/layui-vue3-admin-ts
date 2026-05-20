@@ -1,0 +1,69 @@
+{
+  "vue": [
+    {
+      "title": "Vue Router 4",
+      "intro": "Vue 官方路由管理器，支持动态路由、路由守卫、懒加载。",
+      "code": "// 安装\nnpm install vue-router@4\n\n// main.ts\nimport { createRouter, createWebHistory } from 'vue-router'\nconst router = createRouter({\n  history: createWebHistory(),\n  routes: [...]\n})\napp.use(router)\n\n// 组合式 API 使用\nimport { useRouter, useRoute } from 'vue-router'\nconst router = useRouter()\nconst route = useRoute()\nrouter.push('/dashboard')"
+    },
+    {
+      "title": "Vue I18n 9",
+      "intro": "国际化方案，支持组合式 API、按需加载语言包。",
+      "code": "// 安装\nnpm install vue-i18n@9\n\n// locales/index.ts\nimport { createI18n } from 'vue-i18n'\nimport zhCN from './zh-CN'\nimport enUS from './en-US'\nexport const i18n = createI18n({\n  locale: 'zh-CN',\n  messages: { 'zh-CN': zhCN, 'en-US': enUS }\n})\n\n// 组件中使用\nimport { useI18n } from 'vue-i18n'\nconst { t } = useI18n()\n// 模板中: {{ t('auth.loginTitle') }}"
+    }
+  ],
+  "state": [
+    {
+      "title": "Pinia",
+      "intro": "Vue 官方推荐的状态管理库，替代 Vuex。支持 TypeScript、组合式 API、DevTools。",
+      "code": "// 安装\nnpm install pinia\n\n// store/modules/user.ts\nimport { defineStore } from 'pinia'\nexport const useUserStore = defineStore('user', {\n  state: () => ({ token: '', userInfo: null }),\n  actions: {\n    async login(payload) {\n      const res = await http.post('/auth/login', payload)\n      this.token = res.token\n    }\n  }\n})\n\n// 组件中使用\nconst userStore = useUserStore()\nawait userStore.login({ username, password })"
+    }
+  ],
+  "http": [
+    {
+      "title": "Axios",
+      "intro": "基于 Promise 的 HTTP 客户端，支持拦截器、取消请求、进度回调。",
+      "code": "// 安装\nnpm install axios\n\n// utils/http/core.ts - 创建实例\nimport axios from 'axios'\nexport const instance = axios.create({\n  baseURL: '/api',\n  timeout: 15000,\n})\n\n// 请求拦截器 - 注入 Token\ninstance.interceptors.request.use((config) => {\n  const token = storage.get('token')\n  if (token) config.headers.Authorization = 'Bearer ' + token\n  return config\n})\n\n// 响应拦截器 - 统一错误处理\ninstance.interceptors.response.use(\n  (res) => res.data,\n  (err) => {\n    if (err.response?.status === 401) handleLogout()\n    return Promise.reject(err)\n  }\n)"
+    }
+  ],
+  "ui": [
+    {
+      "title": "layui-vue",
+      "intro": "layui 的 Vue 3 实现，提供丰富的企业级组件。",
+      "code": "// 安装\nnpm install @layui/layui-vue\n\n// 按需引入（推荐，配合 unplugin）\nnpm install -D @layui/unplugin-vue-components\n\n// vite.config.ts\nimport LayuiVueResolver from '@layui/unplugin-vue-components'\nimport Components from 'unplugin-vue-components/vite'\nplugins: [\n  Components({ resolvers: [LayuiVueResolver()] })\n]\n\n// 直接在模板中使用，无需手动 import\n// <lay-button type=\"primary\">按钮</lay-button>\n// <lay-table :columns=\"cols\" :data-source=\"data\" />"
+    },
+    {
+      "title": "ECharts + vue-echarts",
+      "intro": "按需引入 ECharts 图表，通过 vue-echarts 组件化使用。",
+      "code": "// 安装\nnpm install echarts vue-echarts\n\n// 按需引入\nimport { use } from 'echarts/core'\nimport { CanvasRenderer } from 'echarts/renderers'\nimport { LineChart, BarChart } from 'echarts/charts'\nimport { GridComponent, TooltipComponent } from 'echarts/components'\nuse([CanvasRenderer, LineChart, BarChart, GridComponent, TooltipComponent])\n\n// 模板中\nimport VChart from 'vue-echarts'\n// <VChart :option=\"chartOption\" autoresize />"
+    }
+  ],
+  "utils": [
+    {
+      "title": "lodash-es",
+      "intro": "ES Module 版本的 lodash，支持 tree-shaking，按需引入不增加包体积。",
+      "code": "// 安装（注意用 lodash-es 而非 lodash）\nnpm install lodash-es\nnpm install -D @types/lodash-es\n\n// 按需引入（tree-shakeable）\nimport { debounce, throttle, cloneDeep } from 'lodash-es'\n\n// 在 Vue 组件中使用防抖\nconst debouncedSearch = debounce((keyword: string) => {\n  fetchResults(keyword)\n}, 300)\n\n// 在 onBeforeUnmount 中取消\nonBeforeUnmount(() => debouncedSearch.cancel())"
+    },
+    {
+      "title": "Day.js",
+      "intro": "轻量级日期处理库（2KB），API 兼容 Moment.js。",
+      "code": "// 安装\nnpm install dayjs\n\n// 使用\nimport dayjs from 'dayjs'\nimport relativeTime from 'dayjs/plugin/relativeTime'\nimport 'dayjs/locale/zh-cn'\ndayjs.extend(relativeTime)\ndayjs.locale('zh-cn')\n\ndayjs().format('YYYY-MM-DD HH:mm:ss')  // 2024-01-15 14:30:00\ndayjs('2024-01-01').fromNow()           // 2 周前\ndayjs().add(7, 'day').format('MM/DD')   // 01/22"
+    },
+    {
+      "title": "xlsx",
+      "intro": "纯前端 Excel 读写，支持 .xlsx/.xls/.csv 格式。",
+      "code": "// 安装\nnpm install xlsx\n\n// 导出\nimport * as XLSX from 'xlsx'\nconst ws = XLSX.utils.json_to_sheet(data)\nconst wb = XLSX.utils.book_new()\nXLSX.utils.book_append_sheet(wb, ws, 'Sheet1')\nconst buf = XLSX.write(wb, { bookType: 'xlsx', type: 'array' })\n// 触发下载...\n\n// 解析\nconst wb = XLSX.read(arrayBuffer, { type: 'array' })\nconst rows = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]])"
+    }
+  ],
+  "build": [
+    {
+      "title": "Vite 5",
+      "intro": "下一代前端构建工具，极速冷启动、HMR、按需编译。",
+      "code": "// vite.config.ts 常用配置\nimport { defineConfig } from 'vite'\nimport vue from '@vitejs/plugin-vue'\nimport { resolve } from 'path'\n\nexport default defineConfig({\n  plugins: [vue()],\n  resolve: {\n    alias: { '@': resolve(__dirname, 'src') }\n  },\n  server: {\n    port: 5173,\n    proxy: { '/api': { target: 'http://localhost:3000', changeOrigin: true } }\n  },\n  build: {\n    rollupOptions: {\n      output: { manualChunks: { vue: ['vue', 'vue-router', 'pinia'] } }\n    }\n  }\n})"
+    },
+    {
+      "title": "Vitest + fast-check",
+      "intro": "Vite 原生测试框架 + 属性测试（Property-Based Testing）。",
+      "code": "// 安装\nnpm install -D vitest @vue/test-utils fast-check jsdom\n\n// vitest.config.ts\nimport { defineConfig } from 'vitest/config'\nexport default defineConfig({\n  test: {\n    environment: 'jsdom',\n    setupFiles: ['./tests/setup.ts'],\n  }\n})\n\n// 属性测试示例\nimport fc from 'fast-check'\nit('clearAuth always resets state', () => {\n  fc.assert(fc.property(\n    fc.string({ minLength: 1 }),\n    (token) => {\n      store.token = token\n      store.clearAuth()\n      expect(store.token).toBe('')\n    }\n  ))\n})"
+    }
+  ]
+}
