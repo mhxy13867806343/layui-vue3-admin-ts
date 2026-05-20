@@ -1,0 +1,20 @@
+/**
+ * 视觉模式：色弱 / 灰度
+ *
+ * 通过 `<html>` 类名整体应用 filter，实现一刀切的全局滤镜。
+ * 注意：filter 会与 backdrop-filter / fixed 元素叠层渲染产生影响，
+ * 这是浏览器层面公认的代价；为了「无侵入业务样式」的目标可接受。
+ */
+html.visual-weak {
+  filter: invert(0.05) hue-rotate(180deg);
+}
+html.visual-gray {
+  filter: grayscale(1);
+}
+
+/* layui-vue dropdown 弹层项默认会 wrap，单字一行；强制 nowrap */
+.layui-dropdown-content .layui-menu li,
+.layui-dropdown-content .layui-dropdown-menu .layui-menu-body-title,
+.layui-dropdown-content .layui-dropdown-menu .layui-menu-body-title a {
+  white-space: nowrap !important;
+}

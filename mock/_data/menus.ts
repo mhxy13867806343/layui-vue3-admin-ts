@@ -1,0 +1,373 @@
+/**
+ * 菜单数据（树形）
+ *
+ * 演示用菜单包含：
+ *   - 仪表盘
+ *   - 示例（组件 / Hooks / Charts / Dayjs）
+ *   - 系统管理（用户 / 角色 / 菜单）
+ *   - 权限演示（按钮权限）
+ *   - 异常页（400 / 403 / 404 / 500）
+ *
+ * `group` 类型节点会被前端 SidebarItem 渲染为分组小标题。
+ */
+import type { Menu } from '@/types/domain'
+
+export const menus: Menu[] = [
+  {
+    id: 1,
+    parentId: null,
+    name: '仪表盘',
+    icon: 'layui-icon-home',
+    type: 'menu',
+    path: '/dashboard',
+    component: 'dashboard/index',
+    permission: 'dashboard:view',
+    sort: 1,
+    visible: true,
+    children: [],
+  },
+
+  {
+    id: 100,
+    parentId: null,
+    name: '示例',
+    icon: 'layui-icon-component',
+    type: 'directory',
+    path: '/example',
+    sort: 5,
+    visible: true,
+    children: [
+      {
+        id: 110,
+        parentId: 100,
+        name: 'UI 组件',
+        icon: '',
+        type: 'group',
+        path: '',
+        sort: 1,
+        visible: true,
+        children: [
+          {
+            id: 111,
+            parentId: 110,
+            name: 'Button',
+            icon: 'layui-icon-form',
+            type: 'menu',
+            path: 'components/button',
+            component: 'example/components/button',
+            permission: '',
+            sort: 1,
+            visible: true,
+            children: [],
+          },
+          {
+            id: 112,
+            parentId: 110,
+            name: 'Form',
+            icon: 'layui-icon-edit',
+            type: 'menu',
+            path: 'components/form',
+            component: 'example/components/form',
+            permission: '',
+            sort: 2,
+            visible: true,
+            children: [],
+          },
+          {
+            id: 113,
+            parentId: 110,
+            name: 'Table',
+            icon: 'layui-icon-table',
+            type: 'menu',
+            path: 'components/table',
+            component: 'example/components/table',
+            permission: '',
+            sort: 3,
+            visible: true,
+            children: [],
+          },
+        ],
+      },
+      {
+        id: 120,
+        parentId: 100,
+        name: 'Hooks 示例',
+        icon: '',
+        type: 'group',
+        path: '',
+        sort: 2,
+        visible: true,
+        children: [
+          {
+            id: 121,
+            parentId: 120,
+            name: 'useTable',
+            icon: 'layui-icon-template',
+            type: 'menu',
+            path: 'hooks/use-table',
+            component: 'example/hooks/use-table',
+            permission: '',
+            sort: 1,
+            visible: true,
+            children: [],
+          },
+          {
+            id: 122,
+            parentId: 120,
+            name: 'useDict',
+            icon: 'layui-icon-list',
+            type: 'menu',
+            path: 'hooks/use-dict',
+            component: 'example/hooks/use-dict',
+            permission: '',
+            sort: 2,
+            visible: true,
+            children: [],
+          },
+          {
+            id: 123,
+            parentId: 120,
+            name: 'useDownload',
+            icon: 'layui-icon-download-circle',
+            type: 'menu',
+            path: 'hooks/use-download',
+            component: 'example/hooks/use-download',
+            permission: '',
+            sort: 3,
+            visible: true,
+            children: [],
+          },
+        ],
+      },
+      {
+        id: 130,
+        parentId: 100,
+        name: '工具库',
+        icon: '',
+        type: 'group',
+        path: '',
+        sort: 3,
+        visible: true,
+        children: [
+          {
+            id: 131,
+            parentId: 130,
+            name: 'Charts (echarts)',
+            icon: 'layui-icon-chart',
+            type: 'menu',
+            path: 'libs/charts',
+            component: 'example/libs/charts',
+            permission: '',
+            sort: 1,
+            visible: true,
+            children: [],
+          },
+          {
+            id: 132,
+            parentId: 130,
+            name: 'Dayjs',
+            icon: 'layui-icon-time',
+            type: 'menu',
+            path: 'libs/dayjs',
+            component: 'example/libs/dayjs',
+            permission: '',
+            sort: 2,
+            visible: true,
+            children: [],
+          },
+          {
+            id: 133,
+            parentId: 130,
+            name: '上传 / Excel',
+            icon: 'layui-icon-upload',
+            type: 'menu',
+            path: 'libs/upload',
+            component: 'example/libs/upload',
+            permission: '',
+            sort: 3,
+            visible: true,
+            children: [],
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 200,
+    parentId: null,
+    name: '权限演示',
+    icon: 'layui-icon-vercode',
+    type: 'directory',
+    path: '/permission',
+    sort: 6,
+    visible: true,
+    children: [
+      {
+        id: 201,
+        parentId: 200,
+        name: '按钮权限',
+        icon: 'layui-icon-key',
+        type: 'menu',
+        path: 'button',
+        component: 'permission-demo/button',
+        permission: '',
+        sort: 1,
+        visible: true,
+        children: [],
+      },
+      {
+        id: 202,
+        parentId: 200,
+        name: '页面权限',
+        icon: 'layui-icon-auz',
+        type: 'menu',
+        path: 'page',
+        component: 'permission-demo/page',
+        permission: 'dashboard:view',
+        sort: 2,
+        visible: true,
+        children: [],
+      },
+    ],
+  },
+
+  {
+    id: 300,
+    parentId: null,
+    name: '异常页',
+    icon: 'layui-icon-face-cry',
+    type: 'directory',
+    path: '/error',
+    sort: 7,
+    visible: true,
+    children: [
+      {
+        id: 301,
+        parentId: 300,
+        name: '400 错误请求',
+        icon: '',
+        type: 'menu',
+        path: '400',
+        component: 'error/400',
+        permission: '',
+        sort: 1,
+        visible: true,
+        children: [],
+      },
+      {
+        id: 302,
+        parentId: 300,
+        name: '403 无权限',
+        icon: '',
+        type: 'menu',
+        path: '403',
+        component: 'error/403',
+        permission: '',
+        sort: 2,
+        visible: true,
+        children: [],
+      },
+      {
+        id: 303,
+        parentId: 300,
+        name: '404 找不到',
+        icon: '',
+        type: 'menu',
+        path: '404',
+        component: 'error/404',
+        permission: '',
+        sort: 3,
+        visible: true,
+        children: [],
+      },
+      {
+        id: 304,
+        parentId: 300,
+        name: '500 服务异常',
+        icon: '',
+        type: 'menu',
+        path: '500',
+        component: 'error/500',
+        permission: '',
+        sort: 4,
+        visible: true,
+        children: [],
+      },
+    ],
+  },
+
+  {
+    id: 2,
+    parentId: null,
+    name: '系统管理',
+    icon: 'layui-icon-set',
+    type: 'directory',
+    path: '/system',
+    sort: 9,
+    visible: true,
+    children: [
+      {
+        id: 21,
+        parentId: 2,
+        name: '用户管理',
+        icon: 'layui-icon-username',
+        type: 'menu',
+        path: 'user',
+        component: 'system/user/index',
+        permission: 'user:view',
+        sort: 1,
+        visible: true,
+        children: [],
+      },
+      {
+        id: 22,
+        parentId: 2,
+        name: '角色管理',
+        icon: 'layui-icon-user',
+        type: 'menu',
+        path: 'role',
+        component: 'system/role/index',
+        permission: 'role:view',
+        sort: 2,
+        visible: true,
+        children: [],
+      },
+      {
+        id: 23,
+        parentId: 2,
+        name: '菜单管理',
+        icon: 'layui-icon-list',
+        type: 'menu',
+        path: 'menu',
+        component: 'system/menu/index',
+        permission: 'menu:view',
+        sort: 3,
+        visible: true,
+        children: [],
+      },
+    ],
+  },
+]
+
+/** 扁平化菜单树（仅 menu/directory），用于分页展示 */
+export function flattenMenus(tree: Menu[]): Menu[] {
+  const result: Menu[] = []
+  const walk = (nodes: Menu[]): void => {
+    for (const n of nodes) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { children, ...rest } = n
+      result.push({ ...rest } as Menu)
+      if (children && children.length > 0) walk(children)
+    }
+  }
+  walk(tree)
+  return result
+}
+
+export const countMenus = (tree: Menu[] = menus): number => flattenMenus(tree).length
+
+export function nextMenuId(): number {
+  const flat = flattenMenus(menus)
+  return flat.reduce((acc, m) => Math.max(acc, m.id), 0) + 1
+}
