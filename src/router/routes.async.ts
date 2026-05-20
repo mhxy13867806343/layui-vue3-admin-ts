@@ -87,6 +87,24 @@ export const asyncRoutes: RouteRecordRaw[] = [
             component: () => import('@/views/example/libs/upload.vue'),
             meta: { title: '上传 / Excel' },
           },
+          {
+            path: 'libs/lodash',
+            name: 'ExampleLodash',
+            component: () => import('@/views/example/libs/lodash.vue'),
+            meta: { title: 'Lodash' },
+          },
+          {
+            path: 'advanced/dynamic-form',
+            name: 'ExampleDynamicForm',
+            component: () => import('@/views/example/advanced/dynamic-form.vue'),
+            meta: { title: '动态表单' },
+          },
+          {
+            path: 'advanced/integration',
+            name: 'ExampleIntegration',
+            component: () => import('@/views/example/advanced/integration.vue'),
+            meta: { title: '第三方库集成' },
+          },
         ],
       },
 
