@@ -153,8 +153,8 @@ plugins: [
 ]
 
 // 直接在模板中使用，无需手动 import
-&lt;lay-button type="primary"&gt;按钮&lt;/lay-button&gt;
-&lt;lay-table :columns="cols" :data-source="data" /&gt;</pre>
+// &lt;lay-button type="primary"&gt;按钮&lt;/lay-button&gt;
+// &lt;lay-table :columns="cols" :data-source="data" /&gt;</pre>
       </div>
       <div class="lva-integ__lib">
         <h3>ECharts + vue-echarts</h3>
@@ -171,7 +171,7 @@ use([CanvasRenderer, LineChart, BarChart, GridComponent, TooltipComponent])
 
 // 模板中
 import VChart from 'vue-echarts'
-&lt;VChart :option="chartOption" autoresize /&gt;</pre>
+// &lt;VChart :option="chartOption" autoresize /&gt;</pre>
       </div>
     </section>
 
