@@ -190,6 +190,12 @@ export const asyncRoutes: RouteRecordRaw[] = [
             meta: { title: '二维码配置' },
           },
           {
+            path: 'advanced/dynamic-feed',
+            name: 'ExampleDynamicFeed',
+            component: () => import('@/views/example/advanced/dynamic-feed.vue'),
+            meta: { title: '多端动态' },
+          },
+          {
             path: 'advanced/tabbar-config',
             name: 'ExampleTabbarConfig',
             component: () => import('@/views/example/advanced/tabbar-config.vue'),
