@@ -1,0 +1,13 @@
+import { useTimeoutFn as t } from "@vueuse/core";
+import { unref as e } from "vue";
+function h({ showAfter: n, hideAfter: r, show: f, hidden: s }) {
+  let o;
+  return { onShow: () => {
+    o && o(), t(f, e(n));
+  }, onHidden: () => {
+    o = t(s, e(r)).stop;
+  } };
+}
+export {
+  h as default
+};

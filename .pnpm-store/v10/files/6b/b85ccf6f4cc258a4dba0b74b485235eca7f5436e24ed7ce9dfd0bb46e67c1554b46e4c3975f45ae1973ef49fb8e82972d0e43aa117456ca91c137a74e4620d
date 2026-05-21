@@ -1,0 +1,47 @@
+import { defineComponent as M, ref as f, reactive as P, onMounted as x, onUnmounted as z, openBlock as T, createElementBlock as O, normalizeClass as _, normalizeStyle as h, createElementVNode as n, renderSlot as L, withModifiers as S } from "vue";
+/* empty css           */
+import { useResizeObserver as v } from "@vueuse/core";
+const E = { class: "layui-scroll-y" }, N = M({ name: "LayScroll", __name: "index", props: { height: { default: "100%" }, trackColor: { default: "rgba(0,0,0,0)" }, thumbColor: { default: "#eeeeee" }, thumbWidth: { default: 6 } }, emits: ["arrive"], setup(R, { emit: p }) {
+  const w = p, r = f(), s = f(), t = P({ translateY: 0, heightPre: 0, barHeight: 0, winWidth: document.body.clientWidth });
+  let c, d, a = !1, l = 0, o = 0, m = 0, g = 0;
+  x(() => {
+    y(), Y();
+    const { stop: e } = v(r.value, i);
+    c = e, v(s.value, i);
+  }), z(() => {
+    window.clearInterval(void 0), c && c(), d && d();
+  });
+  const y = function() {
+    let e;
+    window.addEventListener("resize", () => {
+      t.winWidth = document.body.clientWidth, clearTimeout(e), e = setTimeout(() => {
+        i();
+      }, 500);
+    });
+  }, Y = function() {
+    new (window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver)((e) => {
+      i();
+    }).observe(r.value, { attributes: !0, childList: !0, subtree: !0 });
+  }, i = function() {
+    let e = r.value, u = s.value;
+    e && u && (g = e.scrollHeight, m = e.clientHeight, o = u.clientHeight, t.heightPre = m / g, t.barHeight = t.heightPre * o);
+  }, H = (e) => {
+    t.translateY = e.target.scrollTop * t.heightPre, t.translateY == 0 ? b("top") : e.target.scrollTop + e.target.offsetHeight == e.target.scrollHeight && b("bottom");
+  }, b = (e) => {
+    w("arrive", e);
+  }, k = (e) => {
+    a = !0, l = e.clientY - t.translateY, C(), W();
+  }, C = () => {
+    document.onmousemove = (e) => {
+      a && (e.clientY - l > o - t.barHeight ? t.translateY = o - t.barHeight : e.clientY - l < 0 ? t.translateY = 0 : t.translateY = e.clientY - l, r.value && (r.value.scrollTop = t.translateY / t.heightPre));
+    };
+  }, W = function() {
+    document.onmouseup = (e) => {
+      a && (a = !1);
+    };
+  };
+  return (e, u) => (T(), O("div", { class: _(["layui-scroll", { hide: t.winWidth < 500 }]), style: h({ height: e.height }) }, [n("div", E, [n("div", { ref_key: "scrollRef", ref: r, class: "layui-scroll-wrap", onScroll: H }, [L(e.$slots, "default")], 544), n("div", { ref_key: "barRef", ref: s, class: "layui-scroll-track", style: h({ backgroundColor: t.heightPre == 1 ? "transparent" : e.trackColor }) }, [n("div", { style: h({ height: t.barHeight + "px", width: e.thumbWidth + "px", transform: "translateY(" + t.translateY + "px)", backgroundColor: t.heightPre == 1 ? "transparent" : e.thumbColor }), class: "layui-scroll-thumb", onMousedown: S(k, ["stop", "prevent"]) }, null, 36)], 4)])], 6));
+} });
+export {
+  N as default
+};

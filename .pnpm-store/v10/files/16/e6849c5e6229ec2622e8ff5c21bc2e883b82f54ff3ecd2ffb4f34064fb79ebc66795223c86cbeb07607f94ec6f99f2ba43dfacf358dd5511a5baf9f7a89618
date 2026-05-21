@@ -1,0 +1,6 @@
+import { defineComponent as t, openBlock as n, createElementBlock as o, renderSlot as a } from "vue";
+/* empty css           */
+const s = { class: "layui-btn-container" }, c = t({ name: "LayButtonContainer", __name: "index", setup: (l) => (e, r) => (n(), o("div", s, [a(e.$slots, "default")])) });
+export {
+  c as default
+};

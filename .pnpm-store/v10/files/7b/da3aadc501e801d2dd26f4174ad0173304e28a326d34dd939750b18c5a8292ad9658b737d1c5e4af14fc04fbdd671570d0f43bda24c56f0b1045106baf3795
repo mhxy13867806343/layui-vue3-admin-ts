@@ -1,0 +1,15 @@
+import { defineComponent as V, inject as t, ref as v, computed as o, withDirectives as S, openBlock as c, createElementBlock as g, normalizeClass as w, unref as f, createBlock as O, isRef as B, createCommentVNode as C, renderSlot as R, createTextVNode as _, toDisplayString as j, vShow as D } from "vue";
+import N from "../checkbox/index2.js";
+const L = V({ name: "LaySelectOption", __name: "index", props: { label: { default: "" }, value: {}, disabled: { type: Boolean, default: !1 }, keyword: { default: "" } }, setup(m) {
+  const a = m, u = t("searchValue"), p = t("selectRef"), i = t("searchMethod"), l = t("selectedValue"), d = t("multiple"), n = v(), b = () => {
+    var e;
+    d.value ? a.disabled || ((e = n.value) == null || e.toggle()) : a.disabled || (p.value.hide(), l.value = a.value);
+  }, y = o(() => d.value ? l.value.indexOf(a.value) != -1 : l.value === a.value), r = v(!0), k = o(() => {
+    var e, s;
+    return i && !r.value ? i(u.value, a) : (r.value = !1, ((e = a.keyword) == null ? void 0 : e.toString().indexOf(u.value)) > -1 || ((s = a.label) == null ? void 0 : s.toString().indexOf(u.value)) > -1);
+  }), h = o(() => ["layui-select-option", { "layui-this": y.value, "layui-disabled": a.disabled }]);
+  return (e, s) => S((c(), g("dd", { class: w(h.value), onClick: b }, [f(d) ? (c(), O(N, { key: 0, skin: "primary", ref_key: "checkboxRef", ref: n, modelValue: f(l), "onUpdate:modelValue": s[0] || (s[0] = (x) => B(l) ? l.value = x : null), disabled: e.disabled, value: e.value }, null, 8, ["modelValue", "disabled", "value"])) : C("", !0), R(e.$slots, "default", {}, () => [_(j(e.label), 1)])], 2)), [[D, k.value]]);
+} });
+export {
+  L as default
+};

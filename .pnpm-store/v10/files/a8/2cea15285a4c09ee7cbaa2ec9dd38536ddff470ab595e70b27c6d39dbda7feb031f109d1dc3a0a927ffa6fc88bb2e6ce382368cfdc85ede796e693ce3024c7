@@ -1,0 +1,36 @@
+import { isFunction as l } from "./type.js";
+function m(r) {
+  return Array.isArray(r) ? !r.length : !r;
+}
+function o(r) {
+  return r && Array.isArray(r);
+}
+function f(r) {
+  return o(r) && r.length > 0;
+}
+function g(r) {
+  return o(r) ? r : [r];
+}
+function A(r, n, e, y) {
+  if (!f(r))
+    return;
+  let s, t, c = y;
+  if (l(n) || o(n) ? (s = "children", t = l(n) ? [n] : n, c = e) : (s = n, t = l(e) ? [e] : e), f(t) && !t.some((a) => !l(a)))
+    for (let a = 0; a < r.length; a++) {
+      const u = r[a];
+      for (let i = 0; i < t.length; i++)
+        (0, t[i])(u, a, c);
+      u != null && u[s] && A(u[s], s, t, u);
+    }
+}
+function d(r, n) {
+  return r.every((e) => n.includes(e)) && n.every((e) => r.includes(e));
+}
+export {
+  d as arrayEverySame,
+  o as isArray,
+  f as isValueArray,
+  m as isValueNull,
+  A as loopForEach,
+  g as normalizeArray
+};

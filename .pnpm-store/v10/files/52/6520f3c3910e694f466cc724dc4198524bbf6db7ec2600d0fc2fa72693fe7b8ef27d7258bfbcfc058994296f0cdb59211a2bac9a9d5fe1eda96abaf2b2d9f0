@@ -1,0 +1,91 @@
+/** __vue_virtual_code_placeholder */
+import "./index.less";
+import { TextareaAutosizeHeight, TextareaAutosizeRow } from "./interface";
+export interface TextareaProps {
+    /**
+     * 绑定值
+     */
+    modelValue?: string;
+    /**
+     * `native` 表单名
+     */
+    name?: string;
+    /**
+     * `native` 提示信息
+     */
+    placeholder?: string;
+    /**
+     * `native` 禁用
+     */
+    disabled?: boolean;
+    /**
+     * 显示字数
+     */
+    showCount?: boolean;
+    /**
+     * 允许清空
+     */
+    allowClear?: boolean;
+    /**
+     * `native` 列数
+     */
+    cols?: number;
+    /**
+     * `native` 行数
+     */
+    rows?: number;
+    /**
+     * `native` 最大输入长度
+     */
+    maxlength?: number;
+    /**
+     * 自动高度
+     */
+    autosize?: boolean | TextareaAutosizeHeight | TextareaAutosizeRow;
+    readonly?: boolean;
+}
+declare const _default: import("vue").DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<TextareaProps>, {
+    autosize: boolean;
+    showCount: boolean;
+}>, {
+    focus: () => void;
+    blur: () => void;
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+    blur: (eventParam: Event) => void;
+    input: (value: string) => void;
+    "update:modelValue": (value: string) => void;
+    change: (value: string) => void;
+    focus: (eventParam: Event) => void;
+    clear: () => void;
+}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<TextareaProps>, {
+    autosize: boolean;
+    showCount: boolean;
+}>>> & {
+    "onUpdate:modelValue"?: ((value: string) => any) | undefined;
+    onInput?: ((value: string) => any) | undefined;
+    onClear?: (() => any) | undefined;
+    onBlur?: ((eventParam: Event) => any) | undefined;
+    onChange?: ((value: string) => any) | undefined;
+    onFocus?: ((eventParam: Event) => any) | undefined;
+}, {
+    showCount: boolean;
+    autosize: boolean | TextareaAutosizeHeight | TextareaAutosizeRow;
+}, {}>;
+export default _default;
+type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
+type __VLS_TypePropsToRuntimeProps<T> = {
+    [K in keyof T]-?: {} extends Pick<T, K> ? {
+        type: import('vue').PropType<__VLS_NonUndefinedable<T[K]>>;
+    } : {
+        type: import('vue').PropType<T[K]>;
+        required: true;
+    };
+};
+type __VLS_WithDefaults<P, D> = {
+    [K in keyof Pick<P, keyof P>]: K extends keyof D ? __VLS_Prettify<P[K] & {
+        default: D[K];
+    }> : P[K];
+};
+type __VLS_Prettify<T> = {
+    [K in keyof T]: T[K];
+} & {};

@@ -1,0 +1,16 @@
+import { defineComponent as g, useCssVars as b, useSlots as v, shallowRef as h, computed as a, openBlock as l, createElementBlock as s, renderSlot as i, normalizeClass as k, normalizeStyle as S, unref as d, Fragment as x, createTextVNode as B, toDisplayString as N, createCommentVNode as u } from "vue";
+/* empty css           */
+const C = { class: "layui-badge" }, w = { key: 2, class: "layui-badge-dot-ripple" }, _ = g({ name: "LayBadge", __name: "index", props: { theme: {}, color: {}, ripple: { type: Boolean }, type: { default: "rim" }, value: { default: 0 }, badgeStyle: { type: [Boolean, null, String, Object, Array] }, position: { default: "top-right" }, showZero: { type: Boolean, default: !1 }, max: { default: 99 } }, setup(n) {
+  b((t) => ({ "066508d3": c.value }));
+  const o = v(), r = h(null), e = n, p = a(() => {
+    if (e.type !== "dot" && !isNaN(+e.value)) {
+      const t = Math.max(0, +e.value);
+      return +t > e.max ? `${e.max}+` : t;
+    }
+    return e.value;
+  }), m = a(() => [{ [`layui-bg-${e.theme}`]: e.theme, "layui-badge-number": e.type == "rim", "layui-badge-base": !o.default, "layui-badge-dot": e.type == "dot", "is-bottom-right": e.position === "bottom-right", "is-bottom-left": e.position === "bottom-left", "is-top-left": e.position === "top-left" }]), y = a(() => [{ "background-color": e.color }, e.badgeStyle]), c = a(() => (r.value && getComputedStyle(r.value).backgroundColor) ?? ""), f = a(() => e.type === "dot" || !!o.custom || !!isNaN(+e.value) || !!(+e.value <= 0 && e.showZero) || !(+e.value <= 0 && !e.showZero));
+  return (t, $) => (l(), s("div", C, [i(t.$slots, "default", {}, void 0, !0), f.value ? (l(), s("sup", { key: 0, ref_key: "layBadge", ref: r, class: k(m.value), style: S(y.value) }, [t.type === "dot" || d(o).custom ? u("", !0) : (l(), s(x, { key: 0 }, [B(N(p.value), 1)], 64)), d(o).custom ? i(t.$slots, "custom", { key: 1 }, void 0, !0) : u("", !0), t.ripple ? (l(), s("span", w)) : u("", !0)], 6)) : u("", !0)]));
+} });
+export {
+  _ as default
+};

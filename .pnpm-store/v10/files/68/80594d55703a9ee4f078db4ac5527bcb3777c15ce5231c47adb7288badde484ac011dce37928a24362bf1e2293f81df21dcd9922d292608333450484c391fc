@@ -1,0 +1,43 @@
+import { defineComponent as D, ref as n, watch as w, computed as j, openBlock as A, createElementBlock as F, createElementVNode as m, createVNode as i, withCtx as y, unref as c, toDisplayString as v, createTextVNode as H } from "vue";
+import p from "../../icon/index.js";
+import x from "dayjs";
+import { useBaseDatePicker as I } from "../hook/useBaseDatePicker.js";
+import { useShortcutsRange as L } from "../hook/useShortcutsRange.js";
+import N from "./common/DatePickerRender.js";
+import R from "./common/Footer.js";
+import T from "./common/Shortcuts.js";
+import C from "./common/Year.js";
+const z = { class: "layui-laydate layui-laydate-range" }, E = { class: "layui-laydate-range-main" }, Y = { class: "laydate-set-ym" }, q = { class: "laydate-time-text" }, G = { class: "laydate-set-ym" }, J = { class: "laydate-time-text" }, ae = D({ __name: "YearRange", props: { modelValue: {}, size: {}, type: {}, disabled: { type: Boolean }, readonly: { type: Boolean }, allowClear: { type: Boolean }, simple: { type: Boolean }, range: { type: Boolean }, rangeSeparator: {}, prefixIcon: {}, suffixIcon: {}, timestamp: { type: Boolean }, yearPage: {}, name: {}, placeholder: {}, max: {}, min: {}, format: {}, inputFormat: {}, defaultValue: {}, defaultTime: {}, contentStyle: { type: [Boolean, null, String, Object, Array] }, contentClass: {}, disabledDate: {}, shortcuts: {}, static: { type: Boolean }, teleportProps: {} }, emits: ["pick"], setup(k, { emit: P }) {
+  const o = k, V = P, { getDefaultValue: b } = I(o), O = L(), a = n(), t = n(), r = n(x()), d = n(x()), f = n();
+  w(() => o.modelValue, () => {
+    const [e, l] = o.modelValue;
+    a.value = e, t.value = l, r.value = e || b();
+  }, { immediate: !0 }), w(() => r.value, () => {
+    d.value = r.value.add(o.yearPage, "year");
+  }, { immediate: !0 });
+  const g = j(() => (e) => {
+    var s, u;
+    const l = f.value || t.value;
+    return { "layui-this": !(!((s = a.value) != null && s.isSame(e, "year")) && !((u = t.value) != null && u.isSame(e, "year"))), "laydate-range-hover": !!(a.value && e.isSameOrAfter(a.value, "year") && e.isSameOrBefore(l, "year")) || !!(a.value && e.isSameOrBefore(a.value, "year") && e.isSameOrAfter(l, "year")) };
+  });
+  function B(e) {
+    !a.value || a.value && t.value ? (a.value = e, t.value = void 0) : e.isSameOrBefore(a.value, "year") ? (t.value = a.value, a.value = e) : t.value = e, o.simple && a.value && t.value && h();
+  }
+  function S(e) {
+    a.value && !t.value ? f.value = e : f.value = void 0;
+  }
+  function _(e) {
+    const l = O(e);
+    r.value = l[0], d.value = l[1], a.value = l[0], t.value = l[1], o.simple && h();
+  }
+  function h() {
+    V("pick", [a.value, t.value]);
+  }
+  return (e, l) => (A(), F("div", z, [m("div", E, [i(T, { onChangeShortcut: _ }), i(C, { "model-value": r.value, "show-date": r.value, classes: g.value, onPick: B, onHoverCell: S }, { header: y(({ yearList: s }) => [i(c(p), { type: "layui-icon-prev", onClick: l[0] || (l[0] = (u) => r.value = r.value.subtract(e.yearPage, "year")) }), m("div", Y, [m("span", q, v(s.join(" - ")), 1)]), i(c(p), { type: "layui-icon-next", style: { visibility: "hidden" } })]), _: 1 }, 8, ["model-value", "show-date", "classes"]), i(C, { "model-value": d.value, "show-date": d.value, classes: g.value, onPick: B, onHoverCell: S }, { header: y(({ yearList: s }) => [i(c(p), { type: "layui-icon-prev", style: { visibility: "hidden" } }), m("div", G, [m("span", J, v(s.join(" - ")), 1)]), i(c(p), { type: "layui-icon-next", onClick: l[1] || (l[1] = (u) => r.value = r.value.add(e.yearPage, "year")) })]), _: 1 }, 8, ["model-value", "show-date", "classes"])]), i(R, { "show-now": !1, "show-confirm": !o.simple, onConfirm: h }, { default: y(() => [i(N, { render: "footer", start: a.value, end: t.value }, { default: y(() => {
+    var s, u;
+    return [H(v((s = a.value) == null ? void 0 : s.format(o.inputFormat)) + " " + v(o.rangeSeparator) + " " + v((u = t.value) == null ? void 0 : u.format(o.inputFormat)), 1)];
+  }), _: 1 }, 8, ["start", "end"])]), _: 1 }, 8, ["show-confirm"])]));
+} });
+export {
+  ae as default
+};

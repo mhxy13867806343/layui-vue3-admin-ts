@@ -1,0 +1,155 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+        };
+        position: {
+            type: import("vue").PropType<import("@floating-ui/utils").Placement>;
+        };
+        content: {
+            type: import("vue").PropType<string>;
+        };
+        trigger: {
+            type: import("vue").PropType<"click" | "focus" | "hover" | "contextMenu">;
+        };
+        teleportProps: {
+            type: import("vue").PropType<import("vue").TeleportProps>;
+        };
+        btnAlign: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        confirmText: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        cancelText: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+    }>> & {
+        onConfirm?: ((...args: any[]) => any) | undefined;
+        onCancel?: ((...args: any[]) => any) | undefined;
+    }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("cancel" | "confirm")[], import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+        };
+        position: {
+            type: import("vue").PropType<import("@floating-ui/utils").Placement>;
+        };
+        content: {
+            type: import("vue").PropType<string>;
+        };
+        trigger: {
+            type: import("vue").PropType<"click" | "focus" | "hover" | "contextMenu">;
+        };
+        teleportProps: {
+            type: import("vue").PropType<import("vue").TeleportProps>;
+        };
+        btnAlign: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        confirmText: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        cancelText: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+    }>> & {
+        onConfirm?: ((...args: any[]) => any) | undefined;
+        onCancel?: ((...args: any[]) => any) | undefined;
+    }, {
+        btnAlign: string;
+        confirmText: string;
+        cancelText: string;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+        };
+        position: {
+            type: import("vue").PropType<import("@floating-ui/utils").Placement>;
+        };
+        content: {
+            type: import("vue").PropType<string>;
+        };
+        trigger: {
+            type: import("vue").PropType<"click" | "focus" | "hover" | "contextMenu">;
+        };
+        teleportProps: {
+            type: import("vue").PropType<import("vue").TeleportProps>;
+        };
+        btnAlign: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        confirmText: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        cancelText: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+    }>> & {
+        onConfirm?: ((...args: any[]) => any) | undefined;
+        onCancel?: ((...args: any[]) => any) | undefined;
+    }, {}, {}, {}, {}, {
+        btnAlign: string;
+        confirmText: string;
+        cancelText: string;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    disabled: {
+        type: import("vue").PropType<boolean>;
+    };
+    position: {
+        type: import("vue").PropType<import("@floating-ui/utils").Placement>;
+    };
+    content: {
+        type: import("vue").PropType<string>;
+    };
+    trigger: {
+        type: import("vue").PropType<"click" | "focus" | "hover" | "contextMenu">;
+    };
+    teleportProps: {
+        type: import("vue").PropType<import("vue").TeleportProps>;
+    };
+    btnAlign: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    confirmText: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    cancelText: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+}>> & {
+    onConfirm?: ((...args: any[]) => any) | undefined;
+    onCancel?: ((...args: any[]) => any) | undefined;
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("cancel" | "confirm")[], "cancel" | "confirm", {
+    btnAlign: string;
+    confirmText: string;
+    cancelText: string;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        default?(_: {}): any;
+        content?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

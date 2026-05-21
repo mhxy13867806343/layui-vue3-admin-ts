@@ -1,0 +1,130 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        name: {
+            type: import("vue").PropType<string>;
+        };
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        size: {
+            type: import("vue").PropType<"lg" | "md" | "sm">;
+            default: string;
+        };
+        options: {
+            type: import("vue").PropType<string[] | import("./interfaces").LaySegmentedItemType[]>;
+            required: true;
+        };
+        modelValue: {
+            type: import("vue").PropType<string>;
+            required: true;
+            default: string;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((value: string) => any) | undefined;
+        onChange?: ((value: string) => any) | undefined;
+    }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+        change: (value: string) => void;
+        "update:modelValue": (value: string) => void;
+    }, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        name: {
+            type: import("vue").PropType<string>;
+        };
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        size: {
+            type: import("vue").PropType<"lg" | "md" | "sm">;
+            default: string;
+        };
+        options: {
+            type: import("vue").PropType<string[] | import("./interfaces").LaySegmentedItemType[]>;
+            required: true;
+        };
+        modelValue: {
+            type: import("vue").PropType<string>;
+            required: true;
+            default: string;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((value: string) => any) | undefined;
+        onChange?: ((value: string) => any) | undefined;
+    }, {
+        disabled: boolean;
+        size: "lg" | "md" | "sm";
+        modelValue: string;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        name: {
+            type: import("vue").PropType<string>;
+        };
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        size: {
+            type: import("vue").PropType<"lg" | "md" | "sm">;
+            default: string;
+        };
+        options: {
+            type: import("vue").PropType<string[] | import("./interfaces").LaySegmentedItemType[]>;
+            required: true;
+        };
+        modelValue: {
+            type: import("vue").PropType<string>;
+            required: true;
+            default: string;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((value: string) => any) | undefined;
+        onChange?: ((value: string) => any) | undefined;
+    }, {}, {}, {}, {}, {
+        disabled: boolean;
+        size: "lg" | "md" | "sm";
+        modelValue: string;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    name: {
+        type: import("vue").PropType<string>;
+    };
+    disabled: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    size: {
+        type: import("vue").PropType<"lg" | "md" | "sm">;
+        default: string;
+    };
+    options: {
+        type: import("vue").PropType<string[] | import("./interfaces").LaySegmentedItemType[]>;
+        required: true;
+    };
+    modelValue: {
+        type: import("vue").PropType<string>;
+        required: true;
+        default: string;
+    };
+}>> & {
+    "onUpdate:modelValue"?: ((value: string) => any) | undefined;
+    onChange?: ((value: string) => any) | undefined;
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+    change: (value: string) => void;
+    "update:modelValue": (value: string) => void;
+}, string, {
+    disabled: boolean;
+    size: "lg" | "md" | "sm";
+    modelValue: string;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: Partial<Record<any, (_: any) => any>>;
+}) & import("vue").Plugin<any[]>;
+export default component;

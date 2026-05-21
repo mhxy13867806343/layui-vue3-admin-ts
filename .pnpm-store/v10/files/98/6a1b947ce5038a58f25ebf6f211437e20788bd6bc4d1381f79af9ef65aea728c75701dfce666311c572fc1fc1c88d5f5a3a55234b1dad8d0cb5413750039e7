@@ -1,0 +1,23 @@
+import type { FloatingElement, MiddlewareData, ReferenceElement } from "@floating-ui/dom";
+import type { Ref } from "vue";
+import type { UsePopperOptions } from "./types";
+export declare function usePopper(reference: Ref<ReferenceElement>, // 参照元素
+popper: Ref<FloatingElement>, // 定位元素
+options?: UsePopperOptions): {
+    position: import("vue").ComputedRef<{
+        x: number;
+        y: number;
+        strategy: "fixed" | "absolute";
+    }>;
+    strategy: Ref<"fixed" | "absolute">;
+    placement: Ref<"top" | "left" | "right" | "bottom" | "top-end" | "top-start" | "left-end" | "left-start" | "right-end" | "right-start" | "bottom-end" | "bottom-start">;
+    popperStyle: import("vue").ComputedRef<{
+        top: string;
+        left: string;
+        position: "fixed" | "absolute";
+    }>;
+    middlewareData: import("vue").ShallowRef<MiddlewareData>;
+    update: () => void;
+    stopAutoUpdate: Ref<(() => void) | undefined>;
+    startAutoUpdate: Ref<(() => void) | undefined>;
+};

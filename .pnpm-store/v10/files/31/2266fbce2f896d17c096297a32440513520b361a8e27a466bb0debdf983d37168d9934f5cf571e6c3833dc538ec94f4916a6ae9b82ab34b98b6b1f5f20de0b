@@ -1,0 +1,363 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+        };
+        visible: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        placement: {
+            type: import("vue").PropType<import("@floating-ui/utils").Placement>;
+            default: string;
+        };
+        trigger: {
+            type: import("vue").PropType<import("@layui/component/component/popper").PopperTrigger | import("@layui/component/component/popper").PopperTrigger[]>;
+            default: string;
+        };
+        clickOutsideToClose: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        teleportProps: {
+            type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+        };
+        autoFitPosition: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        autoFitWidth: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        autoFitMinWidth: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        clickToClose: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        blurToClose: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        contentOffset: {
+            type: import("vue").PropType<string | number>;
+            default: string;
+        };
+        mouseEnterDelay: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        mouseLeaveDelay: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        focusDelay: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        alignPoint: {
+            type: import("vue").PropType<boolean>;
+        };
+        contentClass: {
+            type: import("vue").PropType<string | object | (string | object)[]>;
+        };
+        contentStyle: {
+            type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+        };
+    }>> & {
+        onShow?: ((value: boolean) => any) | undefined;
+        onHide?: ((value: boolean) => any) | undefined;
+    }, {
+        show: () => void;
+        hide: () => void;
+        toggle: () => void;
+    }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+        show: (value: boolean) => void;
+        hide: (value: boolean) => void;
+    }, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+        };
+        visible: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        placement: {
+            type: import("vue").PropType<import("@floating-ui/utils").Placement>;
+            default: string;
+        };
+        trigger: {
+            type: import("vue").PropType<import("@layui/component/component/popper").PopperTrigger | import("@layui/component/component/popper").PopperTrigger[]>;
+            default: string;
+        };
+        clickOutsideToClose: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        teleportProps: {
+            type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+        };
+        autoFitPosition: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        autoFitWidth: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        autoFitMinWidth: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        clickToClose: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        blurToClose: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        contentOffset: {
+            type: import("vue").PropType<string | number>;
+            default: string;
+        };
+        mouseEnterDelay: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        mouseLeaveDelay: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        focusDelay: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        alignPoint: {
+            type: import("vue").PropType<boolean>;
+        };
+        contentClass: {
+            type: import("vue").PropType<string | object | (string | object)[]>;
+        };
+        contentStyle: {
+            type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+        };
+    }>> & {
+        onShow?: ((value: boolean) => any) | undefined;
+        onHide?: ((value: boolean) => any) | undefined;
+    }, {
+        visible: boolean;
+        placement: import("@floating-ui/utils").Placement;
+        trigger: import("@layui/component/component/popper").PopperTrigger | import("@layui/component/component/popper").PopperTrigger[];
+        clickOutsideToClose: boolean;
+        autoFitPosition: boolean;
+        autoFitWidth: boolean;
+        autoFitMinWidth: boolean;
+        clickToClose: boolean;
+        blurToClose: boolean;
+        contentOffset: string | number;
+        mouseEnterDelay: number;
+        mouseLeaveDelay: number;
+        focusDelay: number;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+        };
+        visible: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        placement: {
+            type: import("vue").PropType<import("@floating-ui/utils").Placement>;
+            default: string;
+        };
+        trigger: {
+            type: import("vue").PropType<import("@layui/component/component/popper").PopperTrigger | import("@layui/component/component/popper").PopperTrigger[]>;
+            default: string;
+        };
+        clickOutsideToClose: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        teleportProps: {
+            type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+        };
+        autoFitPosition: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        autoFitWidth: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        autoFitMinWidth: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        clickToClose: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        blurToClose: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        contentOffset: {
+            type: import("vue").PropType<string | number>;
+            default: string;
+        };
+        mouseEnterDelay: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        mouseLeaveDelay: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        focusDelay: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        alignPoint: {
+            type: import("vue").PropType<boolean>;
+        };
+        contentClass: {
+            type: import("vue").PropType<string | object | (string | object)[]>;
+        };
+        contentStyle: {
+            type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+        };
+    }>> & {
+        onShow?: ((value: boolean) => any) | undefined;
+        onHide?: ((value: boolean) => any) | undefined;
+    }, {
+        show: () => void;
+        hide: () => void;
+        toggle: () => void;
+    }, {}, {}, {}, {
+        visible: boolean;
+        placement: import("@floating-ui/utils").Placement;
+        trigger: import("@layui/component/component/popper").PopperTrigger | import("@layui/component/component/popper").PopperTrigger[];
+        clickOutsideToClose: boolean;
+        autoFitPosition: boolean;
+        autoFitWidth: boolean;
+        autoFitMinWidth: boolean;
+        clickToClose: boolean;
+        blurToClose: boolean;
+        contentOffset: string | number;
+        mouseEnterDelay: number;
+        mouseLeaveDelay: number;
+        focusDelay: number;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    disabled: {
+        type: import("vue").PropType<boolean>;
+    };
+    visible: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    placement: {
+        type: import("vue").PropType<import("@floating-ui/utils").Placement>;
+        default: string;
+    };
+    trigger: {
+        type: import("vue").PropType<import("@layui/component/component/popper").PopperTrigger | import("@layui/component/component/popper").PopperTrigger[]>;
+        default: string;
+    };
+    clickOutsideToClose: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    teleportProps: {
+        type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+    };
+    autoFitPosition: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    autoFitWidth: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    autoFitMinWidth: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    clickToClose: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    blurToClose: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    contentOffset: {
+        type: import("vue").PropType<string | number>;
+        default: string;
+    };
+    mouseEnterDelay: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    mouseLeaveDelay: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    focusDelay: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    alignPoint: {
+        type: import("vue").PropType<boolean>;
+    };
+    contentClass: {
+        type: import("vue").PropType<string | object | (string | object)[]>;
+    };
+    contentStyle: {
+        type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+    };
+}>> & {
+    onShow?: ((value: boolean) => any) | undefined;
+    onHide?: ((value: boolean) => any) | undefined;
+}, {
+    show: () => void;
+    hide: () => void;
+    toggle: () => void;
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+    show: (value: boolean) => void;
+    hide: (value: boolean) => void;
+}, string, {
+    visible: boolean;
+    placement: import("@floating-ui/utils").Placement;
+    trigger: import("@layui/component/component/popper").PopperTrigger | import("@layui/component/component/popper").PopperTrigger[];
+    clickOutsideToClose: boolean;
+    autoFitPosition: boolean;
+    autoFitWidth: boolean;
+    autoFitMinWidth: boolean;
+    clickToClose: boolean;
+    blurToClose: boolean;
+    contentOffset: string | number;
+    mouseEnterDelay: number;
+    mouseLeaveDelay: number;
+    focusDelay: number;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        default?(_: {}): any;
+        content?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

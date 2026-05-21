@@ -1,0 +1,90 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        content: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        backText: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        backIcon: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+    }>> & {
+        onBack?: ((...args: any[]) => any) | undefined;
+    }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "back"[], import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        content: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        backText: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        backIcon: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+    }>> & {
+        onBack?: ((...args: any[]) => any) | undefined;
+    }, {
+        content: string;
+        backText: string;
+        backIcon: string;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        content: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        backText: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        backIcon: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+    }>> & {
+        onBack?: ((...args: any[]) => any) | undefined;
+    }, {}, {}, {}, {}, {
+        content: string;
+        backText: string;
+        backIcon: string;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    content: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    backText: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    backIcon: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+}>> & {
+    onBack?: ((...args: any[]) => any) | undefined;
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "back"[], "back", {
+    content: string;
+    backText: string;
+    backIcon: string;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: Partial<Record<any, (_: {}) => any>> & {
+        default?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

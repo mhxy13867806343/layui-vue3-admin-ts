@@ -1,0 +1,105 @@
+/** __vue_virtual_code_placeholder */
+import "./index.less";
+import { StyleValue } from "vue";
+import type { DropdownTeleportProps } from "../dropdown/interface";
+import { SelectOptionProps } from "../selectOption/index.vue";
+import { SelectSize } from "./interface";
+export interface SelectProps {
+    name?: string;
+    disabled?: boolean;
+    placeholder?: string;
+    searchPlaceholder?: string;
+    searchMethod?: Function;
+    modelValue?: any;
+    multiple?: boolean;
+    options?: SelectOptionProps[];
+    autoFitWidth?: boolean;
+    autoFitMinWidth?: boolean;
+    size?: SelectSize;
+    collapseTagsTooltip?: boolean;
+    minCollapsedNum?: number;
+    allowClear?: boolean;
+    showSearch?: boolean;
+    contentClass?: string | Array<string | object> | object;
+    contentStyle?: StyleValue;
+    teleportProps?: DropdownTeleportProps;
+}
+export interface SelectEmits {
+    (e: "update:modelValue", value: string | number | object): void;
+    (e: "change", value: string | number | object): void;
+    (e: "search", value: string): void;
+    (e: "remove-tag", value: string | number | object): void;
+    (e: "clear"): void;
+}
+declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<SelectProps>, {
+    collapseTagsTooltip: boolean;
+    minCollapsedNum: number;
+    allowClear: boolean;
+    autoFitWidth: boolean;
+    autoFitMinWidth: boolean;
+    showSearch: boolean;
+    modelValue: null;
+    disabled: boolean;
+    multiple: boolean;
+}>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+    "update:modelValue": (value: string | number | object) => void;
+    change: (value: string | number | object) => void;
+    search: (value: string) => void;
+    "remove-tag": (value: string | number | object) => void;
+    clear: () => void;
+}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<SelectProps>, {
+    collapseTagsTooltip: boolean;
+    minCollapsedNum: number;
+    allowClear: boolean;
+    autoFitWidth: boolean;
+    autoFitMinWidth: boolean;
+    showSearch: boolean;
+    modelValue: null;
+    disabled: boolean;
+    multiple: boolean;
+}>>> & {
+    "onUpdate:modelValue"?: ((value: string | number | object) => any) | undefined;
+    onClear?: (() => any) | undefined;
+    onChange?: ((value: string | number | object) => any) | undefined;
+    onSearch?: ((value: string) => any) | undefined;
+    "onRemove-tag"?: ((value: string | number | object) => any) | undefined;
+}, {
+    disabled: boolean;
+    multiple: boolean;
+    modelValue: any;
+    autoFitWidth: boolean;
+    autoFitMinWidth: boolean;
+    allowClear: boolean;
+    minCollapsedNum: number;
+    collapseTagsTooltip: boolean;
+    showSearch: boolean;
+}, {}>, {
+    prepend?(_: {}): any;
+    append?(_: {}): any;
+    header?(_: {}): any;
+    default?(_: {}): any;
+    footer?(_: {}): any;
+}>;
+export default _default;
+type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
+type __VLS_TypePropsToRuntimeProps<T> = {
+    [K in keyof T]-?: {} extends Pick<T, K> ? {
+        type: import('vue').PropType<__VLS_NonUndefinedable<T[K]>>;
+    } : {
+        type: import('vue').PropType<T[K]>;
+        required: true;
+    };
+};
+type __VLS_WithDefaults<P, D> = {
+    [K in keyof Pick<P, keyof P>]: K extends keyof D ? __VLS_Prettify<P[K] & {
+        default: D[K];
+    }> : P[K];
+};
+type __VLS_WithTemplateSlots<T, S> = T & {
+    new (): {
+        $slots: S;
+    };
+};
+type __VLS_Prettify<T> = {
+    [K in keyof T]: T[K];
+} & {};

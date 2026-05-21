@@ -1,0 +1,15 @@
+import { defineComponent as p, ref as r, watch as c, provide as i, openBlock as d, createElementBlock as u, normalizeClass as f, renderSlot as m } from "vue";
+/* empty css           */
+const v = p({ name: "LayStep", __name: "index", props: { active: { default: 0 }, center: { type: Boolean, default: !1 }, direction: { default: "horizontal" }, space: { default: "auto" }, currentStatus: { default: "success" }, composition: { default: "default" }, simple: { type: Boolean, default: !1 } }, emits: ["onChange"], setup(o, { emit: s }) {
+  const n = o, t = r([]), l = s;
+  return c(t, () => {
+    t.value.forEach((e, a) => {
+      e.setIndex(a);
+    });
+  }), i("LayStep", { props: n, steps: t, change: (e) => {
+    l("onChange", e - 1);
+  } }), (e, a) => (d(), u("div", { class: f(["lay-step", e.direction !== "vertical" ? "" : "lay-step-column"]) }, [m(e.$slots, "default")], 2));
+} });
+export {
+  v as default
+};

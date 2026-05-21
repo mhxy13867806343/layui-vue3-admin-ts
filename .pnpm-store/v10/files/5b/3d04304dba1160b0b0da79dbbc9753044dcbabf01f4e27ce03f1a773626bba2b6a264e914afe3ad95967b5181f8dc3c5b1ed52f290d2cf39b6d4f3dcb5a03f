@@ -1,0 +1,54 @@
+import { defineComponent as ne, useSlots as ie, shallowRef as u, ref as b, computed as N, watch as ue, nextTick as U, onMounted as de, onBeforeUnmount as re, provide as ce, openBlock as o, createElementBlock as i, normalizeClass as E, normalizeStyle as W, createVNode as k, unref as t, normalizeProps as me, guardReactiveProps as pe, renderSlot as C, createCommentVNode as d, createElementVNode as r, withDirectives as ye, Fragment as A, renderList as V, createBlock as I, vShow as fe, mergeProps as he } from "vue";
+import { useResizeObserver as O } from "@vueuse/core";
+import ve from "../empty/index2.js";
+import be from "./components/TableHeader.js";
+import ge from "./components/TablePage.js";
+import xe from "./components/TableToolbar.js";
+import Se from "./components/TableTotal.js";
+import { LAY_TABLE_CONTEXT as we } from "./constant.js";
+import { useTable as ke } from "./hooks/useTable.js";
+import { tableEmits as Ce } from "./typing.js";
+/* empty css           */
+import Te from "./components/TableMain/TableMain.js";
+const Re = { key: 0, class: "layui-table-box-header" }, ze = { class: "layui-table-box" }, Be = ["lay-size", "lay-skin"], Le = ["width"], Ne = { key: 1, class: "layui-table-loading" }, Ee = [r("i", { class: "layui-icon-loading layui-icon layui-anim layui-anim-rotate layui-anim-loop" }, null, -1)], We = { key: 1, class: "layui-table-footer" }, Ae = { key: 1, class: "layui-table-page" }, De = { key: 0, class: "layui-table-page-slot" }, Xe = ne({ name: "LayTable", __name: "index", props: { id: { default: "id" }, dataSource: { default: () => [] }, columns: {}, skin: {}, size: { default: "md" }, page: {}, defaultToolbar: { type: [Boolean, Array], default: !1 }, selectedKey: { default: "" }, selectedKeys: { default: () => [] }, indentSize: { default: 30 }, childrenColumnName: { default: "children" }, height: {}, maxHeight: { default: "auto" }, even: { type: Boolean, default: !1 }, expandIndex: { default: 0 }, rowClassName: { type: [String, Function], default: "" }, cellClassName: { type: [String, Function], default: "" }, rowStyle: { type: [String, Function], default: "" }, cellStyle: { type: [String, Function], default: "" }, spanMethod: { type: Function, default: () => {
+} }, defaultExpandAll: { type: Boolean, default: !1 }, expandKeys: { default: () => [] }, loading: { type: Boolean, default: !1 }, getCheckboxProps: { type: Function, default: () => {
+} }, getRadioProps: { type: Function, default: () => {
+} }, resize: { type: Boolean, default: !1 }, autoColsWidth: { type: Boolean, default: !1 }, emptyDescription: {}, initSort: { default: () => ({ field: "", type: "" }) } }, emits: Ce, setup(X, { expose: Y, emit: j }) {
+  const s = X, D = j, y = ie(), { hierarchicalColumns: F, lastLevelAllColumns: q, lastLevelShowColumns: g, tableDataSource: c, columnsState: J, selectedState: P, expandState: Q, hasTotalRow: _, commonGetClasses: Z, commonGetStylees: ee } = ke(s, D), T = u(null), n = u(null), H = u(null), M = b(), R = b(0), z = u(null), B = u(null), L = u(null), le = u(null), f = b(!1), h = b(!1), ae = N(() => [f.value ? "layui-table-has-fixed-left" : "", h.value ? "layui-table-has-fixed-right" : "", { "layui-table-has-bottom-width": !(_.value || s.page && s.page.total > 0 || y.footer) }]);
+  function m() {
+    var l, p, v;
+    const e = ((l = n.value) == null ? void 0 : l.clientWidth) || 0, a = ((p = n.value) == null ? void 0 : p.offsetWidth) || 0;
+    R.value = e < a ? a - e : 0, M.value = `${(v = B.value) == null ? void 0 : v.offsetWidth}px`;
+  }
+  let x, S;
+  function w() {
+    var v, $, G, K;
+    const e = ((v = n.value) == null ? void 0 : v.scrollLeft) || 0, a = (($ = n.value) == null ? void 0 : $.scrollWidth) || 0, l = ((G = n.value) == null ? void 0 : G.clientWidth) || 0, p = ((K = n.value) == null ? void 0 : K.offsetWidth) || 0;
+    z.value && (z.value.scrollLeft = e), L.value && (L.value.scrollLeft = e), a > l ? e === 0 ? (f.value = !1, h.value = !0) : e + p + 2 > a ? (f.value = !0, h.value = !1) : (f.value = !0, h.value = !0) : (f.value = !1, h.value = !1);
+  }
+  ue(() => [s.height, s.maxHeight, c], () => {
+    U(() => {
+      m();
+    });
+  }), de(() => {
+    var e, a;
+    U(() => {
+      m();
+    }), w(), (e = n.value) == null || e.addEventListener("scroll", () => {
+      m(), w();
+    }), (a = n.value) == null || a.addEventListener("transitionend", () => {
+      m();
+    }), x = O(n, () => {
+      m(), w();
+    }), S = O(B, () => {
+      m(), w();
+    });
+  }), re(() => {
+    x == null || x.stop(), S == null || S.stop();
+  });
+  const te = b(0), oe = N(() => c.find((e) => e[s.childrenColumnName]) !== void 0), se = N(() => ({ defaultToolbar: s.defaultToolbar, spanMethod: s.spanMethod, tableDataSource: c, hierarchicalColumns: F.value, lastLevelAllColumns: q.value, tableRef: T.value }));
+  return Y({ getCheckData: P.getAllSelectedDataSource }), ce(we, { tableEmits: D, tableProps: s, tableSlots: y, tableRef: T, tableBodyTableRef: H, tableHeaderRef: z, tableHeaderTableRef: B, tableTotalRef: L, tableTotalTableRef: le, tableDataSource: c, columnsState: J, selectedState: P, expandState: Q, commonGetClasses: Z, commonGetStylees: ee }), (e, a) => (o(), i("div", { ref_key: "tableRef", ref: T, class: E(["layui-form layui-border-box layui-table-view", ae.value]), style: W({ height: e.height, maxHeight: e.maxHeight }) }, [k(t(xe), me(pe(se.value)), null, 16), t(y).header ? (o(), i("div", Re, [C(e.$slots, "header")])) : d("", !0), r("div", ze, [k(be, { "last-level-show-columns": t(g), "hierarchical-columns": t(F), "table-body-scroll-width": R.value }, null, 8, ["last-level-show-columns", "hierarchical-columns", "table-body-scroll-width"]), r("div", { ref_key: "tableBodyRef", ref: n, class: E(["layui-table-body layui-table-main", { "layui-table-body-loading": s.loading }]) }, [ye(r("table", { ref_key: "tableBodyTableRef", ref: H, class: E(["layui-table", { "layui-table-even": s.even }]), "lay-size": e.size, "lay-skin": e.skin }, [r("colgroup", null, [(o(!0), i(A, null, V(t(g), (l) => (o(), i("col", { key: l.key || l.type, width: l.width, style: W({ minWidth: l.minWidth }) }, null, 12, Le))), 128))]), r("tbody", null, [(o(!0), i(A, null, V(t(c), (l, p) => (o(), I(t(Te), { key: l[e.id], id: e.id, index: p, data: l, page: e.page, columns: t(g), "indent-size": e.indentSize, "current-indent-size": te.value, "expand-space": oe.value, "expand-index": e.expandIndex, "cell-style": e.cellStyle, "cell-class-name": e.cellClassName, "row-style": e.rowStyle, "row-class-name": e.rowClassName, "span-method": e.spanMethod, "default-expand-all": e.defaultExpandAll, "get-checkbox-props": e.getCheckboxProps, "get-radio-props": e.getRadioProps, "children-column-name": e.childrenColumnName }, null, 8, ["id", "index", "data", "page", "columns", "indent-size", "current-indent-size", "expand-space", "expand-index", "cell-style", "cell-class-name", "row-style", "row-class-name", "span-method", "default-expand-all", "get-checkbox-props", "get-radio-props", "children-column-name"]))), 128))])], 10, Be), [[fe, !e.loading]]), t(c).length !== 0 || e.loading ? d("", !0) : (o(), i(A, { key: 0 }, [C(e.$slots, "empty", {}, () => [k(ve, { description: e.emptyDescription }, null, 8, ["description"])]), r("div", { style: W({ width: M.value }) }, null, 4)], 64)), e.loading ? (o(), i("div", Ne, Ee)) : d("", !0)], 2), t(_) ? (o(), I(Se, { key: 0, "last-level-show-columns": t(g), "table-body-scroll-width": R.value }, null, 8, ["last-level-show-columns", "table-body-scroll-width"])) : d("", !0), t(y).footer ? (o(), i("div", We, [C(e.$slots, "footer")])) : d("", !0)]), e.page && e.page.total > 0 ? (o(), i("div", Ae, [k(ge, he(e.page, { current: e.page.current, "onUpdate:current": a[0] || (a[0] = (l) => e.page.current = l), limit: e.page.limit, "onUpdate:limit": a[1] || (a[1] = (l) => e.page.limit = l) }), null, 16, ["current", "limit"]), t(y).page ? (o(), i("div", De, [C(e.$slots, "page")])) : d("", !0)])) : d("", !0)], 6));
+} });
+export {
+  Xe as default
+};

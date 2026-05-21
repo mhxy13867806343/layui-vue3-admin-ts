@@ -1,0 +1,10 @@
+import type { StyleValue } from "vue";
+import type { TableToolBarType } from "../components/types";
+import type { TableDefaultToolbar } from "../typing";
+export declare function useToolBar(props: TableToolBarType): {
+    t: any;
+    showToolbars: import("vue").ComputedRef<TableDefaultToolbar[]>;
+    toolbarStyle: (toolbarName: TableDefaultToolbar) => StyleValue;
+    exportData: () => void;
+    print: () => void;
+};

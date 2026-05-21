@@ -1,0 +1,4 @@
+const o = Symbol("LayDescriptions");
+export {
+  o as DESCRIPTIONS_INJECTION_KEY
+};

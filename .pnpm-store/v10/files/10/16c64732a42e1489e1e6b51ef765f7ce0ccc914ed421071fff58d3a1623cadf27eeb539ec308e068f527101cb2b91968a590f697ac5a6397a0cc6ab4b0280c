@@ -1,0 +1,987 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        name: {
+            type: import("vue").PropType<string>;
+        };
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        type: {
+            type: import("vue").PropType<import("./interface").DatePickerType>;
+            default: string;
+        };
+        static: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        size: {
+            type: import("vue").PropType<import("../../types").CommonSize>;
+            default: string;
+        };
+        range: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        modelValue: {
+            type: import("vue").PropType<string | number | Date | import("dayjs").Dayjs | {
+                years?: string | number | undefined;
+                year?: string | number | undefined;
+                y?: string | number | undefined;
+                months?: string | number | undefined;
+                month?: string | number | undefined;
+                M?: string | number | undefined;
+                days?: string | number | undefined;
+                day?: string | number | undefined;
+                d?: string | number | undefined;
+                dates?: string | number | undefined;
+                date?: string | number | undefined;
+                D?: string | number | undefined;
+                hours?: string | number | undefined;
+                hour?: string | number | undefined;
+                h?: string | number | undefined;
+                minutes?: string | number | undefined;
+                minute?: string | number | undefined;
+                m?: string | number | undefined;
+                seconds?: string | number | undefined;
+                second?: string | number | undefined;
+                s?: string | number | undefined;
+                milliseconds?: string | number | undefined;
+                millisecond?: string | number | undefined;
+                ms?: string | number | undefined;
+            } | import("dayjs").ConfigType[] | null>;
+            default: null;
+        };
+        teleportProps: {
+            type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+        };
+        contentClass: {
+            type: import("vue").PropType<import("../../types").CommonClass>;
+        };
+        contentStyle: {
+            type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+        };
+        prefixIcon: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        suffixIcon: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        allowClear: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        placeholder: {
+            type: import("vue").PropType<string | string[]>;
+        };
+        readonly: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        max: {
+            type: import("vue").PropType<string>;
+        };
+        min: {
+            type: import("vue").PropType<string>;
+        };
+        format: {
+            type: import("vue").PropType<string>;
+        };
+        disabledDate: {
+            type: import("vue").PropType<(date: Date) => boolean>;
+        };
+        simple: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        rangeSeparator: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        timestamp: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        inputFormat: {
+            type: import("vue").PropType<string>;
+        };
+        defaultValue: {
+            type: import("vue").PropType<string | number | Date | import("dayjs").Dayjs | {
+                years?: string | number | undefined;
+                year?: string | number | undefined;
+                y?: string | number | undefined;
+                months?: string | number | undefined;
+                month?: string | number | undefined;
+                M?: string | number | undefined;
+                days?: string | number | undefined;
+                day?: string | number | undefined;
+                d?: string | number | undefined;
+                dates?: string | number | undefined;
+                date?: string | number | undefined;
+                D?: string | number | undefined;
+                hours?: string | number | undefined;
+                hour?: string | number | undefined;
+                h?: string | number | undefined;
+                minutes?: string | number | undefined;
+                minute?: string | number | undefined;
+                m?: string | number | undefined;
+                seconds?: string | number | undefined;
+                second?: string | number | undefined;
+                s?: string | number | undefined;
+                milliseconds?: string | number | undefined;
+                millisecond?: string | number | undefined;
+                ms?: string | number | undefined;
+            } | import("dayjs").ConfigType[] | null>;
+            default: null;
+        };
+        defaultTime: {
+            type: import("vue").PropType<string | number | Date | import("dayjs").Dayjs | {
+                years?: string | number | undefined;
+                year?: string | number | undefined;
+                y?: string | number | undefined;
+                months?: string | number | undefined;
+                month?: string | number | undefined;
+                M?: string | number | undefined;
+                days?: string | number | undefined;
+                day?: string | number | undefined;
+                d?: string | number | undefined;
+                dates?: string | number | undefined;
+                date?: string | number | undefined;
+                D?: string | number | undefined;
+                hours?: string | number | undefined;
+                hour?: string | number | undefined;
+                h?: string | number | undefined;
+                minutes?: string | number | undefined;
+                minute?: string | number | undefined;
+                m?: string | number | undefined;
+                seconds?: string | number | undefined;
+                second?: string | number | undefined;
+                s?: string | number | undefined;
+                milliseconds?: string | number | undefined;
+                millisecond?: string | number | undefined;
+                ms?: string | number | undefined;
+            } | import("dayjs").ConfigType[] | null>;
+            default: null;
+        };
+        yearPage: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        shortcuts: {
+            type: import("vue").PropType<import("./interface").Shortcuts[]>;
+        };
+    }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        name: {
+            type: import("vue").PropType<string>;
+        };
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        type: {
+            type: import("vue").PropType<import("./interface").DatePickerType>;
+            default: string;
+        };
+        static: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        size: {
+            type: import("vue").PropType<import("../../types").CommonSize>;
+            default: string;
+        };
+        range: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        modelValue: {
+            type: import("vue").PropType<string | number | Date | import("dayjs").Dayjs | {
+                years?: string | number | undefined;
+                year?: string | number | undefined;
+                y?: string | number | undefined;
+                months?: string | number | undefined;
+                month?: string | number | undefined;
+                M?: string | number | undefined;
+                days?: string | number | undefined;
+                day?: string | number | undefined;
+                d?: string | number | undefined;
+                dates?: string | number | undefined;
+                date?: string | number | undefined;
+                D?: string | number | undefined;
+                hours?: string | number | undefined;
+                hour?: string | number | undefined;
+                h?: string | number | undefined;
+                minutes?: string | number | undefined;
+                minute?: string | number | undefined;
+                m?: string | number | undefined;
+                seconds?: string | number | undefined;
+                second?: string | number | undefined;
+                s?: string | number | undefined;
+                milliseconds?: string | number | undefined;
+                millisecond?: string | number | undefined;
+                ms?: string | number | undefined;
+            } | import("dayjs").ConfigType[] | null>;
+            default: null;
+        };
+        teleportProps: {
+            type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+        };
+        contentClass: {
+            type: import("vue").PropType<import("../../types").CommonClass>;
+        };
+        contentStyle: {
+            type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+        };
+        prefixIcon: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        suffixIcon: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        allowClear: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        placeholder: {
+            type: import("vue").PropType<string | string[]>;
+        };
+        readonly: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        max: {
+            type: import("vue").PropType<string>;
+        };
+        min: {
+            type: import("vue").PropType<string>;
+        };
+        format: {
+            type: import("vue").PropType<string>;
+        };
+        disabledDate: {
+            type: import("vue").PropType<(date: Date) => boolean>;
+        };
+        simple: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        rangeSeparator: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        timestamp: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        inputFormat: {
+            type: import("vue").PropType<string>;
+        };
+        defaultValue: {
+            type: import("vue").PropType<string | number | Date | import("dayjs").Dayjs | {
+                years?: string | number | undefined;
+                year?: string | number | undefined;
+                y?: string | number | undefined;
+                months?: string | number | undefined;
+                month?: string | number | undefined;
+                M?: string | number | undefined;
+                days?: string | number | undefined;
+                day?: string | number | undefined;
+                d?: string | number | undefined;
+                dates?: string | number | undefined;
+                date?: string | number | undefined;
+                D?: string | number | undefined;
+                hours?: string | number | undefined;
+                hour?: string | number | undefined;
+                h?: string | number | undefined;
+                minutes?: string | number | undefined;
+                minute?: string | number | undefined;
+                m?: string | number | undefined;
+                seconds?: string | number | undefined;
+                second?: string | number | undefined;
+                s?: string | number | undefined;
+                milliseconds?: string | number | undefined;
+                millisecond?: string | number | undefined;
+                ms?: string | number | undefined;
+            } | import("dayjs").ConfigType[] | null>;
+            default: null;
+        };
+        defaultTime: {
+            type: import("vue").PropType<string | number | Date | import("dayjs").Dayjs | {
+                years?: string | number | undefined;
+                year?: string | number | undefined;
+                y?: string | number | undefined;
+                months?: string | number | undefined;
+                month?: string | number | undefined;
+                M?: string | number | undefined;
+                days?: string | number | undefined;
+                day?: string | number | undefined;
+                d?: string | number | undefined;
+                dates?: string | number | undefined;
+                date?: string | number | undefined;
+                D?: string | number | undefined;
+                hours?: string | number | undefined;
+                hour?: string | number | undefined;
+                h?: string | number | undefined;
+                minutes?: string | number | undefined;
+                minute?: string | number | undefined;
+                m?: string | number | undefined;
+                seconds?: string | number | undefined;
+                second?: string | number | undefined;
+                s?: string | number | undefined;
+                milliseconds?: string | number | undefined;
+                millisecond?: string | number | undefined;
+                ms?: string | number | undefined;
+            } | import("dayjs").ConfigType[] | null>;
+            default: null;
+        };
+        yearPage: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        shortcuts: {
+            type: import("vue").PropType<import("./interface").Shortcuts[]>;
+        };
+    }>>, {
+        disabled: boolean;
+        type: import("./interface").DatePickerType;
+        static: boolean;
+        size: import("../../types").CommonSize;
+        range: boolean;
+        modelValue: string | number | Date | import("dayjs").Dayjs | {
+            years?: string | number | undefined;
+            year?: string | number | undefined;
+            y?: string | number | undefined;
+            months?: string | number | undefined;
+            month?: string | number | undefined;
+            M?: string | number | undefined;
+            days?: string | number | undefined;
+            day?: string | number | undefined;
+            d?: string | number | undefined;
+            dates?: string | number | undefined;
+            date?: string | number | undefined;
+            D?: string | number | undefined;
+            hours?: string | number | undefined;
+            hour?: string | number | undefined;
+            h?: string | number | undefined;
+            minutes?: string | number | undefined;
+            minute?: string | number | undefined;
+            m?: string | number | undefined;
+            seconds?: string | number | undefined;
+            second?: string | number | undefined;
+            s?: string | number | undefined;
+            milliseconds?: string | number | undefined;
+            millisecond?: string | number | undefined;
+            ms?: string | number | undefined;
+        } | import("dayjs").ConfigType[] | null;
+        prefixIcon: string;
+        suffixIcon: string;
+        allowClear: boolean;
+        readonly: boolean;
+        simple: boolean;
+        rangeSeparator: string;
+        timestamp: boolean;
+        defaultValue: string | number | Date | import("dayjs").Dayjs | {
+            years?: string | number | undefined;
+            year?: string | number | undefined;
+            y?: string | number | undefined;
+            months?: string | number | undefined;
+            month?: string | number | undefined;
+            M?: string | number | undefined;
+            days?: string | number | undefined;
+            day?: string | number | undefined;
+            d?: string | number | undefined;
+            dates?: string | number | undefined;
+            date?: string | number | undefined;
+            D?: string | number | undefined;
+            hours?: string | number | undefined;
+            hour?: string | number | undefined;
+            h?: string | number | undefined;
+            minutes?: string | number | undefined;
+            minute?: string | number | undefined;
+            m?: string | number | undefined;
+            seconds?: string | number | undefined;
+            second?: string | number | undefined;
+            s?: string | number | undefined;
+            milliseconds?: string | number | undefined;
+            millisecond?: string | number | undefined;
+            ms?: string | number | undefined;
+        } | import("dayjs").ConfigType[] | null;
+        defaultTime: string | number | Date | import("dayjs").Dayjs | {
+            years?: string | number | undefined;
+            year?: string | number | undefined;
+            y?: string | number | undefined;
+            months?: string | number | undefined;
+            month?: string | number | undefined;
+            M?: string | number | undefined;
+            days?: string | number | undefined;
+            day?: string | number | undefined;
+            d?: string | number | undefined;
+            dates?: string | number | undefined;
+            date?: string | number | undefined;
+            D?: string | number | undefined;
+            hours?: string | number | undefined;
+            hour?: string | number | undefined;
+            h?: string | number | undefined;
+            minutes?: string | number | undefined;
+            minute?: string | number | undefined;
+            m?: string | number | undefined;
+            seconds?: string | number | undefined;
+            second?: string | number | undefined;
+            s?: string | number | undefined;
+            milliseconds?: string | number | undefined;
+            millisecond?: string | number | undefined;
+            ms?: string | number | undefined;
+        } | import("dayjs").ConfigType[] | null;
+        yearPage: number;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        name: {
+            type: import("vue").PropType<string>;
+        };
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        type: {
+            type: import("vue").PropType<import("./interface").DatePickerType>;
+            default: string;
+        };
+        static: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        size: {
+            type: import("vue").PropType<import("../../types").CommonSize>;
+            default: string;
+        };
+        range: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        modelValue: {
+            type: import("vue").PropType<string | number | Date | import("dayjs").Dayjs | {
+                years?: string | number | undefined;
+                year?: string | number | undefined;
+                y?: string | number | undefined;
+                months?: string | number | undefined;
+                month?: string | number | undefined;
+                M?: string | number | undefined;
+                days?: string | number | undefined;
+                day?: string | number | undefined;
+                d?: string | number | undefined;
+                dates?: string | number | undefined;
+                date?: string | number | undefined;
+                D?: string | number | undefined;
+                hours?: string | number | undefined;
+                hour?: string | number | undefined;
+                h?: string | number | undefined;
+                minutes?: string | number | undefined;
+                minute?: string | number | undefined;
+                m?: string | number | undefined;
+                seconds?: string | number | undefined;
+                second?: string | number | undefined;
+                s?: string | number | undefined;
+                milliseconds?: string | number | undefined;
+                millisecond?: string | number | undefined;
+                ms?: string | number | undefined;
+            } | import("dayjs").ConfigType[] | null>;
+            default: null;
+        };
+        teleportProps: {
+            type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+        };
+        contentClass: {
+            type: import("vue").PropType<import("../../types").CommonClass>;
+        };
+        contentStyle: {
+            type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+        };
+        prefixIcon: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        suffixIcon: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        allowClear: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        placeholder: {
+            type: import("vue").PropType<string | string[]>;
+        };
+        readonly: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        max: {
+            type: import("vue").PropType<string>;
+        };
+        min: {
+            type: import("vue").PropType<string>;
+        };
+        format: {
+            type: import("vue").PropType<string>;
+        };
+        disabledDate: {
+            type: import("vue").PropType<(date: Date) => boolean>;
+        };
+        simple: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        rangeSeparator: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        timestamp: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        inputFormat: {
+            type: import("vue").PropType<string>;
+        };
+        defaultValue: {
+            type: import("vue").PropType<string | number | Date | import("dayjs").Dayjs | {
+                years?: string | number | undefined;
+                year?: string | number | undefined;
+                y?: string | number | undefined;
+                months?: string | number | undefined;
+                month?: string | number | undefined;
+                M?: string | number | undefined;
+                days?: string | number | undefined;
+                day?: string | number | undefined;
+                d?: string | number | undefined;
+                dates?: string | number | undefined;
+                date?: string | number | undefined;
+                D?: string | number | undefined;
+                hours?: string | number | undefined;
+                hour?: string | number | undefined;
+                h?: string | number | undefined;
+                minutes?: string | number | undefined;
+                minute?: string | number | undefined;
+                m?: string | number | undefined;
+                seconds?: string | number | undefined;
+                second?: string | number | undefined;
+                s?: string | number | undefined;
+                milliseconds?: string | number | undefined;
+                millisecond?: string | number | undefined;
+                ms?: string | number | undefined;
+            } | import("dayjs").ConfigType[] | null>;
+            default: null;
+        };
+        defaultTime: {
+            type: import("vue").PropType<string | number | Date | import("dayjs").Dayjs | {
+                years?: string | number | undefined;
+                year?: string | number | undefined;
+                y?: string | number | undefined;
+                months?: string | number | undefined;
+                month?: string | number | undefined;
+                M?: string | number | undefined;
+                days?: string | number | undefined;
+                day?: string | number | undefined;
+                d?: string | number | undefined;
+                dates?: string | number | undefined;
+                date?: string | number | undefined;
+                D?: string | number | undefined;
+                hours?: string | number | undefined;
+                hour?: string | number | undefined;
+                h?: string | number | undefined;
+                minutes?: string | number | undefined;
+                minute?: string | number | undefined;
+                m?: string | number | undefined;
+                seconds?: string | number | undefined;
+                second?: string | number | undefined;
+                s?: string | number | undefined;
+                milliseconds?: string | number | undefined;
+                millisecond?: string | number | undefined;
+                ms?: string | number | undefined;
+            } | import("dayjs").ConfigType[] | null>;
+            default: null;
+        };
+        yearPage: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        shortcuts: {
+            type: import("vue").PropType<import("./interface").Shortcuts[]>;
+        };
+    }>>, {}, {}, {}, {}, {
+        disabled: boolean;
+        type: import("./interface").DatePickerType;
+        static: boolean;
+        size: import("../../types").CommonSize;
+        range: boolean;
+        modelValue: string | number | Date | import("dayjs").Dayjs | {
+            years?: string | number | undefined;
+            year?: string | number | undefined;
+            y?: string | number | undefined;
+            months?: string | number | undefined;
+            month?: string | number | undefined;
+            M?: string | number | undefined;
+            days?: string | number | undefined;
+            day?: string | number | undefined;
+            d?: string | number | undefined;
+            dates?: string | number | undefined;
+            date?: string | number | undefined;
+            D?: string | number | undefined;
+            hours?: string | number | undefined;
+            hour?: string | number | undefined;
+            h?: string | number | undefined;
+            minutes?: string | number | undefined;
+            minute?: string | number | undefined;
+            m?: string | number | undefined;
+            seconds?: string | number | undefined;
+            second?: string | number | undefined;
+            s?: string | number | undefined;
+            milliseconds?: string | number | undefined;
+            millisecond?: string | number | undefined;
+            ms?: string | number | undefined;
+        } | import("dayjs").ConfigType[] | null;
+        prefixIcon: string;
+        suffixIcon: string;
+        allowClear: boolean;
+        readonly: boolean;
+        simple: boolean;
+        rangeSeparator: string;
+        timestamp: boolean;
+        defaultValue: string | number | Date | import("dayjs").Dayjs | {
+            years?: string | number | undefined;
+            year?: string | number | undefined;
+            y?: string | number | undefined;
+            months?: string | number | undefined;
+            month?: string | number | undefined;
+            M?: string | number | undefined;
+            days?: string | number | undefined;
+            day?: string | number | undefined;
+            d?: string | number | undefined;
+            dates?: string | number | undefined;
+            date?: string | number | undefined;
+            D?: string | number | undefined;
+            hours?: string | number | undefined;
+            hour?: string | number | undefined;
+            h?: string | number | undefined;
+            minutes?: string | number | undefined;
+            minute?: string | number | undefined;
+            m?: string | number | undefined;
+            seconds?: string | number | undefined;
+            second?: string | number | undefined;
+            s?: string | number | undefined;
+            milliseconds?: string | number | undefined;
+            millisecond?: string | number | undefined;
+            ms?: string | number | undefined;
+        } | import("dayjs").ConfigType[] | null;
+        defaultTime: string | number | Date | import("dayjs").Dayjs | {
+            years?: string | number | undefined;
+            year?: string | number | undefined;
+            y?: string | number | undefined;
+            months?: string | number | undefined;
+            month?: string | number | undefined;
+            M?: string | number | undefined;
+            days?: string | number | undefined;
+            day?: string | number | undefined;
+            d?: string | number | undefined;
+            dates?: string | number | undefined;
+            date?: string | number | undefined;
+            D?: string | number | undefined;
+            hours?: string | number | undefined;
+            hour?: string | number | undefined;
+            h?: string | number | undefined;
+            minutes?: string | number | undefined;
+            minute?: string | number | undefined;
+            m?: string | number | undefined;
+            seconds?: string | number | undefined;
+            second?: string | number | undefined;
+            s?: string | number | undefined;
+            milliseconds?: string | number | undefined;
+            millisecond?: string | number | undefined;
+            ms?: string | number | undefined;
+        } | import("dayjs").ConfigType[] | null;
+        yearPage: number;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    name: {
+        type: import("vue").PropType<string>;
+    };
+    disabled: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    type: {
+        type: import("vue").PropType<import("./interface").DatePickerType>;
+        default: string;
+    };
+    static: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    size: {
+        type: import("vue").PropType<import("../../types").CommonSize>;
+        default: string;
+    };
+    range: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    modelValue: {
+        type: import("vue").PropType<string | number | Date | import("dayjs").Dayjs | {
+            years?: string | number | undefined;
+            year?: string | number | undefined;
+            y?: string | number | undefined;
+            months?: string | number | undefined;
+            month?: string | number | undefined;
+            M?: string | number | undefined;
+            days?: string | number | undefined;
+            day?: string | number | undefined;
+            d?: string | number | undefined;
+            dates?: string | number | undefined;
+            date?: string | number | undefined;
+            D?: string | number | undefined;
+            hours?: string | number | undefined;
+            hour?: string | number | undefined;
+            h?: string | number | undefined;
+            minutes?: string | number | undefined;
+            minute?: string | number | undefined;
+            m?: string | number | undefined;
+            seconds?: string | number | undefined;
+            second?: string | number | undefined;
+            s?: string | number | undefined;
+            milliseconds?: string | number | undefined;
+            millisecond?: string | number | undefined;
+            ms?: string | number | undefined;
+        } | import("dayjs").ConfigType[] | null>;
+        default: null;
+    };
+    teleportProps: {
+        type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+    };
+    contentClass: {
+        type: import("vue").PropType<import("../../types").CommonClass>;
+    };
+    contentStyle: {
+        type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+    };
+    prefixIcon: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    suffixIcon: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    allowClear: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    placeholder: {
+        type: import("vue").PropType<string | string[]>;
+    };
+    readonly: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    max: {
+        type: import("vue").PropType<string>;
+    };
+    min: {
+        type: import("vue").PropType<string>;
+    };
+    format: {
+        type: import("vue").PropType<string>;
+    };
+    disabledDate: {
+        type: import("vue").PropType<(date: Date) => boolean>;
+    };
+    simple: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    rangeSeparator: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    timestamp: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    inputFormat: {
+        type: import("vue").PropType<string>;
+    };
+    defaultValue: {
+        type: import("vue").PropType<string | number | Date | import("dayjs").Dayjs | {
+            years?: string | number | undefined;
+            year?: string | number | undefined;
+            y?: string | number | undefined;
+            months?: string | number | undefined;
+            month?: string | number | undefined;
+            M?: string | number | undefined;
+            days?: string | number | undefined;
+            day?: string | number | undefined;
+            d?: string | number | undefined;
+            dates?: string | number | undefined;
+            date?: string | number | undefined;
+            D?: string | number | undefined;
+            hours?: string | number | undefined;
+            hour?: string | number | undefined;
+            h?: string | number | undefined;
+            minutes?: string | number | undefined;
+            minute?: string | number | undefined;
+            m?: string | number | undefined;
+            seconds?: string | number | undefined;
+            second?: string | number | undefined;
+            s?: string | number | undefined;
+            milliseconds?: string | number | undefined;
+            millisecond?: string | number | undefined;
+            ms?: string | number | undefined;
+        } | import("dayjs").ConfigType[] | null>;
+        default: null;
+    };
+    defaultTime: {
+        type: import("vue").PropType<string | number | Date | import("dayjs").Dayjs | {
+            years?: string | number | undefined;
+            year?: string | number | undefined;
+            y?: string | number | undefined;
+            months?: string | number | undefined;
+            month?: string | number | undefined;
+            M?: string | number | undefined;
+            days?: string | number | undefined;
+            day?: string | number | undefined;
+            d?: string | number | undefined;
+            dates?: string | number | undefined;
+            date?: string | number | undefined;
+            D?: string | number | undefined;
+            hours?: string | number | undefined;
+            hour?: string | number | undefined;
+            h?: string | number | undefined;
+            minutes?: string | number | undefined;
+            minute?: string | number | undefined;
+            m?: string | number | undefined;
+            seconds?: string | number | undefined;
+            second?: string | number | undefined;
+            s?: string | number | undefined;
+            milliseconds?: string | number | undefined;
+            millisecond?: string | number | undefined;
+            ms?: string | number | undefined;
+        } | import("dayjs").ConfigType[] | null>;
+        default: null;
+    };
+    yearPage: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    shortcuts: {
+        type: import("vue").PropType<import("./interface").Shortcuts[]>;
+    };
+}>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {
+    disabled: boolean;
+    type: import("./interface").DatePickerType;
+    static: boolean;
+    size: import("../../types").CommonSize;
+    range: boolean;
+    modelValue: string | number | Date | import("dayjs").Dayjs | {
+        years?: string | number | undefined;
+        year?: string | number | undefined;
+        y?: string | number | undefined;
+        months?: string | number | undefined;
+        month?: string | number | undefined;
+        M?: string | number | undefined;
+        days?: string | number | undefined;
+        day?: string | number | undefined;
+        d?: string | number | undefined;
+        dates?: string | number | undefined;
+        date?: string | number | undefined;
+        D?: string | number | undefined;
+        hours?: string | number | undefined;
+        hour?: string | number | undefined;
+        h?: string | number | undefined;
+        minutes?: string | number | undefined;
+        minute?: string | number | undefined;
+        m?: string | number | undefined;
+        seconds?: string | number | undefined;
+        second?: string | number | undefined;
+        s?: string | number | undefined;
+        milliseconds?: string | number | undefined;
+        millisecond?: string | number | undefined;
+        ms?: string | number | undefined;
+    } | import("dayjs").ConfigType[] | null;
+    prefixIcon: string;
+    suffixIcon: string;
+    allowClear: boolean;
+    readonly: boolean;
+    simple: boolean;
+    rangeSeparator: string;
+    timestamp: boolean;
+    defaultValue: string | number | Date | import("dayjs").Dayjs | {
+        years?: string | number | undefined;
+        year?: string | number | undefined;
+        y?: string | number | undefined;
+        months?: string | number | undefined;
+        month?: string | number | undefined;
+        M?: string | number | undefined;
+        days?: string | number | undefined;
+        day?: string | number | undefined;
+        d?: string | number | undefined;
+        dates?: string | number | undefined;
+        date?: string | number | undefined;
+        D?: string | number | undefined;
+        hours?: string | number | undefined;
+        hour?: string | number | undefined;
+        h?: string | number | undefined;
+        minutes?: string | number | undefined;
+        minute?: string | number | undefined;
+        m?: string | number | undefined;
+        seconds?: string | number | undefined;
+        second?: string | number | undefined;
+        s?: string | number | undefined;
+        milliseconds?: string | number | undefined;
+        millisecond?: string | number | undefined;
+        ms?: string | number | undefined;
+    } | import("dayjs").ConfigType[] | null;
+    defaultTime: string | number | Date | import("dayjs").Dayjs | {
+        years?: string | number | undefined;
+        year?: string | number | undefined;
+        y?: string | number | undefined;
+        months?: string | number | undefined;
+        month?: string | number | undefined;
+        M?: string | number | undefined;
+        days?: string | number | undefined;
+        day?: string | number | undefined;
+        d?: string | number | undefined;
+        dates?: string | number | undefined;
+        date?: string | number | undefined;
+        D?: string | number | undefined;
+        hours?: string | number | undefined;
+        hour?: string | number | undefined;
+        h?: string | number | undefined;
+        minutes?: string | number | undefined;
+        minute?: string | number | undefined;
+        m?: string | number | undefined;
+        seconds?: string | number | undefined;
+        second?: string | number | undefined;
+        s?: string | number | undefined;
+        milliseconds?: string | number | undefined;
+        millisecond?: string | number | undefined;
+        ms?: string | number | undefined;
+    } | import("dayjs").ConfigType[] | null;
+    yearPage: number;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        default?: ((props: import("./interface").DatePickerDefaultSlotParams) => any) | undefined;
+        footer?: ((props: import("./interface").DatePickerFooterSlotParams) => any) | undefined;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

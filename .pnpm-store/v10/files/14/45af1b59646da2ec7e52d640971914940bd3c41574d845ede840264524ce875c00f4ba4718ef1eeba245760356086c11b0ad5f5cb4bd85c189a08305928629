@@ -1,0 +1,44 @@
+import { defineComponent as f, shallowRef as i, onMounted as m, watch as c, onBeforeUnmount as h, renderSlot as p } from "vue";
+/* empty css           */
+import { useMutationObserver as v } from "@vueuse/core";
+import { reRendering as b } from "./utils.js";
+const $ = f({ name: "LayWatermark", __name: "index", props: { content: { default: "" }, fontSize: { default: "20px" }, fontFamily: { default: "serif" }, color: { default: "rgba(184, 184, 184, 0.8)" }, rotate: { default: -45 }, height: { default: 200 }, width: { default: 200 }, elementBox: { default: "body" } }, setup(u) {
+  const e = u, o = i(), t = i();
+  m(() => {
+    o.value = document.querySelector(e.elementBox), v(o, s, { attributes: !0, subtree: !0, childList: !0 }), l();
+  }), c(() => e, () => {
+    l();
+  }, { deep: !0, flush: "post" });
+  const r = () => {
+    t.value && (t.value.remove(), t.value = void 0);
+  }, l = () => {
+    const n = document.createElement("canvas");
+    t.value || (t.value = document.createElement("div")), n.setAttribute("width", `${e.width}`), n.setAttribute("height", `${e.height}`);
+    const a = n.getContext("2d");
+    a.font = `${e.fontSize} ${e.fontFamily}`, a.fillStyle = e.color, a.textAlign = "center", a.translate(e.width / 2, e.height / 2), a.rotate(Math.PI / 180 * e.rotate), a.fillText(e.content, 0, 0);
+    let d = `position: absolute;
+                        top: 0;
+                        left: 0;
+                        pointer-events: none;
+                        z-index: 999;
+                        width: 100%;
+                        height: 100%;
+                        mix-blend-mode: multiply;
+                        background-repeat:repeat;
+                        background-image:url('${n.toDataURL()}');
+                        `;
+    t.value.classList.add("lay-watermark-box"), t.value.setAttribute("style", d), o.value && o.value.appendChild(t.value);
+  };
+  h(() => {
+    r();
+  });
+  const s = (n) => {
+    n.forEach((a) => {
+      b(a, t.value) && (r(), l());
+    });
+  };
+  return (n, a) => p(n.$slots, "default");
+} });
+export {
+  $ as default
+};

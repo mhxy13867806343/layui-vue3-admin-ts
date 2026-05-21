@@ -1,0 +1,6 @@
+function n(e) {
+  return { name: "pointMiddleware", fn: () => ({ x: e.x, y: e.y }) };
+}
+export {
+  n as pointMiddleware
+};

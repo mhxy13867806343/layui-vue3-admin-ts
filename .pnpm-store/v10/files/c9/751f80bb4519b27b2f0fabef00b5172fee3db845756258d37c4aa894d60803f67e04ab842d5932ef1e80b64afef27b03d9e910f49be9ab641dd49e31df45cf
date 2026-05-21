@@ -1,0 +1,84 @@
+/** __vue_virtual_code_placeholder */
+import type { DropdownTeleportProps } from "../dropdown/interface";
+import { StyleValue } from "vue";
+import "./index.less";
+export type AutocompleteSize = "lg" | "md" | "sm" | "xs";
+export interface AutocompleteProps {
+    modelValue: string;
+    disabled?: boolean;
+    fetchSuggestions: Function;
+    placeholder?: string;
+    allowClear?: boolean;
+    name?: string;
+    autoFitWidth?: boolean;
+    contentClass?: string | Array<string | object> | object;
+    contentStyle?: StyleValue;
+    replaceFields?: {
+        value: string;
+    };
+    size?: AutocompleteSize;
+    teleportProps?: DropdownTeleportProps;
+}
+declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<AutocompleteProps>, {
+    autoFitWidth: boolean;
+    replaceFields: () => {
+        value: string;
+    };
+}>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+    "update:modelValue": ((value: string) => void) & ((value: string) => void);
+    select: (option: any) => void;
+    blur: (eventParam: FocusEvent) => void;
+    input: (value: string) => void;
+    change: (value: string) => void;
+    focus: (eventParam: FocusEvent) => void;
+    clear: () => void;
+}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<AutocompleteProps>, {
+    autoFitWidth: boolean;
+    replaceFields: () => {
+        value: string;
+    };
+}>>> & {
+    "onUpdate:modelValue"?: ((value: string) => any) | undefined;
+    onInput?: ((value: string) => any) | undefined;
+    onClear?: (() => any) | undefined;
+    onBlur?: ((eventParam: FocusEvent) => any) | undefined;
+    onChange?: ((value: string) => any) | undefined;
+    onFocus?: ((eventParam: FocusEvent) => any) | undefined;
+    onSelect?: ((option: any) => any) | undefined;
+}, {
+    autoFitWidth: boolean;
+    replaceFields: {
+        value: string;
+    };
+}, {}>, {
+    prefix?(_: {}): any;
+    suffix?(_: {}): any;
+    prepend?(_: {}): any;
+    append?(_: {}): any;
+    default?(_: {
+        option: any;
+    }): any;
+}>;
+export default _default;
+type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
+type __VLS_TypePropsToRuntimeProps<T> = {
+    [K in keyof T]-?: {} extends Pick<T, K> ? {
+        type: import('vue').PropType<__VLS_NonUndefinedable<T[K]>>;
+    } : {
+        type: import('vue').PropType<T[K]>;
+        required: true;
+    };
+};
+type __VLS_WithDefaults<P, D> = {
+    [K in keyof Pick<P, keyof P>]: K extends keyof D ? __VLS_Prettify<P[K] & {
+        default: D[K];
+    }> : P[K];
+};
+type __VLS_WithTemplateSlots<T, S> = T & {
+    new (): {
+        $slots: S;
+    };
+};
+type __VLS_Prettify<T> = {
+    [K in keyof T]: T[K];
+} & {};

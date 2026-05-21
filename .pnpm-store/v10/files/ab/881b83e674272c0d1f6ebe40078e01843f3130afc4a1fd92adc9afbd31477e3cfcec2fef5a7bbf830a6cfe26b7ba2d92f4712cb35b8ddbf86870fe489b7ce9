@@ -1,0 +1,8 @@
+import type { RequiredTableProps, TableEmit } from "../typing";
+type KeyType = string | number;
+export declare function useTableExpand(props: RequiredTableProps, emit: TableEmit): {
+    checkExpand: (key: KeyType) => boolean;
+    toggleExpand: (key: KeyType, state: boolean) => void;
+};
+export type UseTableExpandReturn = ReturnType<typeof useTableExpand>;
+export {};

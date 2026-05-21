@@ -1,0 +1,11 @@
+interface UseDelayedToggleProps {
+    showAfter: number;
+    hideAfter: number;
+    show: () => void;
+    hidden: () => void;
+}
+declare function useDelayTrigger({ showAfter, hideAfter, show, hidden, }: UseDelayedToggleProps): {
+    onShow: () => void;
+    onHidden: () => void;
+};
+export default useDelayTrigger;

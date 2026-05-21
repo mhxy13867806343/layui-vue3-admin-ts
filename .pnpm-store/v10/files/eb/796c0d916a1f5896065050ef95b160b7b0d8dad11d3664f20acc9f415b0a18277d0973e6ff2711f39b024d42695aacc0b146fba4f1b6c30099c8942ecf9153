@@ -1,0 +1,71 @@
+import type { Recordable } from "@layui/component/types";
+import type { PropType } from "vue";
+import type { TableColumn } from "../../typing";
+declare const _default: import("vue").DefineComponent<{
+    data: {
+        type: PropType<Recordable>;
+        default: () => {};
+    };
+    dataIndex: {
+        type: NumberConstructor;
+        default: number;
+    };
+    column: {
+        type: PropType<TableColumn>;
+        default: () => {};
+    };
+    columnIndex: {
+        type: NumberConstructor;
+        default: number;
+    };
+    expandSpace: {
+        type: BooleanConstructor;
+    };
+    expandIndex: {
+        type: NumberConstructor;
+        default: number;
+    };
+    currentIndentSize: {
+        type: NumberConstructor;
+        default: number;
+    };
+}, () => false | JSX.Element, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "update:expandKeys"[], "update:expandKeys", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+    data: {
+        type: PropType<Recordable>;
+        default: () => {};
+    };
+    dataIndex: {
+        type: NumberConstructor;
+        default: number;
+    };
+    column: {
+        type: PropType<TableColumn>;
+        default: () => {};
+    };
+    columnIndex: {
+        type: NumberConstructor;
+        default: number;
+    };
+    expandSpace: {
+        type: BooleanConstructor;
+    };
+    expandIndex: {
+        type: NumberConstructor;
+        default: number;
+    };
+    currentIndentSize: {
+        type: NumberConstructor;
+        default: number;
+    };
+}>> & {
+    "onUpdate:expandKeys"?: ((...args: any[]) => any) | undefined;
+}, {
+    data: Recordable;
+    column: TableColumn;
+    expandIndex: number;
+    columnIndex: number;
+    dataIndex: number;
+    expandSpace: boolean;
+    currentIndentSize: number;
+}, {}>;
+export default _default;

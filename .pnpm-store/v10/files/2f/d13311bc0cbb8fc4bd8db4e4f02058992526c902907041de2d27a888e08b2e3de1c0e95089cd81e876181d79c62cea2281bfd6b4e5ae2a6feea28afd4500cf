@@ -1,0 +1,8 @@
+import type { pointType } from "./interface";
+export declare function pointMiddleware(point: pointType): {
+    name: string;
+    fn: () => {
+        x: number;
+        y: number;
+    };
+};

@@ -1,0 +1,9 @@
+import { defineComponent as s, provide as e, openBlock as t, createElementBlock as p, renderSlot as n } from "vue";
+/* empty css           */
+const c = { class: "layui-breadcrumb" }, u = s({ name: "LayBreadcrumb", __name: "index", props: { separator: { default: "/" }, separatorIcon: {} }, setup(r) {
+  const a = r;
+  return e("separator", a.separator), e("separatorIcon", a.separatorIcon), (o, l) => (t(), p("span", c, [n(o.$slots, "default")]));
+} });
+export {
+  u as default
+};

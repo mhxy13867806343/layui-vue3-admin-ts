@@ -1,0 +1,255 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        target: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        circle: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        position: {
+            type: import("vue").PropType<"fixed" | "absolute">;
+        };
+        color: {
+            type: import("vue").PropType<string>;
+        };
+        right: {
+            type: import("vue").PropType<number>;
+        };
+        bottom: {
+            type: import("vue").PropType<number>;
+        };
+        size: {
+            type: import("vue").PropType<"small" | "medium">;
+        };
+        icon: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        showHeight: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        bgcolor: {
+            type: import("vue").PropType<string>;
+        };
+        opacity: {
+            type: import("vue").PropType<number>;
+        };
+        borderRadius: {
+            type: import("vue").PropType<string | number>;
+        };
+        iconSize: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        iconColor: {
+            type: import("vue").PropType<string>;
+        };
+    }>> & {
+        onClick?: ((...args: any[]) => any) | undefined;
+    }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "click"[], import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        target: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        circle: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        position: {
+            type: import("vue").PropType<"fixed" | "absolute">;
+        };
+        color: {
+            type: import("vue").PropType<string>;
+        };
+        right: {
+            type: import("vue").PropType<number>;
+        };
+        bottom: {
+            type: import("vue").PropType<number>;
+        };
+        size: {
+            type: import("vue").PropType<"small" | "medium">;
+        };
+        icon: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        showHeight: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        bgcolor: {
+            type: import("vue").PropType<string>;
+        };
+        opacity: {
+            type: import("vue").PropType<number>;
+        };
+        borderRadius: {
+            type: import("vue").PropType<string | number>;
+        };
+        iconSize: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        iconColor: {
+            type: import("vue").PropType<string>;
+        };
+    }>> & {
+        onClick?: ((...args: any[]) => any) | undefined;
+    }, {
+        disabled: boolean;
+        target: string;
+        circle: boolean;
+        icon: string;
+        showHeight: number;
+        iconSize: number;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        target: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        circle: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        position: {
+            type: import("vue").PropType<"fixed" | "absolute">;
+        };
+        color: {
+            type: import("vue").PropType<string>;
+        };
+        right: {
+            type: import("vue").PropType<number>;
+        };
+        bottom: {
+            type: import("vue").PropType<number>;
+        };
+        size: {
+            type: import("vue").PropType<"small" | "medium">;
+        };
+        icon: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        showHeight: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        bgcolor: {
+            type: import("vue").PropType<string>;
+        };
+        opacity: {
+            type: import("vue").PropType<number>;
+        };
+        borderRadius: {
+            type: import("vue").PropType<string | number>;
+        };
+        iconSize: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        iconColor: {
+            type: import("vue").PropType<string>;
+        };
+    }>> & {
+        onClick?: ((...args: any[]) => any) | undefined;
+    }, {}, {}, {}, {}, {
+        disabled: boolean;
+        target: string;
+        circle: boolean;
+        icon: string;
+        showHeight: number;
+        iconSize: number;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    disabled: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    target: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    circle: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    position: {
+        type: import("vue").PropType<"fixed" | "absolute">;
+    };
+    color: {
+        type: import("vue").PropType<string>;
+    };
+    right: {
+        type: import("vue").PropType<number>;
+    };
+    bottom: {
+        type: import("vue").PropType<number>;
+    };
+    size: {
+        type: import("vue").PropType<"small" | "medium">;
+    };
+    icon: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    showHeight: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    bgcolor: {
+        type: import("vue").PropType<string>;
+    };
+    opacity: {
+        type: import("vue").PropType<number>;
+    };
+    borderRadius: {
+        type: import("vue").PropType<string | number>;
+    };
+    iconSize: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    iconColor: {
+        type: import("vue").PropType<string>;
+    };
+}>> & {
+    onClick?: ((...args: any[]) => any) | undefined;
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "click"[], "click", {
+    disabled: boolean;
+    target: string;
+    circle: boolean;
+    icon: string;
+    showHeight: number;
+    iconSize: number;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        default?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

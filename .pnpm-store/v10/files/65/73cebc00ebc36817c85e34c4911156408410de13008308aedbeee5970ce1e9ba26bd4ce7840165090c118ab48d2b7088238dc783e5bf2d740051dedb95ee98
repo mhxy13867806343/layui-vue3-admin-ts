@@ -1,0 +1,9 @@
+import { defineComponent as c, useSlots as d, openBlock as s, createElementBlock as t, createElementVNode as a, unref as n, renderSlot as l, Fragment as u, createCommentVNode as i, toDisplayString as o } from "vue";
+/* empty css           */
+const p = { class: "layui-exception" }, y = { class: "layui-exception-image" }, m = { key: 0, class: "error-401" }, x = { key: 1, class: "error-403" }, v = { key: 2, class: "error-404" }, k = { key: 3, class: "error-500" }, f = { class: "layui-exception-details" }, b = { class: "layui-exception-details-content" }, g = { class: "layui-exception-details-title" }, $ = { class: "layui-exception-details-describe" }, E = { class: "layui-exception-details-extra" }, V = c({ name: "LayException", __name: "index", props: { title: { default: "exception" }, status: {}, describe: { default: "describe" } }, setup(S) {
+  const r = d();
+  return (e, B) => (s(), t("div", p, [a("div", y, [n(r).default ? l(e.$slots, "image", { key: 0 }) : (s(), t(u, { key: 1 }, [e.status == "401" ? (s(), t("div", m)) : i("", !0), e.status == "403" ? (s(), t("div", x)) : i("", !0), e.status == "404" ? (s(), t("div", v)) : i("", !0), e.status == "500" ? (s(), t("div", k)) : i("", !0)], 64))]), a("div", f, [a("div", b, [a("div", g, o(e.title), 1), a("div", $, o(e.describe), 1), a("div", E, [l(e.$slots, "extra")])])])]));
+} });
+export {
+  V as default
+};

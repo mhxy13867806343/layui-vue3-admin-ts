@@ -1,0 +1,24 @@
+import { defineComponent as G, useSlots as L, ref as N, inject as S, computed as r, watch as _, openBlock as c, createElementBlock as s, normalizeClass as k, createCommentVNode as t, renderSlot as d, createTextVNode as i, toDisplayString as u, createElementVNode as m } from "vue";
+/* empty css           */
+const j = { key: 0, class: "layui-checkcard-is-cover" }, w = ["src"], z = { key: 0, class: "layui-checkcard-left" }, D = { key: 0, class: "layui-checkcard-avatar" }, I = ["src"], q = { class: "layui-checkcard-right" }, T = { key: 0, class: "layui-checkcard-header" }, F = { key: 0, class: "layui-checkcard-extra" }, H = { key: 1, class: "layui-checkcard-desc" }, M = G({ name: "LayCheckcard", __name: "index", props: { title: {}, avatar: {}, description: {}, cover: {}, extra: {}, disabled: { type: Boolean, default: !1 }, value: {}, modelValue: { type: Boolean, default: !1 } }, emits: ["change", "update:modelValue"], setup(x, { emit: f }) {
+  const l = x, p = f, h = L(), v = N(l.modelValue), e = S("checkcardGroup", {}), n = r(() => e && e.name === "LayCheckCardGroup"), V = r(() => {
+    var a;
+    return l.disabled || ((a = e.disabled) == null ? void 0 : a.value);
+  }), g = r(() => ({ "layui-checkcard-is-description": !l.description && !h.description, "layui-checkcard-content": !0 })), C = r(() => ({ "layui-checkcard-title": !0, "layui-checkcard-is-extra": h.extra })), y = r({ get: () => n.value ? Array.isArray(e.modelVal.value) ? e.modelVal.value.includes(l.value) : e.modelVal.value === l.value : v.value, set(a) {
+    n.value ? Array.isArray(e.modelVal.value) ? e.modelVal.value = function() {
+      const o = [...b.value], $ = o.findIndex((E) => E === l.value);
+      return $ < 0 ? o.push(l.value) : o.splice($, 1), o;
+    }() : e.modelVal.value = l.value : (v.value = a, p("change", a), p("update:modelValue", a));
+  } }), b = r(() => n.value ? e.modelVal.value : []);
+  function A() {
+    V.value || (y.value = !y.value);
+  }
+  _(() => l.modelValue, (a) => {
+    v.value = a;
+  });
+  const B = r(() => ["layui-checkcard", "layui-checkcard-bordered", { "layui-checkcard-checked": y.value, "layui-checkcard-disabled": V.value }]);
+  return (a, o) => (c(), s("div", { class: k(B.value), onClick: A }, [a.$slots.cover || a.cover ? (c(), s("div", j, [a.cover ? (c(), s("img", { key: 0, src: a.cover }, null, 8, w)) : t("", !0), a.$slots.cover ? d(a.$slots, "cover", { key: 1 }, () => [i(u(a.cover), 1)]) : t("", !0)])) : (c(), s("div", { key: 1, class: k(g.value) }, [a.$slots.avatar || a.avatar ? (c(), s("div", z, [a.avatar ? (c(), s("span", D, [m("img", { src: a.avatar }, null, 8, I)])) : t("", !0), a.$slots.avatar ? d(a.$slots, "avatar", { key: 1 }, () => [i(u(a.avatar), 1)]) : t("", !0)])) : t("", !0), m("div", q, [a.$slots.title || a.title ? (c(), s("div", T, [m("span", { class: k(C.value) }, [d(a.$slots, "title", {}, () => [i(u(a.title), 1)])], 2), a.$slots.extra ? (c(), s("div", F, [d(a.$slots, "extra", {}, () => [i(u(a.extra), 1)])])) : t("", !0)])) : t("", !0), a.$slots.description || a.description ? (c(), s("div", H, [d(a.$slots, "description", {}, () => [i(u(a.description), 1)])])) : t("", !0)])], 2))], 2));
+} });
+export {
+  M as default
+};

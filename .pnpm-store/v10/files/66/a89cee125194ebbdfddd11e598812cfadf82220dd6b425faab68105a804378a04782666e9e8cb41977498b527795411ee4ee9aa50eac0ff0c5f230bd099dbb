@@ -1,0 +1,19 @@
+import m from "../../tabItem/index.js";
+import { useSlots as r, ref as l, watch as u } from "vue";
+import { flattedVNode as s } from "../../utils/vueUtil.js";
+function p() {
+  const e = r(), a = l([]);
+  return u(() => {
+    var t;
+    return (t = e.default) == null ? void 0 : t.call(e);
+  }, () => {
+    var t;
+    a.value = e.default ? (t = s(e.default())) == null ? void 0 : t.filter((f) => {
+      var o;
+      return ((o = f.type) == null ? void 0 : o.name) === m.name;
+    }) : [];
+  }, { deep: !0, immediate: !0 }), { defaultSlot: a };
+}
+export {
+  p as useTabSlot
+};

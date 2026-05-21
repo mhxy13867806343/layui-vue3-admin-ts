@@ -1,0 +1,223 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+        };
+        type: {
+            type: import("vue").PropType<import("./interface").ButtonType>;
+        };
+        size: {
+            type: import("vue").PropType<import("./interface").ButtonSize>;
+        };
+        border: {
+            type: import("vue").PropType<import("./interface").ButtonBorder>;
+        };
+        prefixIcon: {
+            type: import("vue").PropType<string>;
+        };
+        suffixIcon: {
+            type: import("vue").PropType<string>;
+        };
+        loading: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        radius: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        loadingIcon: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        borderStyle: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        fluid: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        nativeType: {
+            type: import("vue").PropType<import("./interface").ButtonNativeType>;
+            default: string;
+        };
+    }>> & {
+        onClick?: ((evt: MouseEvent) => any) | undefined;
+    }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+        click: (evt: MouseEvent) => boolean;
+    }, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+        };
+        type: {
+            type: import("vue").PropType<import("./interface").ButtonType>;
+        };
+        size: {
+            type: import("vue").PropType<import("./interface").ButtonSize>;
+        };
+        border: {
+            type: import("vue").PropType<import("./interface").ButtonBorder>;
+        };
+        prefixIcon: {
+            type: import("vue").PropType<string>;
+        };
+        suffixIcon: {
+            type: import("vue").PropType<string>;
+        };
+        loading: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        radius: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        loadingIcon: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        borderStyle: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        fluid: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        nativeType: {
+            type: import("vue").PropType<import("./interface").ButtonNativeType>;
+            default: string;
+        };
+    }>> & {
+        onClick?: ((evt: MouseEvent) => any) | undefined;
+    }, {
+        loading: boolean;
+        radius: boolean;
+        loadingIcon: string;
+        borderStyle: string;
+        fluid: boolean;
+        nativeType: import("./interface").ButtonNativeType;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+        };
+        type: {
+            type: import("vue").PropType<import("./interface").ButtonType>;
+        };
+        size: {
+            type: import("vue").PropType<import("./interface").ButtonSize>;
+        };
+        border: {
+            type: import("vue").PropType<import("./interface").ButtonBorder>;
+        };
+        prefixIcon: {
+            type: import("vue").PropType<string>;
+        };
+        suffixIcon: {
+            type: import("vue").PropType<string>;
+        };
+        loading: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        radius: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        loadingIcon: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        borderStyle: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        fluid: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        nativeType: {
+            type: import("vue").PropType<import("./interface").ButtonNativeType>;
+            default: string;
+        };
+    }>> & {
+        onClick?: ((evt: MouseEvent) => any) | undefined;
+    }, {}, {}, {}, {}, {
+        loading: boolean;
+        radius: boolean;
+        loadingIcon: string;
+        borderStyle: string;
+        fluid: boolean;
+        nativeType: import("./interface").ButtonNativeType;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    disabled: {
+        type: import("vue").PropType<boolean>;
+    };
+    type: {
+        type: import("vue").PropType<import("./interface").ButtonType>;
+    };
+    size: {
+        type: import("vue").PropType<import("./interface").ButtonSize>;
+    };
+    border: {
+        type: import("vue").PropType<import("./interface").ButtonBorder>;
+    };
+    prefixIcon: {
+        type: import("vue").PropType<string>;
+    };
+    suffixIcon: {
+        type: import("vue").PropType<string>;
+    };
+    loading: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    radius: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    loadingIcon: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    borderStyle: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    fluid: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    nativeType: {
+        type: import("vue").PropType<import("./interface").ButtonNativeType>;
+        default: string;
+    };
+}>> & {
+    onClick?: ((evt: MouseEvent) => any) | undefined;
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+    click: (evt: MouseEvent) => boolean;
+}, string, {
+    loading: boolean;
+    radius: boolean;
+    loadingIcon: string;
+    borderStyle: string;
+    fluid: boolean;
+    nativeType: import("./interface").ButtonNativeType;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        default?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

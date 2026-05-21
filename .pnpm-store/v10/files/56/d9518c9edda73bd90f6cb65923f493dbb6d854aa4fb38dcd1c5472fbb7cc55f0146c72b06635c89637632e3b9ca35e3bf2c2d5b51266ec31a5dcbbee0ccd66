@@ -1,0 +1,210 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        name: {
+            type: import("vue").PropType<string>;
+        };
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        size: {
+            type: import("vue").PropType<import("./interface").SwitchSize>;
+        };
+        modelValue: {
+            type: import("vue").PropType<string | number | boolean>;
+        };
+        loading: {
+            type: import("vue").PropType<boolean>;
+        };
+        loadingIcon: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        onswitchColor: {
+            type: import("vue").PropType<string>;
+        };
+        unswitchColor: {
+            type: import("vue").PropType<string>;
+        };
+        onswitchText: {
+            type: import("vue").PropType<string>;
+        };
+        unswitchText: {
+            type: import("vue").PropType<string>;
+        };
+        onswitchValue: {
+            type: import("vue").PropType<string | number | boolean>;
+            default: boolean;
+        };
+        unswitchValue: {
+            type: import("vue").PropType<string | number | boolean>;
+            default: boolean;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+        onChange?: ((...args: any[]) => any) | undefined;
+    }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("change" | "update:modelValue")[], import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        name: {
+            type: import("vue").PropType<string>;
+        };
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        size: {
+            type: import("vue").PropType<import("./interface").SwitchSize>;
+        };
+        modelValue: {
+            type: import("vue").PropType<string | number | boolean>;
+        };
+        loading: {
+            type: import("vue").PropType<boolean>;
+        };
+        loadingIcon: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        onswitchColor: {
+            type: import("vue").PropType<string>;
+        };
+        unswitchColor: {
+            type: import("vue").PropType<string>;
+        };
+        onswitchText: {
+            type: import("vue").PropType<string>;
+        };
+        unswitchText: {
+            type: import("vue").PropType<string>;
+        };
+        onswitchValue: {
+            type: import("vue").PropType<string | number | boolean>;
+            default: boolean;
+        };
+        unswitchValue: {
+            type: import("vue").PropType<string | number | boolean>;
+            default: boolean;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+        onChange?: ((...args: any[]) => any) | undefined;
+    }, {
+        disabled: boolean;
+        loadingIcon: string;
+        onswitchValue: string | number | boolean;
+        unswitchValue: string | number | boolean;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        name: {
+            type: import("vue").PropType<string>;
+        };
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        size: {
+            type: import("vue").PropType<import("./interface").SwitchSize>;
+        };
+        modelValue: {
+            type: import("vue").PropType<string | number | boolean>;
+        };
+        loading: {
+            type: import("vue").PropType<boolean>;
+        };
+        loadingIcon: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        onswitchColor: {
+            type: import("vue").PropType<string>;
+        };
+        unswitchColor: {
+            type: import("vue").PropType<string>;
+        };
+        onswitchText: {
+            type: import("vue").PropType<string>;
+        };
+        unswitchText: {
+            type: import("vue").PropType<string>;
+        };
+        onswitchValue: {
+            type: import("vue").PropType<string | number | boolean>;
+            default: boolean;
+        };
+        unswitchValue: {
+            type: import("vue").PropType<string | number | boolean>;
+            default: boolean;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+        onChange?: ((...args: any[]) => any) | undefined;
+    }, {}, {}, {}, {}, {
+        disabled: boolean;
+        loadingIcon: string;
+        onswitchValue: string | number | boolean;
+        unswitchValue: string | number | boolean;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    name: {
+        type: import("vue").PropType<string>;
+    };
+    disabled: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    size: {
+        type: import("vue").PropType<import("./interface").SwitchSize>;
+    };
+    modelValue: {
+        type: import("vue").PropType<string | number | boolean>;
+    };
+    loading: {
+        type: import("vue").PropType<boolean>;
+    };
+    loadingIcon: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    onswitchColor: {
+        type: import("vue").PropType<string>;
+    };
+    unswitchColor: {
+        type: import("vue").PropType<string>;
+    };
+    onswitchText: {
+        type: import("vue").PropType<string>;
+    };
+    unswitchText: {
+        type: import("vue").PropType<string>;
+    };
+    onswitchValue: {
+        type: import("vue").PropType<string | number | boolean>;
+        default: boolean;
+    };
+    unswitchValue: {
+        type: import("vue").PropType<string | number | boolean>;
+        default: boolean;
+    };
+}>> & {
+    "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+    onChange?: ((...args: any[]) => any) | undefined;
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("change" | "update:modelValue")[], "change" | "update:modelValue", {
+    disabled: boolean;
+    loadingIcon: string;
+    onswitchValue: string | number | boolean;
+    unswitchValue: string | number | boolean;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        "onswitch-icon"?(_: {}): any;
+        "unswitch-icon"?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

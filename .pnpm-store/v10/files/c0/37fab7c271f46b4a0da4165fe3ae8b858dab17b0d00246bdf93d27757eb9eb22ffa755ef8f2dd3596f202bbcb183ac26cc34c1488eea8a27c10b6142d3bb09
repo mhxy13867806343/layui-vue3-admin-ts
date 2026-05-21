@@ -1,0 +1,28 @@
+import { camelize as s } from "vue";
+import { isArray as n } from "./arrayUtil.js";
+function a(e, o) {
+  return !!(e && 16 & e.shapeFlag);
+}
+function f(e, o) {
+  const r = s(o), t = i(o);
+  return e.slots[r] ? r : e.slots[t] ? t : o;
+}
+function i(e) {
+  return e.replace(/([A-Z])/g, " $1").trim().split(" ").join("-").toLowerCase();
+}
+function c(e) {
+  const o = n(e) ? e : [e], r = [];
+  return o.forEach((t) => {
+    a(t, t.children) ? r.push(...c(t.children)) : r.push(t);
+  }), r;
+}
+function p(e) {
+  return Object.keys(e).reduce((o, r) => (o[s(r)] = e[r], o), {});
+}
+export {
+  f as convertSlotName,
+  c as flattedVNode,
+  a as isArrayChildren,
+  i as kebabCase,
+  p as normalizeProps
+};

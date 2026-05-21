@@ -1,0 +1,10 @@
+import { defineComponent as p, useSlots as k, getCurrentInstance as f, openBlock as s, createElementBlock as n, createElementVNode as a, renderSlot as l, unref as o, normalizeClass as y, toDisplayString as c, Fragment as g, createTextVNode as _ } from "vue";
+/* empty css           */
+import { convertSlotName as b } from "../utils/vueUtil.js";
+const v = { class: "lay-page-header" }, x = { class: "lay-page-header__title" }, h = { class: "lay-page-header__content" }, B = p({ name: "LayPageHeader", __name: "index", props: { content: { default: "" }, backText: { default: "返回" }, backIcon: { default: "layui-icon-return" } }, emits: ["back"], setup(C, { emit: r }) {
+  const i = r, d = k(), m = f(), u = b(m, "backIcon");
+  return (e, t) => (s(), n("div", v, [a("div", { class: "lay-page-header__left", onClick: t[0] || (t[0] = (I) => i("back")) }, [l(e.$slots, o(u), {}, () => [a("i", { class: y(["layui-icon", [e.backIcon]]) }, null, 2)]), a("div", x, c(e.backText), 1)]), a("div", h, [o(d).default ? l(e.$slots, "default", { key: 0 }) : (s(), n(g, { key: 1 }, [_(c(e.content), 1)], 64))])]));
+} });
+export {
+  B as default
+};

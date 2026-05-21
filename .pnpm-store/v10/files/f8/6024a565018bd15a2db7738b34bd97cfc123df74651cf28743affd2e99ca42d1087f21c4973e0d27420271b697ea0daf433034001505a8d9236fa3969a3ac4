@@ -1,0 +1,24 @@
+import { defineComponent as h, computed as t, ref as S, watch as B, useSlots as k, h as T, provide as n, openBlock as C, createElementBlock as L, normalizeClass as x, createVNode as b, unref as M } from "vue";
+import { provideLevel as O } from "./useLevel.js";
+/* empty css           */
+const E = h({ name: "LayMenu", __name: "index", props: { selectedKey: { default: "" }, openKeys: { default: () => [] }, tree: { type: Boolean, default: !1 }, theme: { default: "dark" }, inverted: { type: [Boolean, String], default: !1 }, level: { type: [Boolean, String], default: !0 }, collapse: { type: [Boolean, String], default: !1 }, collapseTransition: { type: [Boolean, String], default: !0 }, indent: { type: [Boolean, String], default: !1 } }, emits: ["update:selectedKey", "update:openKeys", "changeSelectedKey", "changeOpenKeys"], setup(i, { emit: u }) {
+  const s = u, a = i, c = t(() => a.tree), y = t(() => a.collapse), m = t(() => a.collapseTransition), p = S(a.openKeys), v = t(() => a.theme), o = t({ get: () => a.collapse ? [] : a.openKeys, set(e) {
+    s("update:openKeys", e), s("changeOpenKeys", e);
+  } }), f = t({ get: () => a.selectedKey, set(e) {
+    s("update:selectedKey", e), s("changeSelectedKey", e);
+  } }), K = t(() => a.indent);
+  B(() => a.collapse, () => {
+    a.collapse ? (p.value = a.openKeys, o.value = []) : o.value = p.value;
+  });
+  const d = k(), g = t(() => {
+    const e = d.default ? d.default() : [];
+    return T("div", null, e.map((l) => {
+      var r;
+      return ((r = l == null ? void 0 : l.type) == null ? void 0 : r.name) === "LaySubMenu" && (l.props = { ...l.props, teleportProps: { disabled: !1 } }), l;
+    }));
+  });
+  return O(1), n("isTree", c), n("selectedKey", f), n("openKeys", o), n("isCollapse", y), n("isCollapseTransition", m), n("menuTheme", v), n("indent", K), (e, l) => (C(), L("ul", { class: x(["layui-nav", [e.level ? "" : "not-level", e.inverted ? "inverted" : "", e.tree ? "layui-nav-tree" : "", e.theme === "dark" ? "layui-nav-dark" : "layui-nav-light", e.collapse ? "layui-nav-collapse" : ""]]) }, [b(M(g))], 2));
+} });
+export {
+  E as default
+};

@@ -1,0 +1,7 @@
+import { defineComponent as t, openBlock as s, createElementBlock as l, mergeProps as n, renderSlot as o, Fragment as r, renderList as m, createBlock as d, normalizeClass as i } from "vue";
+/* empty css           */
+import p from "../skeletonItem/index2.js";
+const B = t({ name: "LaySkeleton", __name: "index", props: { rows: { default: 4 }, loading: { type: Boolean, default: !1 }, animated: { type: Boolean, default: !1 } }, setup: (k) => (e, y) => (s(), l("div", n({ class: ["lay-skeleton", e.animated ? "lay-skeleton-animated" : ""] }, e.$attrs), [e.loading ? o(e.$slots, "skeleton", { key: 0 }, () => [(s(!0), l(r, null, m(e.rows, (a) => (s(), d(p, { key: a, class: i([a === 1 ? "lay-skeleton-first" : "", a === e.rows ? "lay-skeleton-last" : ""]), type: "p" }, null, 8, ["class"]))), 128))]) : o(e.$slots, "default", { key: 1 })], 16)) });
+export {
+  B as default
+};

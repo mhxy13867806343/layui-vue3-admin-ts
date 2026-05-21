@@ -1,0 +1,6 @@
+import { defineComponent as a, openBlock as t, createElementBlock as o, renderSlot as s } from "vue";
+/* empty css           */
+const n = { class: "layui-header" }, m = a({ name: "LayHeader", __name: "index", setup: (d) => (e, l) => (t(), o("div", n, [s(e.$slots, "default")])) });
+export {
+  m as default
+};

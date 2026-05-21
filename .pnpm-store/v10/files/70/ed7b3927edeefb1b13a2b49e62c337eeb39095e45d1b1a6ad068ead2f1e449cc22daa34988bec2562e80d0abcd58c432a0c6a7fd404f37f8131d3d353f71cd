@@ -1,0 +1,6 @@
+import { defineComponent as o, openBlock as t, createElementBlock as a, mergeProps as s, createVNode as p, unref as m, createCommentVNode as n } from "vue";
+import { LayIcon as r } from "@layui/icons-vue";
+const l = { key: 0 }, f = o({ name: "LaySkeletonItem", __name: "index", props: { type: { default: "p" } }, setup: (i) => (e, y) => (t(), a("div", s({ class: ["lay-skeleton-item", `lay-skeleton-type--${e.type}`] }, e.$attrs), [e.type === "image" ? (t(), a("div", l, [p(m(r), { type: "layui-icon-picture" })])) : n("", !0)], 16)) });
+export {
+  f as default
+};

@@ -1,0 +1,20 @@
+import { defineComponent as f, useSlots as c, computed as y, provide as P, reactive as x, toRefs as B, openBlock as k, createBlock as C, mergeProps as r, unref as a, withCtx as g, createVNode as S } from "vue";
+import t from "dayjs";
+import z from "dayjs/plugin/customParseFormat.js";
+import _ from "dayjs/plugin/isSameOrAfter.js";
+import b from "dayjs/plugin/isSameOrBefore.js";
+import h from "dayjs/plugin/objectSupport.js";
+import v from "./component/common/InputBlock.js";
+import { useDatePicker as D } from "./hook/useDatePicker.js";
+import { useProps as F } from "./hook/useProps.js";
+import { DATE_PICKER_CONTEXT as T } from "./interface.js";
+/* empty css           */
+const $ = f({ name: "LayDatePicker", __name: "index", props: { name: {}, modelValue: { default: null }, type: { default: "date" }, disabled: { type: Boolean, default: !1 }, readonly: { type: Boolean, default: !1 }, placeholder: {}, allowClear: { type: Boolean, default: !1 }, simple: { type: Boolean, default: !1 }, max: {}, min: {}, range: { type: Boolean, default: !1 }, rangeSeparator: { default: "至" }, size: { default: "md" }, prefixIcon: { default: "layui-icon-date" }, suffixIcon: { default: "" }, timestamp: { type: Boolean, default: !1 }, format: {}, inputFormat: {}, defaultValue: { default: null }, defaultTime: { default: null }, contentStyle: { type: [Boolean, null, String, Object, Array] }, contentClass: {}, disabledDate: {}, yearPage: { default: 15 }, shortcuts: {}, static: { type: Boolean, default: !1 }, teleportProps: {} }, setup(l) {
+  const e = l, n = c();
+  t.extend(z), t.extend(b), t.extend(_), t.extend(h);
+  const { size: s } = F(e), { RenderComponent: d, renderComponentProps: o, datePickerContext: m } = D(e), p = y(() => e.inputFormat ?? o.value.inputFormat);
+  return P(T, x({ ...B(m), datePickerSlots: n })), (i, E) => (k(), C(v, r({ ...e, ...i.$attrs }, { format: p.value, size: a(s) }), { default: g(({ onPick: u }) => [S(a(d), r(a(o), { onPick: u }), null, 16, ["onPick"])]), _: 1 }, 16, ["format", "size"]));
+} });
+export {
+  $ as default
+};

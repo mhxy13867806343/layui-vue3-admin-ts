@@ -1,0 +1,147 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        type: {
+            type: import("vue").PropType<"default" | "brief" | "card">;
+            default: string;
+        };
+        modelValue: {
+            type: import("vue").PropType<import("../../types").NumberOrString>;
+            required: true;
+        };
+        beforeLeave: {
+            type: import("vue").PropType<Function>;
+        };
+        allowClose: {
+            type: import("vue").PropType<boolean>;
+        };
+        tabPosition: {
+            type: import("vue").PropType<import("./interface").TabPosition>;
+            default: string;
+        };
+        beforeClose: {
+            type: import("vue").PropType<Function>;
+        };
+        activeBarTransition: {
+            type: import("vue").PropType<boolean>;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((value: import("../../types").NumberOrString) => any) | undefined;
+        onChange?: ((value: import("../../types").NumberOrString) => any) | undefined;
+        onClose?: ((value: import("../../types").NumberOrString) => any) | undefined;
+    }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+        "update:modelValue": (value: import("../../types").NumberOrString) => void;
+        change: (value: import("../../types").NumberOrString) => void;
+        close: (value: import("../../types").NumberOrString) => void;
+    }, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        type: {
+            type: import("vue").PropType<"default" | "brief" | "card">;
+            default: string;
+        };
+        modelValue: {
+            type: import("vue").PropType<import("../../types").NumberOrString>;
+            required: true;
+        };
+        beforeLeave: {
+            type: import("vue").PropType<Function>;
+        };
+        allowClose: {
+            type: import("vue").PropType<boolean>;
+        };
+        tabPosition: {
+            type: import("vue").PropType<import("./interface").TabPosition>;
+            default: string;
+        };
+        beforeClose: {
+            type: import("vue").PropType<Function>;
+        };
+        activeBarTransition: {
+            type: import("vue").PropType<boolean>;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((value: import("../../types").NumberOrString) => any) | undefined;
+        onChange?: ((value: import("../../types").NumberOrString) => any) | undefined;
+        onClose?: ((value: import("../../types").NumberOrString) => any) | undefined;
+    }, {
+        type: "default" | "brief" | "card";
+        tabPosition: import("./interface").TabPosition;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        type: {
+            type: import("vue").PropType<"default" | "brief" | "card">;
+            default: string;
+        };
+        modelValue: {
+            type: import("vue").PropType<import("../../types").NumberOrString>;
+            required: true;
+        };
+        beforeLeave: {
+            type: import("vue").PropType<Function>;
+        };
+        allowClose: {
+            type: import("vue").PropType<boolean>;
+        };
+        tabPosition: {
+            type: import("vue").PropType<import("./interface").TabPosition>;
+            default: string;
+        };
+        beforeClose: {
+            type: import("vue").PropType<Function>;
+        };
+        activeBarTransition: {
+            type: import("vue").PropType<boolean>;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((value: import("../../types").NumberOrString) => any) | undefined;
+        onChange?: ((value: import("../../types").NumberOrString) => any) | undefined;
+        onClose?: ((value: import("../../types").NumberOrString) => any) | undefined;
+    }, {}, {}, {}, {}, {
+        type: "default" | "brief" | "card";
+        tabPosition: import("./interface").TabPosition;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    type: {
+        type: import("vue").PropType<"default" | "brief" | "card">;
+        default: string;
+    };
+    modelValue: {
+        type: import("vue").PropType<import("../../types").NumberOrString>;
+        required: true;
+    };
+    beforeLeave: {
+        type: import("vue").PropType<Function>;
+    };
+    allowClose: {
+        type: import("vue").PropType<boolean>;
+    };
+    tabPosition: {
+        type: import("vue").PropType<import("./interface").TabPosition>;
+        default: string;
+    };
+    beforeClose: {
+        type: import("vue").PropType<Function>;
+    };
+    activeBarTransition: {
+        type: import("vue").PropType<boolean>;
+    };
+}>> & {
+    "onUpdate:modelValue"?: ((value: import("../../types").NumberOrString) => any) | undefined;
+    onChange?: ((value: import("../../types").NumberOrString) => any) | undefined;
+    onClose?: ((value: import("../../types").NumberOrString) => any) | undefined;
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+    "update:modelValue": (value: import("../../types").NumberOrString) => void;
+    change: (value: import("../../types").NumberOrString) => void;
+    close: (value: import("../../types").NumberOrString) => void;
+}, string, {
+    type: "default" | "brief" | "card";
+    tabPosition: import("./interface").TabPosition;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & import("vue").Plugin<any[]>;
+export default component;

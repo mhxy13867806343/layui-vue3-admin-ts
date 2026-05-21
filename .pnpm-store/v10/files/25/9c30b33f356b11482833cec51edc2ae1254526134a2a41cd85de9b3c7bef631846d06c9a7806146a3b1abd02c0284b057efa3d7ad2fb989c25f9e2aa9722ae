@@ -1,0 +1,15 @@
+import { inject as a, computed as t, isRef as s, provide as i, reactive as r } from "vue";
+const n = Symbol("menuLevelKey");
+function u(e) {
+  const o = t(() => s(e) ? e.value : e);
+  i(n, r({ level: o }));
+}
+function f(e) {
+  const { provideNextLevel: o } = {}, v = a(n), l = t(() => v.level || 1);
+  return o && u(t(() => l.value + 1)), { level: l };
+}
+export {
+  n as LevelInjectionKey,
+  f as default,
+  u as provideLevel
+};

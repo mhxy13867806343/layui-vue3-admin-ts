@@ -1,0 +1,12 @@
+import { defineComponent as u, openBlock as p, createElementBlock as c, createTextVNode as r, toDisplayString as t, unref as e, createVNode as n, isRef as f, withCtx as b } from "vue";
+import g from "../../button/index.js";
+import k from "../../input/index.js";
+import { useI18n as x } from "../../language/index.js";
+import { usePage as B } from "../usePage.js";
+const V = { class: "layui-pager-jumper" }, v = u({ name: "LayPageSkip", __name: "skip", setup(y) {
+  const { t: o } = x(), { disabled: l, jumpNumber: a, handleBlur: i, handleJumpPage: m } = B();
+  return (C, s) => (p(), c("div", V, [r(t(e(o)("page.goTo")) + " ", 1), n(e(k), { disabled: e(l), onBlur: e(i), type: "number", modelValue: e(a), "onUpdate:modelValue": s[0] || (s[0] = (d) => f(a) ? a.value = d : null) }, null, 8, ["disabled", "onBlur", "modelValue"]), n(e(g), { disabled: e(l), onClick: e(m), size: "xs" }, { default: b(() => [r(t(e(o)("page.confirm")), 1)]), _: 1 }, 8, ["disabled", "onClick"])]));
+} });
+export {
+  v as default
+};

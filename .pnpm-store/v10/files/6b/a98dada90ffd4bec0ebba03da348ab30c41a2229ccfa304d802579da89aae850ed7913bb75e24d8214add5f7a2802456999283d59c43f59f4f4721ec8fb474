@@ -1,0 +1,69 @@
+import { defineComponent as C, ref as d, shallowRef as E, computed as u, onMounted as S, onBeforeUnmount as R, withDirectives as $, openBlock as T, createElementBlock as B, normalizeClass as q, normalizeStyle as L, withModifiers as M, renderSlot as D, createVNode as H, unref as f, vShow as W } from "vue";
+import { LayIcon as _ } from "@layui/icons-vue";
+/* empty css           */
+const I = C({ name: "LayBacktop", __name: "index", props: { target: { default: "window" }, showHeight: { default: 200 }, disabled: { type: Boolean, default: !1 }, position: {}, right: {}, bottom: {}, size: {}, bgcolor: {}, opacity: {}, color: {}, borderRadius: {}, circle: { type: Boolean, default: !1 }, icon: { default: "layui-icon-top" }, iconSize: { default: 30 }, iconColor: {} }, emits: ["click"], setup(m, { emit: v }) {
+  const e = m, w = v, n = d(null), t = E(void 0);
+  let c = d(e.showHeight === 0);
+  const y = u(() => ({ "layui-backtop-medium": e.size === "medium", "layui-backtop-small": e.size === "small" })), b = u(() => e.circle ? "50%" : typeof e.borderRadius == "number" ? `${e.borderRadius}px` : e.borderRadius), g = u(() => ({ position: e.position, right: `${e.right}px`, bottom: `${e.bottom}px`, backgroundColor: e.bgcolor, opacity: e.opacity, color: e.color, borderRadius: b.value })), h = (o) => {
+    e.disabled || (() => {
+      if (t.value)
+        if (t.value instanceof Window)
+          window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        else {
+          const r = Date.now(), l = t.value.scrollTop, i = () => {
+            if (!t.value || t.value instanceof Window)
+              return;
+            const s = (Date.now() - r) / 450;
+            var a;
+            s < 1 ? (t.value.scrollTop = l * (1 - ((a = s) < 0.5 ? 2 * a * a : 1 - 2 * (a - 1) * (a - 1))), window.requestAnimationFrame(i)) : t.value.scrollTop = 0;
+          };
+          window.requestAnimationFrame(i);
+        }
+    })(), w("click", o);
+  }, k = () => {
+    n.value.style.opacity = "1";
+  }, z = () => {
+    n.value.style.opacity = "0.95";
+  }, x = (o, r) => {
+    let l = getComputedStyle(o), i = l.position === "absolute", s = /(auto|scroll)/;
+    for (let a = o; a = a.parentElement; )
+      if (l = getComputedStyle(a), (!i || l.position !== "static") && s.test(l.overflow + l.overflowY + l.overflowX))
+        return a;
+    return window;
+  }, p = /* @__PURE__ */ ((o, r) => {
+    var l = null;
+    return (...i) => {
+      l || (l = setTimeout(() => {
+        l = null, o.apply(this, i);
+      }, r));
+    };
+  })(() => {
+    if (!t.value)
+      return;
+    const o = t.value instanceof Window ? window.pageYOffset : t.value.scrollTop;
+    c.value = o >= e.showHeight;
+  }, 300);
+  return S(() => {
+    e.target && (t.value = (() => {
+      if (e.target === "window")
+        return x(n.value);
+      {
+        const o = document.querySelector(e.target);
+        if (!o)
+          throw new Error(`target is not existed: ${e.target}`);
+        if (e.position === "absolute") {
+          if (!o.parentElement)
+            throw new Error(`target parent element is not existed: ${e.target}`);
+          o.parentElement.style.position = "relative";
+        }
+        return o;
+      }
+    })(), t.value.addEventListener("scroll", p));
+  }), R(() => {
+    var o;
+    (o = t.value) == null || o.removeEventListener("scroll", p);
+  }), (o, r) => $((T(), B("div", { ref_key: "backtopRef", ref: n, class: q(["layui-backtop", y.value]), style: L({ ...g.value }), onClick: M(h, ["stop"]), onMousedown: k, onMouseup: z }, [D(o.$slots, "default", {}, () => [H(f(_), { type: e.icon, size: `${e.iconSize}px`, color: e.iconColor }, null, 8, ["type", "size", "color"])])], 38)), [[W, f(c)]]);
+} });
+export {
+  I as default
+};

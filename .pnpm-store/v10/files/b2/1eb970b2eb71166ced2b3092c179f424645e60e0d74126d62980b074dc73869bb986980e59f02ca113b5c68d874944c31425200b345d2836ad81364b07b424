@@ -1,0 +1,9 @@
+import { defineComponent as l, computed as t, openBlock as p, createElementBlock as c, normalizeClass as n, renderSlot as r } from "vue";
+/* empty css           */
+const d = l({ name: "LayRow", __name: "index", props: { space: {} }, setup(a) {
+  const e = a, s = t(() => [e.space ? `layui-col-space${e.space}` : ""]);
+  return (o, m) => (p(), c("div", { class: n(["layui-row", s.value]) }, [r(o.$slots, "default")], 2));
+} });
+export {
+  d as default
+};

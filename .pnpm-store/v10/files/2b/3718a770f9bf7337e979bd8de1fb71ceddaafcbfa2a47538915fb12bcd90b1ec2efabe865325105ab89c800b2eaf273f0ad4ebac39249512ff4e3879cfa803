@@ -1,0 +1,214 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        md: {
+            type: import("vue").PropType<string | number>;
+        };
+        xs: {
+            type: import("vue").PropType<string | number>;
+        };
+        sm: {
+            type: import("vue").PropType<string | number>;
+        };
+        lg: {
+            type: import("vue").PropType<string | number>;
+        };
+        mdOffset: {
+            type: import("vue").PropType<string | number>;
+        };
+        xsOffset: {
+            type: import("vue").PropType<string | number>;
+        };
+        smOffset: {
+            type: import("vue").PropType<string | number>;
+        };
+        lgOffset: {
+            type: import("vue").PropType<string | number>;
+        };
+        xsPull: {
+            type: import("vue").PropType<string | number>;
+        };
+        smPull: {
+            type: import("vue").PropType<string | number>;
+        };
+        mdPull: {
+            type: import("vue").PropType<string | number>;
+        };
+        lgPull: {
+            type: import("vue").PropType<string | number>;
+        };
+        xsPush: {
+            type: import("vue").PropType<string | number>;
+        };
+        smPush: {
+            type: import("vue").PropType<string | number>;
+        };
+        mdPush: {
+            type: import("vue").PropType<string | number>;
+        };
+        lgPush: {
+            type: import("vue").PropType<string | number>;
+        };
+    }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        md: {
+            type: import("vue").PropType<string | number>;
+        };
+        xs: {
+            type: import("vue").PropType<string | number>;
+        };
+        sm: {
+            type: import("vue").PropType<string | number>;
+        };
+        lg: {
+            type: import("vue").PropType<string | number>;
+        };
+        mdOffset: {
+            type: import("vue").PropType<string | number>;
+        };
+        xsOffset: {
+            type: import("vue").PropType<string | number>;
+        };
+        smOffset: {
+            type: import("vue").PropType<string | number>;
+        };
+        lgOffset: {
+            type: import("vue").PropType<string | number>;
+        };
+        xsPull: {
+            type: import("vue").PropType<string | number>;
+        };
+        smPull: {
+            type: import("vue").PropType<string | number>;
+        };
+        mdPull: {
+            type: import("vue").PropType<string | number>;
+        };
+        lgPull: {
+            type: import("vue").PropType<string | number>;
+        };
+        xsPush: {
+            type: import("vue").PropType<string | number>;
+        };
+        smPush: {
+            type: import("vue").PropType<string | number>;
+        };
+        mdPush: {
+            type: import("vue").PropType<string | number>;
+        };
+        lgPush: {
+            type: import("vue").PropType<string | number>;
+        };
+    }>>, {}, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        md: {
+            type: import("vue").PropType<string | number>;
+        };
+        xs: {
+            type: import("vue").PropType<string | number>;
+        };
+        sm: {
+            type: import("vue").PropType<string | number>;
+        };
+        lg: {
+            type: import("vue").PropType<string | number>;
+        };
+        mdOffset: {
+            type: import("vue").PropType<string | number>;
+        };
+        xsOffset: {
+            type: import("vue").PropType<string | number>;
+        };
+        smOffset: {
+            type: import("vue").PropType<string | number>;
+        };
+        lgOffset: {
+            type: import("vue").PropType<string | number>;
+        };
+        xsPull: {
+            type: import("vue").PropType<string | number>;
+        };
+        smPull: {
+            type: import("vue").PropType<string | number>;
+        };
+        mdPull: {
+            type: import("vue").PropType<string | number>;
+        };
+        lgPull: {
+            type: import("vue").PropType<string | number>;
+        };
+        xsPush: {
+            type: import("vue").PropType<string | number>;
+        };
+        smPush: {
+            type: import("vue").PropType<string | number>;
+        };
+        mdPush: {
+            type: import("vue").PropType<string | number>;
+        };
+        lgPush: {
+            type: import("vue").PropType<string | number>;
+        };
+    }>>, {}, {}, {}, {}, {}>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    md: {
+        type: import("vue").PropType<string | number>;
+    };
+    xs: {
+        type: import("vue").PropType<string | number>;
+    };
+    sm: {
+        type: import("vue").PropType<string | number>;
+    };
+    lg: {
+        type: import("vue").PropType<string | number>;
+    };
+    mdOffset: {
+        type: import("vue").PropType<string | number>;
+    };
+    xsOffset: {
+        type: import("vue").PropType<string | number>;
+    };
+    smOffset: {
+        type: import("vue").PropType<string | number>;
+    };
+    lgOffset: {
+        type: import("vue").PropType<string | number>;
+    };
+    xsPull: {
+        type: import("vue").PropType<string | number>;
+    };
+    smPull: {
+        type: import("vue").PropType<string | number>;
+    };
+    mdPull: {
+        type: import("vue").PropType<string | number>;
+    };
+    lgPull: {
+        type: import("vue").PropType<string | number>;
+    };
+    xsPush: {
+        type: import("vue").PropType<string | number>;
+    };
+    smPush: {
+        type: import("vue").PropType<string | number>;
+    };
+    mdPush: {
+        type: import("vue").PropType<string | number>;
+    };
+    lgPush: {
+        type: import("vue").PropType<string | number>;
+    };
+}>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        default?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

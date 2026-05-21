@@ -1,0 +1,46 @@
+import { defineComponent as S, useCssVars as C, watch as W, computed as l, openBlock as s, createElementBlock as i, createElementVNode as c, normalizeStyle as o, toDisplayString as y, createCommentVNode as h, normalizeClass as N, Fragment as f, renderList as T } from "vue";
+/* empty css           */
+import { isArray as g } from "../utils/arrayUtil.js";
+const _ = { key: 0, class: "lay-progress-circle" }, D = ["viewBox", "width", "height"], V = ["d"], E = ["d"], F = { key: 0, class: "layui-progress-text lay-progress-circle__text" }, L = { class: "layui-progress-bar-container" }, M = { key: 0, class: "layui-progress-text" }, j = S({ name: "LayProgress", __name: "index", props: { percent: {}, theme: { default: "" }, color: {}, size: { default: "md" }, showText: { type: Boolean }, text: {}, circle: { type: Boolean, default: !1 }, circleSize: { default: 150 }, circleWidth: { default: 6 }, animated: { type: Boolean }, animationDuration: { default: 3e3 }, indeterminate: { type: Boolean } }, setup(v) {
+  C((e) => ({ "73ace339": $.value, "327d4ca7": x.value }));
+  const r = v, u = (e) => {
+    switch (e) {
+      case "red":
+        return "#ff5722";
+      case "orange":
+        return "#ffb800";
+      case "green":
+        return "#009688";
+      case "cyan":
+        return "#2f4056";
+      case "blue":
+        return "#1e9fff";
+      case "black":
+        return "#393d49";
+      case "gray":
+        return "#fafafa";
+      default:
+        return "#5FB878";
+    }
+  };
+  W(() => r.percent, () => d(), { deep: !0 });
+  const d = () => {
+    const e = { percent: 0, theme: r.theme, color: r.color, showText: r.showText, text: r.text };
+    return r.indeterminate ? [{ ...e, percent: 100 }] : g(r.percent) ? r.percent.map((t) => ({ ...e, ...t, percent: Number(t.percent) })) : [{ ...e, percent: Number(r.percent) }];
+  }, p = l(() => d()), x = l(() => `${r.animationDuration ?? 3e3}ms`), k = l(() => p.value.map((e) => e.percent).reduce((e, t) => e + t, 0)), $ = l(() => `${k.value}%`), b = l(() => p.value.map((e, t) => {
+    const a = p.value.map((n) => Number(n.percent)).slice(0, t).reduce((n, B) => n + B, 0);
+    return { left: `${a}%`, width: `${100 - a > e.percent ? e.percent : 100 - a}%`, backgroundColor: e.color ?? u(e.theme) };
+  })), w = l(() => r.color ?? u(r.theme)), z = l(() => {
+    if (g(r.percent))
+      return;
+    let e = Number(r.percent), t = r.circleSize / 2 - r.circleWidth / 2, a = 2 * Math.PI * t;
+    return `${e / 100 * a}px ${a}px`;
+  }), m = l(() => {
+    let e = r.circleSize, t = r.circleWidth;
+    return `M ${e / 2} ${e / 2} m 0, -${(e - t) / 2} a ${(e - t) / 2}, ${(e - t) / 2} 0 1, 1 0, ${e - t} a ${(e - t) / 2}, ${(e - t) / 2} 0 1, 1 0, -${e - t}`;
+  });
+  return (e, t) => e.circle ? (s(), i("div", _, [(s(), i("svg", { viewBox: `0 0 ${e.circleSize} ${e.circleSize}`, width: e.circleSize, height: e.circleSize }, [c("path", { d: m.value, style: o([{ fill: "none", stroke: "var(--global-neutral-color-3)" }, { strokeWidth: `${e.circleWidth}px` }]) }, null, 12, V), c("path", { d: m.value, style: o([{ fill: "none", "stroke-linecap": "round" }, { strokeDasharray: z.value, stroke: w.value, strokeWidth: `${e.circleWidth}px` }]) }, null, 12, E)], 8, D)), e.showText ? (s(), i("div", F, y(e.text ? e.text : e.percent + "%"), 1)) : h("", !0)])) : (s(), i("div", { key: 1, class: N(["layui-progress", ["layui-progress-" + e.size, { "layui-progress-animated": e.animated && !e.indeterminate, "layui-progress-indeterminate": e.indeterminate }]]) }, [c("div", L, [e.indeterminate ? (s(), i(f, { key: 1 }, [c("div", { style: o({ backgroundColor: e.color ?? u(e.theme) }), class: "layui-progress-infinite-bar1" }, null, 4), c("div", { style: o({ backgroundColor: e.color ?? u(e.theme) }), class: "layui-progress-infinite-bar2" }, null, 4)], 64)) : (s(!0), i(f, { key: 0 }, T(p.value, (a, n) => (s(), i("div", { class: "layui-progress-bar", style: o(b.value.at(n)), key: n }, [a.showText ? (s(), i("span", M, y(a.text ? a.text : a.percent + "%"), 1)) : h("", !0)], 4))), 128))])], 2));
+} });
+export {
+  j as default
+};

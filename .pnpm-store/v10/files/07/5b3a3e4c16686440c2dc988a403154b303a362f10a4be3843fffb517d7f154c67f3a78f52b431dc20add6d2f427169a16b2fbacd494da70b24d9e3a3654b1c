@@ -1,0 +1,109 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        height: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        trackColor: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        thumbColor: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        thumbWidth: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+    }>> & {
+        onArrive?: ((...args: any[]) => any) | undefined;
+    }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "arrive"[], import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        height: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        trackColor: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        thumbColor: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        thumbWidth: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+    }>> & {
+        onArrive?: ((...args: any[]) => any) | undefined;
+    }, {
+        height: string;
+        trackColor: string;
+        thumbColor: string;
+        thumbWidth: number;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        height: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        trackColor: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        thumbColor: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        thumbWidth: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+    }>> & {
+        onArrive?: ((...args: any[]) => any) | undefined;
+    }, {}, {}, {}, {}, {
+        height: string;
+        trackColor: string;
+        thumbColor: string;
+        thumbWidth: number;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    height: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    trackColor: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    thumbColor: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    thumbWidth: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+}>> & {
+    onArrive?: ((...args: any[]) => any) | undefined;
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "arrive"[], "arrive", {
+    height: string;
+    trackColor: string;
+    thumbColor: string;
+    thumbWidth: number;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        default?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

@@ -1,0 +1,186 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        value: (NumberConstructor | StringConstructor)[];
+        format: {
+            type: StringConstructor[];
+            default: string;
+        };
+        width: {
+            type: (NumberConstructor | StringConstructor)[];
+            default: number;
+        };
+        height: {
+            type: (NumberConstructor | StringConstructor)[];
+            default: number;
+        };
+        text: (NumberConstructor | StringConstructor)[];
+        fontOptions: {
+            type: StringConstructor[];
+            default: string;
+        };
+        font: (NumberConstructor | StringConstructor)[];
+        textAlign: StringConstructor[];
+        textPosition: StringConstructor[];
+        textMargin: (NumberConstructor | StringConstructor)[];
+        fontSize: {
+            type: (NumberConstructor | StringConstructor)[];
+            default: number;
+        };
+        lineColor: StringConstructor[];
+        background: {
+            type: StringConstructor[];
+            default: string;
+        };
+        margin: (NumberConstructor | StringConstructor)[];
+        displayValue: {
+            type: (BooleanConstructor | StringConstructor)[];
+            default: boolean;
+        };
+    }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        value: (NumberConstructor | StringConstructor)[];
+        format: {
+            type: StringConstructor[];
+            default: string;
+        };
+        width: {
+            type: (NumberConstructor | StringConstructor)[];
+            default: number;
+        };
+        height: {
+            type: (NumberConstructor | StringConstructor)[];
+            default: number;
+        };
+        text: (NumberConstructor | StringConstructor)[];
+        fontOptions: {
+            type: StringConstructor[];
+            default: string;
+        };
+        font: (NumberConstructor | StringConstructor)[];
+        textAlign: StringConstructor[];
+        textPosition: StringConstructor[];
+        textMargin: (NumberConstructor | StringConstructor)[];
+        fontSize: {
+            type: (NumberConstructor | StringConstructor)[];
+            default: number;
+        };
+        lineColor: StringConstructor[];
+        background: {
+            type: StringConstructor[];
+            default: string;
+        };
+        margin: (NumberConstructor | StringConstructor)[];
+        displayValue: {
+            type: (BooleanConstructor | StringConstructor)[];
+            default: boolean;
+        };
+    }>>, {
+        width: string | number;
+        format: string;
+        height: string | number;
+        fontOptions: string;
+        fontSize: string | number;
+        background: string;
+        displayValue: string | boolean;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        value: (NumberConstructor | StringConstructor)[];
+        format: {
+            type: StringConstructor[];
+            default: string;
+        };
+        width: {
+            type: (NumberConstructor | StringConstructor)[];
+            default: number;
+        };
+        height: {
+            type: (NumberConstructor | StringConstructor)[];
+            default: number;
+        };
+        text: (NumberConstructor | StringConstructor)[];
+        fontOptions: {
+            type: StringConstructor[];
+            default: string;
+        };
+        font: (NumberConstructor | StringConstructor)[];
+        textAlign: StringConstructor[];
+        textPosition: StringConstructor[];
+        textMargin: (NumberConstructor | StringConstructor)[];
+        fontSize: {
+            type: (NumberConstructor | StringConstructor)[];
+            default: number;
+        };
+        lineColor: StringConstructor[];
+        background: {
+            type: StringConstructor[];
+            default: string;
+        };
+        margin: (NumberConstructor | StringConstructor)[];
+        displayValue: {
+            type: (BooleanConstructor | StringConstructor)[];
+            default: boolean;
+        };
+    }>>, {}, {}, {}, {}, {
+        width: string | number;
+        format: string;
+        height: string | number;
+        fontOptions: string;
+        fontSize: string | number;
+        background: string;
+        displayValue: string | boolean;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    value: (NumberConstructor | StringConstructor)[];
+    format: {
+        type: StringConstructor[];
+        default: string;
+    };
+    width: {
+        type: (NumberConstructor | StringConstructor)[];
+        default: number;
+    };
+    height: {
+        type: (NumberConstructor | StringConstructor)[];
+        default: number;
+    };
+    text: (NumberConstructor | StringConstructor)[];
+    fontOptions: {
+        type: StringConstructor[];
+        default: string;
+    };
+    font: (NumberConstructor | StringConstructor)[];
+    textAlign: StringConstructor[];
+    textPosition: StringConstructor[];
+    textMargin: (NumberConstructor | StringConstructor)[];
+    fontSize: {
+        type: (NumberConstructor | StringConstructor)[];
+        default: number;
+    };
+    lineColor: StringConstructor[];
+    background: {
+        type: StringConstructor[];
+        default: string;
+    };
+    margin: (NumberConstructor | StringConstructor)[];
+    displayValue: {
+        type: (BooleanConstructor | StringConstructor)[];
+        default: boolean;
+    };
+}>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {
+    width: string | number;
+    format: string;
+    height: string | number;
+    fontOptions: string;
+    fontSize: string | number;
+    background: string;
+    displayValue: string | boolean;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & import("vue").Plugin<any[]>;
+export default component;

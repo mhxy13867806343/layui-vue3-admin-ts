@@ -1,0 +1,368 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        search: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        data: {
+            type: import("vue").PropType<NonNullable<import("../tree/interface").OriginalTreeData | import("../tree/interface").OriginalTreeData[] | undefined>>;
+            required: true;
+        };
+        size: {
+            type: import("vue").PropType<import("./interface").TreeSelectSize>;
+        };
+        multiple: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        load: {
+            type: import("vue").PropType<import("../tree/interface").LoadFunction>;
+        };
+        modelValue: {
+            type: import("vue").PropType<import("../../types").NumberOrString | import("../tree/interface").KeysType | undefined>;
+            required: true;
+        };
+        teleportProps: {
+            type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+        };
+        contentClass: {
+            type: import("vue").PropType<string | object | (string | object)[]>;
+        };
+        contentStyle: {
+            type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+        };
+        allowClear: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        placeholder: {
+            type: import("vue").PropType<string>;
+        };
+        replaceFields: {
+            type: import("vue").PropType<Partial<import("../tree/interface").ReplaceFieldsOptions>>;
+        };
+        lazy: {
+            type: import("vue").PropType<boolean>;
+        };
+        checkStrictly: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        minCollapsedNum: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        collapseTagsTooltip: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        defaultExpandAll: {
+            type: import("vue").PropType<boolean>;
+            default: undefined;
+        };
+        tailNodeIcon: {
+            type: import("vue").PropType<string>;
+        };
+        cacheData: {
+            type: import("vue").PropType<import("../tree/interface").OriginalTreeData[]>;
+        };
+        searchNodeMethod: {
+            type: import("vue").PropType<import("../tree/interface").SearchNodeMethodType>;
+            default: (node: any, value: string) => any;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((value: import("../../types").NumberOrString | import("../tree/interface").KeysType | undefined) => any) | undefined;
+        onChange?: ((value: import("../../types").NumberOrString | import("../tree/interface").KeysType | undefined) => any) | undefined;
+        onSearch?: ((value: string) => any) | undefined;
+    }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+        "update:modelValue": (value: import("../../types").NumberOrString | import("../tree/interface").KeysType | undefined) => void;
+        change: (value: import("../../types").NumberOrString | import("../tree/interface").KeysType | undefined) => void;
+        search: (value: string) => void;
+    }, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        search: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        data: {
+            type: import("vue").PropType<NonNullable<import("../tree/interface").OriginalTreeData | import("../tree/interface").OriginalTreeData[] | undefined>>;
+            required: true;
+        };
+        size: {
+            type: import("vue").PropType<import("./interface").TreeSelectSize>;
+        };
+        multiple: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        load: {
+            type: import("vue").PropType<import("../tree/interface").LoadFunction>;
+        };
+        modelValue: {
+            type: import("vue").PropType<import("../../types").NumberOrString | import("../tree/interface").KeysType | undefined>;
+            required: true;
+        };
+        teleportProps: {
+            type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+        };
+        contentClass: {
+            type: import("vue").PropType<string | object | (string | object)[]>;
+        };
+        contentStyle: {
+            type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+        };
+        allowClear: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        placeholder: {
+            type: import("vue").PropType<string>;
+        };
+        replaceFields: {
+            type: import("vue").PropType<Partial<import("../tree/interface").ReplaceFieldsOptions>>;
+        };
+        lazy: {
+            type: import("vue").PropType<boolean>;
+        };
+        checkStrictly: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        minCollapsedNum: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        collapseTagsTooltip: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        defaultExpandAll: {
+            type: import("vue").PropType<boolean>;
+            default: undefined;
+        };
+        tailNodeIcon: {
+            type: import("vue").PropType<string>;
+        };
+        cacheData: {
+            type: import("vue").PropType<import("../tree/interface").OriginalTreeData[]>;
+        };
+        searchNodeMethod: {
+            type: import("vue").PropType<import("../tree/interface").SearchNodeMethodType>;
+            default: (node: any, value: string) => any;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((value: import("../../types").NumberOrString | import("../tree/interface").KeysType | undefined) => any) | undefined;
+        onChange?: ((value: import("../../types").NumberOrString | import("../tree/interface").KeysType | undefined) => any) | undefined;
+        onSearch?: ((value: string) => any) | undefined;
+    }, {
+        disabled: boolean;
+        search: boolean;
+        multiple: boolean;
+        allowClear: boolean;
+        checkStrictly: boolean;
+        minCollapsedNum: number;
+        collapseTagsTooltip: boolean;
+        defaultExpandAll: boolean;
+        searchNodeMethod: import("../tree/interface").SearchNodeMethodType;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        search: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        data: {
+            type: import("vue").PropType<NonNullable<import("../tree/interface").OriginalTreeData | import("../tree/interface").OriginalTreeData[] | undefined>>;
+            required: true;
+        };
+        size: {
+            type: import("vue").PropType<import("./interface").TreeSelectSize>;
+        };
+        multiple: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        load: {
+            type: import("vue").PropType<import("../tree/interface").LoadFunction>;
+        };
+        modelValue: {
+            type: import("vue").PropType<import("../../types").NumberOrString | import("../tree/interface").KeysType | undefined>;
+            required: true;
+        };
+        teleportProps: {
+            type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+        };
+        contentClass: {
+            type: import("vue").PropType<string | object | (string | object)[]>;
+        };
+        contentStyle: {
+            type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+        };
+        allowClear: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        placeholder: {
+            type: import("vue").PropType<string>;
+        };
+        replaceFields: {
+            type: import("vue").PropType<Partial<import("../tree/interface").ReplaceFieldsOptions>>;
+        };
+        lazy: {
+            type: import("vue").PropType<boolean>;
+        };
+        checkStrictly: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        minCollapsedNum: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        collapseTagsTooltip: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        defaultExpandAll: {
+            type: import("vue").PropType<boolean>;
+            default: undefined;
+        };
+        tailNodeIcon: {
+            type: import("vue").PropType<string>;
+        };
+        cacheData: {
+            type: import("vue").PropType<import("../tree/interface").OriginalTreeData[]>;
+        };
+        searchNodeMethod: {
+            type: import("vue").PropType<import("../tree/interface").SearchNodeMethodType>;
+            default: (node: any, value: string) => any;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((value: import("../../types").NumberOrString | import("../tree/interface").KeysType | undefined) => any) | undefined;
+        onChange?: ((value: import("../../types").NumberOrString | import("../tree/interface").KeysType | undefined) => any) | undefined;
+        onSearch?: ((value: string) => any) | undefined;
+    }, {}, {}, {}, {}, {
+        disabled: boolean;
+        search: boolean;
+        multiple: boolean;
+        allowClear: boolean;
+        checkStrictly: boolean;
+        minCollapsedNum: number;
+        collapseTagsTooltip: boolean;
+        defaultExpandAll: boolean;
+        searchNodeMethod: import("../tree/interface").SearchNodeMethodType;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    disabled: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    search: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    data: {
+        type: import("vue").PropType<NonNullable<import("../tree/interface").OriginalTreeData | import("../tree/interface").OriginalTreeData[] | undefined>>;
+        required: true;
+    };
+    size: {
+        type: import("vue").PropType<import("./interface").TreeSelectSize>;
+    };
+    multiple: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    load: {
+        type: import("vue").PropType<import("../tree/interface").LoadFunction>;
+    };
+    modelValue: {
+        type: import("vue").PropType<import("../../types").NumberOrString | import("../tree/interface").KeysType | undefined>;
+        required: true;
+    };
+    teleportProps: {
+        type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+    };
+    contentClass: {
+        type: import("vue").PropType<string | object | (string | object)[]>;
+    };
+    contentStyle: {
+        type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+    };
+    allowClear: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    placeholder: {
+        type: import("vue").PropType<string>;
+    };
+    replaceFields: {
+        type: import("vue").PropType<Partial<import("../tree/interface").ReplaceFieldsOptions>>;
+    };
+    lazy: {
+        type: import("vue").PropType<boolean>;
+    };
+    checkStrictly: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    minCollapsedNum: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    collapseTagsTooltip: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    defaultExpandAll: {
+        type: import("vue").PropType<boolean>;
+        default: undefined;
+    };
+    tailNodeIcon: {
+        type: import("vue").PropType<string>;
+    };
+    cacheData: {
+        type: import("vue").PropType<import("../tree/interface").OriginalTreeData[]>;
+    };
+    searchNodeMethod: {
+        type: import("vue").PropType<import("../tree/interface").SearchNodeMethodType>;
+        default: (node: any, value: string) => any;
+    };
+}>> & {
+    "onUpdate:modelValue"?: ((value: import("../../types").NumberOrString | import("../tree/interface").KeysType | undefined) => any) | undefined;
+    onChange?: ((value: import("../../types").NumberOrString | import("../tree/interface").KeysType | undefined) => any) | undefined;
+    onSearch?: ((value: string) => any) | undefined;
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+    "update:modelValue": (value: import("../../types").NumberOrString | import("../tree/interface").KeysType | undefined) => void;
+    change: (value: import("../../types").NumberOrString | import("../tree/interface").KeysType | undefined) => void;
+    search: (value: string) => void;
+}, string, {
+    disabled: boolean;
+    search: boolean;
+    multiple: boolean;
+    allowClear: boolean;
+    checkStrictly: boolean;
+    minCollapsedNum: number;
+    collapseTagsTooltip: boolean;
+    defaultExpandAll: boolean;
+    searchNodeMethod: import("../tree/interface").SearchNodeMethodType;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & import("vue").Plugin<any[]>;
+export default component;

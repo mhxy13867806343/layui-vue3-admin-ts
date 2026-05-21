@@ -1,0 +1,7 @@
+import o from "./index3.js";
+/* empty css       */
+import r from "../_virtual/_plugin-vue_export-helper.js";
+const m = r(o, [["__scopeId", "data-v-abf2081f"]]);
+export {
+  m as default
+};

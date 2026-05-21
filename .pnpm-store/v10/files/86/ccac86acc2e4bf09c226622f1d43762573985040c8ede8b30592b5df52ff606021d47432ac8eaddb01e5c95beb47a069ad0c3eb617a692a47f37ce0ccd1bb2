@@ -1,0 +1,4 @@
+import o from "./Year.js";
+export {
+  o as default
+};

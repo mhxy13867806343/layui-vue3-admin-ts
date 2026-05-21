@@ -1,0 +1,131 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        placement: {
+            type: import("vue").PropType<import("@floating-ui/utils").Placement>;
+            default: string;
+        };
+        trigger: {
+            type: import("vue").PropType<import("@layui/component/component/popper").PopperTrigger | import("@layui/component/component/popper").PopperTrigger[]>;
+            default: () => string[];
+        };
+        teleportProps: {
+            type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+            default: () => {
+                disabled: boolean;
+            };
+        };
+        contentOffset: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+    }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        placement: {
+            type: import("vue").PropType<import("@floating-ui/utils").Placement>;
+            default: string;
+        };
+        trigger: {
+            type: import("vue").PropType<import("@layui/component/component/popper").PopperTrigger | import("@layui/component/component/popper").PopperTrigger[]>;
+            default: () => string[];
+        };
+        teleportProps: {
+            type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+            default: () => {
+                disabled: boolean;
+            };
+        };
+        contentOffset: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+    }>>, {
+        disabled: boolean;
+        placement: import("@floating-ui/utils").Placement;
+        trigger: import("@layui/component/component/popper").PopperTrigger | import("@layui/component/component/popper").PopperTrigger[];
+        teleportProps: Partial<import("vue").TeleportProps>;
+        contentOffset: number;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        placement: {
+            type: import("vue").PropType<import("@floating-ui/utils").Placement>;
+            default: string;
+        };
+        trigger: {
+            type: import("vue").PropType<import("@layui/component/component/popper").PopperTrigger | import("@layui/component/component/popper").PopperTrigger[]>;
+            default: () => string[];
+        };
+        teleportProps: {
+            type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+            default: () => {
+                disabled: boolean;
+            };
+        };
+        contentOffset: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+    }>>, {}, {}, {}, {}, {
+        disabled: boolean;
+        placement: import("@floating-ui/utils").Placement;
+        trigger: import("@layui/component/component/popper").PopperTrigger | import("@layui/component/component/popper").PopperTrigger[];
+        teleportProps: Partial<import("vue").TeleportProps>;
+        contentOffset: number;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    disabled: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    placement: {
+        type: import("vue").PropType<import("@floating-ui/utils").Placement>;
+        default: string;
+    };
+    trigger: {
+        type: import("vue").PropType<import("@layui/component/component/popper").PopperTrigger | import("@layui/component/component/popper").PopperTrigger[]>;
+        default: () => string[];
+    };
+    teleportProps: {
+        type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+        default: () => {
+            disabled: boolean;
+        };
+    };
+    contentOffset: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+}>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {
+    disabled: boolean;
+    placement: import("@floating-ui/utils").Placement;
+    trigger: import("@layui/component/component/popper").PopperTrigger | import("@layui/component/component/popper").PopperTrigger[];
+    teleportProps: Partial<import("vue").TeleportProps>;
+    contentOffset: number;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        prefix?(_: {}): any;
+        default?(_: {}): any;
+        suffix?(_: {}): any;
+        content?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

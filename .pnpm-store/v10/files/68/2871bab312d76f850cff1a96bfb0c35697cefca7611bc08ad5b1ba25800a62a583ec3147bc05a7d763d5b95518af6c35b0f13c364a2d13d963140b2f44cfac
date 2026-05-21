@@ -1,0 +1,2 @@
+import type { CascaderPanelProps, tCascaderPanel } from "./interface";
+export default function useCascaderPanel(props: CascaderPanelProps): tCascaderPanel;

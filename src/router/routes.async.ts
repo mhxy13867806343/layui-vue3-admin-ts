@@ -147,6 +147,18 @@ export const asyncRoutes: RouteRecordRaw[] = [
             component: () => import('@/views/example/advanced/visualization.vue'),
             meta: { title: '可视化图形' },
           },
+          {
+            path: 'advanced/threejs',
+            name: 'ExampleThreejs',
+            component: () => import('@/views/example/advanced/threejs.vue'),
+            meta: { title: 'Three.js 3D' },
+          },
+          {
+            path: 'advanced/print',
+            name: 'ExamplePrint',
+            component: () => import('@/views/example/advanced/print.vue'),
+            meta: { title: '打印' },
+          },
         ],
       },
 

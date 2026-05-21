@@ -1,0 +1,13 @@
+import { defineComponent as b, useSlots as h, computed as r, openBlock as n, createElementBlock as l, normalizeClass as i, normalizeStyle as a, renderSlot as y, createCommentVNode as p } from "vue";
+/* empty css           */
+const v = b({ name: "LayLine", __name: "index", props: { direction: { default: "horizontal" }, contentPosition: { default: "center" }, borderWidth: { default: "1px" }, borderStyle: { default: "solid" }, offset: { default: "25px" }, theme: {}, margin: { default: "8px" } }, setup(d) {
+  const e = d, s = h(), o = ["red", "orange", "green", "cyan", "blue", "black", "gray"].includes(e.theme ?? ""), u = r(() => [`layui-line-${e.direction}`, { [`layui-border-${e.theme}`]: o, "layui-line-with-text": !!s.default }]), f = r(() => e.direction === "horizontal" ? { "border-bottom-color": o ? void 0 : e.theme, "border-bottom-width": e.borderWidth, "border-bottom-style": e.borderStyle, margin: `${e.margin} 0`, "border-right": "none", "border-left": "none", "border-top": "none" } : { "border-left-color": o ? void 0 : e.theme, "border-left-width": e.borderWidth, "border-left-style": e.borderStyle, margin: `0 ${e.margin}`, "border-bottom": "none", "border-right": "none", "border-top": "none" }), m = r(() => ({ "--layui-line-text-offset": e.contentPosition != "center" ? e.offset : "50%", transform: c() }));
+  function c() {
+    if (e.offset.includes("%"))
+      return e.contentPosition === "right" ? "translate(50%, -50%)" : "translate(-50%, -50%)";
+  }
+  return (t, g) => (n(), l("div", { class: i(u.value), style: a(f.value) }, [t.$slots.default && t.direction === "horizontal" ? (n(), l("span", { key: 0, class: i([`layui-line-text layui-line-text-${t.contentPosition}`]), style: a(m.value) }, [y(t.$slots, "default")], 6)) : p("", !0)], 6));
+} });
+export {
+  v as default
+};

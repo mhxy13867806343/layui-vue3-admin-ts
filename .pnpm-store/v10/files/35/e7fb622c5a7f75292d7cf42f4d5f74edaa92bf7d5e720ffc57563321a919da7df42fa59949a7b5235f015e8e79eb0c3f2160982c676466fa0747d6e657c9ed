@@ -1,0 +1,56 @@
+import { defineComponent as b, onMounted as B, provide as E, reactive as x, toRefs as F, openBlock as P, createElementBlock as k, normalizeClass as q, renderSlot as A, nextTick as C } from "vue";
+/* empty css           */
+const j = b({ name: "LayForm", __name: "index", props: { model: { default: function() {
+  return {};
+} }, required: { type: Boolean }, rules: {}, size: {}, mode: {}, pane: { type: Boolean, default: !1 }, initValidate: { type: Boolean, default: !1 }, useCN: { type: Boolean, default: !0 }, labelPosition: { default: "right" }, labelWidth: {}, inlineWidth: {}, requiredIcons: { default: "" }, requiredErrorMessage: {}, validateMessage: {}, isLabelTooltip: { type: Boolean, default: !1 }, tooltipProps: {} }, emits: ["submit"], setup(m, { expose: y, emit: h }) {
+  const n = m, a = [], r = {}, g = h;
+  B(() => {
+    var o;
+    n.initValidate && ((o = u()) == null || o.catch((e) => {
+    }));
+  });
+  const v = function(o) {
+    o.preventDefault();
+    let e = !1;
+    return u((t, l, s) => {
+      e = t, g("submit", t, l, s);
+    }), e;
+  }, u = async function(o, e) {
+    let t = a;
+    typeof o == "function" ? e = o : (typeof o == "string" || Array.isArray(o) && o.length > 0) && (t = [], (o ? [].concat(o) : []).forEach((i) => r[i] && t.push(r[i])));
+    let l = [];
+    for (const i of t) {
+      const c = await i.validate();
+      l = l.concat(c == null ? void 0 : c.errors).filter(Boolean);
+    }
+    const s = l.length === 0;
+    return typeof e == "function" ? (s ? e(!0, n.model, null) : e(!1, n.model, l), null) : new Promise((i, c) => {
+      const d = { isValidate: s, model: n.model, errors: s ? null : l };
+      d.isValidate ? i(d) : c(d);
+    });
+  }, p = function(o) {
+    const e = o ? [].concat(o) : [];
+    e.length === 0 ? a.forEach((t) => t.clearValidate()) : e.forEach((t) => r[t] && r[t].clearValidate());
+  };
+  function f(o, e) {
+    const t = o.replace(/\[(\d+)\]/g, ".$1").split("."), l = t.shift();
+    if (l !== void 0)
+      return e == null || typeof e != "object" ? null : t.length === 0 ? (e[l] instanceof Array ? e[l] = [] : e[l] = null, e) : (e[l] = f(t.join("."), e[l]), e);
+  }
+  const V = (o) => {
+    for (var e = 0; e < a.length; e++)
+      a[e].prop != null && f(a[e].prop, o);
+  };
+  return y({ validate: u, clearValidate: p, reset: function() {
+    V(n.model), C(() => p());
+  } }), E("LayForm", x({ formItems: a, addField: function(o) {
+    a.push(o), r[o.prop] = o;
+  }, removeField: function(o) {
+    for (var e = 0; e < a.length; e++)
+      a[e].prop == o.prop && a.splice(e, 1);
+    o.prop != null && Reflect.deleteProperty(r, o.prop);
+  }, clearValidate: p, validate: u, ...F(n) })), (o, e) => (P(), k("form", { class: q(["layui-form", { "layui-form-pane": o.pane }]), onsubmit: v }, [A(o.$slots, "default")], 2));
+} });
+export {
+  j as default
+};

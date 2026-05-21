@@ -1,0 +1,20 @@
+import type { InjectionKey, Slots } from "vue";
+import type { UseTreeReturn } from "./hooks/useTree";
+import type { TreeEmits } from "./interface";
+export declare const treeReplaceFields: {
+    id: string;
+    title: string;
+    parent: string;
+    checked: string;
+    children: string;
+    disabled: string;
+    expanded: string;
+    leaf: string;
+};
+interface LayTreeContextType {
+    treeEmits: TreeEmits;
+    treeSlots: Slots;
+    useTreeData: UseTreeReturn;
+}
+export declare const LAY_TREE_CONTEXT: InjectionKey<LayTreeContextType>;
+export {};

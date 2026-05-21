@@ -1,0 +1,578 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        page: {
+            type: import("vue").PropType<import("./typing").TablePageProps>;
+        };
+        size: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        resize: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        loading: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        height: {
+            type: import("vue").PropType<string | number>;
+        };
+        id: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        skin: {
+            type: import("vue").PropType<string>;
+        };
+        dataSource: {
+            type: import("vue").PropType<import("../../types").Recordable[]>;
+            required: true;
+            default: () => never[];
+        };
+        maxHeight: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        columns: {
+            type: import("vue").PropType<import("./typing").TableColumn[]>;
+            required: true;
+        };
+        selectedKey: {
+            type: import("vue").PropType<string | number>;
+            default: string;
+        };
+        emptyDescription: {
+            type: import("vue").PropType<string>;
+        };
+        defaultToolbar: {
+            type: import("vue").PropType<boolean | import("./typing").TableDefaultToolbar[]>;
+            default: boolean;
+        };
+        selectedKeys: {
+            type: import("vue").PropType<(string | number)[]>;
+            default: () => never[];
+        };
+        indentSize: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        childrenColumnName: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        even: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        expandIndex: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        rowClassName: {
+            type: import("vue").PropType<string | Function>;
+            default: string;
+        };
+        cellClassName: {
+            type: import("vue").PropType<string | Function>;
+            default: string;
+        };
+        rowStyle: {
+            type: import("vue").PropType<string | Function>;
+            default: string;
+        };
+        cellStyle: {
+            type: import("vue").PropType<string | Function>;
+            default: string;
+        };
+        spanMethod: {
+            type: import("vue").PropType<Function>;
+            default: () => void;
+        };
+        defaultExpandAll: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        expandKeys: {
+            type: import("vue").PropType<(string | number)[]>;
+            default: () => never[];
+        };
+        getCheckboxProps: {
+            type: import("vue").PropType<Function>;
+            default: () => void;
+        };
+        getRadioProps: {
+            type: import("vue").PropType<Function>;
+            default: () => void;
+        };
+        autoColsWidth: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        initSort: {
+            type: import("vue").PropType<import("./typing").initSort>;
+            default: () => {
+                field: string;
+                type: string;
+            };
+        };
+    }>> & {
+        [x: `on${Capitalize<string>}`]: ((...args: any[]) => any) | undefined;
+    }, {
+        getCheckData: () => import("../../types").Recordable[];
+    }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, string[], import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        page: {
+            type: import("vue").PropType<import("./typing").TablePageProps>;
+        };
+        size: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        resize: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        loading: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        height: {
+            type: import("vue").PropType<string | number>;
+        };
+        id: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        skin: {
+            type: import("vue").PropType<string>;
+        };
+        dataSource: {
+            type: import("vue").PropType<import("../../types").Recordable[]>;
+            required: true;
+            default: () => never[];
+        };
+        maxHeight: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        columns: {
+            type: import("vue").PropType<import("./typing").TableColumn[]>;
+            required: true;
+        };
+        selectedKey: {
+            type: import("vue").PropType<string | number>;
+            default: string;
+        };
+        emptyDescription: {
+            type: import("vue").PropType<string>;
+        };
+        defaultToolbar: {
+            type: import("vue").PropType<boolean | import("./typing").TableDefaultToolbar[]>;
+            default: boolean;
+        };
+        selectedKeys: {
+            type: import("vue").PropType<(string | number)[]>;
+            default: () => never[];
+        };
+        indentSize: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        childrenColumnName: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        even: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        expandIndex: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        rowClassName: {
+            type: import("vue").PropType<string | Function>;
+            default: string;
+        };
+        cellClassName: {
+            type: import("vue").PropType<string | Function>;
+            default: string;
+        };
+        rowStyle: {
+            type: import("vue").PropType<string | Function>;
+            default: string;
+        };
+        cellStyle: {
+            type: import("vue").PropType<string | Function>;
+            default: string;
+        };
+        spanMethod: {
+            type: import("vue").PropType<Function>;
+            default: () => void;
+        };
+        defaultExpandAll: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        expandKeys: {
+            type: import("vue").PropType<(string | number)[]>;
+            default: () => never[];
+        };
+        getCheckboxProps: {
+            type: import("vue").PropType<Function>;
+            default: () => void;
+        };
+        getRadioProps: {
+            type: import("vue").PropType<Function>;
+            default: () => void;
+        };
+        autoColsWidth: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        initSort: {
+            type: import("vue").PropType<import("./typing").initSort>;
+            default: () => {
+                field: string;
+                type: string;
+            };
+        };
+    }>> & {
+        [x: `on${Capitalize<string>}`]: ((...args: any[]) => any) | undefined;
+    }, {
+        size: string;
+        resize: boolean;
+        loading: boolean;
+        id: string;
+        dataSource: import("../../types").Recordable[];
+        maxHeight: string;
+        selectedKey: string | number;
+        defaultToolbar: boolean | import("./typing").TableDefaultToolbar[];
+        selectedKeys: (string | number)[];
+        indentSize: number;
+        childrenColumnName: string;
+        even: boolean;
+        expandIndex: number;
+        rowClassName: string | Function;
+        cellClassName: string | Function;
+        rowStyle: string | Function;
+        cellStyle: string | Function;
+        spanMethod: Function;
+        defaultExpandAll: boolean;
+        expandKeys: (string | number)[];
+        getCheckboxProps: Function;
+        getRadioProps: Function;
+        autoColsWidth: boolean;
+        initSort: import("./typing").initSort;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        page: {
+            type: import("vue").PropType<import("./typing").TablePageProps>;
+        };
+        size: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        resize: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        loading: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        height: {
+            type: import("vue").PropType<string | number>;
+        };
+        id: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        skin: {
+            type: import("vue").PropType<string>;
+        };
+        dataSource: {
+            type: import("vue").PropType<import("../../types").Recordable[]>;
+            required: true;
+            default: () => never[];
+        };
+        maxHeight: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        columns: {
+            type: import("vue").PropType<import("./typing").TableColumn[]>;
+            required: true;
+        };
+        selectedKey: {
+            type: import("vue").PropType<string | number>;
+            default: string;
+        };
+        emptyDescription: {
+            type: import("vue").PropType<string>;
+        };
+        defaultToolbar: {
+            type: import("vue").PropType<boolean | import("./typing").TableDefaultToolbar[]>;
+            default: boolean;
+        };
+        selectedKeys: {
+            type: import("vue").PropType<(string | number)[]>;
+            default: () => never[];
+        };
+        indentSize: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        childrenColumnName: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        even: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        expandIndex: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        rowClassName: {
+            type: import("vue").PropType<string | Function>;
+            default: string;
+        };
+        cellClassName: {
+            type: import("vue").PropType<string | Function>;
+            default: string;
+        };
+        rowStyle: {
+            type: import("vue").PropType<string | Function>;
+            default: string;
+        };
+        cellStyle: {
+            type: import("vue").PropType<string | Function>;
+            default: string;
+        };
+        spanMethod: {
+            type: import("vue").PropType<Function>;
+            default: () => void;
+        };
+        defaultExpandAll: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        expandKeys: {
+            type: import("vue").PropType<(string | number)[]>;
+            default: () => never[];
+        };
+        getCheckboxProps: {
+            type: import("vue").PropType<Function>;
+            default: () => void;
+        };
+        getRadioProps: {
+            type: import("vue").PropType<Function>;
+            default: () => void;
+        };
+        autoColsWidth: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        initSort: {
+            type: import("vue").PropType<import("./typing").initSort>;
+            default: () => {
+                field: string;
+                type: string;
+            };
+        };
+    }>> & {
+        [x: `on${Capitalize<string>}`]: ((...args: any[]) => any) | undefined;
+    }, {
+        getCheckData: () => import("../../types").Recordable[];
+    }, {}, {}, {}, {
+        size: string;
+        resize: boolean;
+        loading: boolean;
+        id: string;
+        dataSource: import("../../types").Recordable[];
+        maxHeight: string;
+        selectedKey: string | number;
+        defaultToolbar: boolean | import("./typing").TableDefaultToolbar[];
+        selectedKeys: (string | number)[];
+        indentSize: number;
+        childrenColumnName: string;
+        even: boolean;
+        expandIndex: number;
+        rowClassName: string | Function;
+        cellClassName: string | Function;
+        rowStyle: string | Function;
+        cellStyle: string | Function;
+        spanMethod: Function;
+        defaultExpandAll: boolean;
+        expandKeys: (string | number)[];
+        getCheckboxProps: Function;
+        getRadioProps: Function;
+        autoColsWidth: boolean;
+        initSort: import("./typing").initSort;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    page: {
+        type: import("vue").PropType<import("./typing").TablePageProps>;
+    };
+    size: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    resize: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    loading: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    height: {
+        type: import("vue").PropType<string | number>;
+    };
+    id: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    skin: {
+        type: import("vue").PropType<string>;
+    };
+    dataSource: {
+        type: import("vue").PropType<import("../../types").Recordable[]>;
+        required: true;
+        default: () => never[];
+    };
+    maxHeight: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    columns: {
+        type: import("vue").PropType<import("./typing").TableColumn[]>;
+        required: true;
+    };
+    selectedKey: {
+        type: import("vue").PropType<string | number>;
+        default: string;
+    };
+    emptyDescription: {
+        type: import("vue").PropType<string>;
+    };
+    defaultToolbar: {
+        type: import("vue").PropType<boolean | import("./typing").TableDefaultToolbar[]>;
+        default: boolean;
+    };
+    selectedKeys: {
+        type: import("vue").PropType<(string | number)[]>;
+        default: () => never[];
+    };
+    indentSize: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    childrenColumnName: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    even: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    expandIndex: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    rowClassName: {
+        type: import("vue").PropType<string | Function>;
+        default: string;
+    };
+    cellClassName: {
+        type: import("vue").PropType<string | Function>;
+        default: string;
+    };
+    rowStyle: {
+        type: import("vue").PropType<string | Function>;
+        default: string;
+    };
+    cellStyle: {
+        type: import("vue").PropType<string | Function>;
+        default: string;
+    };
+    spanMethod: {
+        type: import("vue").PropType<Function>;
+        default: () => void;
+    };
+    defaultExpandAll: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    expandKeys: {
+        type: import("vue").PropType<(string | number)[]>;
+        default: () => never[];
+    };
+    getCheckboxProps: {
+        type: import("vue").PropType<Function>;
+        default: () => void;
+    };
+    getRadioProps: {
+        type: import("vue").PropType<Function>;
+        default: () => void;
+    };
+    autoColsWidth: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    initSort: {
+        type: import("vue").PropType<import("./typing").initSort>;
+        default: () => {
+            field: string;
+            type: string;
+        };
+    };
+}>> & {
+    [x: `on${Capitalize<string>}`]: ((...args: any[]) => any) | undefined;
+}, {
+    getCheckData: () => import("../../types").Recordable[];
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, string[], string, {
+    size: string;
+    resize: boolean;
+    loading: boolean;
+    id: string;
+    dataSource: import("../../types").Recordable[];
+    maxHeight: string;
+    selectedKey: string | number;
+    defaultToolbar: boolean | import("./typing").TableDefaultToolbar[];
+    selectedKeys: (string | number)[];
+    indentSize: number;
+    childrenColumnName: string;
+    even: boolean;
+    expandIndex: number;
+    rowClassName: string | Function;
+    cellClassName: string | Function;
+    rowStyle: string | Function;
+    cellStyle: string | Function;
+    spanMethod: Function;
+    defaultExpandAll: boolean;
+    expandKeys: (string | number)[];
+    getCheckboxProps: Function;
+    getRadioProps: Function;
+    autoColsWidth: boolean;
+    initSort: import("./typing").initSort;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        header?(_: {}): any;
+        empty?(_: {}): any;
+        footer?(_: {}): any;
+        page?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

@@ -1,0 +1,9 @@
+import { defineComponent as l, computed as t, openBlock as n, createElementBlock as d, normalizeClass as r, renderSlot as p } from "vue";
+/* empty css           */
+const c = l({ name: "LayPanel", __name: "index", props: { shadow: { default: "always" } }, setup(e) {
+  const a = e, s = t(() => ({ shadow: a.shadow === "always", "is-hover-shadow": a.shadow === "hover" }));
+  return (o, m) => (n(), d("div", { class: r(["layui-panel", s.value]) }, [p(o.$slots, "default")], 2));
+} });
+export {
+  c as default
+};

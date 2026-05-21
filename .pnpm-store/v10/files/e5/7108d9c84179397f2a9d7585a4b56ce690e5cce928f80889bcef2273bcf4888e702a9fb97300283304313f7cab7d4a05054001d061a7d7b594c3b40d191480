@@ -1,0 +1,218 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        name: {
+            type: import("vue").PropType<string>;
+        };
+        disabled: {
+            type: import("vue").PropType<boolean>;
+        };
+        modelValue: {
+            type: import("vue").PropType<string>;
+        };
+        allowClear: {
+            type: import("vue").PropType<boolean>;
+        };
+        placeholder: {
+            type: import("vue").PropType<string>;
+        };
+        readonly: {
+            type: import("vue").PropType<boolean>;
+        };
+        maxlength: {
+            type: import("vue").PropType<number>;
+        };
+        rows: {
+            type: import("vue").PropType<number>;
+        };
+        showCount: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        cols: {
+            type: import("vue").PropType<number>;
+        };
+        autosize: {
+            type: import("vue").PropType<boolean | import("./interface").TextareaAutosizeHeight | import("./interface").TextareaAutosizeRow>;
+            default: boolean;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((value: string) => any) | undefined;
+        onInput?: ((value: string) => any) | undefined;
+        onClear?: (() => any) | undefined;
+        onBlur?: ((eventParam: Event) => any) | undefined;
+        onChange?: ((value: string) => any) | undefined;
+        onFocus?: ((eventParam: Event) => any) | undefined;
+    }, {
+        focus: () => void;
+        blur: () => void;
+    }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+        blur: (eventParam: Event) => void;
+        input: (value: string) => void;
+        "update:modelValue": (value: string) => void;
+        change: (value: string) => void;
+        focus: (eventParam: Event) => void;
+        clear: () => void;
+    }, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        name: {
+            type: import("vue").PropType<string>;
+        };
+        disabled: {
+            type: import("vue").PropType<boolean>;
+        };
+        modelValue: {
+            type: import("vue").PropType<string>;
+        };
+        allowClear: {
+            type: import("vue").PropType<boolean>;
+        };
+        placeholder: {
+            type: import("vue").PropType<string>;
+        };
+        readonly: {
+            type: import("vue").PropType<boolean>;
+        };
+        maxlength: {
+            type: import("vue").PropType<number>;
+        };
+        rows: {
+            type: import("vue").PropType<number>;
+        };
+        showCount: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        cols: {
+            type: import("vue").PropType<number>;
+        };
+        autosize: {
+            type: import("vue").PropType<boolean | import("./interface").TextareaAutosizeHeight | import("./interface").TextareaAutosizeRow>;
+            default: boolean;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((value: string) => any) | undefined;
+        onInput?: ((value: string) => any) | undefined;
+        onClear?: (() => any) | undefined;
+        onBlur?: ((eventParam: Event) => any) | undefined;
+        onChange?: ((value: string) => any) | undefined;
+        onFocus?: ((eventParam: Event) => any) | undefined;
+    }, {
+        showCount: boolean;
+        autosize: boolean | import("./interface").TextareaAutosizeHeight | import("./interface").TextareaAutosizeRow;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        name: {
+            type: import("vue").PropType<string>;
+        };
+        disabled: {
+            type: import("vue").PropType<boolean>;
+        };
+        modelValue: {
+            type: import("vue").PropType<string>;
+        };
+        allowClear: {
+            type: import("vue").PropType<boolean>;
+        };
+        placeholder: {
+            type: import("vue").PropType<string>;
+        };
+        readonly: {
+            type: import("vue").PropType<boolean>;
+        };
+        maxlength: {
+            type: import("vue").PropType<number>;
+        };
+        rows: {
+            type: import("vue").PropType<number>;
+        };
+        showCount: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        cols: {
+            type: import("vue").PropType<number>;
+        };
+        autosize: {
+            type: import("vue").PropType<boolean | import("./interface").TextareaAutosizeHeight | import("./interface").TextareaAutosizeRow>;
+            default: boolean;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((value: string) => any) | undefined;
+        onInput?: ((value: string) => any) | undefined;
+        onClear?: (() => any) | undefined;
+        onBlur?: ((eventParam: Event) => any) | undefined;
+        onChange?: ((value: string) => any) | undefined;
+        onFocus?: ((eventParam: Event) => any) | undefined;
+    }, {
+        focus: () => void;
+        blur: () => void;
+    }, {}, {}, {}, {
+        showCount: boolean;
+        autosize: boolean | import("./interface").TextareaAutosizeHeight | import("./interface").TextareaAutosizeRow;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    name: {
+        type: import("vue").PropType<string>;
+    };
+    disabled: {
+        type: import("vue").PropType<boolean>;
+    };
+    modelValue: {
+        type: import("vue").PropType<string>;
+    };
+    allowClear: {
+        type: import("vue").PropType<boolean>;
+    };
+    placeholder: {
+        type: import("vue").PropType<string>;
+    };
+    readonly: {
+        type: import("vue").PropType<boolean>;
+    };
+    maxlength: {
+        type: import("vue").PropType<number>;
+    };
+    rows: {
+        type: import("vue").PropType<number>;
+    };
+    showCount: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    cols: {
+        type: import("vue").PropType<number>;
+    };
+    autosize: {
+        type: import("vue").PropType<boolean | import("./interface").TextareaAutosizeHeight | import("./interface").TextareaAutosizeRow>;
+        default: boolean;
+    };
+}>> & {
+    "onUpdate:modelValue"?: ((value: string) => any) | undefined;
+    onInput?: ((value: string) => any) | undefined;
+    onClear?: (() => any) | undefined;
+    onBlur?: ((eventParam: Event) => any) | undefined;
+    onChange?: ((value: string) => any) | undefined;
+    onFocus?: ((eventParam: Event) => any) | undefined;
+}, {
+    focus: () => void;
+    blur: () => void;
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+    blur: (eventParam: Event) => void;
+    input: (value: string) => void;
+    "update:modelValue": (value: string) => void;
+    change: (value: string) => void;
+    focus: (eventParam: Event) => void;
+    clear: () => void;
+}, string, {
+    showCount: boolean;
+    autosize: boolean | import("./interface").TextareaAutosizeHeight | import("./interface").TextareaAutosizeRow;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & import("vue").Plugin<any[]>;
+export default component;

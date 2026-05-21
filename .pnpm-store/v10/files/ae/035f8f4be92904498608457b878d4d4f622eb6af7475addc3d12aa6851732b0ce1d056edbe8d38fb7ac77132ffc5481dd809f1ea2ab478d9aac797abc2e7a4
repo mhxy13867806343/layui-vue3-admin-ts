@@ -1,0 +1,6 @@
+import { inject as a } from "vue";
+const e = Symbol("layui-page"), s = () => a(e, {});
+export {
+  e as LAYUI_PAGE_KEY,
+  s as usePage
+};

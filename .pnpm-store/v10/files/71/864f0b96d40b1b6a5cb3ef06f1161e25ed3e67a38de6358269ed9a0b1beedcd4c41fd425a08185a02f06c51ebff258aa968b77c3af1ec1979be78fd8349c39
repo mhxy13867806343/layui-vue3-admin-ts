@@ -1,0 +1,30 @@
+import { defineComponent as _, inject as j, ref as k, computed as C, watch as E, openBlock as d, createElementBlock as m, createElementVNode as o, renderSlot as b, createVNode as p, unref as s, toDisplayString as D, Fragment as N, renderList as Y, normalizeClass as $, withCtx as F, createTextVNode as L } from "vue";
+import w from "../../../icon/index.js";
+import l from "dayjs";
+import { DATE_PICKER_CONTEXT as M } from "../../interface.js";
+import { getYears as O } from "../../util.js";
+import z from "./DatePickerRender.js";
+const B = { class: "layui-laydate-main layui-laydate-main-year" }, R = { class: "layui-laydate-header" }, S = { class: "laydate-set-ym" }, q = { class: "laydate-time-text" }, A = { class: "layui-laydate-content", style: { height: "220px", "overflow-y": "auto" } }, I = { class: "layui-laydate-list laydate-year-list" }, K = ["onClick", "onMouseenter"], W = _({ name: "YearPanel", __name: "Year", props: { modelValue: {}, showDate: {}, dateType: {}, classes: { type: Function } }, emits: ["pick", "hover-cell"], setup(P, { emit: T }) {
+  const v = P, f = T, t = j(M), u = k(), i = k(l()), y = C(() => O(i.value.year(), t.yearPage)), h = C(() => [y.value.at(0), y.value.at(-1)]);
+  function c(e) {
+    return t.disabledDate ? t.disabledDate(i.value.year(e).toDate()) : !!(t.min && e < l(t.min).year()) || !!(t.max && e > l(t.max).year());
+  }
+  function x(e) {
+    i.value = i.value.year(i.value.year() + e);
+  }
+  return E([() => v.modelValue, () => v.showDate], ([e, n]) => {
+    u.value = e ? e.year() : null, i.value = e || n;
+  }, { immediate: !0 }), (e, n) => (d(), m("div", B, [o("div", R, [b(e.$slots, "header", { yearList: h.value }, () => [p(s(w), { type: "layui-icon-prev", onClick: n[0] || (n[0] = (a) => x(-s(t).yearPage)) }), o("div", S, [o("span", q, D(h.value.join(" - ")), 1)]), p(s(w), { type: "layui-icon-next", onClick: n[1] || (n[1] = (a) => x(s(t).yearPage)) })])]), o("div", A, [o("ul", I, [(d(!0), m(N, null, Y(y.value, (a) => {
+    var g;
+    return d(), m("li", { key: a, class: $({ "layui-this": u.value === a, "layui-laydate-current": a === s(l)().year(), "layui-disabled": c(a), ...(g = e.classes) == null ? void 0 : g.call(e, s(l)().year(a)) }), onClick: (V) => function(r) {
+      if (c(r))
+        return !0;
+      u.value = r, f("pick", t.range ? l().year(r) : r);
+    }(a), onMouseenter: (V) => function(r) {
+      !c(r) && t.range && f("hover-cell", l().year(r));
+    }(a) }, [p(z, { type: "year", unix: s(l)(`${a}`).valueOf(), dayjs: s(l)(`${a}`) }, { default: F(() => [L(D(a), 1)]), _: 2 }, 1032, ["unix", "dayjs"])], 42, K);
+  }), 128))])])]));
+} });
+export {
+  W as default
+};

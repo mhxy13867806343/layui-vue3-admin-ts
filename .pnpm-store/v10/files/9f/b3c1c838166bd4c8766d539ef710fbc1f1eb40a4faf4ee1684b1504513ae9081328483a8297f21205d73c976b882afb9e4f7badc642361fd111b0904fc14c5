@@ -1,0 +1,4 @@
+import r from "./Month.js";
+export {
+  r as default
+};

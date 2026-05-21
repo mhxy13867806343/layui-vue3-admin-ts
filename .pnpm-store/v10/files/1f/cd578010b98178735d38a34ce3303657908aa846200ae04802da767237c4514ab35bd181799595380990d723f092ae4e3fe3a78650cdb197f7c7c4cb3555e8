@@ -1,0 +1,4 @@
+const s = (o) => `layui-${o}`;
+export {
+  s as clsPrefix
+};

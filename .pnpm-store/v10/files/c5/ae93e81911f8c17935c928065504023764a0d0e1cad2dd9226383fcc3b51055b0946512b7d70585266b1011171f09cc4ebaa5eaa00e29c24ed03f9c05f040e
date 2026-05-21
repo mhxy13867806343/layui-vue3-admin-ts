@@ -1,0 +1,56 @@
+import { defineComponent as h, ref as E, computed as p, onMounted as S, onBeforeUnmount as x, renderSlot as z } from "vue";
+/* empty css           */
+const C = h({ name: "LayFullscreen", __name: "index", props: { target: {}, immersive: { type: Boolean, default: !0 }, position: {}, zIndex: {} }, emits: ["fullscreenchange"], setup(w, { emit: k }) {
+  const t = w, c = k, m = [["requestFullscreen", "exitFullscreen", "fullscreenElement", "fullscreenEnabled", "fullscreenchange", "fullscreenerror"], ["webkitRequestFullscreen", "webkitExitFullscreen", "webkitFullscreenElement", "webkitFullscreenEnabled", "webkitfullscreenchange", "webkitfullscreenerror"], ["webkitRequestFullScreen", "webkitCancelFullScreen", "webkitCurrentFullScreenElement", "webkitCancelFullScreen", "webkitfullscreenchange", "webkitfullscreenerror"], ["mozRequestFullScreen", "mozCancelFullScreen", "mozFullScreenElement", "mozFullScreenEnabled", "mozfullscreenchange", "mozfullscreenerror"], ["msRequestFullscreen", "msExitFullscreen", "msFullscreenElement", "msFullscreenEnabled", "MSFullscreenChange", "MSFullscreenError"]], o = document.documentElement;
+  let b = E(t.target || o);
+  const l = E(!1);
+  let a = !1;
+  const g = m[0], u = {};
+  for (const e of m)
+    if (e[1] in document) {
+      for (const [n, y] of e.entries())
+        u[g[n]] = y;
+      a = !0;
+      break;
+    }
+  async function f(e) {
+    if (!a)
+      return;
+    e || (e = r.value || o);
+    let n = null;
+    return t.immersive ? n = Promise.resolve(e[u.requestFullscreen]()) : (v(e, !1), n = Promise.resolve(e == null ? void 0 : e.classList.add("layui-fullscreen"))), await (n == null ? void 0 : n.then(() => (l.value = !0, c("fullscreenchange", l.value), !!document.fullscreenElement)));
+  }
+  async function i(e) {
+    if (!a)
+      return;
+    e || (e = r.value || document);
+    let n = null;
+    if (t.immersive)
+      n = Promise.resolve(document[u.exitFullscreen]());
+    else {
+      if (e instanceof Document)
+        return;
+      v(e, !0), n = Promise.resolve(e == null ? void 0 : e.classList.remove("layui-fullscreen"));
+    }
+    return await (n == null ? void 0 : n.then(() => (l.value = !1, c("fullscreenchange", l.value), !!document.fullscreenElement)));
+  }
+  async function d() {
+    l.value ? await i(r.value) : await f(r.value);
+  }
+  const v = function(e, n = !1) {
+    e.style.position = n ? "" : t.position || "", e.style.zIndex = n ? "" : t.zIndex || "";
+  }, r = p(() => b.value = t.target), s = function(e) {
+    l.value && !document.fullscreenElement && (t.immersive ? (l.value = !1, c("fullscreenchange", l.value)) : e.key === "Escape" && i(r.value));
+  }, F = function(e) {
+    let n = t.immersive && (!r.value || r.value === o);
+    e.key === "F11" && n && (e.preventDefault(), d());
+  };
+  return S(() => {
+    document.addEventListener(u.fullscreenchange, s), document.addEventListener("keydown", s), document.addEventListener("keydown", F);
+  }), x(() => {
+    document.removeEventListener(u.fullscreenchange, s), document.removeEventListener("keydown", s), document.removeEventListener("keydown", F);
+  }), (e, n) => z(e.$slots, "default", { isFullscreen: l.value, enter: f, exit: i, toggle: d });
+} });
+export {
+  C as default
+};

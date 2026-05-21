@@ -1,0 +1,15 @@
+import { defineComponent as y, inject as b, computed as t, openBlock as f, createElementBlock as V, unref as d, createElementVNode as g, createVNode as N, withModifiers as h, withCtx as z, renderSlot as B, createTextVNode as G, toDisplayString as R } from "vue";
+/* empty css           */
+import S from "./index.hooks.js";
+import k from "../button/index2.js";
+const w = ["size"], x = ["value", "name"], D = y({ name: "LayRadioButton", __name: "index", props: { name: {}, size: {}, disabled: { type: Boolean }, modelValue: { type: [String, Boolean, Number] }, value: { type: [String, Boolean, Number] }, label: {} }, emits: ["update:modelValue", "change"], setup(r, { emit: m }) {
+  const a = r, { size: u } = S(a), i = m, e = b("radioGroup", {}), n = t(() => e != null && (e == null ? void 0 : e.name) === "LayRadioGroup"), p = t(() => e.naiveName ? e.naiveName : a.name), o = t({ get: () => n.value ? e.modelValue.value === a.value : a.modelValue === a.value, set(l) {
+    n.value ? e.changeRadioGroup(a.value) : l && (i("change", a.value), i("update:modelValue", a.value));
+  } }), v = function() {
+    s.value || (o.value = !o.value);
+  }, s = t(() => !!a.disabled || !(!e.hasOwnProperty("disabled") || !e.disabled.value)), c = t(() => o.value ? "primary" : "default");
+  return (l, C) => (f(), V("span", { class: "layui-radio-button", size: d(u) }, [g("input", { type: "radio", value: l.value, name: p.value }, null, 8, x), N(k, { size: d(u), type: c.value, disabled: s.value, onClick: h(v, ["stop"]) }, { default: z(() => [B(l.$slots, "default", {}, () => [G(R(l.label), 1)])]), _: 3 }, 8, ["size", "type", "disabled"])], 8, w));
+} });
+export {
+  D as default
+};

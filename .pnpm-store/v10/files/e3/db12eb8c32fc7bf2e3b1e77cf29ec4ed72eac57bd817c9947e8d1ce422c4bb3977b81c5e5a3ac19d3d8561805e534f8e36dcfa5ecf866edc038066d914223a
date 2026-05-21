@@ -1,0 +1,4 @@
+const o = Symbol("LayPopperContent");
+export {
+  o as CONTENT_INJECTION_KEY
+};

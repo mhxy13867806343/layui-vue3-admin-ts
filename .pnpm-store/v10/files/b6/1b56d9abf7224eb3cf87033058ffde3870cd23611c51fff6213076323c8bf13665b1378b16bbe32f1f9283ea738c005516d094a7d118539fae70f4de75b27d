@@ -1,0 +1,10 @@
+import { defineComponent as a, inject as n, openBlock as s, createElementBlock as i, normalizeClass as r, unref as t, renderSlot as l } from "vue";
+import { LAY_TAB_CONTEXT as m } from "../tab/constant.js";
+import { clsPrefix as c } from "../utils/common.js";
+const B = a({ name: "LayTabItem", __name: "index", props: { id: {}, title: { type: [String, Function] }, icon: { type: [String, Function] }, closable: { type: Boolean } }, setup(p) {
+  const { modelValue: o } = n(m);
+  return (e, d) => (s(), i("div", { class: r(["layui-tab-item", { [t(c)("show")]: t(o) === e.id }]) }, [l(e.$slots, "default")], 2));
+} });
+export {
+  B as default
+};

@@ -1,0 +1,37 @@
+import { ref as m, watch as o, reactive as S, computed as r, toRaw as i } from "vue";
+import { arrayEverySame as v, isValueArray as y, loopForEach as f } from "../../utils/arrayUtil.js";
+function b(t, u) {
+  const d = m(t.selectedKey);
+  o(() => t.selectedKey, (e) => {
+    d.value = e;
+  });
+  const l = S(t.selectedKeys), s = r(() => {
+    const e = [], c = (n) => {
+      n.forEach((a) => {
+        e.push(a[t.id]), y(a[t.childrenColumnName]) && c(a[t.childrenColumnName]);
+      });
+    };
+    return c(t.dataSource), e;
+  });
+  o(() => t.selectedKeys, (e) => {
+    l.splice(0, l.length, ...i(e || []));
+  }, { deep: !0 });
+  const h = r(() => s.value.length > 0 && s.value.every((e) => l.includes(e))), p = r(() => s.value.length > 0 && s.value.some((e) => l.includes(e)));
+  return o(l, (e) => {
+    v(e, t.selectedKeys) || u("update:selectedKeys", [...e]);
+  }, { deep: !0 }), { tableSelectedKey: d, toggleSelected: function(e) {
+    d.value = e, u("update:selectedKey", e);
+  }, allMSelected: h, setMAllSelected: function(e) {
+    e ? l.push(...s.value.filter((c) => !l.includes(c))) : l.splice(0, l.length, ...l.filter((c) => !s.value.includes(c))), u("checkbox-all", e ? s.value : []);
+  }, someMSelected: p, tableMSelectedKeys: l, toggleMSelected: function(e, c) {
+    c ? l.push(e[t.id]) : l.splice(l.indexOf(e[t.id]), 1), u("checkbox", c, i(e));
+  }, getAllSelectedDataSource: function() {
+    const e = [.../* @__PURE__ */ new Set([d.value, ...l])], c = [];
+    return f(t.dataSource, t.childrenColumnName, (n) => {
+      e.includes(n[t.id]) && c.push({ ...n });
+    }), c;
+  } };
+}
+export {
+  b as useTableSelected
+};

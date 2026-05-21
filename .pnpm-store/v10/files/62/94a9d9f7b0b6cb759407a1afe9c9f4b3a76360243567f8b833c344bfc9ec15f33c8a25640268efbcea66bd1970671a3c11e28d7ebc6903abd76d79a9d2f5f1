@@ -1,0 +1,6 @@
+import { defineComponent as o, openBlock as a, createElementBlock as t, renderSlot as s } from "vue";
+/* empty css           */
+const d = { class: "layui-body" }, i = o({ name: "LayBody", __name: "index", setup: (n) => (e, l) => (a(), t("div", d, [s(e.$slots, "default")])) });
+export {
+  i as default
+};

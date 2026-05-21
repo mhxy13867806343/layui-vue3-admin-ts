@@ -1,0 +1,179 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+        };
+        type: {
+            type: import("vue").PropType<"normal" | "primary" | "warm" | "danger">;
+        };
+        color: {
+            type: import("vue").PropType<string>;
+        };
+        size: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        closable: {
+            type: import("vue").PropType<boolean>;
+        };
+        bordered: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        shape: {
+            type: import("vue").PropType<import("./interface").TagShape>;
+            default: string;
+        };
+        maxWidth: {
+            type: import("vue").PropType<string>;
+        };
+        variant: {
+            type: import("vue").PropType<import("./interface").TagVariant>;
+            default: string;
+        };
+    }>> & {
+        onClose?: ((...args: any[]) => any) | undefined;
+        onCheck?: ((...args: any[]) => any) | undefined;
+        "onUpdate:checked"?: ((...args: any[]) => any) | undefined;
+    }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("close" | "check" | "update:checked")[], import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+        };
+        type: {
+            type: import("vue").PropType<"normal" | "primary" | "warm" | "danger">;
+        };
+        color: {
+            type: import("vue").PropType<string>;
+        };
+        size: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        closable: {
+            type: import("vue").PropType<boolean>;
+        };
+        bordered: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        shape: {
+            type: import("vue").PropType<import("./interface").TagShape>;
+            default: string;
+        };
+        maxWidth: {
+            type: import("vue").PropType<string>;
+        };
+        variant: {
+            type: import("vue").PropType<import("./interface").TagVariant>;
+            default: string;
+        };
+    }>> & {
+        onClose?: ((...args: any[]) => any) | undefined;
+        onCheck?: ((...args: any[]) => any) | undefined;
+        "onUpdate:checked"?: ((...args: any[]) => any) | undefined;
+    }, {
+        size: string;
+        bordered: boolean;
+        shape: import("./interface").TagShape;
+        variant: import("./interface").TagVariant;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+        };
+        type: {
+            type: import("vue").PropType<"normal" | "primary" | "warm" | "danger">;
+        };
+        color: {
+            type: import("vue").PropType<string>;
+        };
+        size: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        closable: {
+            type: import("vue").PropType<boolean>;
+        };
+        bordered: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        shape: {
+            type: import("vue").PropType<import("./interface").TagShape>;
+            default: string;
+        };
+        maxWidth: {
+            type: import("vue").PropType<string>;
+        };
+        variant: {
+            type: import("vue").PropType<import("./interface").TagVariant>;
+            default: string;
+        };
+    }>> & {
+        onClose?: ((...args: any[]) => any) | undefined;
+        onCheck?: ((...args: any[]) => any) | undefined;
+        "onUpdate:checked"?: ((...args: any[]) => any) | undefined;
+    }, {}, {}, {}, {}, {
+        size: string;
+        bordered: boolean;
+        shape: import("./interface").TagShape;
+        variant: import("./interface").TagVariant;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    disabled: {
+        type: import("vue").PropType<boolean>;
+    };
+    type: {
+        type: import("vue").PropType<"normal" | "primary" | "warm" | "danger">;
+    };
+    color: {
+        type: import("vue").PropType<string>;
+    };
+    size: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    closable: {
+        type: import("vue").PropType<boolean>;
+    };
+    bordered: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    shape: {
+        type: import("vue").PropType<import("./interface").TagShape>;
+        default: string;
+    };
+    maxWidth: {
+        type: import("vue").PropType<string>;
+    };
+    variant: {
+        type: import("vue").PropType<import("./interface").TagVariant>;
+        default: string;
+    };
+}>> & {
+    onClose?: ((...args: any[]) => any) | undefined;
+    onCheck?: ((...args: any[]) => any) | undefined;
+    "onUpdate:checked"?: ((...args: any[]) => any) | undefined;
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("close" | "check" | "update:checked")[], "close" | "check" | "update:checked", {
+    size: string;
+    bordered: boolean;
+    shape: import("./interface").TagShape;
+    variant: import("./interface").TagVariant;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        icon?(_: {}): any;
+        default?(_: {}): any;
+        "close-icon"?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

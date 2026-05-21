@@ -1,0 +1,9 @@
+import { defineComponent as y, useSlots as u, computed as p, openBlock as o, createElementBlock as l, normalizeClass as m, unref as s, createElementVNode as i, renderSlot as t, createTextVNode as h, toDisplayString as f, createCommentVNode as r } from "vue";
+/* empty css           */
+const w = { key: 0, class: "layui-card-header" }, k = { class: "layui-card-header-title" }, v = { key: 0, class: "layui-card-header-extra" }, x = { class: "layui-card-body" }, $ = { key: 1, class: "layui-card-footer" }, S = y({ name: "LayCard", __name: "index", props: { title: {}, shadow: { default: "always" } }, setup(c) {
+  const d = c, a = u(), n = p(() => ({ shadow: d.shadow === "always", "is-hover-shadow": d.shadow === "hover" }));
+  return (e, C) => (o(), l("div", { class: m(["layui-card", n.value]) }, [s(a).title || e.title || s(a).extra ? (o(), l("div", w, [i("span", k, [t(e.$slots, "title", {}, () => [h(f(e.title), 1)])]), s(a).extra ? (o(), l("span", v, [t(e.$slots, "extra")])) : r("", !0)])) : r("", !0), i("div", x, [s(a).body ? t(e.$slots, "body", { key: 0 }) : t(e.$slots, "default", { key: 1 })]), s(a).footer ? (o(), l("div", $, [t(e.$slots, "footer")])) : r("", !0)], 2));
+} });
+export {
+  S as default
+};

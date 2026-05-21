@@ -1,0 +1,102 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        title: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        content: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        icon: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        status: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+    }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        title: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        content: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        icon: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        status: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+    }>>, {
+        title: string;
+        content: string;
+        icon: string;
+        status: string;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        title: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        content: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        icon: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        status: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+    }>>, {}, {}, {}, {}, {
+        title: string;
+        content: string;
+        icon: string;
+        status: string;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    title: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    content: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    icon: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    status: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+}>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {
+    title: string;
+    content: string;
+    icon: string;
+    status: string;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        pace?(_: {}): any;
+        default?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

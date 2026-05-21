@@ -1,0 +1,83 @@
+import { defineComponent as M, ref as p, useAttrs as S, watch as T, nextTick as c, computed as f, onMounted as _, openBlock as d, createElementBlock as g, createElementVNode as I, normalizeClass as L, normalizeStyle as E, createVNode as F, unref as q, createCommentVNode as y, toDisplayString as A } from "vue";
+import { LayIcon as D } from "@layui/icons-vue";
+import { isObject as x } from "@vueuse/core";
+/* empty css           */
+const G = { class: "layui-textarea-wrapper" }, J = ["rows", "cols", "value", "placeholder", "name", "disabled", "readonly", "maxlength"], K = { key: 0, class: "layui-textarea-clear" }, P = { key: 1, class: "layui-texterea-count" }, Y = M({ name: "LayTextarea", __name: "index", props: { modelValue: {}, name: {}, placeholder: {}, disabled: { type: Boolean }, showCount: { type: Boolean, default: !1 }, allowClear: { type: Boolean }, cols: {}, rows: {}, maxlength: {}, autosize: { type: [Boolean, Object], default: !1 }, readonly: { type: Boolean } }, emits: ["blur", "input", "update:modelValue", "change", "focus", "clear"], setup(w, { expose: H, emit: b }) {
+  const t = w, s = b, n = p(), h = p(!1), z = S(), l = p({ width: t.cols ? "" : "100%", height: t.rows ? "" : "auto", minHeight: t.rows ? "" : "100px", maxHeight: t.autosize ? "" : "auto", transition: "height 0.2s", ...z }), v = function(e) {
+    const a = e.target;
+    h.value || (s("update:modelValue", a.value), c(() => s("input", a.value)));
+  }, i = (e) => {
+    const a = Number(n.value.style.lineHeight) || 20;
+    let o = a * e + 8;
+    return o += o % a, o;
+  };
+  T(() => t.modelValue, (e, a) => {
+    if (x(t.autosize)) {
+      const o = (a ?? "").split(/\n/g).length > (e ?? "").split(/\n/g).length ? "inc" : "dec";
+      let u = i((e == null ? void 0 : e.split(/\n/g).length) ?? 0);
+      if (n.value.clientHeight > u && o == "dec" || n.value.clientHeight < u && o == "inc")
+        return;
+      l.value.height = `${u}px`, c(() => {
+        var r;
+        return n.value.scrollTo(0, ((r = n.value) == null ? void 0 : r.scrollHeight) ?? 0);
+      });
+    }
+  });
+  const C = function(e) {
+    s("focus", e);
+  }, V = function(e) {
+    s("blur", e);
+  }, B = (e) => {
+    const a = e.target;
+    s("change", a.value);
+  }, $ = function() {
+    s("update:modelValue", ""), s("clear");
+  }, k = () => {
+    h.value = !0;
+  }, O = (e) => {
+    h.value = !1, v(e);
+  }, N = f(() => {
+    var e;
+    return ((e = t.modelValue) == null ? void 0 : e.length) > 0;
+  }), R = f(() => {
+    var a;
+    let e = String(((a = t.modelValue) == null ? void 0 : a.length) ?? 0);
+    return t.maxlength && (e += "/" + t.maxlength), e;
+  }), j = () => {
+    var u;
+    let e = Number((u = n.value) == null ? void 0 : u.style.height), a = 0, o = 0;
+    if (x(t.autosize))
+      if (Object.hasOwn(t.autosize, "maxHeight")) {
+        let { minHeight: r, maxHeight: m } = t.autosize;
+        a = r, o = m;
+      } else {
+        let { minRow: r, maxRow: m } = t.autosize;
+        a = i(r), o = i(m);
+      }
+    e < a && (e = a), e > o && (e = o), c(() => l.value.height = `${e}px`);
+  };
+  return _(() => {
+    if (x(t.autosize))
+      if (Object.hasOwn(t.autosize, "maxHeight")) {
+        let { minHeight: e, maxHeight: a } = t.autosize;
+        l.value.minHeight = `${e}px`, l.value.height = `${e}px`, l.value.maxHeight = `${a}px`;
+      } else {
+        let { minRow: e, maxRow: a } = t.autosize;
+        l.value.minHeight = `${i(e)}px`, l.value.height = `${i(e)}px`, l.value.maxHeight = `${i(a)}px`;
+      }
+    t.rows && (l.value.height = i(t.rows) + "px", l.value.maxHeight = i(t.rows) + "px");
+  }), H({ focus: () => {
+    c(() => {
+      var e;
+      (e = n.value) == null || e.focus();
+    });
+  }, blur: () => {
+    c(() => {
+      var e;
+      (e = n.value) == null || e.blur();
+    });
+  } }), (e, a) => (d(), g("div", G, [I("textarea", { ref_key: "textareaRef", ref: n, class: L(["layui-textarea", { "layui-textarea-disabled": e.disabled }]), rows: e.rows, cols: e.cols, value: e.modelValue, placeholder: e.placeholder, name: e.name, disabled: e.disabled, readonly: e.readonly, maxlength: e.maxlength, style: E(l.value), onCompositionstart: k, onCompositionend: O, onInput: v, onFocus: C, onChange: B, onBlur: V, onMouseenter: j, onMousedown: a[0] || (a[0] = () => l.value.transition = "none"), onMouseup: a[1] || (a[1] = () => l.value.transition = "height 0.2s") }, null, 46, J), e.allowClear && N.value ? (d(), g("span", K, [F(q(D), { type: "layui-icon-close-fill", onClick: $ })])) : y("", !0), e.showCount ? (d(), g("div", P, A(R.value), 1)) : y("", !0)]));
+} });
+export {
+  Y as default
+};

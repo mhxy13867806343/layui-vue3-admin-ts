@@ -1,0 +1,191 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+        };
+        position: {
+            type: import("vue").PropType<import("@floating-ui/utils").Placement>;
+            default: string;
+        };
+        visible: {
+            type: import("vue").PropType<boolean>;
+        };
+        content: {
+            type: import("vue").PropType<string | number>;
+        };
+        trigger: {
+            type: import("vue").PropType<import("@layui/component/component/popper").PopperTrigger>;
+            default: string;
+        };
+        enterable: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        popperClass: {
+            type: import("vue").PropType<string | string[]>;
+        };
+        popperStyle: {
+            type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+        };
+        teleportProps: {
+            type: import("vue").PropType<import("vue").TeleportProps>;
+        };
+        isDark: {
+            type: import("vue").PropType<boolean>;
+        };
+        isAutoShow: {
+            type: import("vue").PropType<boolean>;
+        };
+    }>>, {
+        show: () => void;
+        hide: () => void;
+        update: () => void;
+    }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+        };
+        position: {
+            type: import("vue").PropType<import("@floating-ui/utils").Placement>;
+            default: string;
+        };
+        visible: {
+            type: import("vue").PropType<boolean>;
+        };
+        content: {
+            type: import("vue").PropType<string | number>;
+        };
+        trigger: {
+            type: import("vue").PropType<import("@layui/component/component/popper").PopperTrigger>;
+            default: string;
+        };
+        enterable: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        popperClass: {
+            type: import("vue").PropType<string | string[]>;
+        };
+        popperStyle: {
+            type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+        };
+        teleportProps: {
+            type: import("vue").PropType<import("vue").TeleportProps>;
+        };
+        isDark: {
+            type: import("vue").PropType<boolean>;
+        };
+        isAutoShow: {
+            type: import("vue").PropType<boolean>;
+        };
+    }>>, {
+        position: import("@floating-ui/utils").Placement;
+        trigger: import("@layui/component/component/popper").PopperTrigger;
+        enterable: boolean;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+        };
+        position: {
+            type: import("vue").PropType<import("@floating-ui/utils").Placement>;
+            default: string;
+        };
+        visible: {
+            type: import("vue").PropType<boolean>;
+        };
+        content: {
+            type: import("vue").PropType<string | number>;
+        };
+        trigger: {
+            type: import("vue").PropType<import("@layui/component/component/popper").PopperTrigger>;
+            default: string;
+        };
+        enterable: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        popperClass: {
+            type: import("vue").PropType<string | string[]>;
+        };
+        popperStyle: {
+            type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+        };
+        teleportProps: {
+            type: import("vue").PropType<import("vue").TeleportProps>;
+        };
+        isDark: {
+            type: import("vue").PropType<boolean>;
+        };
+        isAutoShow: {
+            type: import("vue").PropType<boolean>;
+        };
+    }>>, {
+        show: () => void;
+        hide: () => void;
+        update: () => void;
+    }, {}, {}, {}, {
+        position: import("@floating-ui/utils").Placement;
+        trigger: import("@layui/component/component/popper").PopperTrigger;
+        enterable: boolean;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    disabled: {
+        type: import("vue").PropType<boolean>;
+    };
+    position: {
+        type: import("vue").PropType<import("@floating-ui/utils").Placement>;
+        default: string;
+    };
+    visible: {
+        type: import("vue").PropType<boolean>;
+    };
+    content: {
+        type: import("vue").PropType<string | number>;
+    };
+    trigger: {
+        type: import("vue").PropType<import("@layui/component/component/popper").PopperTrigger>;
+        default: string;
+    };
+    enterable: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    popperClass: {
+        type: import("vue").PropType<string | string[]>;
+    };
+    popperStyle: {
+        type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+    };
+    teleportProps: {
+        type: import("vue").PropType<import("vue").TeleportProps>;
+    };
+    isDark: {
+        type: import("vue").PropType<boolean>;
+    };
+    isAutoShow: {
+        type: import("vue").PropType<boolean>;
+    };
+}>>, {
+    show: () => void;
+    hide: () => void;
+    update: () => void;
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {
+    position: import("@floating-ui/utils").Placement;
+    trigger: import("@layui/component/component/popper").PopperTrigger;
+    enterable: boolean;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        default?(_: {}): any;
+        content?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

@@ -1,0 +1,10 @@
+import { computed as o, inject as s } from "vue";
+function i(r) {
+  return { size: o(() => {
+    const e = s("LayForm", {});
+    return r.size || e.size || "md";
+  }) };
+}
+export {
+  i as useProps
+};

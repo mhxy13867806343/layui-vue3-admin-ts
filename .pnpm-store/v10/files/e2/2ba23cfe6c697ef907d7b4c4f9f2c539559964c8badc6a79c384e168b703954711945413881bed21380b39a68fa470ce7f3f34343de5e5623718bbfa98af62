@@ -1,0 +1,78 @@
+import { defineComponent as _, ref as u, computed as i, watch as n, onMounted as W, nextTick as H, openBlock as w, createElementBlock as N, createVNode as E, unref as h, mergeProps as Y, withCtx as D, Fragment as j, renderList as I, createBlock as L, renderSlot as O } from "vue";
+import { fromTime as d, toTime as T, calcInterval as z, timeInterval as U } from "./util.js";
+import q from "../icon/index.js";
+import G from "../select/index.js";
+import J from "../selectOption/index.js";
+const K = { class: "layui-time-select" }, ae = _({ name: "LayTimeSelect", __name: "index", props: { interval: { default: "00:30:00" }, inputFormat: {}, format: { default: "H:i" }, start: { default: "00:00:00" }, end: { default: "00:00:00" }, withStartTime: { type: Boolean, default: !0 }, withEndTime: { type: Boolean, default: !0 }, skip: {}, name: {}, disabled: { type: Boolean }, placeholder: {}, searchPlaceholder: {}, searchMethod: {}, modelValue: {}, multiple: { type: Boolean }, options: {}, autoFitWidth: { type: Boolean, default: !0 }, autoFitMinWidth: { type: Boolean, default: !0 }, size: {}, collapseTagsTooltip: { type: Boolean, default: !0 }, minCollapsedNum: { default: 3 }, allowClear: { type: Boolean }, showSearch: { type: Boolean }, contentClass: {}, contentStyle: { type: [Boolean, null, String, Object, Array] }, teleportProps: {} }, emits: ["change", "update:modelValue", "clear"], setup(M) {
+  const l = M, P = l, f = u(l.modelValue), m = u(l.start ?? "00:00:00"), s = u(l.end ?? "00:00:00"), B = u(l.interval ?? "00:30:00"), V = u(l.withStartTime ?? !0), b = u(l.withEndTime ?? !0), k = i(() => {
+    var a;
+    return Array.from(((a = B.value) == null ? void 0 : a.matchAll(/:?(\d+)/g)) ?? []).map((e) => Number(e[1]));
+  }), y = i(() => {
+    var a;
+    return typeof m.value == "string" ? Array.from(((a = m.value) == null ? void 0 : a.matchAll(/:?(\d+)/g)) ?? []).map((e) => Number(e[1])) : (() => {
+      let { hour: e, minute: t, second: o } = d(m.value);
+      return [e, t, o];
+    })();
+  }), c = i(() => {
+    var a;
+    return typeof s.value == "string" ? Array.from(((a = s.value) == null ? void 0 : a.matchAll(/:?(\d+)/g)) ?? []).map((e) => Number(e[1])) : (() => {
+      let { hour: e, minute: t, second: o } = d(s.value);
+      return [e, t, o];
+    })();
+  }), S = i(() => k.value.map((a, e) => a ? a / 60 * 60 ** (k.value.length - e) : 0).reduce((a, e) => a + e)), A = u(l.inputFormat ?? "H:i"), g = u(l.format ?? "H:i"), C = u([]), x = u(l.skip), $ = (a, e) => a.replace(/(Y|m|d|H|i|s|a)/g, (t) => {
+    switch (t) {
+      case "Y":
+        return `${e.year < 10 ? "0" : ""}${e.year}`;
+      case "m":
+        return `${e.month < 10 ? "0" : ""}${e.month}`;
+      case "d":
+        return `${e.day < 10 ? "0" : ""}${e.day}`;
+      case "H":
+        return `${e.hour < 10 ? "0" : ""}${e.hour}`;
+      case "i":
+        return `${e.minute < 10 ? "0" : ""}${e.minute}`;
+      case "s":
+        return `${e.second < 10 ? "0" : ""}${e.second}`;
+      case "a":
+        return `${T(e).getTime()}`;
+      default:
+        return t;
+    }
+  }), r = () => {
+    H(() => {
+      let a = i(() => T(d(/* @__PURE__ */ new Date(), { hour: y.value.at(-3), minute: y.value.at(-2), second: y.value.at(-1) }))), e = u(T(d(/* @__PURE__ */ new Date(), { hour: c.value.at(-3), minute: c.value.at(-2), second: c.value.at(-1) })));
+      c.value.reduce((v, p) => v + p) === 0 && (e.value = new Date(e.value.getTime() + 864e5));
+      let t = z(a.value, e.value, S.value);
+      const o = U(a.value, 1e3 * S.value);
+      C.value = (() => {
+        var p;
+        const v = [];
+        for (t && !V.value && (o.next(), t--), t && b.value && t++; t-- > 0; ) {
+          let F = d(o.next().value);
+          (p = x.value) != null && p.includes($(g.value, F)) || v.push(F);
+        }
+        return v;
+      })();
+    });
+  };
+  return n(() => l.modelValue, (a) => {
+    f.value = a, r();
+  }), n(() => [l.interval, l.start, l.end], ([a, e, t]) => {
+    B.value = a, m.value = e, s.value = t, r();
+  }), n(() => [l.start, l.end], ([a, e]) => {
+    m.value = a, s.value = e, r();
+  }), n(() => [l.withStartTime, l.withEndTime], ([a, e]) => {
+    console.log(a, e), V.value = a, b.value = e, r();
+  }), n(() => [l.skip], ([a]) => {
+    x.value = a, r();
+  }), n(() => [l.inputFormat, l.format], ([a, e]) => {
+    A.value = a, g.value = e, r();
+  }), W(() => {
+    H(() => {
+      r();
+    });
+  }), (a, e) => (w(), N("div", K, [E(h(G), Y(h(P), { onChange: e[0] || (e[0] = (t) => a.$emit("change", t)), modelValue: f.value, "onUpdate:modelValue": [e[1] || (e[1] = (t) => f.value = t), e[2] || (e[2] = (t) => a.$emit("update:modelValue", t))], onClear: e[3] || (e[3] = (t) => a.$emit("clear", t)) }), { prepend: D(() => [E(h(q), { type: "layui-icon-time" })]), default: D(() => [(w(!0), N(j, null, I(C.value, (t, o) => (w(), L(h(J), { key: o, label: $(A.value, t), value: $(g.value, t) }, null, 8, ["label", "value"]))), 128)), O(a.$slots, "default")]), _: 3 }, 16, ["modelValue"])]));
+} });
+export {
+  ae as default
+};

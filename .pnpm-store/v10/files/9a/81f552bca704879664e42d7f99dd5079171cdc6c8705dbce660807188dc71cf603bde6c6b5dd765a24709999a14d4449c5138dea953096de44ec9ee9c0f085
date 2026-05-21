@@ -1,0 +1,18 @@
+import { defineComponent as g, inject as C, h as i } from "vue";
+import { DESCRIPTIONS_INJECTION_KEY as S } from "./descriptions3.js";
+import { isNil as I } from "../utils/type.js";
+import { normalizeProps as N } from "../utils/vueUtil.js";
+const j = g({ name: "LayDescriptionsCell", props: { cell: { type: Object, default: () => ({}) }, tag: { type: String, default: "" }, type: { type: String, default: "" } }, setup: () => ({ descriptionsContext: C(S, {}) }), render() {
+  var s, b, l, f;
+  const { border: m, direction: $ } = this.descriptionsContext, e = N(this.cell.props), a = ((b = (s = this.cell.children) == null ? void 0 : s.label) == null ? void 0 : b.call(s)) || e.label, r = (f = (l = this.cell.children) == null ? void 0 : l.default) == null ? void 0 : f.call(l), n = e.span, c = e.align ? `is-${e.align}` : "", o = e.labelAlign ? `is-${e.labelAlign}` : "", p = e.style, d = e.labelStyle, y = e.class ?? "", h = e.labelClass ?? "", u = $ === "vertical", t = this.type === "label";
+  switch (this.type) {
+    case "label":
+    case "content":
+      return i(this.tag, { style: t ? d : p, class: ["layui-descriptions-cell", `layui-descriptions-${this.type}`, t ? `${h} ${o}` : `${y} ${c}`, , { [`is-border-${this.type}`]: m, [`is-vertical-${this.type}`]: u }], colSpan: u ? n : t ? 1 : 2 * n - 1 }, t ? a : r);
+    default:
+      return i("td", { class: ["layui-descriptions-cell"], colSpan: n }, [I(a) ? void 0 : i("span", { style: d, class: ["layui-descriptions-label", h, o] }, a), i("span", { style: p, class: ["layui-descriptions-content", y, c] }, r)]);
+  }
+} });
+export {
+  j as default
+};

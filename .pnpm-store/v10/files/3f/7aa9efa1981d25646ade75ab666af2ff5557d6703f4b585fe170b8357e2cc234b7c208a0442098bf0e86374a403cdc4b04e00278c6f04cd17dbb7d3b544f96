@@ -1,0 +1,10 @@
+import { defineComponent as n, ref as u, provide as p, watch as s, openBlock as r, createElementBlock as i, normalizeClass as m, renderSlot as b } from "vue";
+const k = n({ name: "LayCheckboxGroup", __name: "index", props: { modelValue: { default: () => [] }, disabled: { type: Boolean, default: !1 } }, emits: ["update:modelValue", "change"], setup(t, { emit: c }) {
+  const a = t, l = c, d = u(a.modelValue), o = u(a.disabled);
+  return p("checkboxGroup", { name: "LayCheckboxGroup", modelValue: d, disabled: o, changeCheckboxGroup: function(e) {
+    l("update:modelValue", e), l("change", e);
+  } }), s(() => a.modelValue, (e) => d.value = e), s(() => a.disabled, (e) => o.value = e), (e, h) => (r(), i("div", { class: m(["layui-checkbox-group", { "layui-checkbox-group-disabled": o.value }]) }, [b(e.$slots, "default")], 2));
+} });
+export {
+  k as default
+};

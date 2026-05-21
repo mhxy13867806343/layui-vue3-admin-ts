@@ -1,0 +1,27 @@
+import { AppContext, App } from "vue";
+import LayLayer, { LayerProps } from "./component/index.vue";
+declare const layer: {
+    _context: AppContext | null;
+    open: (option: LayerProps) => string;
+    drawer: (option: LayerProps) => string;
+    msg: (message: string, option?: LayerProps, callback?: Function) => string;
+    load: (load: number, option?: LayerProps) => string;
+    confirm: (msg: string, option?: LayerProps) => string;
+    photos: (option: string | LayerProps) => string;
+    notify: (option: LayerProps, callback?: Function) => string;
+    prompt: (option: LayerProps) => string;
+    create: (option: LayerProps, defaultOption: LayerProps, callback?: Function) => string;
+    close: (id: any) => void;
+    closeAll: () => void;
+    reset: (id: any) => void;
+    min: (id: any) => void;
+    full: (id: any) => void;
+    revert: (id: any) => void;
+};
+export { layer, LayLayer };
+declare const _default: {
+    install: (app: App<any>, options?: import("./types").StringObject | undefined) => void;
+};
+export default _default;
+export * from "./types";
+import "./theme/index.css";

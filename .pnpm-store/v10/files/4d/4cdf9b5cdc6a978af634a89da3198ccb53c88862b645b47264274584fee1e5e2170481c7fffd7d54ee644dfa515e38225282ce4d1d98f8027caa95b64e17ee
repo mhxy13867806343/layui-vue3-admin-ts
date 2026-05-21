@@ -1,0 +1,24 @@
+import { defineComponent as l, ref as f, onMounted as g, nextTick as u, watch as d, openBlock as s, createElementBlock as m, createElementVNode as p } from "vue";
+import c from "jsbarcode";
+/* empty css           */
+const S = { class: "layui-barcode" }, h = l({ name: "LayBarcode", __name: "index", props: { value: [String, Number], format: { type: [String], default: "CODE39" }, width: { type: [String, Number], default: 2 }, height: { type: [String, Number], default: 80 }, text: [String, Number], fontOptions: { type: [String], default: "bold italic" }, font: [String, Number], textAlign: [String], textPosition: [String], textMargin: [String, Number], fontSize: { type: [String, Number], default: 15 }, lineColor: [String], background: { type: [String], default: "#fff" }, margin: [String, Number], displayValue: { type: [String, Boolean], default: !1 } }, setup(a) {
+  const t = a, r = f(null);
+  g(() => {
+    u(() => {
+      o();
+    });
+  }), d(() => t, () => {
+    o();
+  }, { deep: !0 });
+  const o = () => {
+    const n = { format: t.format, width: t.width, height: t.height, displayValue: t.displayValue, text: t.text, fontOptions: t.fontOptions, font: t.font, textAlign: t.textAlign, textPosition: t.textPosition, textMargin: t.textMargin, fontSize: t.fontSize, background: t.background, lineColor: t.lineColor, margin: t.margin };
+    ((e) => {
+      for (let i in e)
+        e.hasOwnProperty(i) && e[i] === void 0 && delete e[i];
+    })(n), c(r.value, String(t.value), n);
+  };
+  return (n, e) => (s(), m("div", S, [p("canvas", { ref_key: "barcodeRef", ref: r }, null, 512)]));
+} });
+export {
+  h as default
+};

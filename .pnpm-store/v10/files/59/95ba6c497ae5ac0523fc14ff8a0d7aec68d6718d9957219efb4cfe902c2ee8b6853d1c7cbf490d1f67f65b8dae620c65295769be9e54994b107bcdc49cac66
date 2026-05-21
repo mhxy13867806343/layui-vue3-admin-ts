@@ -1,0 +1,72 @@
+import { defineComponent as G, useSlots as Q, ref as i, computed as b, onMounted as X, watch as Y, onUnmounted as Z, provide as v, openBlock as u, createElementBlock as S, normalizeClass as C, createVNode as F, withCtx as d, createElementVNode as ee, unref as o, renderSlot as p, createCommentVNode as M, Fragment as ae, renderList as le, createBlock as N, mergeProps as te, withKeys as x, withModifiers as O, createSlots as E } from "vue";
+/* empty css           */
+import { LayIcon as K } from "@layui/icons-vue";
+import oe from "../input/index2.js";
+import se from "../tagInput/index2.js";
+import ne from "../dropdown/index2.js";
+import L from "../selectOption/index2.js";
+import re from "../selectOptionGroup/index2.js";
+import de from "./index.hooks.js";
+import { isArrayChildren as ie } from "../utils/vueUtil.js";
+const ue = { class: "layui-select-content" }, pe = { key: 0, class: "layui-select-content__header" }, ce = { key: 2, class: "layui-select-content__footer" }, Ve = G({ name: "LaySelect", __name: "index", props: { name: {}, disabled: { type: Boolean, default: !1 }, placeholder: {}, searchPlaceholder: {}, searchMethod: {}, modelValue: { default: null }, multiple: { type: Boolean, default: !1 }, options: {}, autoFitWidth: { type: Boolean, default: !0 }, autoFitMinWidth: { type: Boolean, default: !0 }, size: {}, collapseTagsTooltip: { type: Boolean, default: !0 }, minCollapsedNum: { default: 3 }, allowClear: { type: Boolean, default: !1 }, showSearch: { type: Boolean, default: !1 }, contentClass: {}, contentStyle: { type: [Boolean, null, String, Object, Array] }, teleportProps: {} }, emits: ["update:modelValue", "change", "search", "remove-tag", "clear"], setup(R, { emit: U }) {
+  const s = R, { size: T } = de(s), n = Q(), g = i(null), c = i(""), W = i(""), V = i([]), h = U, m = i(!1), y = i([]), k = i(!1);
+  var z;
+  const B = (e, l) => {
+    e == null || e.map((a) => {
+      if (ie(a, a.children))
+        B(a.children, l);
+      else {
+        if (a.type.name == L.name) {
+          if (a.children) {
+            const r = a.children.default()[0].children;
+            typeof r == "string" && (a.props.label = r);
+          }
+          l.push(a.props);
+        }
+        a.type.name == re.name && a.children && B(a.children.default(), l);
+      }
+    });
+  }, I = () => {
+    const e = [];
+    n.default && B(n.default(), e), Object.assign(e, s.options), JSON.stringify(e) != JSON.stringify(y.value) && (y.value = e);
+  }, j = b(() => s.options), J = (e) => {
+    Array.isArray(t.value) && (t.value = t.value.filter((l) => l !== e), h("remove-tag", e));
+  }, H = () => {
+    k.value = !0;
+  }, q = (e) => {
+    k.value = !1, _(e.target.value);
+  };
+  X(() => {
+    I(), z = setInterval(I, 500), Y([t, y], () => {
+      var e, l;
+      if (w.value)
+        try {
+          V.value = (e = t.value) == null ? void 0 : e.map((a) => {
+            var r = y.value.find((f) => (f.disabled == "" || f.disabled == 1 ? f.closable = !1 : f.closable = !0, f.value === a));
+            return r == null && (r = { label: a, value: a, closable: !0 }), r;
+          });
+        } catch {
+          throw new Error("v-model / model-value is not an array type");
+        }
+      else
+        c.value = "", W.value = (l = y.value.find((a) => a.value === t.value)) == null ? void 0 : l.label;
+    }, { immediate: !0, deep: !0 });
+  }), Z(() => {
+    clearInterval(z);
+  });
+  const t = b({ get: () => s.multiple && s.modelValue == null ? [] : s.modelValue, set(e) {
+    h("update:modelValue", e), h("change", e);
+  } }), w = b(() => s.multiple), _ = (e) => {
+    k.value || (h("search", e), c.value = e, e && !m.value && g.value && g.value.show());
+  }, $ = () => {
+    w.value ? t.value = [] : t.value = "", h("clear");
+  }, D = () => {
+    c.value = "", m.value = !1;
+  }, A = b(() => Array.isArray(t.value) ? t.value.length > 0 : t.value !== "" && t.value !== void 0 && t.value !== null), P = b(() => A.value ? "" : s.placeholder);
+  return v("selectRef", g), v("openState", m), v("selectedValue", t), v("searchValue", c), v("multiple", w), v("searchMethod", s.searchMethod), (e, l) => (u(), S("div", { class: C(["layui-select", { "has-content": A.value, "has-clear": e.allowClear, "has-disabled": e.disabled }]) }, [F(ne, { ref_key: "selectRef", ref: g, disabled: e.disabled, contentClass: e.contentClass, contentStyle: e.contentStyle, autoFitWidth: e.autoFitWidth, autoFitMinWidth: e.autoFitMinWidth, teleportProps: e.teleportProps, onHide: D, onShow: l[4] || (l[4] = (a) => m.value = !0) }, { content: d(() => [ee("dl", ue, [o(n).header ? (u(), S("div", pe, [p(e.$slots, "header")])) : M("", !0), e.options ? (u(!0), S(ae, { key: 1 }, le(j.value, (a, r) => (u(), N(L, te(a, { key: r }), null, 16))), 128)) : M("", !0), p(e.$slots, "default"), o(n).footer ? (u(), S("div", ce, [p(e.$slots, "footer")])) : M("", !0)])]), default: d(() => [w.value ? (u(), N(se, { key: 0, modelValue: V.value, "onUpdate:modelValue": l[0] || (l[0] = (a) => V.value = a), "input-value": c.value, "onUpdate:inputValue": l[1] || (l[1] = (a) => c.value = a), "allow-clear": e.allowClear, placeholder: P.value, collapseTagsTooltip: e.collapseTagsTooltip, minCollapsedNum: e.minCollapsedNum, disabled: e.disabled, disabledInput: !e.showSearch, size: o(T), class: C({ "layui-unselect": !0 }), style: { width: "100%" }, onRemove: J, onClear: $, onInputValueChange: _, onKeyupCapture: l[2] || (l[2] = x(O(() => {
+  }, ["prevent", "stop"]), ["delete"])), onKeydownCapture: l[3] || (l[3] = x(O(() => {
+  }, ["prevent", "stop"]), ["enter"])) }, E({ suffix: d(() => [F(o(K), { type: "layui-icon-triangle-d", class: C({ triangle: m.value }) }, null, 8, ["class"])]), _: 2 }, [o(n).prepend ? { name: "prepend", fn: d(() => [p(e.$slots, "prepend")]), key: "0" } : void 0, o(n).append ? { name: "append", fn: d(() => [p(e.$slots, "append")]), key: "1" } : void 0]), 1032, ["modelValue", "input-value", "allow-clear", "placeholder", "collapseTagsTooltip", "minCollapsedNum", "disabled", "disabledInput", "size"])) : (u(), N(oe, { key: 1, size: o(T), disabled: e.disabled, readonly: !e.showSearch, modelValue: W.value, "allow-clear": e.allowClear, placeholder: P.value, class: C({ "layui-unselect": !e.showSearch }), onCompositionstart: H, onCompositionend: q, onInput: _, onClear: $ }, E({ suffix: d(() => [F(o(K), { type: "layui-icon-triangle-d", class: C({ triangle: m.value }) }, null, 8, ["class"])]), _: 2 }, [o(n).prepend ? { name: "prepend", fn: d(() => [p(e.$slots, "prepend")]), key: "0" } : void 0, o(n).append ? { name: "append", fn: d(() => [p(e.$slots, "append")]), key: "1" } : void 0]), 1032, ["size", "disabled", "readonly", "modelValue", "allow-clear", "placeholder", "class"]))]), _: 3 }, 8, ["disabled", "contentClass", "contentStyle", "autoFitWidth", "autoFitMinWidth", "teleportProps"])], 2));
+} });
+export {
+  Ve as default
+};

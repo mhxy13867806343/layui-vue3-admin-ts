@@ -1,0 +1,18 @@
+import { defineComponent as y, inject as f, computed as s, openBlock as b, createBlock as v, withCtx as p, createVNode as m, unref as u } from "vue";
+import T from "../../page/index2.js";
+import { LayIcon as r } from "@layui/icons-vue";
+import { LAY_TABLE_CONTEXT as B } from "../constant.js";
+const P = y({ name: "LayTablePage", __name: "TablePage", props: { total: {}, limit: {}, theme: {}, pages: {}, limits: {}, hideOnSinglePage: { type: Boolean }, ellipsisTooltip: { type: Boolean }, disabled: { type: Boolean }, layout: { default: () => ["prev", "page", "next", "limits", "skip"] }, current: {}, change: {} }, emits: ["update:current", "update:limit"], setup(g, { emit: d }) {
+  const t = g, l = d, { tableEmits: c } = f(B), o = s({ get: () => t.current, set(e) {
+    l("update:current", e);
+  } }), n = s({ get: () => t.limit, set(e) {
+    l("update:limit", e);
+  } });
+  function h(e) {
+    t.change || console.warn("layui-vue： LayTable的change事件，将在未来版本中废弃，请将回调函数移至为props.page中的change属性。"), c("change", e), t.change && t.change(e);
+  }
+  return (e, a) => (b(), v(T, { modelValue: o.value, "onUpdate:modelValue": a[0] || (a[0] = (i) => o.value = i), limit: n.value, "onUpdate:limit": a[1] || (a[1] = (i) => n.value = i), total: e.total, theme: e.theme, pages: e.pages, layout: e.layout, limits: e.limits, disabled: e.disabled, "hide-on-single-page": e.hideOnSinglePage, "ellipsis-tooltip": e.ellipsisTooltip, onChange: h }, { prev: p(() => [m(u(r), { type: "layui-icon-left" })]), next: p(() => [m(u(r), { type: "layui-icon-right" })]), _: 1 }, 8, ["modelValue", "limit", "total", "theme", "pages", "layout", "limits", "disabled", "hide-on-single-page", "ellipsis-tooltip"]));
+} });
+export {
+  P as default
+};

@@ -1,0 +1,29 @@
+import { computed as t, inject as r } from "vue";
+import { normalizeValue as i } from "../utils/type.js";
+function a(e) {
+  return { size: t(() => {
+    const o = r("LayForm", {});
+    return e.size || o.size || "md";
+  }), mode: t(() => {
+    const o = r("LayForm", {});
+    return e.mode || o.mode || "block";
+  }), labelWidth: t(() => {
+    const o = r("LayForm", {});
+    return i([e.labelWidth, o.labelWidth, 95])[0];
+  }), labelPosition: t(() => {
+    const o = r("LayForm", {});
+    return e.labelPosition || o.labelPosition;
+  }), isRequired: t(() => {
+    const o = r("LayForm", {});
+    return e.required || o.required;
+  }), tooltipProps: t(() => {
+    const o = r("LayForm", {});
+    return e.tooltipProps || o.tooltipProps;
+  }), isLabelTooltip: t(() => r("LayForm", {}).isLabelTooltip), inlineWidth: t(() => {
+    const o = r("LayForm", {});
+    return i([e.inlineWidth, o.inlineWidth, "auto"])[0];
+  }) };
+}
+export {
+  a as default
+};

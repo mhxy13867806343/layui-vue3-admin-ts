@@ -1,0 +1,53 @@
+import { defineComponent as _, computed as a, ref as p, reactive as E, onMounted as M, onUnmounted as R, watch as S, inject as $, provide as A, openBlock as N, createBlock as V, mergeProps as L, withCtx as y, renderSlot as h } from "vue";
+import j from "../popper/popper.js";
+import { useResizeObserver as z } from "@vueuse/core";
+import { DROPDOWN_INJECTION_KEY as g } from "./interface.js";
+import { pointMiddleware as I } from "./utils.js";
+/* empty css           */
+import { normalizeArray as X } from "../utils/arrayUtil.js";
+import { offset as Y, shift as J, flip as K, hide as q } from "@floating-ui/dom";
+const le = _({ name: "LayDropdown", __name: "index", props: { visible: { type: Boolean, default: !1 }, trigger: { default: "click" }, placement: { default: "bottom-start" }, disabled: { type: Boolean }, autoFitPosition: { type: Boolean, default: !0 }, autoFitWidth: { type: Boolean, default: !1 }, autoFitMinWidth: { type: Boolean, default: !0 }, clickToClose: { type: Boolean, default: !0 }, blurToClose: { type: Boolean, default: !0 }, clickOutsideToClose: { type: Boolean, default: !0 }, contentOffset: { default: "2px" }, mouseEnterDelay: { default: 150 }, mouseLeaveDelay: { default: 150 }, focusDelay: { default: 150 }, alignPoint: { type: Boolean }, contentClass: {}, contentStyle: { type: [Boolean, null, String, Object, Array] }, teleportProps: {} }, emits: ["show", "hide"], setup(C, { expose: b, emit: B }) {
+  const e = C, k = B, l = a(() => X(e.trigger)), o = p(e.visible), f = p(), w = a(() => ({ click: (t) => {
+    l.value.includes("click") && (o.value && !e.clickToClose || (e.alignPoint && m(t), c()));
+  }, contextmenu: (t) => {
+    l.value.includes("contextMenu") && (o.value && !e.clickToClose || (e.alignPoint && m(t), t.preventDefault(), c()));
+  }, focusout: () => {
+    l.value.includes("focus") && e.blurToClose && r();
+  } })), s = E({ x: 0, y: 0 });
+  function m(t) {
+    s.x = t.pageX, s.y = t.pageY;
+  }
+  const v = p();
+  let u;
+  M(() => {
+    var t;
+    u = z((t = f.value) == null ? void 0 : t.TriggerRef, (n) => {
+      const d = n[0], { width: W } = d.contentRect;
+      v.value = W;
+    });
+  }), R(() => {
+    u && u.stop();
+  });
+  const x = a(() => {
+    const t = {}, n = e.alignPoint ? 0 : v.value || 0;
+    return e.autoFitMinWidth && (t.minWidth = `${n}px`), e.autoFitWidth && (t.width = `${n}px`), t;
+  }), D = a(() => Number(`${e.contentOffset}`.replace("px", "") ?? 0)), P = a(() => l.value.includes("hover") ? e.mouseEnterDelay : l.value.includes("focus") ? e.focusDelay : 0), O = a(() => l.value.includes("hover") ? e.mouseLeaveDelay : l.value.includes("focus") ? e.focusDelay : 0), T = a(() => [Y(D.value), J(), e.autoFitPosition && K(), e.alignPoint && I(s), q()].filter(Boolean)), F = a(() => ({ modelValue: o.value, trigger: l.value, placement: e.placement, disabled: e.disabled, enterable: !0, popperClass: ["layui-anim-upbit", "layui-dropdown-content", e.contentClass], showAfter: P.value, hideAfter: O.value, popperStyle: [e.contentStyle, x.value], clickOutsideToClose: e.clickOutsideToClose, middlewares: T.value, teleportProps: e.teleportProps, triggerCustomEvents: w.value }));
+  S(() => o.value, (t) => {
+    k(t ? "show" : "hide", t);
+  });
+  const i = $(g, {});
+  function r() {
+    o.value = !1;
+  }
+  function c() {
+    o.value = !o.value;
+  }
+  return A(g, { hide: function() {
+    r(), i != null && i.hide && (i == null || i.hide());
+  } }), b({ show: function() {
+    o.value = !0;
+  }, hide: r, toggle: c }), (t, n) => (N(), V(j, L({ ref_key: "popperRef", ref: f, modelValue: o.value, "onUpdate:modelValue": n[0] || (n[0] = (d) => o.value = d) }, F.value), { content: y(() => [h(t.$slots, "content")]), default: y(() => [h(t.$slots, "default")]), _: 3 }, 16, ["modelValue"]));
+} });
+export {
+  le as default
+};

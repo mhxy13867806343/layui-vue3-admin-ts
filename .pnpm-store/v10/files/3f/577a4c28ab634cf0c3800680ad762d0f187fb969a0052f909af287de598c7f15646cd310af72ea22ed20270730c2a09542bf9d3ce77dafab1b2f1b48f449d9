@@ -1,0 +1,6 @@
+import { inject as e } from "vue";
+const t = Symbol("layui-tree-select"), r = () => e(t, {});
+export {
+  t as LAYUI_TREE_SELECT,
+  r as useTreeSelectProvide
+};

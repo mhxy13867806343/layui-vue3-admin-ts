@@ -1,0 +1,7 @@
+import type { DatePickerRenderComponentProps } from "../interface";
+import dayjs from "dayjs";
+export declare function useBaseDatePicker(props: DatePickerRenderComponentProps): {
+    defaultTimeValue: import("vue").ComputedRef<(dayjs.Dayjs | null)[]>;
+    getDefaultValue: () => dayjs.Dayjs;
+};
+export type UseBaseDatePicker = ReturnType<typeof useBaseDatePicker>;

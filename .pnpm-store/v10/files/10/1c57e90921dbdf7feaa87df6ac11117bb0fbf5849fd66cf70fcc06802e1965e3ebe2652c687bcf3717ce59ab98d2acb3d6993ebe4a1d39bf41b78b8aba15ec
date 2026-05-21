@@ -1,0 +1,7 @@
+function a(i) {
+  const { indent: e, level: r, basePadding: t = 0, isTree: d } = i, n = r - 1;
+  return d && e && n > 0 ? `padding-left: ${typeof e == "boolean" ? `${t + 10 * n}px` : e.replace(/\d+/g, (o) => (t + n * +o).toString())}` : "";
+}
+export {
+  a as indentHandle
+};

@@ -1,0 +1,90 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        target: {
+            type: import("vue").PropType<HTMLElement>;
+            default: () => HTMLElement;
+        };
+        offset: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        position: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+    }>> & {
+        onScroll?: ((...args: any[]) => any) | undefined;
+    }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "scroll"[], import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        target: {
+            type: import("vue").PropType<HTMLElement>;
+            default: () => HTMLElement;
+        };
+        offset: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        position: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+    }>> & {
+        onScroll?: ((...args: any[]) => any) | undefined;
+    }, {
+        target: HTMLElement;
+        offset: number;
+        position: string;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        target: {
+            type: import("vue").PropType<HTMLElement>;
+            default: () => HTMLElement;
+        };
+        offset: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        position: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+    }>> & {
+        onScroll?: ((...args: any[]) => any) | undefined;
+    }, {}, {}, {}, {}, {
+        target: HTMLElement;
+        offset: number;
+        position: string;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    target: {
+        type: import("vue").PropType<HTMLElement>;
+        default: () => HTMLElement;
+    };
+    offset: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    position: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+}>> & {
+    onScroll?: ((...args: any[]) => any) | undefined;
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "scroll"[], "scroll", {
+    target: HTMLElement;
+    offset: number;
+    position: string;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        default?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

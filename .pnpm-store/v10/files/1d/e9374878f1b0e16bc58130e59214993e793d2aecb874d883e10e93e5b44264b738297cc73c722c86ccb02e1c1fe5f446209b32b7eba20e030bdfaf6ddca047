@@ -1,0 +1,36 @@
+import { watchEffect as l } from "vue";
+function p(h, i) {
+  l(() => {
+    if (h.length === 0 || i.length === 0)
+      return;
+    const n = /* @__PURE__ */ new Map();
+    d(h, n);
+    const a = /* @__PURE__ */ new Map();
+    (function(s, f, r) {
+      for (let t = 0; t < s.length && t < 100; t++) {
+        const o = s[t];
+        r.forEach((u, e) => {
+          if (typeof o[e] != "string" && typeof o[e] != "number")
+            return;
+          const c = f.get(e);
+          c ? String(c).length < String(o[e]).length && f.set(e, o[e]) : f.set(e, o[e]);
+        });
+      }
+    })(i, a, n), a.forEach((s, f) => {
+      const r = Math.ceil(function(o) {
+        let u = 0;
+        const e = window.getComputedStyle(document.body), c = document.createElement("canvas").getContext("2d");
+        return c && (c.font = e.font, u = c.measureText(o).width), u;
+      }(s)) + 16 + 1, t = n.get(f);
+      r < 300 && r > 50 ? t && (t.width = `${r}px`) : r < 50 ? t && (t.width = "50px") : t && (t.width = "300px");
+    });
+  });
+}
+function d(h, i) {
+  h.forEach((n) => {
+    n.children ? d(n.children, i) : n.key && i.set(n.key, n);
+  });
+}
+export {
+  p as useAutoColsWidth
+};

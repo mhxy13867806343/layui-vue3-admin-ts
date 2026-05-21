@@ -1,0 +1,48 @@
+import { defineComponent as q, inject as D, openBlock as l, createElementBlock as s, normalizeStyle as S, createElementVNode as c, unref as t, Fragment as m, renderList as C, normalizeClass as G, createBlock as R, createTextVNode as O, toDisplayString as F, withModifiers as k, createCommentVNode as g } from "vue";
+import P from "../../_components/render.js";
+import X from "../../checkboxV2/index2.js";
+import { LAY_TABLE_CONTEXT as Y } from "../constant.js";
+import { startResize as $ } from "../hooks/useResize.js";
+import { sortType as w } from "../typing.js";
+import { isValueArray as I } from "../../utils/arrayUtil.js";
+const J = ["lay-size", "lay-skin"], K = ["width"], Q = ["colspan", "rowspan", "onClick"], U = ["lay-sort"], Z = ["onClick"], ee = ["onClick"], te = ["onMousedown"], ue = q({ name: "LayTableHeader", __name: "TableHeader", props: { lastLevelShowColumns: {}, hierarchicalColumns: {}, tableBodyScrollWidth: {} }, setup(le) {
+  const { tableProps: u, tableEmits: x, tableSlots: B, tableDataSource: b, tableRef: E, tableBodyTableRef: H, tableHeaderRef: L, tableHeaderTableRef: T, tableTotalTableRef: M, columnsState: v, selectedState: f, commonGetClasses: V, commonGetStylees: _ } = D(Y);
+  function z(i, y, a) {
+    const n = i.target.parentNode, e = n.getAttribute("lay-sort");
+    A(n, y, e !== a ? a : "");
+  }
+  function A(i, y, a) {
+    const { key: n, sort: e } = y;
+    (function() {
+      const o = E.value.querySelectorAll("[lay-sort]");
+      o && o.length > 0 && o.forEach((d) => {
+        d.setAttribute("lay-sort", "");
+      });
+    })(), i.setAttribute("lay-sort", a), e !== "custom" && function(o, d) {
+      switch (d) {
+        case "":
+          b.splice(0, b.length, ...u.dataSource);
+          break;
+        case "asc":
+          b.sort((r, p) => r[o] - p[o]);
+          break;
+        case "desc":
+          b.sort((r, p) => p[o] - r[o]);
+      }
+    }(n, a), x("sort-change", n, a);
+  }
+  return (i, y) => (l(), s("div", { class: "layui-table-header", style: S([{ "padding-right": `${i.tableBodyScrollWidth}px` }]) }, [c("div", { ref_key: "tableHeaderRef", ref: L, class: "layui-table-header-wrapper" }, [c("table", { ref_key: "tableHeaderTableRef", ref: T, class: "layui-table", "lay-size": t(u).size, "lay-skin": t(u).skin }, [c("colgroup", null, [(l(!0), s(m, null, C(i.lastLevelShowColumns, (a, n) => (l(), s("col", { key: a.key || a.type || n, width: a.width, style: S({ minWidth: a.minWidth }) }, null, 12, K))), 128))]), c("thead", null, [(l(!0), s(m, null, C(i.hierarchicalColumns, (a, n) => (l(), s("tr", { key: n }, [(l(!0), s(m, null, C(a, (e, o) => {
+    var d;
+    return l(), s(m, { key: e.key || e.type || o }, [e.hide ? g("", !0) : (l(), s("th", { key: 0, colspan: t(v).setColSpanValue(e), rowspan: t(v).setRowSpanValue(e), class: G(t(V)(e, { "layui-table-is-sort": !!e.sort })), style: S(t(_)(e)), onClick: (r) => function(p, N) {
+      const h = p.currentTarget.querySelector("span[lay-sort]");
+      if (!h)
+        return;
+      const W = h.getAttribute("lay-sort"), j = w.indexOf(W);
+      A(h, N, w[(j + 1) % w.length]);
+    }(r, e) }, [e.type === "checkbox" ? (l(), R(X, { key: 0, "model-value": t(f).allMSelected.value, "is-indeterminate": t(f).someMSelected.value, skin: "primary", value: "all", onChange: t(f).setMAllSelected }, null, 8, ["model-value", "is-indeterminate", "onChange"])) : (l(), s(m, { key: 1 }, [c("span", null, [e.titleSlot ? (l(), R(t(P), { key: 0, slots: t(B), render: e.titleSlot, column: e, "column-index": o }, null, 8, ["slots", "render", "column", "column-index"])) : (l(), s(m, { key: 1 }, [O(F(e.title), 1)], 64))]), e.sort ? (l(), s("span", { key: 0, class: "layui-table-sort layui-inline", "lay-sort": ((d = t(u).initSort) == null ? void 0 : d.field) === e.key ? t(u).initSort.type : "" }, [c("i", { class: "layui-edge layui-table-sort-asc", title: "升序", onClick: k((r) => z(r, e, "asc"), ["stop"]) }, null, 8, Z), c("i", { class: "layui-edge layui-table-sort-desc", title: "降序", onClick: k((r) => z(r, e, "desc"), ["stop"]) }, null, 8, ee)], 8, U)) : g("", !0)], 64)), !t(u).resize && !e.resize || t(I)(e.children) ? g("", !0) : (l(), s("div", { key: 2, class: "lay-table-cols-resize", onMousedown: k((r) => t($)(r, e, t(T), t(H), t(M)), ["stop"]), onClick: y[0] || (y[0] = k(() => {
+    }, ["stop"])) }, null, 40, te))], 14, Q))], 64);
+  }), 128))]))), 128))])], 8, J)], 512)], 4));
+} });
+export {
+  ue as default
+};

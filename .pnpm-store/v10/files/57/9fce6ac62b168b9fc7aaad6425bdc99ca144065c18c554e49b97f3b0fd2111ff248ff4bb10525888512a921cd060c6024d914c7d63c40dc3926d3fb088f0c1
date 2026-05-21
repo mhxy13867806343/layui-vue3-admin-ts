@@ -1,0 +1,10 @@
+import { defineComponent as r, ref as n, provide as i, watch as t, openBlock as m, createElementBlock as p, renderSlot as c } from "vue";
+const f = { class: "layui-radio-group" }, g = r({ name: "LayRadioGroup", __name: "index", props: { modelValue: { type: [String, Boolean, Number] }, name: {}, disabled: { type: Boolean, default: !1 } }, emits: ["update:modelValue", "change"], setup(u, { emit: s }) {
+  const a = u, o = s, l = n(a.modelValue), d = n(a.disabled);
+  return i("radioGroup", { name: "LayRadioGroup", modelValue: l, naiveName: a.name, disabled: d, changeRadioGroup: (e) => {
+    o("change", e), o("update:modelValue", e);
+  } }), t(() => a.modelValue, (e) => l.value = e), t(() => a.disabled, (e) => d.value = e), (e, V) => (m(), p("div", f, [c(e.$slots, "default")]));
+} });
+export {
+  g as default
+};

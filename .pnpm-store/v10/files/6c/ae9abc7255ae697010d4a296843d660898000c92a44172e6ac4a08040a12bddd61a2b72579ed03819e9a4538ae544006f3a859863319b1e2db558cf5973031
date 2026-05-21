@@ -1,0 +1,39 @@
+import { defineComponent as h, ref as y, computed as n, onMounted as x, openBlock as i, createElementBlock as d, normalizeClass as B, normalizeStyle as C, renderSlot as c, createCommentVNode as u, createElementVNode as S, withModifiers as V, createVNode as z, unref as F } from "vue";
+/* empty css           */
+import { LayIcon as w } from "@layui/icons-vue";
+import { TinyColor as E } from "@ctrl/tinycolor";
+const N = { key: 0, class: "layui-tag-icon" }, M = { class: "layui-tag-text" }, W = h({ name: "LayTag", __name: "index", props: { type: {}, color: {}, closable: { type: Boolean }, size: { default: "md" }, bordered: { type: Boolean, default: !0 }, disabled: { type: Boolean }, shape: { default: "square" }, maxWidth: {}, variant: { default: "dark" } }, emits: ["close", "check", "update:checked"], setup(m, { emit: b }) {
+  const t = m, g = b, v = y(!0), f = (e) => {
+    t.disabled || g("close", e);
+  }, k = n(() => ["layui-tag", `layui-tag-size-${t.size}`, `layui-tag-shap-${t.shape}`, { [`layui-tag-variant-${t.variant}`]: t.variant, [`layui-tag-variant-${t.variant}-bordered`]: t.bordered, [`layui-tag-${t.type}-bordered`]: t.bordered, [`layui-tag-${t.type}`]: t.type, "layui-tag-bordered": t.bordered, "layui-tag-disabled": t.disabled }]), $ = n(() => {
+    return [{ "max-width": t.maxWidth ?? "100%", ...(e = t, n(() => {
+      let o = {};
+      if (s.value, e.color || e.type) {
+        var a = void 0;
+        e.color ? a = e.color : a = getComputedStyle(document.documentElement).getPropertyValue(`--global-${e.type}-color`);
+        const r = new E(a);
+        if (e.variant === "dark") {
+          const l = r.getBrightness() < 190, p = l ? "#FFF" : "#000000";
+          o = { "background-color": a, "border-color": e.bordered ? a : "transparent", color: p };
+        } else
+          e.variant === "light" ? o = { "background-color": r.tint(90).toString(), "border-color": e.bordered ? r.tint(50).toString() : "transparent", color: a } : e.variant === "plain" && (o = { "background-color": "transparent", "border-color": e.bordered ? a : "transparent", color: a });
+      }
+      return o;
+    })).value }];
+    var e;
+  }), s = y(!0);
+  return x(() => {
+    var e = void 0;
+    const o = document.documentElement;
+    new MutationObserver(function(a) {
+      for (let r of a)
+        if (r.type === "attributes" && r.attributeName === "style") {
+          const l = getComputedStyle(o).getPropertyValue(`--global-${t.type}-color`);
+          (e == null || e != null && e != l) && (e = l, s.value = !s.value);
+        }
+    }).observe(o, { attributes: !0, attributeOldValue: !0, attributeFilter: ["style"] });
+  }), (e, o) => v.value ? (i(), d("span", { key: 0, class: B(k.value), style: C($.value) }, [e.$slots.icon ? (i(), d("span", N, [c(e.$slots, "icon")])) : u("", !0), S("span", M, [c(e.$slots, "default")]), e.closable ? (i(), d("span", { key: 1, class: "layui-tag-close-icon", onClick: V(f, ["stop"]) }, [c(e.$slots, "close-icon", {}, () => [z(F(w), { type: "layui-icon-close" })])])) : u("", !0)], 6)) : u("", !0);
+} });
+export {
+  W as default
+};

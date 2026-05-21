@@ -1,0 +1,22 @@
+import { defineComponent as _, ref as g, computed as r, resolveComponent as n, openBlock as m, createElementBlock as p, createElementVNode as s, renderSlot as f, Fragment as $, toDisplayString as x, createVNode as l, withCtx as t, createTextVNode as z, createSlots as B, normalizeProps as N, mergeProps as w, createCommentVNode as S } from "vue";
+import o from "dayjs";
+/* empty css           */
+import E from "./date-table.js";
+const L = { class: "layui-calendar" }, P = { class: "layui-calendar-header" }, j = { class: "layui-calendar-title" }, F = { class: "layui-calendar-group" }, T = { class: "layui-calendar-body" }, J = _({ name: "LayCalendar", __name: "index", props: { modelValue: { default: Date.now() }, fullscreen: { type: Boolean, default: !0 }, disabledDate: {} }, emits: ["click", "update:modelValue"], setup(y, { emit: v }) {
+  const u = v, a = g(y.modelValue), i = r(() => o(a.value).format("YYYY-MM")), Y = () => {
+    a.value = o().format("YYYY-MM-DD");
+  }, k = r(() => o(a.value).subtract(1, "month").date(1)), D = r(() => o(a.value).add(1, "month").date(1)), C = () => {
+    a.value = k.value.format("YYYY-MM-DD");
+  }, b = () => {
+    a.value = D.value.format("YYYY-MM-DD");
+  }, M = (e) => {
+    u("click", e), u("update:modelValue", e);
+  };
+  return (e, q) => {
+    const c = n("lay-icon"), d = n("lay-button"), V = n("lay-button-group");
+    return m(), p("div", L, [s("div", P, [e.$slots.header ? f(e.$slots, "header", { key: 0, date: i.value }) : (m(), p($, { key: 1 }, [s("div", j, x(i.value), 1), s("div", F, [l(V, null, { default: t(() => [l(d, { size: "sm", onClick: C }, { default: t(() => [l(c, { type: "layui-icon-left" })]), _: 1 }), l(d, { size: "sm", onClick: Y }, { default: t(() => [z("今天")]), _: 1 }), l(d, { size: "sm", onClick: b }, { default: t(() => [l(c, { type: "layui-icon-right" })]), _: 1 })]), _: 1 })])], 64))]), s("div", T, [l(E, { disabledDate: e.disabledDate, fullscreen: e.fullscreen, date: a.value, onClick: M }, B({ _: 2 }, [e.$slots.cell ? { name: "cell", fn: t((h) => [e.$slots.cell ? f(e.$slots, "cell", N(w({ key: 0 }, h))) : S("", !0)]), key: "0" } : void 0]), 1032, ["disabledDate", "fullscreen", "date"])])]);
+  };
+} });
+export {
+  J as default
+};

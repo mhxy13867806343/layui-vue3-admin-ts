@@ -1,0 +1,22 @@
+import { defineComponent as g, inject as r, openBlock as y, createBlock as h, Transition as m, withCtx as f, renderSlot as B } from "vue";
+const c = g({ name: "LayCollapseTransition", __name: "collapseTransition", setup(T) {
+  const o = r("time"), d = `${o}s height ease-in-out, ${o}s padding-top ease-in-out, ${o}s padding-bottom ease-in-out`, a = (e) => {
+    e.style.transition = d, e.dataset || (e.dataset = {}), e.dataset.oldPaddingTop = e.style.paddingTop, e.dataset.oldPaddingBottom = e.style.paddingBottom, e.style.height = 0, e.style.paddingTop = 0, e.style.paddingBottom = 0;
+  }, s = (e) => {
+    e.dataset.oldOverflow = e.style.overflow, e.scrollHeight !== 0 ? (e.style.height = e.scrollHeight + "px", e.style.paddingTop = e.dataset.oldPaddingTop, e.style.paddingBottom = e.dataset.oldPaddingBottom) : (e.style.height = "", e.style.paddingTop = e.dataset.oldPaddingTop, e.style.paddingBottom = e.dataset.oldPaddingBottom), e.style.overflow = "hidden";
+  }, l = (e) => {
+    e.style.transition = "", e.style.height = "", e.style.overflow = e.dataset.oldOverflow;
+  }, n = (e) => {
+    e.dataset || (e.dataset = {}), e.dataset.oldPaddingTop = e.style.paddingTop, e.dataset.oldPaddingBottom = e.style.paddingBottom, e.dataset.oldOverflow = e.style.overflow;
+    var t = getComputedStyle(e, null);
+    e.style.height = e.scrollHeight - parseInt(t.paddingTop) - parseInt(t.paddingBottom) + "px", e.style.overflow = "hidden";
+  }, i = (e) => {
+    e.scrollHeight !== 0 && (e.style.transition = d, e.style.height = 0, e.style.paddingTop = 0, e.style.paddingBottom = 0);
+  }, p = (e) => {
+    e.style.transition = "", e.style.height = "", e.style.overflow = e.dataset.oldOverflow, e.style.paddingTop = e.dataset.oldPaddingTop, e.style.paddingBottom = e.dataset.oldPaddingBottom;
+  };
+  return (e, t) => (y(), h(m, { onBeforeEnter: a, onEnter: s, onAfterEnter: l, onBeforeLeave: n, onLeave: i, onAfterLeave: p }, { default: f(() => [B(e.$slots, "default")]), _: 3 }));
+} });
+export {
+  c as default
+};

@@ -1,0 +1,22 @@
+import type { Ref } from "vue";
+import type { TreeData, TreeEmits, TreeProps } from "../interface";
+export declare function useTree(props: TreeProps, emits: TreeEmits): {
+    treeData: Ref<TreeData[]>;
+    flatTree: import("vue").ComputedRef<TreeData[]>;
+    findNode: (id?: string | number) => TreeData | undefined;
+    findMockNodes: (id?: string | number) => Array<TreeData> | undefined;
+    findNodePath: (id: string | number) => TreeData[];
+    findParentNode: (id?: string | number) => TreeData | undefined;
+    findSiblingsNodes: (id?: string | number) => Array<TreeData> | undefined;
+    findAllLeafNodes: (id?: string | number) => Array<TreeData> | undefined;
+    lazyLoad: (node?: TreeData) => Promise<void>;
+    reloadAllNodeStatus: () => void;
+    filter: (value: string) => void;
+    expandedKeys: import("vue").ComputedRef<(string | number)[]>;
+    expandedPath: import("vue").ComputedRef<(string | number)[][]>;
+    checkedKeys: import("vue").ComputedRef<(string | number)[]>;
+    checkedPath: import("vue").ComputedRef<(string | number)[][]>;
+    checkedTitle: import("vue").ComputedRef<string[]>;
+    checkedTitlePath: import("vue").ComputedRef<string[][]>;
+};
+export type UseTreeReturn = ReturnType<typeof useTree>;

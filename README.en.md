@@ -47,9 +47,11 @@ An enterprise-grade admin scaffold built with Vue 3 + TypeScript + Vite + [layui
 
 ## 🚀 Quick Start
 
+> This project uses pnpm as the package manager. Please ensure pnpm >= 8 is installed.
+
 ```bash
-npm install
-npm run dev          # Default: http://localhost:5173
+pnpm install
+pnpm dev          # Default: http://localhost:5173
 ```
 
 Preset accounts (mock mode):
@@ -62,17 +64,17 @@ Preset accounts (mock mode):
 ## 🛠 Scripts
 
 ```bash
-npm run dev            # Vite dev server
-npm run build          # Type check + production build
-npm run preview        # Preview build output
-npm run lint           # ESLint
-npm run type-check     # vue-tsc strict type check
-npm run test           # Vitest single run
-npm run test:watch     # Vitest watch mode
-npm run test:coverage  # Coverage report
+pnpm dev            # Vite dev server
+pnpm build          # Type check + production build
+pnpm preview        # Preview build output
+pnpm lint           # ESLint
+pnpm type-check     # vue-tsc strict type check
+pnpm test           # Vitest single run
+pnpm test:watch     # Vitest watch mode
+pnpm test:coverage  # Coverage report
 ```
 
-CI recommended order: `npm run type-check && npm run lint && npm run test && npm run build`
+CI recommended order: `pnpm type-check && pnpm lint && pnpm test && pnpm build`
 
 ## ⚙️ Environment Variables
 
@@ -141,7 +143,7 @@ Examples:
 ## 🤝 Contributing
 
 1. Fork and create a branch: `feat/xxx` / `fix/xxx`
-2. Pass locally: `npm run type-check && npm run lint && npm run test`
+2. Pass locally: `pnpm type-check && pnpm lint && pnpm test`
 3. Submit PR / MR with change description and test results
 
 ## 📄 License

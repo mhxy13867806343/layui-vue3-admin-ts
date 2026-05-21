@@ -1,0 +1,10 @@
+import { defineComponent as n, openBlock as o, createElementBlock as t, unref as e, createVNode as i } from "vue";
+import { LayIcon as l } from "@layui/icons-vue";
+import { usePage as m } from "../usePage.js";
+const P = n({ name: "LayPageRefresh", __name: "refresh", setup(f) {
+  const { currentPage: c, inlimit: p, disabled: u, limits: d, handleRefresh: a } = m();
+  return (h, r) => (o(), t("div", { onClick: r[0] || (r[0] = (...s) => e(a) && e(a)(...s)), class: "layui-page-refresh" }, [i(e(l), { type: "layui-icon-refresh" })]));
+} });
+export {
+  P as default
+};

@@ -1,0 +1,56 @@
+import { defineComponent as q, inject as G, resolveComponent as H, openBlock as c, createElementBlock as p, Fragment as E, renderList as J, unref as l, withDirectives as Q, normalizeClass as y, createElementVNode as k, createVNode as S, createBlock as h, createCommentVNode as b, createTextVNode as R, toDisplayString as X, withCtx as Y, mergeProps as W, vShow as Z } from "vue";
+import T from "../_components/render.js";
+import $ from "../checkboxV2/index.js";
+import ee from "../transition/index.js";
+import { LayIcon as D } from "@layui/icons-vue";
+import { LAY_TREE_CONTEXT as ne } from "./constant.js";
+import { isString as oe, isFunction as B, normalizeValue as V } from "../utils/type.js";
+const te = { class: "layui-tree-block" }, ae = { class: "layui-tree-main" }, le = ["onClickCapture"], ie = ["onDblclick", "onContextmenu", "onClick"], he = q({ name: "LayTreeNode", __name: "TreeNode", props: { tree: {}, data: {}, checkedKeys: {}, expandKeys: {}, checkStrictly: { type: [Boolean, String] }, collapseTransition: { type: Boolean }, onlyIconControl: { type: Boolean }, selectedKey: {}, showLine: { type: Boolean }, standalone: { type: Boolean }, showCheckbox: { type: Boolean }, replaceFields: {}, shouldIconBorder: {}, tailNodeIcon: { type: [String, Boolean, Function] }, defaultExpandAll: { type: Boolean }, cacheData: {}, lazy: { type: Boolean }, load: {}, loadOnCheck: { type: Boolean }, searchNodeMethod: {}, accordion: { type: Boolean } }, setup(K) {
+  const t = K, { treeEmits: r, treeSlots: m, useTreeData: { treeData: P, flatTree: _, lazyLoad: N, findNode: I, findNodePath: z, findSiblingsNodes: A, findAllLeafNodes: F, reloadAllNodeStatus: O, checkedKeys: f, expandedPath: j } } = G(ne);
+  function U(o) {
+    const d = A(o.parent) ?? [];
+    return d.findIndex((a) => a.id === o.id) === d.length - 1;
+  }
+  function g(o) {
+    return B(t.tailNodeIcon) ? t.tailNodeIcon(o) : o.children.length || !o.leaf ? t.showLine ? o.expanded ? "layui-icon-subtraction" : "layui-icon-addition" : o.expanded ? "layui-icon-triangle-d" : "layui-icon-triangle-r" : t.showLine && t.tailNodeIcon ? t.tailNodeIcon : "";
+  }
+  function M(o) {
+    const d = g(o);
+    return !!["layui-icon-subtraction", "layui-icon-addition"].includes(d) || !!B(t.shouldIconBorder) && !!t.shouldIconBorder(d);
+  }
+  async function w(o, d) {
+    if (await N(d), d.expanded = !d.expanded, t.accordion) {
+      const a = z(d.id).map((e) => e.id), n = j.value, v = V(n.filter((e) => e.at(0) !== a.at(0)).map((e) => I(e.at(0)))), i = a.length >= 2 && V(n.filter((e) => e.length === a.length && e.at(0) === a.at(0) && e.at(-1) !== a.at(-1)).map((e) => I(e.at(-1)))).filter((e) => e.expanded);
+      v.forEach((e) => e.expanded = !1), i && i.forEach((e) => e.expanded = !1);
+    }
+    r("update:expand-keys", _.value.filter((a) => a.expanded).map((a) => a.id) ?? []), r("update:checked-keys", f.value);
+  }
+  return (o, d) => {
+    const a = H("tree-node", !0);
+    return c(), p("div", te, [(c(!0), p(E, null, J(o.tree ?? l(P) ?? [], (n, v) => Q((c(), p("div", { key: v, class: y(["layui-tree-set", [{ "layui-tree-set-end": !t.standalone && U(n) }]]) }, [k("div", { class: y(["layui-tree-entry", [{ "layui-this": o.selectedKey === n.id }]]) }, [k("div", ae, [k("span", { class: y(["layui-tree-iconClick", ["layui-tree-icon-" + (M(n) ? "border" : "no-border"), "layui-tree-icon-" + (g(n).length ? "pad-left" : "no-pad-left")]]), onClickCapture: (i) => {
+      w(0, n);
+    } }, [S(l(D), { type: g(n) }, null, 8, ["type"])], 42, le), o.showCheckbox ? (c(), h(l($), { key: 0, modelValue: n.checked, "onUpdate:modelValue": (i) => n.checked = i, value: n.checked ? 1 : 0, skin: "primary", disabled: n.disabled, "is-indeterminate": n.isIndeterminate, onChange: (i) => function(e, s) {
+      const L = (u) => {
+        if (t.checkStrictly)
+          return u.checked = e, r("check-change", u.original, e), void r("update:checked-keys", f.value ?? []);
+        const x = F(u.id);
+        u.isIndeterminate && (e = !1), x == null || x.filter((C) => !C.disabled).forEach((C) => {
+          C.checked = e;
+        }), O(), r("check-change", u.original, u.checked), r("update:checked-keys", f.value);
+      };
+      t.loadOnCheck ? N(s).catch(console.warn).finally(() => L(s)) : L(s);
+    }(i, n) }, null, 8, ["modelValue", "onUpdate:modelValue", "value", "disabled", "is-indeterminate", "onChange"])) : b("", !0), n.loading ? (c(), h(l(D), { key: 1, class: "layui-tree-loading layui-anim layui-anim-rotate layui-anim-loop", type: "layui-icon-loading" })) : b("", !0), k("span", { class: y(["layui-tree-txt", [n.disabled && "layui-disabled"]]), onDblclick: (i) => {
+      return s = n, (e = i).stopPropagation(), e.preventDefault(), void r("node-double", e, s.original);
+      var e, s;
+    }, onContextmenu: (i) => {
+      return s = n, (e = i).stopPropagation(), e.preventDefault(), void r("node-contextmenu", e, s.original);
+      var e, s;
+    }, onClick: (i) => {
+      return (e = n).disabled || (r("update:selected-key", e.id), r("node-click", e.original)), void (t.onlyIconControl || w(0, e));
+      var e;
+    } }, [l(m).title ? (c(), h(l(T), { key: 0, data: n.original, slots: l(m), render: "title" }, null, 8, ["data", "slots"])) : (c(), p(E, { key: 1 }, [R(X(n.title), 1)], 64))], 42, ie)])], 2), S(l(ee), { enable: o.collapseTransition }, { default: Y(() => [n.expanded ? (c(), p("div", { key: 0, class: y(["layui-tree-pack", [{ "layui-tree-showLine": o.showLine }]]) }, [l(oe)(n.slot) && l(m)[n.slot] || l(B)(n.slot) ? (c(), h(l(T), { key: 0, render: n.slot, slots: l(m), data: n.original }, null, 8, ["render", "slots", "data"])) : (c(), h(a, W({ key: 1 }, t, { tree: n.children }), null, 16, ["tree"]))], 2)) : b("", !0)]), _: 2 }, 1032, ["enable"])], 2)), [[Z, !n.mock && n.visible]])), 128))]);
+  };
+} });
+export {
+  he as default
+};

@@ -1,0 +1,23 @@
+import { computed as o, reactive as d, toRefs as v } from "vue";
+import m from "../component/DatePicker.js";
+import p from "../component/DateRange.js";
+import u from "../component/MonthRange.js";
+import g from "../component/TimeRange.js";
+import V from "../component/YearRange.js";
+import { normalizeDayjsValue as i } from "../util.js";
+import { isArray as f } from "../../utils/arrayUtil.js";
+import { isNumber as y } from "../../utils/type.js";
+function x(e) {
+  const s = { year: { component: e.range ? V : m, format: "YYYY" }, month: { component: e.range ? u : m, format: "M" }, datetime: { component: e.range ? p : m, format: "YYYY-MM-DD HH:mm:ss" }, date: { component: e.range ? p : m, format: "YYYY-MM-DD" }, yearmonth: { component: e.range ? u : m, format: "YYYY-MM" }, time: { component: e.range ? g : m, format: "HH:mm:ss" } }, a = o(() => s[e.type]), r = o(() => e.format || a.value.format), n = o(() => {
+    if (e.range)
+      return (f(e.modelValue) ? e.modelValue : []).map((t) => i(t, r.value));
+    {
+      let t = e.modelValue;
+      return ["year", "month"].includes(e.type) && y(e.modelValue) && `${e.modelValue}`.length <= 4 && (t += ""), i(t, r.value);
+    }
+  }), l = o(() => e.inputFormat ?? a.value.format), Y = o(() => ({ ...e, modelValue: n.value, format: r.value, inputFormat: l.value })), c = d({ ...v(e), modelValue: n, format: r, inputFormat: l });
+  return { RenderComponent: o(() => a.value.component), renderComponentProps: Y, datePickerContext: c };
+}
+export {
+  x as useDatePicker
+};

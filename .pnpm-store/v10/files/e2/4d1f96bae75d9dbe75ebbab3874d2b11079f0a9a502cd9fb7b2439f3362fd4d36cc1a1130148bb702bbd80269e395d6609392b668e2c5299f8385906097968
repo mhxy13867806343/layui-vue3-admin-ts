@@ -1,0 +1,84 @@
+import { inject as E, reactive as $, ref as y, onMounted as B, computed as p, watch as c, nextTick as D, toRefs as F } from "vue";
+const R = Symbol("layui-slider"), I = () => E(R), L = (a, i, u) => {
+  const r = $({ firstVal: a.min, secondVal: a.max }), A = $({ isCanHide: !0, disabled: !1, placement: "top", isDark: !1 }), v = y(null), b = y(null), h = y(!1), P = y(null);
+  B(() => {
+    M();
+  });
+  const U = p(() => {
+    const t = "" + Math.abs(V.value - n.value) / (a.max - a.min) * 100, l = "" + Math.abs(n.value - a.min) / (a.max - a.min) * 100;
+    return a.range ? a.vertical ? { [a.reverse ? "top" : "bottom"]: `${l}%`, height: `${t}%` } : { width: `${t}%`, [a.reverse ? "right" : "left"]: `${l}%` } : a.vertical ? { [a.reverse ? "top" : "bottom"]: "0%", height: `${l}%` } : { width: `${l}%`, [a.reverse ? "right" : "left"]: "0%" };
+  }), n = p(() => Math.min(r.firstVal, r.secondVal)), V = p(() => Math.max(r.firstVal, r.secondVal)), N = p(() => {
+    const t = (a.max - a.min) / a.step, l = Array.from({ length: t - 1 }).map((e, m) => (m + 1) * a.step);
+    return a.range, l.filter((e) => e >= a.min && e <= a.max);
+  });
+  c(() => a.tooltipProps, () => {
+    if (a.tooltipProps)
+      for (const t in a.tooltipProps) {
+        const l = t;
+        A[l] = a.tooltipProps[l];
+      }
+  }, { immediate: !0, deep: !0 }), c(() => r, (t) => {
+    a.range ? (i("update:modelValue", [n.value, V.value]), i("update:rangeValue", [n.value, V.value]), i("change", [n.value, V.value])) : (i("update:modelValue", n.value), i("change", n.value));
+  }, { deep: !0 }), c(() => h, (t) => {
+    if (t.value)
+      if (a.range) {
+        const l = a.modelValue ? a.modelValue : a.rangeValue;
+        Array.isArray(l) && l.length > 0 && (r.firstVal = l[0], r.secondVal = l[1]);
+      } else
+        i("update:modelValue", n.value);
+  }, { deep: !0 }), c(() => [a.modelValue, a.rangeValue], (t, l) => {
+    const e = a.range ? Array.isArray(t[0]) ? t[0] : t[1] : t[0], m = a.range ? Array.isArray(l[0]) ? l[0] : l[1] : l[0];
+    h.value || Array.isArray(e) && Array.isArray(m) && e.every((f, o) => f === m[o]) || M();
+  }), c(() => [a.min, a.max], () => {
+    if (typeof a.min != "number" || typeof a.max != "number" || isNaN(a.min) || isNaN(a.max))
+      throw new Error("max与min应为数值!");
+    if (a.max < a.min)
+      throw new Error("max请大于min!");
+    M();
+  });
+  const k = p(() => {
+    const t = [a.min, a.max, a.step].map((l) => {
+      const e = `${l}`.split(".")[1];
+      return e ? e.length : 0;
+    });
+    return Math.max.apply(null, t);
+  }), w = (t) => {
+    const l = P.value.getBoundingClientRect(), e = a.reverse ? l.right : l.left, m = a.reverse ? l.top : l.bottom;
+    let f = (t.clientX - e) * (a.reverse ? -1 : 1);
+    a.vertical && (f = (t.clientY - m) * (a.reverse ? 1 : -1));
+    let o = f / (a.vertical ? l.height : l.width) * 100;
+    o > 100 && (o = 100), o < 0 && (o = 0);
+    const S = a.isFollowMark && u.value.length > 0, C = 100 / ((a.max - a.min) / (S ? 1 : a.step));
+    let g = Math.round(o / C) * a.step + a.min;
+    return g = Number.parseFloat(g.toFixed(k.value)), S ? ((x) => {
+      let s = [];
+      for (let d = 0; d < u.value.length - 1; d++)
+        x >= u.value[d] && x <= u.value[d + 1] && (s = [u.value[d], u.value[d + 1]]);
+      return s && s.length > 1 ? x < (s[0] + s[1]) / 2 ? s[0] : s[1] : x;
+    })(g) : g;
+  }, M = async () => {
+    if (a.range) {
+      const t = a.modelValue ? a.modelValue : a.rangeValue;
+      if (Array.isArray(t)) {
+        const l = Math.min(Math.max(a.min, t[0] ? t[0] : a.min), a.max), e = Math.min(Math.max(a.min, t[1] ? t[1] : a.min), a.max);
+        r.firstVal = l, r.secondVal = e;
+      } else
+        r.firstVal = a.min, r.secondVal = a.max, await D(), i("update:modelValue", [a.min, a.max]);
+    } else
+      typeof a.modelValue != "number" ? r.firstVal = a.min : (r.secondVal = a.max, r.firstVal = Math.min(a.max, Math.max(a.min, a.modelValue))), await D(), i("update:modelValue", n.value);
+  };
+  return { handClick: async (t) => {
+    if (h.value || a.disabled)
+      return;
+    const l = w(t);
+    var e;
+    e = l, a.range ? Math.abs(r.firstVal - e) > Math.abs(r.secondVal - e) ? r.secondVal > r.firstVal ? b.value.setUpDatePos(e) : v.value.setUpDatePos(e) : r.secondVal < r.firstVal ? b.value.setUpDatePos(e) : v.value.setUpDatePos(e) : v.value.setUpDatePos(e);
+  }, barStyle: U, getStop: N, dotStyle: (t) => a.vertical ? { bottom: `${t}%` } : { left: `${t}%` }, laySliderBar1: v, laySliderBar2: b, slider: P, getCalcPos: w, updateDragging: (t) => {
+    h.value = t;
+  }, tooltipProp: A, ...F(r) };
+};
+export {
+  R as LAYUI_SLIDER_KEY,
+  L as useSlider,
+  I as useSliderProvide
+};

@@ -1,0 +1,12 @@
+import { defineComponent as g, openBlock as c, createElementBlock as y, Fragment as f, createElementVNode as s, unref as a, createVNode as n, isRef as v, toDisplayString as x } from "vue";
+import h from "../../input/index.js";
+import { LayIcon as d } from "@layui/icons-vue";
+import { useI18n as B } from "../../language/index.js";
+import { usePage as b } from "../usePage.js";
+const P = ["data-page"], V = ["data-page"], k = s("span", { class: "layui-simple-page-slash" }, "／", -1), C = ["data-page"], _ = g({ name: "LayPageSimple", __name: "simple", setup(N) {
+  const { pageCount: p, disabled: r, currentPage: t, handlePrev: o, handleNext: i, handleBlur: m } = b(), { t: u } = B();
+  return (j, e) => (c(), y(f, null, [s("div", { "data-page": a(u)("page.previous"), class: "layui-page-prev", onClick: e[0] || (e[0] = (...l) => a(o) && a(o)(...l)) }, [n(a(d), { type: "layui-icon-left", size: "16px" })], 8, P), s("div", { class: "layui-pager-jumper", "data-page": a(t) + "/" + a(p) }, [n(a(h), { disabled: a(r), onBlur: a(m), type: "number", modelValue: a(t), "onUpdate:modelValue": e[1] || (e[1] = (l) => v(t) ? t.value = l : null) }, null, 8, ["disabled", "onBlur", "modelValue"]), k, s("span", null, x(a(p)), 1)], 8, V), s("div", { "data-page": a(u)("page.next"), class: "layui-page-next", onClick: e[2] || (e[2] = (...l) => a(i) && a(i)(...l)) }, [n(a(d), { type: "layui-icon-right", size: "16px" })], 8, C)], 64));
+} });
+export {
+  _ as default
+};

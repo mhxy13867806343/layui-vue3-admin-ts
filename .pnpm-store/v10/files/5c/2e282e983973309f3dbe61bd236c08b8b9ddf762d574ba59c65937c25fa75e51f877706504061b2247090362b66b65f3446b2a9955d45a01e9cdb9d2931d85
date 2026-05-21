@@ -1,0 +1,4 @@
+import r from "./SubMenuPopup.js";
+export {
+  r as default
+};

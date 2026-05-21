@@ -1,0 +1,4 @@
+import o from "./next.js";
+export {
+  o as default
+};

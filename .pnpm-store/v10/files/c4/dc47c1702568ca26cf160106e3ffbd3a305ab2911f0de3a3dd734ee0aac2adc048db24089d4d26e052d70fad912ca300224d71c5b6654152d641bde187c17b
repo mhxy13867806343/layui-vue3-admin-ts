@@ -1,0 +1,8 @@
+/** __vue_virtual_code_placeholder */
+import type { Shortcuts } from "../../interface";
+declare const _default: import("vue").DefineComponent<{}, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+    "change-shortcut": (shortcut: Shortcuts) => void;
+}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{}>> & {
+    "onChange-shortcut"?: ((shortcut: Shortcuts) => any) | undefined;
+}, {}, {}>;
+export default _default;

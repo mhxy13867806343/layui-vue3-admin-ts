@@ -1,0 +1,4 @@
+import o from "./descriptionsItem.js";
+export {
+  o as default
+};

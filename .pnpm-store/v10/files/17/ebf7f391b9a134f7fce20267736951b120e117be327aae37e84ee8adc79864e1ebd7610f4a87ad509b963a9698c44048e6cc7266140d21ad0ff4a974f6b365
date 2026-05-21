@@ -1,0 +1,21 @@
+import { defineComponent as g, inject as s, ref as h, computed as b, openBlock as S, createElementBlock as k, normalizeStyle as w, renderSlot as C } from "vue";
+const X = ["data-id"], _ = g({ name: "LayCarouselItem", __name: "index", props: { id: {} }, setup(u) {
+  const f = u, c = s("active"), o = s("slotsChange");
+  o.value = !o.value;
+  const m = s("anim"), r = h(), p = b(() => {
+    if (r.value) {
+      let e = r.value.parentNode.children, l = e.length, t = 0, i = 0;
+      for (let n = 0; n < e.length; n++) {
+        const d = e[n];
+        d.getAttribute("data-id") === String(c.value) && (t = n), d.getAttribute("data-id") === String(f.id) && (i = n);
+      }
+      let v = t > 0 ? t - 1 : l - 1, y = t + 1 < l ? t + 1 : 0, a = m.value;
+      return t === i ? a === "updown" ? { transform: "translateY(0)", visibility: "inherit" } : a.includes("fade") ? { opacity: 1, visibility: "inherit" } : { transform: "translateX(0)", visibility: "inherit" } : v === i ? a === "updown" ? { transform: "translateY(-100%)" } : a.includes("fade") ? { opacity: 0 } : { transform: "translateX(-100%)" } : y === i ? a === "updown" ? { transform: "translateY(100%)" } : a.includes("fade") ? { opacity: 0 } : { transform: "translateX(100%)" } : { display: "none" };
+    }
+    return {};
+  });
+  return (e, l) => (S(), k("li", { ref_key: "item", ref: r, style: w(p.value), "data-id": e.id }, [C(e.$slots, "default")], 12, X));
+} });
+export {
+  _ as default
+};

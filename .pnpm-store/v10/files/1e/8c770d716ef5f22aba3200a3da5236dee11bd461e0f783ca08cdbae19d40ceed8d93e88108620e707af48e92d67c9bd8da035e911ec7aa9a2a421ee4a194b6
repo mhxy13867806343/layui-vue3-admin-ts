@@ -1,0 +1,99 @@
+import D from "../../icon/index.js";
+import { useResizeObserver as N } from "@vueuse/core";
+import { inject as Y, ref as u, computed as f, onMounted as j, onUnmounted as z, watch as P, nextTick as S, h as R, Fragment as A, createTextVNode as F } from "vue";
+import { LAY_TAB_CONTEXT as O } from "../constant.js";
+import { clsPrefix as h } from "../../utils/common.js";
+import { isFunction as B, isString as L } from "../../utils/type.js";
+function J(i) {
+  const v = Y(O), p = u(null), g = u(null), l = u(null), d = u([]), m = u(!1), c = f(() => ["top", "bottom"].includes(i.tabPosition)), w = f(() => c.value ? "width" : "height"), W = f(() => c.value ? "X" : "Y");
+  let b = null;
+  function T() {
+    const t = o(l.value, ["scrollWidth", "scrollHeight"]), e = o(l.value, ["offsetWidth", "offsetHeight"]);
+    m.value = !!(l.value && t > e);
+  }
+  j(() => {
+    b = N(l, () => {
+      T(), C(), x();
+    });
+  }), z(() => {
+    b && b.stop();
+  });
+  const M = f(() => [h("tab-head"), { [`is-${i.tabPosition}`]: i.tabPosition }]), k = f(() => {
+    if (!p.value || !g.value)
+      return;
+    const t = o(p.value, ["offsetWidth", "offsetHeight"]), e = o(g.value, ["offsetWidth", "offsetHeight"]);
+    return c.value ? { paddingLeft: `${t}px`, paddingRight: `${e}px` } : { paddingTop: `${t}px`, paddingBottom: `${e}px` };
+  }), V = f(() => [h("tab-title"), { [`is-${i.tabPosition}`]: i.tabPosition }]), n = u(0), X = f(() => ({ transform: `translate${W.value}(-${n.value}px)` })), $ = u();
+  function x() {
+    if (i.type !== "brief")
+      return;
+    let t = 0, e = 0;
+    for (let a = 0; a < d.value.length; a++) {
+      const s = d.value[a], r = o(s, ["offsetWidth", "offsetHeight"]);
+      if (s.classList.contains(h("this"))) {
+        t = r;
+        break;
+      }
+      e += r;
+    }
+    $.value = { [w.value]: `${t}px`, transform: `translate${W.value}(${e}px)`, transition: i.activeBarTransition ? "transform .3s" : void 0 };
+  }
+  function y(t) {
+    i.beforeLeave && i.beforeLeave(t) === !1 || (v.emits("update:modelValue", t), v.emits("change", t));
+  }
+  function C() {
+    if (!l.value)
+      return;
+    const t = d.value.find((H) => H.classList.contains(h("this")));
+    if (!t)
+      return;
+    const e = o(l.value, ["scrollWidth", "scrollHeight"]), a = o(l.value, ["offsetWidth", "offsetHeight"]), s = o(l.value.getBoundingClientRect(), ["left", "top"]), r = o(t.getBoundingClientRect(), ["left", "top"]) - s;
+    n.value = r < a / 2 ? 0 : r > e - a / 2 ? e - a : r - a / 2;
+  }
+  function o(t, [e, a]) {
+    return c.value ? t[e] : t[a];
+  }
+  return P(() => [i.modelValue, i.tabPosition, i.type], async () => {
+    await S(), C(), x();
+  }, { deep: !0, immediate: !0 }), P(() => [i.defaultSlot], async () => {
+    await S(), T(), x();
+  }, { deep: !0, immediate: !0 }), { isHorizontal: c, preRef: p, nextRef: g, ulRef: l, liSRefS: d, isShowPreNext: m, classTabHead: M, styleTabHead: k, classTabTitle: V, styleTabTitle: X, styleTabBar: $, renderTabIcon: function(t) {
+    const { props: e } = t.tabData;
+    return B(e.icon) ? e.icon() : L(e.icon) ? R(D, { type: e.icon, style: "margin-right: 8px;" }) : void 0;
+  }, renderTabTitle: function(t) {
+    const { children: e, props: a } = t.tabData;
+    return e != null && e.title ? R(A, (e == null ? void 0 : e.title) && e.title()) : B(a.title) ? a.title() : L(a.title) ? F(a.title) : void 0;
+  }, handleChange: y, handlePreClick: function() {
+    if (!l.value)
+      return;
+    const t = o(l.value, ["offsetWidth", "offsetHeight"]), e = n.value;
+    if (!e)
+      return;
+    const a = e > t ? e - t : 0;
+    n.value = a;
+  }, handleNextClick: function() {
+    if (!l.value)
+      return;
+    const t = n.value, e = o(l.value, ["scrollWidth", "scrollHeight"]), a = o(l.value, ["offsetWidth", "offsetHeight"]);
+    if (e - t <= a)
+      return;
+    const s = e - t > 2 * a ? t + a : e - a;
+    n.value = s;
+  }, handleUlScroll: function(t) {
+    if (t.preventDefault(), !l.value)
+      return;
+    const e = o(l.value, ["scrollWidth", "scrollHeight"]), a = o(l.value, ["offsetWidth", "offsetHeight"]), s = n.value, r = 50 * ((Math.abs(t.deltaX) >= Math.abs(t.deltaY) ? t.deltaX : t.deltaY) > 0 ? 1 : -1), H = Math.min(Math.max(s + r, 0), e - a);
+    n.value = H;
+  }, handleClose: function(t, e) {
+    if (!i.beforeClose || i.beforeClose(t) !== !1) {
+      if (i.defaultSlot.splice(e, 1), i.modelValue === t) {
+        const a = i.defaultSlot[e === i.defaultSlot.length ? 0 : e];
+        a && y(a.props.id);
+      }
+      v.emits("close", t), T();
+    }
+  } };
+}
+export {
+  J as useTabHeader
+};

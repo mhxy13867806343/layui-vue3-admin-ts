@@ -1,0 +1,13 @@
+import { defineComponent as f, computed as u, openBlock as l, createElementBlock as o, normalizeClass as i, normalizeStyle as m, createCommentVNode as t, createElementVNode as b, renderSlot as x } from "vue";
+/* empty css           */
+import { ButtonEmits as B } from "./interface.js";
+import I from "./index.hooks.js";
+const k = ["type"], S = f({ name: "LayButton", __name: "index", props: { type: {}, size: {}, prefixIcon: {}, suffixIcon: {}, loadingIcon: { default: "layui-icon-loading-one" }, borderStyle: { default: "soild" }, border: {}, fluid: { type: Boolean, default: !1 }, radius: { type: Boolean, default: !1 }, loading: { type: Boolean, default: !1 }, disabled: { type: Boolean }, nativeType: { default: "button" } }, emits: B, setup(s, { emit: d }) {
+  const e = s, { size: n } = I(e), r = d, y = (a) => {
+    e.disabled || e.loading || r("click", a);
+  }, p = u(() => ({ border: `1px ${e.borderStyle}` })), c = u(() => [{ "layui-btn-fluid": e.fluid, "layui-btn-radius": e.radius, "layui-btn-disabled": e.disabled }, e.type ? `layui-btn-${e.type}` : "", n.value ? `layui-btn-${n.value}` : "", e.border ? `layui-border-${e.border}` : ""]);
+  return (a, $) => (l(), o("button", { class: i(["layui-btn", c.value]), style: m(p.value), type: a.nativeType, onClick: y }, [a.prefixIcon ? (l(), o("i", { key: 0, class: i(`layui-icon ${a.prefixIcon}`) }, null, 2)) : t("", !0), a.loading ? (l(), o("i", { key: 1, class: i([a.loadingIcon, "layui-icon layui-anim layui-anim-rotate layui-anim-loop"]) }, null, 2)) : t("", !0), b("span", null, [x(a.$slots, "default")]), a.suffixIcon ? (l(), o("i", { key: 2, class: i(`layui-icon ${a.suffixIcon}`) }, null, 2)) : t("", !0)], 14, k));
+} });
+export {
+  S as default
+};

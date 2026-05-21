@@ -1,0 +1,11 @@
+import { defineComponent as n, useSlots as c, computed as d, openBlock as a, createElementBlock as i, createElementVNode as e, unref as y, renderSlot as o, toDisplayString as u } from "vue";
+import f from "./index.svg.js";
+/* empty css           */
+import { useI18n as g } from "../language/index.js";
+const v = { class: "layui-empty" }, x = { class: "layui-empty-image" }, k = { key: 1, class: "layui-empty-image-default", src: f }, E = { class: "layui-empty-description" }, S = { class: "layui-empty-extra" }, I = n({ name: "LayEmpty", __name: "index", props: { description: {}, image: {} }, setup(m) {
+  const s = m, { t: r } = g(), p = c(), l = d(() => s.description ? s.description : r("empty.description"));
+  return (t, B) => (a(), i("div", v, [e("div", x, [y(p).image ? o(t.$slots, "image", { key: 0 }) : (a(), i("img", k))]), e("div", E, u(l.value), 1), e("div", S, [o(t.$slots, "extra")])]));
+} });
+export {
+  I as default
+};

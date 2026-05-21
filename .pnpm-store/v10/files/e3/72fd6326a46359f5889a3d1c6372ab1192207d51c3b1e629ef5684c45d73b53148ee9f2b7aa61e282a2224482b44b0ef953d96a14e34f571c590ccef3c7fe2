@@ -1,0 +1,56 @@
+import type { PropType } from "vue";
+import type { TableColumn, TableDefaultToolbar } from "../typing";
+declare const TableToolbar: import("vue").DefineComponent<{
+    defaultToolbar: {
+        required: true;
+        type: PropType<boolean | TableDefaultToolbar[] | undefined>;
+    };
+    hierarchicalColumns: {
+        required: true;
+        type: PropType<TableColumn[][]>;
+    };
+    spanMethod: {
+        required: true;
+        type: PropType<Function | undefined>;
+    };
+    lastLevelAllColumns: {
+        required: true;
+        type: PropType<TableColumn[]>;
+    };
+    tableDataSource: {
+        required: true;
+        type: PropType<import("../../../types").Recordable[]>;
+    };
+    tableRef: {
+        required: true;
+        type: PropType<HTMLDivElement | null>;
+    };
+}, () => import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
+    [key: string]: any;
+}> | null, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+    defaultToolbar: {
+        required: true;
+        type: PropType<boolean | TableDefaultToolbar[] | undefined>;
+    };
+    hierarchicalColumns: {
+        required: true;
+        type: PropType<TableColumn[][]>;
+    };
+    spanMethod: {
+        required: true;
+        type: PropType<Function | undefined>;
+    };
+    lastLevelAllColumns: {
+        required: true;
+        type: PropType<TableColumn[]>;
+    };
+    tableDataSource: {
+        required: true;
+        type: PropType<import("../../../types").Recordable[]>;
+    };
+    tableRef: {
+        required: true;
+        type: PropType<HTMLDivElement | null>;
+    };
+}>>, {}, {}>;
+export default TableToolbar;

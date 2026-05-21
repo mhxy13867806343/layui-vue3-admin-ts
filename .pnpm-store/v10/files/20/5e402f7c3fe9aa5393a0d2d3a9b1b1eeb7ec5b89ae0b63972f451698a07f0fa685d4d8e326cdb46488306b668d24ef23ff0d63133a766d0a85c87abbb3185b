@@ -1,0 +1,240 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        text: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        color: {
+            type: import("vue").PropType<string>;
+            default: () => "var(--color-warning)";
+        };
+        size: {
+            type: import("vue").PropType<string | number>;
+            default: number;
+        };
+        mode: {
+            type: import("vue").PropType<string>;
+        };
+        height: {
+            type: import("vue").PropType<string | number>;
+            default: number;
+        };
+        background: {
+            type: import("vue").PropType<string>;
+            default: () => "var(--color-warning-light-9)";
+        };
+        delay: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        textlist: {
+            type: import("vue").PropType<any[]>;
+            default: () => never[];
+        };
+        speed: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        scrollable: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        leftIcon: {
+            type: import("vue").PropType<string>;
+        };
+        rightIcon: {
+            type: import("vue").PropType<string>;
+        };
+    }>> & {
+        onClose?: ((...args: any[]) => any) | undefined;
+        onLink?: ((...args: any[]) => any) | undefined;
+    }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("link" | "close")[], import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        text: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        color: {
+            type: import("vue").PropType<string>;
+            default: () => "var(--color-warning)";
+        };
+        size: {
+            type: import("vue").PropType<string | number>;
+            default: number;
+        };
+        mode: {
+            type: import("vue").PropType<string>;
+        };
+        height: {
+            type: import("vue").PropType<string | number>;
+            default: number;
+        };
+        background: {
+            type: import("vue").PropType<string>;
+            default: () => "var(--color-warning-light-9)";
+        };
+        delay: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        textlist: {
+            type: import("vue").PropType<any[]>;
+            default: () => never[];
+        };
+        speed: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        scrollable: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        leftIcon: {
+            type: import("vue").PropType<string>;
+        };
+        rightIcon: {
+            type: import("vue").PropType<string>;
+        };
+    }>> & {
+        onClose?: ((...args: any[]) => any) | undefined;
+        onLink?: ((...args: any[]) => any) | undefined;
+    }, {
+        text: string;
+        color: string;
+        size: string | number;
+        height: string | number;
+        background: string;
+        delay: number;
+        textlist: any[];
+        speed: number;
+        scrollable: boolean;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        text: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        color: {
+            type: import("vue").PropType<string>;
+            default: () => "var(--color-warning)";
+        };
+        size: {
+            type: import("vue").PropType<string | number>;
+            default: number;
+        };
+        mode: {
+            type: import("vue").PropType<string>;
+        };
+        height: {
+            type: import("vue").PropType<string | number>;
+            default: number;
+        };
+        background: {
+            type: import("vue").PropType<string>;
+            default: () => "var(--color-warning-light-9)";
+        };
+        delay: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        textlist: {
+            type: import("vue").PropType<any[]>;
+            default: () => never[];
+        };
+        speed: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        scrollable: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        leftIcon: {
+            type: import("vue").PropType<string>;
+        };
+        rightIcon: {
+            type: import("vue").PropType<string>;
+        };
+    }>> & {
+        onClose?: ((...args: any[]) => any) | undefined;
+        onLink?: ((...args: any[]) => any) | undefined;
+    }, {}, {}, {}, {}, {
+        text: string;
+        color: string;
+        size: string | number;
+        height: string | number;
+        background: string;
+        delay: number;
+        textlist: any[];
+        speed: number;
+        scrollable: boolean;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    text: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    color: {
+        type: import("vue").PropType<string>;
+        default: () => "var(--color-warning)";
+    };
+    size: {
+        type: import("vue").PropType<string | number>;
+        default: number;
+    };
+    mode: {
+        type: import("vue").PropType<string>;
+    };
+    height: {
+        type: import("vue").PropType<string | number>;
+        default: number;
+    };
+    background: {
+        type: import("vue").PropType<string>;
+        default: () => "var(--color-warning-light-9)";
+    };
+    delay: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    textlist: {
+        type: import("vue").PropType<any[]>;
+        default: () => never[];
+    };
+    speed: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    scrollable: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    leftIcon: {
+        type: import("vue").PropType<string>;
+    };
+    rightIcon: {
+        type: import("vue").PropType<string>;
+    };
+}>> & {
+    onClose?: ((...args: any[]) => any) | undefined;
+    onLink?: ((...args: any[]) => any) | undefined;
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("link" | "close")[], "link" | "close", {
+    text: string;
+    color: string;
+    size: string | number;
+    height: string | number;
+    background: string;
+    delay: number;
+    textlist: any[];
+    speed: number;
+    scrollable: boolean;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & import("vue").Plugin<any[]>;
+export default component;

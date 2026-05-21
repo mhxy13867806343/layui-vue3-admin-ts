@@ -1,0 +1,70 @@
+import { defineComponent as ue, ref as y, computed as k, watch as I, openBlock as C, createElementBlock as oe, normalizeClass as ne, createElementVNode as m, createVNode as n, unref as i, withCtx as d, toDisplayString as f, createBlock as T, createCommentVNode as z, createTextVNode as se } from "vue";
+import h from "../../dropdown/index.js";
+import p from "../../icon/index.js";
+import { useI18n as ie } from "../../language/index.js";
+import S from "dayjs";
+import { useBaseDatePicker as re } from "../hook/useBaseDatePicker.js";
+import { useShortcutsRange as de } from "../hook/useShortcutsRange.js";
+import { setHMS as E, setDateList as U } from "../util.js";
+import M from "./common/DateContent.js";
+import ve from "./common/DatePickerRender.js";
+import me from "./common/Footer.js";
+import $ from "./common/Month.js";
+import ce from "./common/Shortcuts.js";
+import q from "./common/Time.js";
+import G from "./common/Year.js";
+const ye = { class: "layui-laydate-range-main" }, fe = { class: "layui-laydate-main layui-laydate-main-date" }, pe = { class: "layui-laydate-header" }, he = { class: "laydate-set-ym" }, ke = { class: "layui-laydate-main layui-laydate-main-date" }, Pe = { class: "layui-laydate-header" }, ge = { class: "laydate-set-ym" }, Ae = ue({ __name: "DateRange", props: { modelValue: {}, size: {}, type: {}, disabled: { type: Boolean }, readonly: { type: Boolean }, allowClear: { type: Boolean }, simple: { type: Boolean }, range: { type: Boolean }, rangeSeparator: {}, prefixIcon: {}, suffixIcon: {}, timestamp: { type: Boolean }, yearPage: {}, name: {}, placeholder: {}, max: {}, min: {}, format: {}, inputFormat: {}, defaultValue: {}, defaultTime: {}, contentStyle: { type: [Boolean, null, String, Object, Array] }, contentClass: {}, disabledDate: {}, shortcuts: {}, static: { type: Boolean }, teleportProps: {} }, emits: ["pick"], setup(J, { emit: K }) {
+  const c = J, Q = K, { t: r } = ie(), { defaultTimeValue: P, getDefaultValue: _ } = re(c), W = de(), o = y(), s = y(), l = y(_()), u = y(_().add(1, "month")), b = y(), V = y(), R = y(), O = y(), x = y(), X = y(), Y = y(), H = k(() => c.simple && c.type !== "datetime"), D = k(() => [r("datePicker.january"), r("datePicker.february"), r("datePicker.march"), r("datePicker.april"), r("datePicker.may"), r("datePicker.june"), r("datePicker.july"), r("datePicker.august"), r("datePicker.september"), r("datePicker.october"), r("datePicker.november"), r("datePicker.december")]);
+  I(() => c.modelValue, () => {
+    const [a, e] = c.modelValue;
+    o.value = a, s.value = e;
+    const t = _(), v = P.value[0] ? E(t, P.value[0]) : t, w = P.value[1] ? E(t.add(1, "month"), P.value[1]) : t.add(1, "month");
+    l.value = a || v, u.value = e || w;
+  }, { immediate: !0 }), I(() => l.value, (a) => {
+    const e = u.value.clone();
+    u.value = a.add(1, "month").set("hour", e.hour()).set("minute", e.minute()).set("second", e.second());
+  }, { immediate: !0 });
+  const Z = k(() => U(l.value.year(), l.value.month()) || []), ee = k(() => U(u.value.year(), u.value.month()) || []), j = k(() => (a) => {
+    var v, w;
+    const e = S(a.value), t = s.value || b.value;
+    return { "layui-this": a.type === "current" && (((v = o.value) == null ? void 0 : v.startOf("day").valueOf()) === a.value || ((w = s.value) == null ? void 0 : w.startOf("day").valueOf()) === a.value), "laydate-range-hover": !!(a.type === "current" && (o.value && e.isSameOrAfter(o.value, "day") && e.isSameOrBefore(t, "day") || o.value && e.isSameOrBefore(o.value, "day") && e.isSameOrAfter(t, "day"))) };
+  });
+  function L(a) {
+    const e = S(a), t = (o.value || l.value).clone().set("year", e.year()).set("month", e.month()).set("date", e.date()), v = (s.value || u.value).clone().set("year", e.year()).set("month", e.month()).set("date", e.date());
+    !o.value || o.value && s.value ? (o.value = t, s.value = void 0) : e.isSameOrBefore(o.value, "day") ? (s.value = o.value.clone().set("hour", u.value.hour()).set("minute", u.value.minute()).set("second", u.value.second()), o.value = t) : s.value = v, H.value && o.value && s.value && B();
+  }
+  function N(a) {
+    o.value && !s.value ? b.value = S(a) : b.value = null;
+  }
+  function g(a, e) {
+    l.value = l.value[a](1, e);
+  }
+  function A(a, e, t) {
+    const v = a[e]();
+    l.value = l.value[e](v), t.hide();
+  }
+  function F(a, e, t) {
+    const v = a[e]();
+    l.value = u.value[e](v).subtract(1, "month"), t.hide();
+  }
+  function ae(a) {
+    l.value = l.value.clone().set("hour", a.hour()).set("minute", a.minute()).set("second", a.second()), o.value && (o.value = o.value.set("hour", l.value.hour()).set("minute", l.value.minute()).set("second", l.value.second()));
+  }
+  function te(a) {
+    u.value = u.value.clone().set("hour", a.hour()).set("minute", a.minute()).set("second", a.second()), s.value && (s.value = s.value.set("hour", u.value.hour()).set("minute", u.value.minute()).set("second", u.value.second()));
+  }
+  function le(a) {
+    const e = W(a);
+    l.value = e[0], u.value = e[1], o.value = e[0], s.value = e[1], c.simple && B();
+  }
+  function B() {
+    Q("pick", [o.value, s.value]);
+  }
+  return (a, e) => (C(), oe("div", { class: ne(["layui-laydate layui-laydate-range", `layui-laydate-range-${c.type}`]) }, [m("div", ye, [n(ce, { onChangeShortcut: le }), m("div", fe, [m("div", pe, [n(i(p), { type: "layui-icon-prev", onClick: e[0] || (e[0] = (t) => g("subtract", "year")) }), n(i(p), { type: "layui-icon-left", onClick: e[1] || (e[1] = (t) => g("subtract", "month")) }), m("div", he, [n(i(h), { ref_key: "yearLeftRef", ref: V }, { content: d(() => [n(G, { class: "layui-laydate", "model-value": l.value, "show-date": l.value, onPick: e[2] || (e[2] = (t) => A(t, "year", V.value)) }, null, 8, ["model-value", "show-date"])]), default: d(() => [m("span", null, f(l.value.year()) + " " + f(i(r)("datePicker.year")), 1)]), _: 1 }, 512), n(i(h), { ref_key: "monthLeftRef", ref: O }, { content: d(() => [n($, { class: "layui-laydate", "model-value": l.value, "show-date": l.value, onPick: e[3] || (e[3] = (t) => A(t, "month", O.value)) }, null, 8, ["model-value", "show-date"])]), default: d(() => [m("span", null, f(D.value[l.value.month()]), 1)]), _: 1 }, 512), c.type === "datetime" ? (C(), T(i(h), { key: 0, ref_key: "timeLeftRef", ref: X }, { content: d(() => [n(q, { class: "layui-laydate", "model-value": o.value || l.value, "show-date": o.value || l.value, onPick: ae }, null, 8, ["model-value", "show-date"])]), default: d(() => [m("span", null, f(l.value.format("HH:mm:ss")), 1)]), _: 1 }, 512)) : z("", !0)]), n(i(p), { type: "layui-icon-right", style: { visibility: "hidden" } }), n(i(p), { type: "layui-icon-next", style: { visibility: "hidden" } })]), n(M, { classes: j.value, "date-list": Z.value, "onUpdate:modelValue": L, onHoverCell: N }, null, 8, ["classes", "date-list"])]), m("div", ke, [m("div", Pe, [n(i(p), { type: "layui-icon-prev", style: { visibility: "hidden" } }), n(i(p), { type: "layui-icon-left", style: { visibility: "hidden" } }), m("div", ge, [n(i(h), { ref_key: "yearRightRef", ref: R }, { content: d(() => [n(G, { class: "layui-laydate", "model-value": u.value, "show-date": u.value, onPick: e[4] || (e[4] = (t) => F(t, "year", R.value)) }, null, 8, ["model-value", "show-date"])]), default: d(() => [m("span", null, f(u.value.year()) + " " + f(i(r)("datePicker.year")), 1)]), _: 1 }, 512), n(i(h), { ref_key: "monthRightRef", ref: x }, { content: d(() => [n($, { class: "layui-laydate", "model-value": u.value, "show-date": u.value, "date-type": "month", onPick: e[5] || (e[5] = (t) => F(t, "month", x.value)) }, null, 8, ["model-value", "show-date"])]), default: d(() => [m("span", null, f(D.value[u.value.month()]), 1)]), _: 1 }, 512), c.type === "datetime" ? (C(), T(i(h), { key: 0, ref_key: "timeRightRef", ref: Y }, { content: d(() => [n(q, { class: "layui-laydate", "model-value": s.value || u.value, "show-date": s.value || u.value, onPick: te }, null, 8, ["model-value", "show-date"])]), default: d(() => [m("span", null, f(u.value.format("HH:mm:ss")), 1)]), _: 1 }, 512)) : z("", !0)]), n(i(p), { type: "layui-icon-right", onClick: e[6] || (e[6] = (t) => g("add", "month")) }), n(i(p), { type: "layui-icon-next", onClick: e[7] || (e[7] = (t) => g("add", "year")) })]), n(M, { classes: j.value, "date-list": ee.value, "onUpdate:modelValue": L, onHoverCell: N }, null, 8, ["classes", "date-list"])])]), n(me, { "show-now": !1, "show-confirm": !H.value, onConfirm: B }, { default: d(() => [n(ve, { render: "footer", start: o.value, end: s.value }, { default: d(() => {
+    var t, v;
+    return [se(f((t = o.value) == null ? void 0 : t.format(c.inputFormat)) + " " + f(c.rangeSeparator) + " " + f((v = s.value) == null ? void 0 : v.format(c.inputFormat)), 1)];
+  }), _: 1 }, 8, ["start", "end"])]), _: 1 }, 8, ["show-confirm"])], 2));
+} });
+export {
+  Ae as default
+};

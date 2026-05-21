@@ -1,0 +1,26 @@
+function t(n) {
+  return typeof n == "function";
+}
+const e = (n) => n === void 0, o = (n) => typeof n == "number", u = (n) => typeof n == "string";
+function r(n) {
+  return typeof n == "boolean";
+}
+function s(n) {
+  return n.filter((i) => i != null && i !== "");
+}
+function a(n) {
+  return n == null;
+}
+function f(n, i) {
+  return Object.is(n, i);
+}
+export {
+  r as isBoolean,
+  f as isEqual,
+  t as isFunction,
+  a as isNil,
+  o as isNumber,
+  u as isString,
+  e as isUndefined,
+  s as normalizeValue
+};

@@ -1,0 +1,30 @@
+import { shallowRef as L, ref as y, computed as l, watch as b, nextTick as x } from "vue";
+import { useSliderProvide as P } from "../use-slider.js";
+const k = (u, p) => {
+  const { formatTooltip: a, vertical: c, disabled: w, getCalcPos: f, reverse: s, updateDragging: g, min: n, max: V } = P(), v = L(null), t = y(!1), h = l(() => (a == null ? void 0 : a.value) instanceof Function), D = l(() => {
+    var e;
+    return h.value && ((e = a == null ? void 0 : a.value) == null ? void 0 : e.call(a, u.modelValue)) || u.modelValue;
+  }), i = l(() => (u.modelValue - n.value) / (V.value - n.value) * 100 + "%"), E = l(() => c.value ? { [s.value ? "top" : "bottom"]: i.value } : { [s.value ? "right" : "left"]: i.value });
+  b(() => t, (e) => {
+    g(e.value);
+  }, { deep: !0 });
+  const d = async (e) => {
+    if (t.value) {
+      const o = f(e);
+      m(o);
+    }
+  }, m = async (e) => {
+    var o;
+    p("update:modelValue", e), await x(), (o = v.value) == null || o.update();
+  }, r = () => {
+    t.value && (setTimeout(() => {
+      t.value = !1;
+    }, 0), window.removeEventListener("mousemove", d), window.removeEventListener("mouseup", r));
+  };
+  return { dragging: t, formatValue: D, setUpDatePos: m, wrapperStyle: E, tooltip: v, handleDown: (e) => {
+    w.value || (e.preventDefault(), t.value = !0, window.addEventListener("mousemove", d), window.addEventListener("mouseup", r));
+  } };
+};
+export {
+  k as useSliderBar
+};

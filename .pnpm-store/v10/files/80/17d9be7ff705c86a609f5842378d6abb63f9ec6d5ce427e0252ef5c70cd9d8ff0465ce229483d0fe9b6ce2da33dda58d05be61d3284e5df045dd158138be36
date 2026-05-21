@@ -1,0 +1,4 @@
+import type { DatePickerProps } from "../interface";
+export declare function useProps(props: DatePickerProps): {
+    size: import("vue").ComputedRef<import("../../../types").CommonSize>;
+};

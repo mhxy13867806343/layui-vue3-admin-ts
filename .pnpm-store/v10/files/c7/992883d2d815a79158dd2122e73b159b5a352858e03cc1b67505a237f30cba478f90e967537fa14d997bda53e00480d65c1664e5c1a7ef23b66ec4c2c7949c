@@ -1,0 +1,4 @@
+import o from "./prev.js";
+export {
+  o as default
+};

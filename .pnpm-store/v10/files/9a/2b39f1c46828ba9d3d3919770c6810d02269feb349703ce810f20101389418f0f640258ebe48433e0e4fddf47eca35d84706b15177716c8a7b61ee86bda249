@@ -1,0 +1,62 @@
+import { defineComponent as L, ref as d, watch as h, onMounted as P, onUnmounted as A, openBlock as c, createElementBlock as k, createVNode as g, withCtx as s, unref as W, createBlock as w, Fragment as I, renderList as D, normalizeClass as N, renderSlot as p, createTextVNode as U, toDisplayString as j, createCommentVNode as q, createSlots as M, nextTick as O } from "vue";
+import R from "../dropdown/index2.js";
+import T from "../dropdownMenu/index2.js";
+import G from "../dropdownMenuItem/index2.js";
+import H from "../input/index2.js";
+import { LayIcon as J } from "@layui/icons-vue";
+/* empty css           */
+const K = { class: "lay-autocomplete" }, Q = { key: 0, class: "lay-autocomplete-loading" }, ne = L({ name: "LayAutocomplete", __name: "index", props: { modelValue: {}, disabled: { type: Boolean }, fetchSuggestions: {}, placeholder: {}, allowClear: { type: Boolean }, name: {}, autoFitWidth: { type: Boolean, default: !0 }, contentClass: {}, contentStyle: { type: [Boolean, null, String, Object, Array] }, replaceFields: { default: () => ({ value: "value" }) }, size: {}, teleportProps: {} }, emits: ["update:modelValue", "select", "blur", "input", "change", "focus", "clear"], setup(x, { emit: F }) {
+  const i = x, l = F, m = d(!1), v = d(!1), t = d(i.modelValue), a = d([]), o = d(-1), f = d(!1), r = d(), b = () => {
+    f.value = !0;
+  }, S = (e) => {
+    f.value = !1, C(e.target.value);
+  };
+  h(() => i.modelValue, () => {
+    t.value = i.modelValue;
+  });
+  const C = function(e) {
+    if (l("input", e), !f.value) {
+      v.value = !0, r.value.show(), l("update:modelValue", e);
+      var n = i.fetchSuggestions(e);
+      n === void 0 ? (a.value = [], v.value = !1) : n.then((u) => {
+        a.value = u || [], v.value = !1;
+      });
+    }
+  }, $ = function() {
+    l("update:modelValue", ""), l("clear"), a.value.length > 0 && (a.value = []);
+  };
+  h(a, () => {
+    a.value.length === 0 && r.value.hide();
+  });
+  const B = function(e) {
+    e.stopImmediatePropagation(), O(() => {
+      r.value.hide();
+    });
+  }, _ = function(e) {
+    m.value = !0, l("focus", e);
+  }, z = function(e) {
+    m.value = !1, l("blur", e);
+  };
+  h([t, a], () => {
+    let e = !1;
+    t.value != null && t.value != "" && a.value.forEach((n, u) => {
+      t.value === n[i.replaceFields.value] && (o.value = u, e = !0);
+    }), e === !1 && (o.value = -1);
+  });
+  const V = (e) => {
+    if (m.value === !0 && (e.key === "ArrowDown" && o.value <= a.value.length - 2 && o.value++, e.key === "ArrowUp" && o.value > 0 && o.value--, e.key === "Enter" && o.value != -1)) {
+      const n = a.value[o.value];
+      t.value = n[i.replaceFields.value], r.value.hide(), l("update:modelValue", n.value), l("select", n);
+    }
+  };
+  return P(() => {
+    document.addEventListener("keyup", V);
+  }), A(() => {
+    document.removeEventListener("keyup", V);
+  }), (e, n) => (c(), k("div", K, [g(R, { ref_key: "dropdownRef", ref: r, disabled: e.disabled, autoFitWidth: e.autoFitWidth, contentClass: e.contentClass, contentStyle: e.contentStyle, teleportProps: e.teleportProps }, { content: s(() => [v.value ? (c(), k("div", Q, [g(W(J), { type: "layui-icon-loading", class: "layui-anim layui-anim-rotate layui-anim-loop" })])) : (c(), w(T, { key: 1, class: "lay-autocomplete-content" }, { default: s(() => [a.value.length ? (c(!0), k(I, { key: 0 }, D(a.value, (u, E) => (c(), w(G, { key: u, onClick: (X) => function(y) {
+    t.value = y[i.replaceFields.value], l("update:modelValue", y.value), l("select", y);
+  }(u), class: N(["lay-autocomplete-option", { selected: o.value == E, equals: t.value == u[e.replaceFields.value] }]) }, { default: s(() => [p(e.$slots, "default", { option: u }, () => [U(j(u.value), 1)])]), _: 2 }, 1032, ["onClick", "class"]))), 128)) : q("", !0)]), _: 3 }))]), default: s(() => [g(H, { name: e.name, size: e.size, "model-value": t.value, "allow-clear": e.allowClear, disabled: e.disabled, placeholder: e.placeholder, onClick: B, onBlur: z, onFocus: _, onInput: C, onClear: $, onCompositionstart: b, onCompositionend: S }, M({ _: 2 }, [e.$slots.prefix ? { name: "prefix", fn: s(() => [p(e.$slots, "prefix")]), key: "0" } : void 0, e.$slots.suffix ? { name: "suffix", fn: s(() => [p(e.$slots, "suffix")]), key: "1" } : void 0, e.$slots.prepend ? { name: "prepend", fn: s(() => [p(e.$slots, "prepend")]), key: "2" } : void 0, e.$slots.append ? { name: "append", fn: s(() => [p(e.$slots, "append")]), key: "3" } : void 0]), 1032, ["name", "size", "model-value", "allow-clear", "disabled", "placeholder"])]), _: 3 }, 8, ["disabled", "autoFitWidth", "contentClass", "contentStyle", "teleportProps"])]));
+} });
+export {
+  ne as default
+};

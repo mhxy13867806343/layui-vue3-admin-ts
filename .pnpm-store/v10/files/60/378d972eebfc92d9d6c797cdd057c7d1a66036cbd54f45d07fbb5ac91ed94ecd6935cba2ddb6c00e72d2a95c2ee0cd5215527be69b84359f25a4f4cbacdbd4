@@ -1,0 +1,181 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        color: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        content: {
+            type: import("vue").PropType<string>;
+            required: true;
+            default: string;
+        };
+        width: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        height: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        fontSize: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        fontFamily: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        rotate: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        elementBox: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+    }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        color: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        content: {
+            type: import("vue").PropType<string>;
+            required: true;
+            default: string;
+        };
+        width: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        height: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        fontSize: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        fontFamily: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        rotate: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        elementBox: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+    }>>, {
+        color: string;
+        content: string;
+        width: number;
+        height: number;
+        fontSize: string;
+        fontFamily: string;
+        rotate: number;
+        elementBox: string;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        color: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        content: {
+            type: import("vue").PropType<string>;
+            required: true;
+            default: string;
+        };
+        width: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        height: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        fontSize: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        fontFamily: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        rotate: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        elementBox: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+    }>>, {}, {}, {}, {}, {
+        color: string;
+        content: string;
+        width: number;
+        height: number;
+        fontSize: string;
+        fontFamily: string;
+        rotate: number;
+        elementBox: string;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    color: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    content: {
+        type: import("vue").PropType<string>;
+        required: true;
+        default: string;
+    };
+    width: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    height: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    fontSize: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    fontFamily: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    rotate: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    elementBox: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+}>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {
+    color: string;
+    content: string;
+    width: number;
+    height: number;
+    fontSize: string;
+    fontFamily: string;
+    rotate: number;
+    elementBox: string;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        default?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

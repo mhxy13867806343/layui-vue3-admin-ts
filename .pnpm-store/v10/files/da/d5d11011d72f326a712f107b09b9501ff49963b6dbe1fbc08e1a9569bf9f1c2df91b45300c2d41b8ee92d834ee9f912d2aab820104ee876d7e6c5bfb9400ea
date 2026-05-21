@@ -1,0 +1,317 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        name: {
+            type: import("vue").PropType<string>;
+        };
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        type: {
+            type: import("vue").PropType<string>;
+        };
+        size: {
+            type: import("vue").PropType<import("./interface").InputSize>;
+        };
+        modelValue: {
+            type: import("vue").PropType<string | number | string[] | null>;
+            default: string;
+        };
+        prefixIcon: {
+            type: import("vue").PropType<string>;
+        };
+        suffixIcon: {
+            type: import("vue").PropType<string>;
+        };
+        allowClear: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        autocomplete: {
+            type: import("vue").PropType<string>;
+        };
+        placeholder: {
+            type: import("vue").PropType<string>;
+        };
+        autofocus: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        readonly: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        password: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        maxlength: {
+            type: import("vue").PropType<number>;
+        };
+        max: {
+            type: import("vue").PropType<number>;
+        };
+        min: {
+            type: import("vue").PropType<number>;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((value: string) => any) | undefined;
+        onInput?: ((value: string) => any) | undefined;
+        onClear?: (() => any) | undefined;
+        onBlur?: ((eventParam: FocusEvent) => any) | undefined;
+        onChange?: ((value: string) => any) | undefined;
+        onFocus?: ((eventParam: FocusEvent) => any) | undefined;
+    }, {
+        focus: () => void;
+        blur: () => void;
+    }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+        blur: (eventParam: FocusEvent) => void;
+        input: (value: string) => void;
+        "update:modelValue": (value: string) => void;
+        change: (value: string) => void;
+        focus: (eventParam: FocusEvent) => void;
+        clear: () => void;
+    }, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        name: {
+            type: import("vue").PropType<string>;
+        };
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        type: {
+            type: import("vue").PropType<string>;
+        };
+        size: {
+            type: import("vue").PropType<import("./interface").InputSize>;
+        };
+        modelValue: {
+            type: import("vue").PropType<string | number | string[] | null>;
+            default: string;
+        };
+        prefixIcon: {
+            type: import("vue").PropType<string>;
+        };
+        suffixIcon: {
+            type: import("vue").PropType<string>;
+        };
+        allowClear: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        autocomplete: {
+            type: import("vue").PropType<string>;
+        };
+        placeholder: {
+            type: import("vue").PropType<string>;
+        };
+        autofocus: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        readonly: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        password: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        maxlength: {
+            type: import("vue").PropType<number>;
+        };
+        max: {
+            type: import("vue").PropType<number>;
+        };
+        min: {
+            type: import("vue").PropType<number>;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((value: string) => any) | undefined;
+        onInput?: ((value: string) => any) | undefined;
+        onClear?: (() => any) | undefined;
+        onBlur?: ((eventParam: FocusEvent) => any) | undefined;
+        onChange?: ((value: string) => any) | undefined;
+        onFocus?: ((eventParam: FocusEvent) => any) | undefined;
+    }, {
+        disabled: boolean;
+        modelValue: string | number | string[] | null;
+        allowClear: boolean;
+        autofocus: boolean;
+        readonly: boolean;
+        password: boolean;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        name: {
+            type: import("vue").PropType<string>;
+        };
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        type: {
+            type: import("vue").PropType<string>;
+        };
+        size: {
+            type: import("vue").PropType<import("./interface").InputSize>;
+        };
+        modelValue: {
+            type: import("vue").PropType<string | number | string[] | null>;
+            default: string;
+        };
+        prefixIcon: {
+            type: import("vue").PropType<string>;
+        };
+        suffixIcon: {
+            type: import("vue").PropType<string>;
+        };
+        allowClear: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        autocomplete: {
+            type: import("vue").PropType<string>;
+        };
+        placeholder: {
+            type: import("vue").PropType<string>;
+        };
+        autofocus: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        readonly: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        password: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        maxlength: {
+            type: import("vue").PropType<number>;
+        };
+        max: {
+            type: import("vue").PropType<number>;
+        };
+        min: {
+            type: import("vue").PropType<number>;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((value: string) => any) | undefined;
+        onInput?: ((value: string) => any) | undefined;
+        onClear?: (() => any) | undefined;
+        onBlur?: ((eventParam: FocusEvent) => any) | undefined;
+        onChange?: ((value: string) => any) | undefined;
+        onFocus?: ((eventParam: FocusEvent) => any) | undefined;
+    }, {
+        focus: () => void;
+        blur: () => void;
+    }, {}, {}, {}, {
+        disabled: boolean;
+        modelValue: string | number | string[] | null;
+        allowClear: boolean;
+        autofocus: boolean;
+        readonly: boolean;
+        password: boolean;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    name: {
+        type: import("vue").PropType<string>;
+    };
+    disabled: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    type: {
+        type: import("vue").PropType<string>;
+    };
+    size: {
+        type: import("vue").PropType<import("./interface").InputSize>;
+    };
+    modelValue: {
+        type: import("vue").PropType<string | number | string[] | null>;
+        default: string;
+    };
+    prefixIcon: {
+        type: import("vue").PropType<string>;
+    };
+    suffixIcon: {
+        type: import("vue").PropType<string>;
+    };
+    allowClear: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    autocomplete: {
+        type: import("vue").PropType<string>;
+    };
+    placeholder: {
+        type: import("vue").PropType<string>;
+    };
+    autofocus: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    readonly: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    password: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    maxlength: {
+        type: import("vue").PropType<number>;
+    };
+    max: {
+        type: import("vue").PropType<number>;
+    };
+    min: {
+        type: import("vue").PropType<number>;
+    };
+}>> & {
+    "onUpdate:modelValue"?: ((value: string) => any) | undefined;
+    onInput?: ((value: string) => any) | undefined;
+    onClear?: (() => any) | undefined;
+    onBlur?: ((eventParam: FocusEvent) => any) | undefined;
+    onChange?: ((value: string) => any) | undefined;
+    onFocus?: ((eventParam: FocusEvent) => any) | undefined;
+}, {
+    focus: () => void;
+    blur: () => void;
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+    blur: (eventParam: FocusEvent) => void;
+    input: (value: string) => void;
+    "update:modelValue": (value: string) => void;
+    change: (value: string) => void;
+    focus: (eventParam: FocusEvent) => void;
+    clear: () => void;
+}, string, {
+    disabled: boolean;
+    modelValue: string | number | string[] | null;
+    allowClear: boolean;
+    autofocus: boolean;
+    readonly: boolean;
+    password: boolean;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        prepend?(_: {
+            disabled: any;
+        }): any;
+        prefix?(_: {}): any;
+        suffix?(_: {}): any;
+        append?(_: {
+            disabled: any;
+        }): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

@@ -1,0 +1,11 @@
+import { SliderBarProps } from "../types/sliderType";
+export declare const useSliderBar: (props: SliderBarProps, emit: any) => {
+    dragging: import("vue").Ref<boolean>;
+    formatValue: import("vue").ComputedRef<string | number>;
+    setUpDatePos: (newPos: number) => Promise<void>;
+    wrapperStyle: import("vue").ComputedRef<{
+        [x: string]: string;
+    }>;
+    tooltip: import("vue").ShallowRef<any>;
+    handleDown: (event: MouseEvent) => void;
+};

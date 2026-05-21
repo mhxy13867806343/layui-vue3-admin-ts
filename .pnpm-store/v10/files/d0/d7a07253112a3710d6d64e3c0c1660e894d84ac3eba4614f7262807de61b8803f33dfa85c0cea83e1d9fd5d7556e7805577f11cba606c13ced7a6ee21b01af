@@ -1,0 +1,4 @@
+import o from "./simple.js";
+export {
+  o as default
+};

@@ -1,0 +1,15 @@
+import { defineComponent as x, ref as y, computed as b, openBlock as v, createBlock as _, withCtx as o, createElementVNode as l, renderSlot as s, createTextVNode as i, toDisplayString as a, normalizeStyle as P, createVNode as c } from "vue";
+/* empty css           */
+import k from "../tooltip/index2.js";
+import p from "../button/index2.js";
+const T = { class: "layui-propconfirm-content" }, N = x({ name: "LayPopconfirm", __name: "index", props: { content: {}, disabled: { type: Boolean }, btnAlign: { default: "right" }, confirmText: { default: "确认" }, cancelText: { default: "取消" }, position: {}, trigger: {}, teleportProps: {} }, emits: ["confirm", "cancel"], setup(d, { emit: f }) {
+  const r = d, t = y(), n = f, m = () => {
+    t.value && t.value.hide(), n("confirm");
+  }, u = () => {
+    t.value && t.value.hide(), n("cancel");
+  }, g = b(() => [r.btnAlign ? `text-align:${r.btnAlign}` : ""]);
+  return (e, h) => (v(), _(k, { ref_key: "tooltipRef", ref: t, disabled: e.disabled, position: e.position, trigger: e.trigger, teleportProps: e.teleportProps }, { content: o(() => [l("div", T, [s(e.$slots, "content", {}, () => [i(a(e.content), 1)])]), l("div", { class: "layui-popconfirm-footer", style: P(g.value) }, [c(p, { size: "xs", onClick: m, type: "primary" }, { default: o(() => [i(a(e.confirmText), 1)]), _: 1 }), c(p, { size: "xs", onClick: u }, { default: o(() => [i(a(e.cancelText), 1)]), _: 1 })], 4)]), default: o(() => [s(e.$slots, "default")]), _: 3 }, 8, ["disabled", "position", "trigger", "teleportProps"]));
+} });
+export {
+  N as default
+};

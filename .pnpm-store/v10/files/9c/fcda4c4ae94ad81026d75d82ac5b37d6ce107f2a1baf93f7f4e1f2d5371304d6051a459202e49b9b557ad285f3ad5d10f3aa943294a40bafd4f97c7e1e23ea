@@ -1,0 +1,61 @@
+import { useI18n as T } from "../../language/index.js";
+import { inject as k, computed as E } from "vue";
+import { LAY_TABLE_CONTEXT as $ } from "../constant.js";
+import { isArray as W, isValueArray as u } from "../../utils/arrayUtil.js";
+import { isNumber as C } from "../../utils/type.js";
+function A(o) {
+  const { columnsState: d } = k($), { t: b } = T(), i = E(() => !o.defaultToolbar || W(o.defaultToolbar) && o.defaultToolbar.length === 0 ? [] : u(o.defaultToolbar) ? o.defaultToolbar : ["filter", "export", "print"]);
+  return { t: b, showToolbars: i, toolbarStyle: (t) => {
+    if (u(i.value))
+      return { order: i.value.indexOf(t) };
+  }, exportData: () => {
+    let t = "";
+    for (const s of o.hierarchicalColumns) {
+      t += "<tr>";
+      for (const e of s)
+        e.ignoreExport || (e.type && e.type === "number" || !e.type) && (t += `<td colspan=${d.setColSpanValue(e)} rowspan=${d.setRowSpanValue(e)}>${e.title || ""}</td>`);
+      t += "</tr>";
+    }
+    const n = (s) => {
+      s.forEach((e, m) => {
+        t += "<tr>", o.lastLevelAllColumns.forEach((r, y) => {
+          var p;
+          if (!r.ignoreExport) {
+            if (r.type && r.type === "number")
+              t += `<td ss:Type="Number">${m + 1}</td>`;
+            else if (r.type === void 0) {
+              let c;
+              Object.keys(e).forEach((l) => {
+                r.key === l && (c = e);
+              });
+              const a = (p = o.spanMethod) == null ? void 0 : p.call(o, e, r, m, y), f = a ? a[0] : 1, x = a ? a[1] : 1;
+              if (f !== 0 && x !== 0) {
+                const l = c ? c[r.key] : "", w = r.exportCellType ?? (C(l) ? "ss:Type='Number'" : "x:str");
+                t += `<td colspan=${x} rowspan=${f} ${w}>${l}</td>`;
+              }
+            }
+          }
+        }), t += "</tr>", e.children && n(e.children);
+      });
+    };
+    n(o.tableDataSource);
+    const h = `<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel"
+        xmlns="http://www.w3.org/TR/REC-html40">
+        <head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet>
+            <x:Name>Sheet1</x:Name>
+                <x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet>
+            </x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]-->
+        </head>
+        <body>
+            <table syle="table-layout: fixed;word-wrap: break-word; word-break: break-all;">${t}</table>
+        </body>
+    </html>`;
+    window.location.href = "data:application/vnd.ms-excel;base64," + window.btoa(unescape(encodeURIComponent(h)));
+  }, print: () => {
+    const t = o.tableRef.innerHTML, n = document.body.innerHTML;
+    document.body.innerHTML = t, window.print(), window.location.reload(), document.body.innerHTML = n;
+  } };
+}
+export {
+  A as useToolBar
+};

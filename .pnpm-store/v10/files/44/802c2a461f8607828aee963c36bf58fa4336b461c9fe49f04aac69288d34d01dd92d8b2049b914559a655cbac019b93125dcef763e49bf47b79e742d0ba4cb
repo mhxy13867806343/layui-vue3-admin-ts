@@ -1,0 +1,52 @@
+import { defineComponent as j, ref as n, inject as g, useSlots as x, computed as i, watch as v, onBeforeUnmount as M, onMounted as U, provide as z, openBlock as C, createBlock as D, Teleport as H, withDirectives as J, createElementVNode as K, normalizeClass as Y, normalizeStyle as $, renderSlot as q, createElementBlock as F, createCommentVNode as b, vShow as G } from "vue";
+import { onClickOutside as L } from "@vueuse/core";
+import { CONTENT_INJECTION_KEY as k } from "../types.js";
+import { POPPER_INJECTION_KEY as Q, arrowMiddleware as W, getArrowPlacement as X, getArrowOffer as Z } from "../utils.js";
+import { usePopper as ee } from "../usePopper/usePopper.js";
+import { offset as ae, shift as oe, flip as le, hide as te } from "@floating-ui/dom";
+const pe = j({ __name: "content", props: { modelValue: { type: Boolean }, trigger: {}, disabled: { type: Boolean }, placement: {}, showArrow: { type: Boolean }, offset: {}, enterable: { type: Boolean }, showAfter: {}, hideAfter: {}, popperClass: {}, popperStyle: { type: [Boolean, null, String, Object, Array] }, clickOutsideToClose: { type: Boolean }, middlewares: {}, teleportProps: {}, triggerCustomEvents: {} }, setup(E, { expose: O }) {
+  const a = E, o = n(null), d = n(null), p = [], { TriggerRef: m, onShow: w, onHidden: f } = g(Q), { allContents: t = [] } = g(k, {}), c = n(a.modelValue), r = n(!1), l = n(a.modelValue), A = x(), B = i(() => {
+    var e;
+    return (e = A.default()[0].children) == null ? void 0 : e.length;
+  });
+  v(() => [a.modelValue, r.value], () => {
+    a.disabled || (c.value || (c.value = a.modelValue || r.value), l.value = a.modelValue || r.value);
+  });
+  const y = i(() => Object.assign({}, { to: "body", disabled: !1 }, a.teleportProps)), { popperStyle: S, middlewareData: N, update: T, stopAutoUpdate: u, startAutoUpdate: h } = ee(m, o, { placement: a.placement, middleware: a.middlewares ?? [ae(a.offset), oe(), le(), W({ arrowRef: d, padding: 5 }), X(), Z({ arrowRef: d }), te()] }), V = i(() => ["layui-popper", "layui-anim", a.popperClass]), _ = i(() => [S.value, a.popperStyle]);
+  function P() {
+    var e;
+    a.enterable && ((e = a.trigger) != null && e.includes("hover")) && w();
+  }
+  function I() {
+    var e;
+    (e = a.trigger) != null && e.includes("hover") && f();
+  }
+  return v(() => N.value.hide, (e) => {
+    o.value && Object.assign(o.value.style, { display: e.referenceHidden ? "none" : l.value ? "block" : "none" });
+  }), v(l, () => {
+    l.value ? h.value && h.value() : u.value && u.value();
+  }), M(() => {
+    u.value && u.value(), t.splice(t.findIndex((e) => e === p), 1), t.forEach((e) => {
+      e.splice(e.findIndex((s) => s.value === o.value), 1);
+    });
+  }), L(o, (e) => {
+    var s;
+    if (a.clickOutsideToClose && l.value && !m.value.contains(e.target)) {
+      for (const R of p)
+        if ((s = R.value) != null && s.contains(e.target))
+          return;
+      f();
+    }
+  }), U(() => {
+    t.forEach((e) => {
+      e.push(o);
+    });
+  }), z(k, { allContents: [...t, p] }), O({ show: function() {
+    w(), r.value = !0;
+  }, hidden: function() {
+    f(), r.value = !1;
+  }, update: T }), (e, s) => c.value && B.value ? (C(), D(H, { key: 0, to: y.value.to, disabled: y.value.disabled }, [J(K("div", { ref_key: "ContentRef", ref: o, class: Y(V.value), style: $(_.value), onMouseenter: P, onMouseleave: I }, [q(e.$slots, "default"), e.showArrow ? (C(), F("div", { key: 0, ref_key: "ArrowRef", ref: d, "data-popper-arrow": "" }, null, 512)) : b("", !0)], 38), [[G, l.value]])], 8, ["to", "disabled"])) : b("", !0);
+} });
+export {
+  pe as default
+};

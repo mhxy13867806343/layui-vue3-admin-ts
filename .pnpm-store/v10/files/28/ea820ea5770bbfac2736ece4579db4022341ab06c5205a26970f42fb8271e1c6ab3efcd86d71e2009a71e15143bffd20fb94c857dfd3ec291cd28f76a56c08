@@ -1,0 +1,1 @@
+export declare const reRendering: (mutation: MutationRecord, watermarkElement?: HTMLDivElement) => boolean;

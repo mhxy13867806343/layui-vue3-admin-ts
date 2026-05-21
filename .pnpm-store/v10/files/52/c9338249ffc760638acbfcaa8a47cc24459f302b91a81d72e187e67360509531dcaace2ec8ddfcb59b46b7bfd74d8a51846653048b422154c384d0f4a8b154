@@ -1,0 +1,160 @@
+import { defineComponent as Se, ref as g, onMounted as Ie, watch as B, nextTick as Me, computed as U, openBlock as S, createBlock as Y, isRef as ae, withCtx as z, createElementVNode as u, normalizeStyle as $, unref as f, createElementBlock as R, createVNode as Ve, createCommentVNode as P, Fragment as Ae, renderList as Ee, createTextVNode as ne, normalizeClass as ue } from "vue";
+/* empty css           */
+import Fe from "../dropdown/index2.js";
+import { useEyeDropper as Le, useDebounceFn as Be } from "@vueuse/core";
+import { LayIcon as _e } from "@layui/icons-vue";
+import ze from "./index.hooks.js";
+import oe from "../button/index2.js";
+/* empty css                   */
+const Re = ["size"], Pe = { class: "layui-color-picker" }, De = u("div", { class: "saturation-value-2" }, null, -1), He = u("div", { class: "saturation-value-3" }, null, -1), Ne = { class: "layui-color-picker-middle" }, We = { style: { flex: "auto" } }, Xe = { class: "color-diamond" }, je = { class: "color-value" }, Te = { class: "hex" }, Ge = ["value"], Oe = { class: "rgba-r" }, Ue = ["value"], Ye = { class: "rgba-g" }, qe = ["value"], Je = { class: "rgba-b" }, Ke = ["value"], Qe = { class: "rgba-a" }, Ze = ["value"], el = { class: "preset" }, ll = ["onClick"], tl = { key: 0, class: "layui-color-picker__footer" }, dl = Se({ name: "LayColorPicker", __name: "index", props: { modelValue: { default: { r: 255, g: 255, b: 255, a: 1 } }, preset: { default: ["#16BAAA", "#1e9fff", "#ffb800", "#ff5722", "#16B777"] }, disabled: { type: Boolean, default: !1 }, eyeDropper: { type: Boolean }, contentClass: {}, contentStyle: { type: [Boolean, null, String, Object, Array] }, size: {}, allowClear: { type: Boolean, default: !1 }, simple: { type: Boolean, default: !0 }, teleportProps: {} }, emits: ["update:modelValue"], setup(re, { emit: se }) {
+  const _ = se, h = re, { size: ie } = ze(h), w = g(null), q = g(null), J = g(null), { isSupported: ve, open: de, sRGBHex: ce } = Le();
+  let D = g("top: 25%;left: 80%;"), H = g("left: 0;"), N = g("left: calc(100% - 6px);"), k = g(0), M = g(1), V = g(1), d = g(255), c = g(0), p = g(0), s = g(1);
+  const W = g();
+  let m = g(""), x = g(!1);
+  const pe = function() {
+    ve ? de() : console.warn("LayColorPicker: Eye dropper not supported by your browser!");
+  }, X = (e) => {
+    const l = function(t) {
+      if (t) {
+        let a, n, o, r;
+        if (typeof t != "string")
+          return a = t.r > 255 ? 255 : t.r < 0 ? 0 : t.r, n = t.g > 255 ? 255 : t.g < 0 ? 0 : t.g, o = t.b > 255 ? 255 : t.b < 0 ? 0 : t.b, r = t.a > 1 ? 1 : t.a < 0 ? 0 : t.a, { r: a, g: n, b: o, a: r };
+        if (/^#?([0-9a-fA-F]{6}|[0-9a-fA-F]{8}|[0-9a-fA-F]{3}|[0-9a-fA-F]{4})$/.test(t))
+          return I(t);
+      }
+      return null;
+    }(e);
+    if (l) {
+      const { r: t, g: a, b: n, a: o } = l;
+      d.value = t, c.value = a, p.value = n, s.value = o;
+    }
+  };
+  Ie(() => {
+    m.value = h.modelValue, X(m.value);
+  }), B(() => h.modelValue, () => {
+    m.value = h.modelValue, X(m.value);
+  }), B(ce, (e) => {
+    let { r: l, g: t, b: a, a: n } = I(e);
+    d.value = l, c.value = t, p.value = a, s.value = n;
+  }), B([d, c, p], (e) => {
+    m.value = A(d.value, c.value, p.value, s.value), h.simple && _("update:modelValue", m.value);
+    let { h: l, s: t, v: a } = function(n, o, r) {
+      let i, v, y, b = n / 255, E = o / 255, F = r / 255, C = Math.max(b, E, F), Ce = Math.min(b, E, F), L = C - Ce;
+      return L === 0 ? i = 0 : C === b ? i = (60 * (E - F) / L + 360) % 360 : C === E ? i = 60 * ((F - b) / L + 2) : C === F && (i = 60 * ((b - E) / L + 4)), v = C === 0 ? 0 : L / C, y = C, i = Math.floor(i + 0.5), v = Math.floor(100 * v + 0.5) / 100, y = Math.floor(100 * y + 0.5) / 100, { h: i, s: v, v: y };
+    }(d.value, c.value, p.value);
+    k.value = l, M.value = t, V.value = a, D.value = `top: ${100 - 100 * a}%;left: ${100 * t}%;`, H.value = `left: ${k.value / 360 * 100}%;`;
+  }), B(s, () => {
+    m.value = A(d.value, c.value, p.value, s.value), h.simple && _("update:modelValue", m.value), N.value = `left: ${s.value >= 1 ? "calc(100% - 6px)" : 100 * s.value + "%"};`;
+  }), B(x, (e) => {
+    e || (X(h.modelValue), Me(() => {
+      h.modelValue || (m.value = "");
+    }));
+  });
+  let j = U(() => {
+    let e = d.value, l = c.value, t = p.value, a = s.value, n = k.value, o = M.value, r = V.value;
+    return { rgb: `rgba(${e},${l},${t})`, rgba: `rgba(${e},${l},${t},${a})`, hex6: A(e, l, t), hex8: A(e, l, t, a), hsv: `hsv(${n},${o},${r})`, hsl: "" };
+  });
+  const K = U(() => h.modelValue || m.value ? j.value.rgba : "transparent"), ge = U(() => "layui-icon-" + (h.modelValue ? "down" : "close")), Q = Be((e) => {
+    const l = e.target.value;
+    if (/^#?([0-9a-fA-F]{6}|[0-9a-fA-F]{8})$/.test(l)) {
+      let { r: t, g: a, b: n, a: o } = I(l);
+      d.value = t, c.value = a, p.value = n, s.value = o;
+    }
+  }, 500), fe = () => {
+    _("update:modelValue", ""), W.value.hide();
+  }, he = () => {
+    _("update:modelValue", A(d.value, c.value, p.value, s.value)), W.value.hide();
+  };
+  function me(e) {
+    let l = e.target.value;
+    l !== "" && (l > 255 && (d.value = 255), l < 0 && (d.value = 0), l >= 0 && l <= 255 && (d.value = parseInt(l)));
+  }
+  function be(e) {
+    let l = e.target.value;
+    l !== "" && (l > 255 && (c.value = 255), l < 0 && (c.value = 0), l >= 0 && l <= 255 && (c.value = parseInt(l)));
+  }
+  function ye(e) {
+    let l = e.target.value;
+    l !== "" && (l > 255 && (p.value = 255), l < 0 && (p.value = 0), l >= 0 && l <= 255 && (p.value = parseInt(l)));
+  }
+  function $e(e) {
+    let l = e.target.value;
+    l !== "" && (l = parseFloat(l), s.value = l, l > 1 && (s.value = 1), l < 0 && (s.value = 0), l >= 0 && l <= 1 && (s.value = l));
+  }
+  function T(e) {
+    let l = w.value.clientWidth, t = w.value.clientHeight, a = e.pageX - w.value.getBoundingClientRect().left, n = e.pageY - w.value.getBoundingClientRect().top;
+    a = a < l && a > 0 ? a : a > l ? l : 0, n = n < t && n > 0 ? n : n > t ? t : 0, M.value = Math.floor(a / l * 100 + 0.5) / 100, V.value = Math.floor(100 * (1 - n / t) + 0.5) / 100;
+    let { r: o, g: r, b: i } = te(k.value, M.value, V.value);
+    d.value = o, c.value = r, p.value = i, D.value = `top: ${n}px;left: ${a}px;`;
+  }
+  function we(e) {
+    T(e), window.addEventListener("mousemove", T), window.addEventListener("mouseup", Z);
+  }
+  function Z(e) {
+    window.removeEventListener("mousemove", T), window.removeEventListener("mouseup", Z);
+  }
+  function G(e) {
+    let l = q.value.clientWidth, t = e.pageX - w.value.getBoundingClientRect().left;
+    t = t < l && t > 0 ? t : t > l ? l : 0, k.value = Math.floor(t / l * 360 + 0.5);
+    let { r: a, g: n, b: o } = te(k.value, M.value, V.value);
+    d.value = a, c.value = n, p.value = o, H.value = `left: ${t >= l - 6 ? l - 6 : t}px;`;
+  }
+  function ke(e) {
+    G(e), window.addEventListener("mousemove", G), window.addEventListener("mouseup", ee);
+  }
+  function ee(e) {
+    window.removeEventListener("mousemove", G), window.removeEventListener("mouseup", ee);
+  }
+  function O(e) {
+    let l = J.value.clientWidth, t = e.pageX - w.value.getBoundingClientRect().left;
+    t = t < l && t > 0 ? t : t > l ? l : 0, s.value = Math.floor(t / l * 100 + 0.5) / 100, N.value = `left: ${t >= l - 6 ? l - 6 : t}px;`;
+  }
+  function xe(e) {
+    O(e), window.addEventListener("mousemove", O), window.addEventListener("mouseup", le);
+  }
+  function le(e) {
+    window.removeEventListener("mousemove", O), window.removeEventListener("mouseup", le);
+  }
+  function te(e, l, t) {
+    e === 360 && (e = 0);
+    let a, n, o, r = Math.floor(e / 60) % 6, i = e / 60 - r, v = t * (1 - l), y = t * (1 - l * i), b = t * (1 - l * (1 - i));
+    return r === 0 ? (a = t, n = b, o = v) : r === 1 ? (a = y, n = t, o = v) : r === 2 ? (a = v, n = t, o = b) : r === 3 ? (a = v, n = y, o = t) : r === 4 ? (a = b, n = v, o = t) : r === 5 && (a = t, n = v, o = y), a = Math.floor(255 * a + 0.5), n = Math.floor(255 * n + 0.5), o = Math.floor(255 * o + 0.5), { r: a, g: n, b: o };
+  }
+  function A(e, l, t, a = 1) {
+    let n = (e = parseInt(e)).toString(16).length !== 2 ? "0" + e.toString(16) : e.toString(16), o = (l = parseInt(l)).toString(16).length !== 2 ? "0" + l.toString(16) : l.toString(16), r = (t = parseInt(t)).toString(16).length !== 2 ? "0" + t.toString(16) : t.toString(16), i = "";
+    if ((a = parseFloat(a)) !== 1) {
+      let v = Math.floor(256 * a);
+      i = v.toString(16).length !== 2 ? "0" + v.toString(16) : v.toString(16);
+    }
+    return `#${n}${o}${r}${i}`.toUpperCase();
+  }
+  function I(e) {
+    if (/^#?[0-9a-fA-F]{3}$/.test(e)) {
+      let l = e.substring(e.length - 1, e.length), t = e.substring(e.length - 2, e.length - 1), a = e.substring(e.length - 3, e.length - 2);
+      return I(`${a + a}${t + t}${l + l}`);
+    }
+    if (/^#?[0-9a-fA-F]{4}$/.test(e)) {
+      let l = e.substring(e.length - 1, e.length), t = e.substring(e.length - 2, e.length - 1), a = e.substring(e.length - 3, e.length - 2), n = e.substring(e.length - 4, e.length - 3);
+      return I(`${n + n}${a + a}${t + t}${l + l}`);
+    }
+    if (/^#?[0-9a-fA-F]{6}$/.test(e)) {
+      let l = parseInt("0x" + e.substring(e.length - 2, e.length)), t = parseInt("0x" + e.substring(e.length - 4, e.length - 2));
+      return { r: parseInt("0x" + e.substring(e.length - 6, e.length - 4)), g: t, b: l, a: 1 };
+    }
+    if (/^#?[0-9a-fA-F]{8}$/.test(e)) {
+      let l = parseInt("0x" + e.substring(e.length - 2, e.length));
+      l /= 255;
+      let t = parseInt("0x" + e.substring(e.length - 4, e.length - 2)), a = parseInt("0x" + e.substring(e.length - 6, e.length - 4));
+      return { r: parseInt("0x" + e.substring(e.length - 8, e.length - 6)), g: a, b: t, a: l };
+    }
+  }
+  return (e, l) => (S(), Y(Fe, { ref_key: "dropdownRef", ref: W, disabled: e.disabled, contentClass: e.contentClass, contentStyle: e.contentStyle, teleportProps: e.teleportProps, onHide: l[1] || (l[1] = (t) => ae(x) ? x.value = !1 : x = !1), onShow: l[2] || (l[2] = (t) => ae(x) ? x.value = !0 : x = !0) }, { content: z(() => [u("div", Pe, [u("div", { class: "saturation-value", ref_key: "saturationValue", ref: w, onMousedown: we }, [u("div", { style: $(`background-color: hsl(${f(k)}, 100%, 50%);`) }, [u("div", { class: "point", style: $(f(D)) }, null, 4)], 4), De, He], 544), u("div", Ne, [u("div", We, [u("div", { class: "hue-slider", ref_key: "hueSlider", ref: q, onMousedown: ke }, [u("div", { class: "slider", style: $(f(H)) }, null, 4)], 544), u("div", { class: "alpha-slider", ref_key: "alphaSlider", ref: J, onMousedown: xe }, [u("div", { class: "slider", style: $(f(N)) }, null, 4), u("div", { style: $(`background: linear-gradient(to right, rgba(0,0,0,0), ${f(j).rgb});width: 100%;height: 100%`) }, null, 4)], 544)]), e.eyeDropper ? (S(), R("div", { key: 0, onClick: pe, style: { "margin-left": "5px" } }, [Ve(f(_e), { type: "layui-icon-edit", size: "22px" })])) : P("", !0), u("div", Xe, [u("div", { style: $(`background-color: ${K.value};width: 100%;height: 100%;box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .15), inset 0 0 4px rgba(0, 0, 0, .25);`) }, null, 4)])]), u("div", je, [u("div", Te, [u("label", null, [u("input", { value: f(j).hex8, onInput: l[0] || (l[0] = (...t) => f(Q) && f(Q)(...t)), spellcheck: "false" }, null, 40, Ge)])]), u("div", Oe, [u("label", null, [u("input", { value: f(d), onInput: me }, null, 40, Ue)])]), u("div", Ye, [u("label", null, [u("input", { value: f(c), onInput: be }, null, 40, qe)])]), u("div", Je, [u("label", null, [u("input", { value: f(p), onInput: ye }, null, 40, Ke)])]), u("div", Qe, [u("label", null, [u("input", { value: f(s), onInput: $e }, null, 40, Ze)])])]), u("ul", el, [(S(!0), R(Ae, null, Ee(e.preset, (t) => (S(), R("li", { key: t, style: $(`background-color: ${t}`), onClick: (a) => function(n) {
+    if (/^#?([0-9a-fA-F]{6}|[0-9a-fA-F]{8})$/.test(n)) {
+      let { r: o, g: r, b: i, a: v } = I(n);
+      d.value = o, c.value = r, p.value = i, s.value = v;
+    }
+  }(t) }, null, 12, ll))), 128))]), e.allowClear || !e.simple ? (S(), R("div", tl, [e.allowClear ? (S(), Y(oe, { key: 0, size: "xs", onClick: fe }, { default: z(() => [ne("清除")]), _: 1 })) : P("", !0), e.simple ? P("", !0) : (S(), Y(oe, { key: 1, type: "primary", size: "xs", onClick: he }, { default: z(() => [ne("确定")]), _: 1 }))])) : P("", !0)])]), default: z(() => [u("div", { class: ue(["layui-unselect layui-colorpicker", [{ "layui-colorpicker-disabled": e.disabled }]]), size: f(ie) }, [u("span", null, [u("span", { class: "layui-colorpicker-trigger-span", "lay-type": "", style: $(`background-color: ${K.value}`) }, [u("i", { class: ue(["layui-icon layui-colorpicker-trigger-i", ge.value]) }, null, 2)], 4)])], 10, Re)]), _: 1 }, 8, ["disabled", "contentClass", "contentStyle", "teleportProps"]));
+} });
+export {
+  dl as default
+};

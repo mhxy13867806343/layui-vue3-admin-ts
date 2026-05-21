@@ -1,0 +1,44 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        fluid: {
+            type: import("vue").PropType<import("../../types").BooleanOrString>;
+            default: boolean;
+        };
+    }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        fluid: {
+            type: import("vue").PropType<import("../../types").BooleanOrString>;
+            default: boolean;
+        };
+    }>>, {
+        fluid: import("../../types").BooleanOrString;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        fluid: {
+            type: import("vue").PropType<import("../../types").BooleanOrString>;
+            default: boolean;
+        };
+    }>>, {}, {}, {}, {}, {
+        fluid: import("../../types").BooleanOrString;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    fluid: {
+        type: import("vue").PropType<import("../../types").BooleanOrString>;
+        default: boolean;
+    };
+}>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {
+    fluid: import("../../types").BooleanOrString;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        default?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

@@ -1,0 +1,18 @@
+import type { RequiredTableProps, TableEmit } from "../typing";
+export declare function useTableSelected(props: RequiredTableProps, emit: TableEmit): {
+    /**
+     * single radio
+     */
+    tableSelectedKey: import("vue").Ref<string | number>;
+    toggleSelected: (key: RequiredTableProps["selectedKey"]) => void;
+    /**
+     * Multiple
+     */
+    allMSelected: import("vue").ComputedRef<boolean>;
+    setMAllSelected: (value: boolean) => void;
+    someMSelected: import("vue").ComputedRef<boolean>;
+    tableMSelectedKeys: (string | number)[];
+    toggleMSelected: (data: RequiredTableProps["dataSource"][number], state: boolean) => void;
+    getAllSelectedDataSource: () => RequiredTableProps["dataSource"];
+};
+export type UseTableSelectedReturn = ReturnType<typeof useTableSelected>;

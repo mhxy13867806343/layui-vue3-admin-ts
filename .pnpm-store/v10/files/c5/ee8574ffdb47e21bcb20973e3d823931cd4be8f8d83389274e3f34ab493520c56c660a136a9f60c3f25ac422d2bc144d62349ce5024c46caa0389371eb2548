@@ -1,0 +1,29 @@
+import { defineComponent as y, ref as x, computed as F, watch as V, onMounted as v, openBlock as B, createElementBlock as E, Fragment as $, renderSlot as u, createElementVNode as b, toDisplayString as C } from "vue";
+import { TransitionPresets as i, useTransition as N } from "@vueuse/core";
+const k = y({ name: "LayCountUp", __name: "index", props: { startVal: { default: 0 }, endVal: { default: 0 }, decimal: { default: "." }, decimalPlaces: { default: 0 }, useGrouping: { type: Boolean, default: !0 }, separator: { default: "," }, autoplay: { type: Boolean, default: !0 }, useEasing: { type: Boolean, default: !0 }, easingFn: { default: i.easeInOutCubic }, duration: { default: 2e3 }, prefix: { default: "" }, suffix: { default: "" } }, setup(d, { expose: p }) {
+  const a = d;
+  let n = x(a.startVal);
+  const f = (e) => {
+    if (typeof e != "number")
+      return "0";
+    e = e.toFixed(a.decimalPlaces);
+    const t = (e += "").split(".");
+    let s = t[0];
+    const g = t.length > 1 ? a.decimal + t[1] : "", o = /(\d+)(\d{3})/;
+    if (a.useGrouping && a.separator && (r = a.separator, isNaN(parseFloat(r))))
+      for (; o.test(s); )
+        s = s.replace(o, "$1" + a.separator + "$2");
+    var r;
+    return a.prefix + s + g + a.suffix;
+  }, c = N(n, { delay: 0, duration: a.duration, disabled: !a.useEasing, transition: typeof a.easingFn == "string" ? i[a.easingFn] : a.easingFn }), m = F(() => f(c.value)), l = function() {
+    n.value = a.endVal;
+  };
+  return V(() => a.endVal, () => {
+    a.autoplay && (n.value = a.endVal);
+  }), v(() => {
+    a.autoplay && l();
+  }), p({ start: l }), (e, t) => (B(), E($, null, [u(e.$slots, "prefix"), b("span", null, C(m.value), 1), u(e.$slots, "suffix")], 64));
+} });
+export {
+  k as default
+};

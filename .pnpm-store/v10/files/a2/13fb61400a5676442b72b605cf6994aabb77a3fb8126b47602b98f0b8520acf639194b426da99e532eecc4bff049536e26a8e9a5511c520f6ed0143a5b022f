@@ -1,0 +1,26 @@
+import type { PropType, Slots, VNodeChild } from "vue";
+export type RenderFunc = (props: Record<string, unknown>) => VNodeChild;
+export interface RenderProps {
+    render: string | RenderFunc;
+    slots: Slots;
+}
+declare const _default: import("vue").DefineComponent<{
+    render: {
+        type: PropType<string | RenderFunc>;
+    };
+    slots: {
+        type: PropType<Readonly<{
+            [name: string]: import("vue").Slot<any> | undefined;
+        }>>;
+    };
+}, () => VNodeChild, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+    render: {
+        type: PropType<string | RenderFunc>;
+    };
+    slots: {
+        type: PropType<Readonly<{
+            [name: string]: import("vue").Slot<any> | undefined;
+        }>>;
+    };
+}>>, {}, {}>;
+export default _default;

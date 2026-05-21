@@ -1,0 +1,138 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        title: {
+            type: import("vue").PropType<string>;
+        };
+        column: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        size: {
+            type: import("vue").PropType<"lg" | "md" | "sm">;
+            default: string;
+        };
+        border: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        extra: {
+            type: import("vue").PropType<string>;
+        };
+        direction: {
+            type: import("vue").PropType<"horizontal" | "vertical">;
+            default: string;
+        };
+        dataList: {
+            type: import("vue").PropType<import("./interface").DataListType[]>;
+        };
+    }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        title: {
+            type: import("vue").PropType<string>;
+        };
+        column: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        size: {
+            type: import("vue").PropType<"lg" | "md" | "sm">;
+            default: string;
+        };
+        border: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        extra: {
+            type: import("vue").PropType<string>;
+        };
+        direction: {
+            type: import("vue").PropType<"horizontal" | "vertical">;
+            default: string;
+        };
+        dataList: {
+            type: import("vue").PropType<import("./interface").DataListType[]>;
+        };
+    }>>, {
+        column: number;
+        size: "lg" | "md" | "sm";
+        border: boolean;
+        direction: "horizontal" | "vertical";
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        title: {
+            type: import("vue").PropType<string>;
+        };
+        column: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        size: {
+            type: import("vue").PropType<"lg" | "md" | "sm">;
+            default: string;
+        };
+        border: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        extra: {
+            type: import("vue").PropType<string>;
+        };
+        direction: {
+            type: import("vue").PropType<"horizontal" | "vertical">;
+            default: string;
+        };
+        dataList: {
+            type: import("vue").PropType<import("./interface").DataListType[]>;
+        };
+    }>>, {}, {}, {}, {}, {
+        column: number;
+        size: "lg" | "md" | "sm";
+        border: boolean;
+        direction: "horizontal" | "vertical";
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    title: {
+        type: import("vue").PropType<string>;
+    };
+    column: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    size: {
+        type: import("vue").PropType<"lg" | "md" | "sm">;
+        default: string;
+    };
+    border: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    extra: {
+        type: import("vue").PropType<string>;
+    };
+    direction: {
+        type: import("vue").PropType<"horizontal" | "vertical">;
+        default: string;
+    };
+    dataList: {
+        type: import("vue").PropType<import("./interface").DataListType[]>;
+    };
+}>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {
+    column: number;
+    size: "lg" | "md" | "sm";
+    border: boolean;
+    direction: "horizontal" | "vertical";
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        title?(_: {}): any;
+        extra?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

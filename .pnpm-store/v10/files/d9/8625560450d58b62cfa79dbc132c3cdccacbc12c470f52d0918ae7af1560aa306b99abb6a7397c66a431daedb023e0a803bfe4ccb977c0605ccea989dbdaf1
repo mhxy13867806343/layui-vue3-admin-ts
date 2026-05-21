@@ -1,0 +1,26 @@
+import { defineComponent as g, useSlots as h, ref as t, toRefs as A, computed as l, onMounted as C, onUnmounted as E, openBlock as s, createElementBlock as i, normalizeClass as M, normalizeStyle as w, unref as m, createBlock as R, createCommentVNode as j, renderSlot as I } from "vue";
+/* empty css           */
+import { useAvatarProvide as N } from "../avatarList/use-avatar-list.js";
+import { LayIcon as O } from "@layui/icons-vue";
+const P = ["src", "alt"], q = g({ name: "LayAvatar", __name: "index", props: { src: {}, size: { default: "md" }, radius: { type: Boolean, default: !1 }, icon: { default: "layui-icon-username" }, alt: {}, autoFixSize: { type: Boolean, default: !0 }, fallback: {} }, setup(y) {
+  const o = y, p = h(), c = t(null), r = t(null), v = t({}), n = t(), { size: z, radius: k, autoFixSize: x } = A(o), f = t(!1), S = l(() => ["layui-avatar", B.value ? "layui-avatar-radius" : "", d.value ? `layui-avatar-${d.value}` : ""]), e = N(), d = l(() => (e == null ? void 0 : e.size) ?? z.value), B = l(() => (e == null ? void 0 : e.radius) ?? k.value), b = l(() => (e == null ? void 0 : e.autoFixSize) ?? x.value);
+  C(() => {
+    b.value && r.value && (n.value = new ResizeObserver((a) => {
+      for (const u of a)
+        if (u.contentBoxSize) {
+          const F = c.value.offsetWidth, $ = Math.min(F / u.contentBoxSize[0].inlineSize * 0.9, 1);
+          v.value = { transform: `translate(-50%, -50%) scale(${$})` };
+        }
+    }), n.value.observe(r.value));
+  });
+  const _ = (a) => {
+    o.fallback && !f.value && (a.target.src = o.fallback), f.value = !0;
+  };
+  return E(() => {
+    var a;
+    (a = n.value) == null || a.disconnect();
+  }), (a, u) => (s(), i("span", { ref_key: "avatar", ref: c, class: M(S.value) }, [a.src ? (s(), i("img", { key: 0, src: a.src, alt: a.alt, onError: _ }, null, 40, P)) : (s(), i("span", { key: 1, ref_key: "avatarText", ref: r, class: "layui-avatar-text", style: w(v.value) }, [m(p).default ? j("", !0) : (s(), R(m(O), { key: 0, type: a.icon }, null, 8, ["type"])), I(a.$slots, "default")], 4))], 2));
+} });
+export {
+  q as default
+};

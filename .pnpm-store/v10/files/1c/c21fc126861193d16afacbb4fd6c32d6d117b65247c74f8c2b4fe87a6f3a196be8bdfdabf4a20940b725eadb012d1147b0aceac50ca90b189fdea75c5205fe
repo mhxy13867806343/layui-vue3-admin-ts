@@ -1,0 +1,115 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        align: {
+            type: import("vue").PropType<"center" | "end" | "start" | "baseline">;
+        };
+        direction: {
+            type: import("vue").PropType<"horizontal" | "vertical">;
+            default: string;
+        };
+        fill: {
+            type: BooleanConstructor;
+            default: boolean;
+        };
+        size: {
+            type: import("vue").PropType<(string | number) | [string | number, string | number]>;
+            default: string;
+        };
+        wrap: {
+            type: BooleanConstructor;
+            default: boolean;
+        };
+    }>>, () => import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
+        [key: string]: any;
+    }>, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        align: {
+            type: import("vue").PropType<"center" | "end" | "start" | "baseline">;
+        };
+        direction: {
+            type: import("vue").PropType<"horizontal" | "vertical">;
+            default: string;
+        };
+        fill: {
+            type: BooleanConstructor;
+            default: boolean;
+        };
+        size: {
+            type: import("vue").PropType<(string | number) | [string | number, string | number]>;
+            default: string;
+        };
+        wrap: {
+            type: BooleanConstructor;
+            default: boolean;
+        };
+    }>>, {
+        fill: boolean;
+        size: (string | number) | [string | number, string | number];
+        wrap: boolean;
+        direction: "horizontal" | "vertical";
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        align: {
+            type: import("vue").PropType<"center" | "end" | "start" | "baseline">;
+        };
+        direction: {
+            type: import("vue").PropType<"horizontal" | "vertical">;
+            default: string;
+        };
+        fill: {
+            type: BooleanConstructor;
+            default: boolean;
+        };
+        size: {
+            type: import("vue").PropType<(string | number) | [string | number, string | number]>;
+            default: string;
+        };
+        wrap: {
+            type: BooleanConstructor;
+            default: boolean;
+        };
+    }>>, () => import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
+        [key: string]: any;
+    }>, {}, {}, {}, {
+        fill: boolean;
+        size: (string | number) | [string | number, string | number];
+        wrap: boolean;
+        direction: "horizontal" | "vertical";
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    align: {
+        type: import("vue").PropType<"center" | "end" | "start" | "baseline">;
+    };
+    direction: {
+        type: import("vue").PropType<"horizontal" | "vertical">;
+        default: string;
+    };
+    fill: {
+        type: BooleanConstructor;
+        default: boolean;
+    };
+    size: {
+        type: import("vue").PropType<(string | number) | [string | number, string | number]>;
+        default: string;
+    };
+    wrap: {
+        type: BooleanConstructor;
+        default: boolean;
+    };
+}>>, () => import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
+    [key: string]: any;
+}>, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {
+    fill: boolean;
+    size: (string | number) | [string | number, string | number];
+    wrap: boolean;
+    direction: "horizontal" | "vertical";
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & import("vue").Plugin<any[]>;
+export default component;

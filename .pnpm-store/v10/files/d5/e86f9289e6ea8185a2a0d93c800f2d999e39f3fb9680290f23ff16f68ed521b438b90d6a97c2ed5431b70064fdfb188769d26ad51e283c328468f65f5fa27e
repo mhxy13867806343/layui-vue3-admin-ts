@@ -1,0 +1,8 @@
+import { defineComponent as r, inject as l, createVNode as s } from "vue";
+const a = r({ slots: Object, props: { itemSlots: { type: Object, default: () => ({}) }, isRequired: { type: Boolean, default: !1 }, outProps: { type: Object, default: () => ({}) } }, setup(e) {
+  const o = l("LayForm", {}), t = { ...e.outProps, model: o.model };
+  return () => s("span", null, [e.outProps.prop && e.isRequired ? s("span", { class: ["layui-required", "layui-icon"].concat(o.requiredIcons ?? "") }, [e.itemSlots.required ? e.itemSlots.required({ props: t }) : o.requiredIcons ? "" : "*"]) : "", e.itemSlots.label ? e.itemSlots.label({ props: t }) : e.outProps.label]);
+} });
+export {
+  a as default
+};

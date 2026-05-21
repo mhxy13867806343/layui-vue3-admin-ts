@@ -1,0 +1,25 @@
+import { type PropType } from "vue";
+import "./index.less";
+declare const _default: import("vue").DefineComponent<{
+    vertical: {
+        type: PropType<boolean | undefined>;
+        default: () => boolean;
+    };
+    minSize: {
+        type: PropType<number | undefined>;
+        default: number;
+    };
+}, () => JSX.Element, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+    vertical: {
+        type: PropType<boolean | undefined>;
+        default: () => boolean;
+    };
+    minSize: {
+        type: PropType<number | undefined>;
+        default: number;
+    };
+}>>, {
+    vertical: boolean | undefined;
+    minSize: number | undefined;
+}, {}>;
+export default _default;

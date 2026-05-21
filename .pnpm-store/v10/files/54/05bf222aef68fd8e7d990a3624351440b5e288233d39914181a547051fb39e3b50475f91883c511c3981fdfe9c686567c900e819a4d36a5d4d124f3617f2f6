@@ -1,0 +1,6 @@
+import type { ColumnWeakMap, TableColumn } from "../typing";
+export declare function useTableColumns(columns: Array<TableColumn>, columnMap: ColumnWeakMap): {
+    setRowSpanValue: (column: TableColumn) => number;
+    setColSpanValue: (column: TableColumn) => number;
+};
+export type UseTableColumnsReturn = ReturnType<typeof useTableColumns>;

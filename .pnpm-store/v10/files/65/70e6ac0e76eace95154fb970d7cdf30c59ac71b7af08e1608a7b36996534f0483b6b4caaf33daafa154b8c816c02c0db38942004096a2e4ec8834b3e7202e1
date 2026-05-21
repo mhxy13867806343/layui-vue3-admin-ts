@@ -1,0 +1,9 @@
+import { defineComponent as l, computed as o, openBlock as d, createElementBlock as i, normalizeStyle as n, renderSlot as r } from "vue";
+/* empty css           */
+const c = l({ name: "LaySide", __name: "index", props: { width: { default: "200px" } }, setup(t) {
+  const e = t, a = o(() => ({ flex: `0 0 ${e.width}`, width: `${e.width}` }));
+  return (s, p) => (d(), i("div", { class: "layui-side", style: n(a.value) }, [r(s.$slots, "default")], 4));
+} });
+export {
+  c as default
+};

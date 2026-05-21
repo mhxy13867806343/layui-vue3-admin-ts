@@ -1,0 +1,32 @@
+import type { Component, ComponentInternalInstance, VNode, VNodeTypes } from "vue";
+export declare enum ShapeFlags {
+    ELEMENT = 1,
+    FUNCTIONAL_COMPONENT = 2,
+    STATEFUL_COMPONENT = 4,
+    COMPONENT = 6,
+    TEXT_CHILDREN = 8,
+    ARRAY_CHILDREN = 16,
+    SLOTS_CHILDREN = 32,
+    TELEPORT = 64,
+    SUSPENSE = 128,
+    COMPONENT_SHOULD_KEEP_ALIVE = 256,
+    COMPONENT_KEPT_ALIVE = 512
+}
+export declare function isElement(vn: VNode): boolean;
+export declare function isComponent(vn: VNode, type?: VNodeTypes): type is Component;
+export declare function isArrayChildren(vn: VNode, children: VNode["children"]): children is VNode[];
+/**
+ * 同时支持驼峰命名和破折号命名的插槽，示例：back-icon 和 backIcon
+ * @param vm 组件实例
+ * @param name 插槽名
+ */
+export declare function convertSlotName(vm: ComponentInternalInstance, name: string): string;
+export declare function kebabCase(key: string): string;
+export declare function flattedVNode(children: VNode[]): VNode<import("vue").RendererNode, import("vue").RendererElement, {
+    [key: string]: any;
+}>[];
+/**
+ * 将props对象的key从kebab-case转换为camelCase
+ * @param props props集合
+ */
+export declare function normalizeProps<T extends Record<string, any>>(props: T): T;

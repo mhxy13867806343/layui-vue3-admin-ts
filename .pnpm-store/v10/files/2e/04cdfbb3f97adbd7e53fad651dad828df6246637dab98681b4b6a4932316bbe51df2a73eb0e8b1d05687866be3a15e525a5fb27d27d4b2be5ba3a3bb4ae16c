@@ -1,0 +1,9 @@
+import { defineComponent as s, openBlock as r, createBlock as l, withCtx as e, createVNode as a, renderSlot as o, createSlots as n, unref as f } from "vue";
+import d from "../dropdown/index2.js";
+import i from "../dropdownMenu/index2.js";
+import p from "../dropdownMenuItem/index2.js";
+import { LayIcon as u } from "@layui/icons-vue";
+const h = s({ name: "LayDropdownSubMenu", __name: "index", props: { trigger: { default: () => ["hover"] }, placement: { default: "right-start" }, disabled: { type: Boolean, default: !1 }, contentOffset: { default: 2 }, teleportProps: { default: () => ({ disabled: !0 }) } }, setup: (m) => (t, c) => (r(), l(d, { trigger: t.trigger, placement: t.placement, "auto-fit-min-width": !1, "content-offset": t.contentOffset, "teleport-props": t.teleportProps, disabled: t.disabled }, { content: e(() => [a(i, null, { default: e(() => [o(t.$slots, "content")]), _: 3 })]), default: e(() => [a(p, { disabled: t.disabled }, n({ suffix: e(() => [o(t.$slots, "suffix", {}, () => [a(f(u), { type: "layui-icon-right", size: "14px" })])]), _: 2 }, [t.$slots.prefix ? { name: "prefix", fn: e(() => [o(t.$slots, "prefix")]), key: "0" } : void 0, t.$slots.default ? { name: "default", fn: e(() => [o(t.$slots, "default")]), key: "1" } : void 0]), 1032, ["disabled"])]), _: 3 }, 8, ["trigger", "placement", "content-offset", "teleport-props", "disabled"])) });
+export {
+  h as default
+};

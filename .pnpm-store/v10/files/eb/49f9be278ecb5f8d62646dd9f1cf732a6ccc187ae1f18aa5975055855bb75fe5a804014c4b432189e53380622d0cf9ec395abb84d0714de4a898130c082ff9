@@ -1,0 +1,10 @@
+import { defineComponent as p, openBlock as i, createElementBlock as m, normalizeClass as d, unref as e, renderSlot as g, createTextVNode as u, toDisplayString as c } from "vue";
+import { useI18n as x } from "../../language/index.js";
+import { usePage as f } from "../usePage.js";
+const C = ["data-page"], S = p({ name: "LayPageNext", __name: "next", setup(k) {
+  const { t: a } = x(), { pageCount: n, currentPage: o, handleNext: t, slots: y } = f();
+  return (r, s) => (i(), m("div", { class: d(["layui-page-next", [{ "is-disabled": e(n) <= e(o) }]]), "data-page": e(a)("page.next"), onClick: s[0] || (s[0] = (...l) => e(t) && e(t)(...l)) }, [g(r.$slots, "next", {}, () => [u(c(e(a)("page.next")), 1)])], 10, C));
+} });
+export {
+  S as default
+};

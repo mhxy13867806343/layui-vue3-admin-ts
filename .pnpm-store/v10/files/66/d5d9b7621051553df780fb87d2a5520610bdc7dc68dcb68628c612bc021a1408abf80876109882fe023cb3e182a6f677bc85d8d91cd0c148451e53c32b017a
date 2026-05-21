@@ -1,0 +1,20 @@
+type TimeSelectDateTime = {
+    year?: number;
+    month?: number;
+    day?: number;
+    hour?: number;
+    minute?: number;
+    second?: number;
+};
+declare const fromTime: (time: Date, mixin?: TimeSelectDateTime) => {
+    year: number;
+    month: number;
+    day: number;
+    hour: number;
+    minute: number;
+    second: number;
+};
+declare const toTime: (time: TimeSelectDateTime) => Date;
+declare const timeInterval: (time: Date, interval: number) => Generator<Date, never, unknown>;
+declare const calcInterval: (time: Date, endTime: Date, interval: number) => number;
+export { fromTime, toTime, timeInterval, calcInterval, TimeSelectDateTime };

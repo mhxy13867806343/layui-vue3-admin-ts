@@ -1,0 +1,23 @@
+/* empty css           */
+import { defineComponent as f, computed as l, h as n, renderSlot as d, isVNode as m, Comment as g, Fragment as h, createTextVNode as x } from "vue";
+const v = f({ name: "LaySpace", props: { align: { type: String }, direction: { type: String, default: "horizontal" }, fill: { type: Boolean, default: !1 }, size: { type: [Number, String, Array], default: "sm" }, wrap: { type: Boolean, default: !1 } }, setup(e, { slots: o }) {
+  const p = l(() => e.align ?? (e.direction === "horizontal" ? "center" : "")), y = l(() => ["layui-space", { [`layui-space-align-${p.value}`]: p.value, [`layui-space-${e.direction}`]: e.direction, "layui-space-wrap": e.wrap, "layui-space-fill": e.fill }]), u = l(() => {
+    const r = { xs: "4px", sm: "8px", md: "16px", lg: "24px" };
+    let a = "";
+    return Array.isArray(e.size) ? a = e.size.map((i) => typeof i == "number" ? `${i}px` : typeof i == "string" && r[i] || i).join(" ") : typeof e.size == "string" ? a = r[e.size] || e.size : typeof e.size == "number" && (a = `${e.size}px`), { gap: a };
+  }), c = l(() => [e.fill ? { flexGrow: 1, minWidth: "100%" } : {}]);
+  return () => {
+    const r = (() => {
+      const a = [], i = d(o, "default").children, s = Array.isArray(i) ? [...i] : [];
+      for (; s.length; ) {
+        const t = s.shift();
+        t !== null && (Array.isArray(t) && s.unshift(...t), m(t) && t.type !== g && (t.type === h && Array.isArray(t.children) ? s.unshift(t.children) : typeof t == "string" || typeof t == "number" ? a.push(x(t)) : a.push(t)));
+      }
+      return a;
+    })();
+    return n("div", { class: y.value, style: u.value }, r.map((a, i) => n("div", { key: a.key ?? `item-${i}`, class: "layui-space-item", style: c.value }, n(a))));
+  };
+} });
+export {
+  v as default
+};

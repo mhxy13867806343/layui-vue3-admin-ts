@@ -1,0 +1,5 @@
+import { defineComponent as n, useSlots as m, openBlock as l, createElementBlock as i, createElementVNode as a, renderSlot as t, createTextVNode as s, toDisplayString as o } from "vue";
+const c = { class: "layui-timeline-item" }, y = { class: "layui-icon layui-timeline-axis" }, p = { class: "layui-timeline-content layui-text" }, u = { key: 0, class: "layui-timeline-title" }, d = { key: 1, class: "layui-timeline-title" }, k = n({ name: "LayTimelineItem", __name: "index", props: { title: {}, simple: { type: Boolean } }, setup: (r) => (m(), (e, x) => (l(), i("li", c, [a("i", y, [t(e.$slots, "dot", {}, () => [s("")])]), a("div", p, [e.simple ? (l(), i("div", u, [t(e.$slots, "title", {}, () => [s(o(e.title), 1)])])) : (l(), i("h3", d, [t(e.$slots, "title", {}, () => [s(o(e.title), 1)])])), t(e.$slots, "default")])]))) });
+export {
+  k as default
+};

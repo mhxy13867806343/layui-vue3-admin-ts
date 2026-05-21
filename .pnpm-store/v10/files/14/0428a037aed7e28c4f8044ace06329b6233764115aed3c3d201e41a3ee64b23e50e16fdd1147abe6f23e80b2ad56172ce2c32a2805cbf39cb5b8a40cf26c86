@@ -1,0 +1,12 @@
+import { isNode as o, getNodeName as l } from "../../utils/domUtil.js";
+function a(e) {
+  if ((n = e) != null && typeof n == "object" && "$el" in n) {
+    const t = e.$el;
+    return o(t) && l(t) === "#comment" ? null : t;
+  }
+  var n;
+  return e;
+}
+export {
+  a as unRefRealElement
+};

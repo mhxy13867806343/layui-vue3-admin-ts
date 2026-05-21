@@ -1,0 +1,16 @@
+import { defineComponent as r, ref as d, watch as p, openBlock as a, createElementBlock as t, renderSlot as i, Fragment as m, createCommentVNode as o, toDisplayString as y, createElementVNode as c } from "vue";
+import g from "./loading-0.svg.js";
+import u from "./loading-1.svg.js";
+import f from "./loading-2.svg.js";
+/* empty css           */
+const k = { class: "layui-loading" }, v = { key: 0, class: "layui-loading-spinning" }, x = { key: 0, src: g }, B = { key: 1, src: u }, $ = { key: 2, src: f }, C = { key: 2, class: "layui-loading-spinning-text" }, E = { class: "layui-loading-container" }, j = r({ name: "LayLoading", __name: "index", props: { loading: { type: Boolean, default: !0 }, delay: { default: 0 }, type: { default: 0 }, tip: {} }, setup(l) {
+  const n = l, s = d(n.loading);
+  return p(() => n.loading, () => {
+    setTimeout(() => {
+      s.value = n.loading;
+    }, n.delay);
+  }), (e, L) => (a(), t("div", k, [s.value ? (a(), t("div", v, [e.$slots.indicator ? i(e.$slots, "indicator", { key: 0 }) : (a(), t(m, { key: 1 }, [e.type === 0 ? (a(), t("img", x)) : o("", !0), e.type === 1 ? (a(), t("img", B)) : o("", !0), e.type === 2 ? (a(), t("img", $)) : o("", !0)], 64)), e.tip ? (a(), t("div", C, y(e.tip), 1)) : o("", !0)])) : o("", !0), c("div", E, [i(e.$slots, "default")])]));
+} });
+export {
+  j as default
+};

@@ -1,0 +1,4 @@
+import type { TabItemVNode } from "../components/interface";
+export declare function useTabSlot(): {
+    defaultSlot: import("vue").Ref<TabItemVNode[]>;
+};

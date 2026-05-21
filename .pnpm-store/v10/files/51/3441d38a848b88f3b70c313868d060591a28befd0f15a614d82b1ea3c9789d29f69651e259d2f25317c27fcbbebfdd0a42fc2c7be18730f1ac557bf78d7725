@@ -1,0 +1,3 @@
+import type { Dayjs } from "dayjs";
+import type { Shortcuts } from "../interface";
+export declare function useShortcutsRange(): (shortcuts: Shortcuts) => Array<Dayjs>;

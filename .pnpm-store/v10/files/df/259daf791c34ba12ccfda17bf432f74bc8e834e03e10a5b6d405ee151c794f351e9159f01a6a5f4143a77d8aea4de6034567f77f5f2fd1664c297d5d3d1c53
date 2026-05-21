@@ -1,0 +1,4 @@
+import o from "./Time.js";
+export {
+  o as default
+};

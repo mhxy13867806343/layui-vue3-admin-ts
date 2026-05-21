@@ -1,0 +1,35 @@
+import type { Dayjs } from "dayjs";
+import type { DateContentSingleDateObject } from "./component/interface";
+import type { DatePickerModelValueSingleType } from "./interface";
+export declare function normalizeDayjsValue(value: DatePickerModelValueSingleType, format: string | undefined): Dayjs | null;
+export declare function dayjsToString(value: DatePickerModelValueSingleType, format: string): string;
+export declare function checkRangeValue(values: Array<Dayjs | null>): boolean;
+/**
+ * 获取年份列表
+ * @param {Date | number} date 时间
+ * @param {number} page 页数
+ * @param {number} step 步进
+ */
+export declare function getYears(date?: Date | number, page?: number, step?: number): number[];
+/**
+ * 获取当前日期
+ */
+export declare function getDate(val?: string): Date;
+/**
+ * 获取当前年份
+ */
+export declare function getYear(val?: string): number;
+/**
+ * 获取当前月份
+ */
+export declare function getMonth(val?: string): number;
+export declare function getDay(val?: string): number;
+/**
+ * 获取月份天数
+ *
+ * @param year
+ * @param month
+ */
+export declare function getDayLength(year: number, month: number): number;
+export declare function setDateList(year: number, month: number): Array<DateContentSingleDateObject>;
+export declare function setHMS(date: Dayjs, referDate: Dayjs): Dayjs;

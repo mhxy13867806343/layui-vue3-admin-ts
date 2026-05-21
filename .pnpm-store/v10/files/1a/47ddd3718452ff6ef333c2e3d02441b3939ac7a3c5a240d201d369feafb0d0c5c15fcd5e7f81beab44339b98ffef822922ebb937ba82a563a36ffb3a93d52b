@@ -1,0 +1,101 @@
+import { defineComponent as pe, useSlots as re, shallowRef as Q, ref as f, reactive as U, watch as w, computed as x, nextTick as de, onMounted as ve, openBlock as s, createElementBlock as r, normalizeClass as ce, createElementVNode as z, toDisplayString as $, unref as g, renderSlot as I, createCommentVNode as c, Fragment as P, renderList as X, createBlock as D, mergeProps as R, withCtx as N, createTextVNode as F, createVNode as Y, normalizeStyle as me, withKeys as Z, withModifiers as fe } from "vue";
+import { LayIcon as ge } from "@layui/icons-vue";
+import { reactiveOmit as ye, isObject as he, useResizeObserver as be } from "@vueuse/core";
+import K from "../tag/index2.js";
+import Ce from "../tooltip/index2.js";
+import { useTreeSelectProvide as ke } from "../treeSelect/useTreeSelect.js";
+/* empty css           */
+import { isArray as xe } from "../utils/arrayUtil.js";
+const Ne = { key: 0, class: "layui-tag-input-prepend" }, Ve = { key: 1 }, we = { class: "layui-tag-input-inner" }, ze = { class: "layui-tag-input-collapsed-panel" }, $e = ["disabled", "placeholder", "readonly"], Ie = { key: 1, class: "layui-tag-input-inner-disabled-input" }, Te = { key: 2, class: "layui-tag-input-clear" }, Be = { key: 3, class: "layui-tag-input-suffix" }, Se = { key: 4, class: "layui-tag-input-append" }, Me = pe({ name: "LayTagInput", __name: "index", props: { modelValue: {}, inputValue: {}, disabled: { type: Boolean }, placeholder: { default: void 0 }, readonly: { type: Boolean }, allowClear: { type: Boolean }, max: {}, minCollapsedNum: { default: 0 }, collapseTagsTooltip: { type: Boolean }, size: { default: "md" }, tagProps: {}, disabledInput: { type: Boolean }, checkInputValue: { type: Function, default: (M) => !0 } }, emits: ["change", "exceed", "check-input-value-fail", "update:modelValue", "update:inputValue", "input-value-change", "press-enter", "remove", "clear", "focus", "blur"], setup(M, { expose: ee, emit: le }) {
+  const a = M, o = le, O = re(), V = Q(void 0), i = Q(void 0), m = f(""), v = f(""), T = f(""), y = f(!1), j = U({ width: "15px" }), ae = U(a.tagProps ?? {}), B = ye(ae, "closable", "size", "disabled"), n = f(a.inputValue ?? ""), u = f();
+  function S(e) {
+    o("update:modelValue", e), o("change", e);
+  }
+  w(() => a.modelValue, (e) => {
+    a.max && a.minCollapsedNum && a.minCollapsedNum > a.max && (console.group("LayTagInput: minCollapsedNum > max"), console.warn(`props.minCollapsedNum(${a.minCollapsedNum}) > props.max(${a.max})`), console.warn("Tips: props.max should be greater than or equals to props.minCollapsedNum."), console.groupEnd()), u.value = e;
+  }, { immediate: !0 }), w(() => n.value, (e) => {
+    o("update:inputValue", e), o("input-value-change", e);
+  }), w(() => a.inputValue, (e) => {
+    n.value = e ?? "";
+  });
+  const p = x(() => (u.value ?? []).map((e) => he(e) ? e : { value: e, label: String(e), closable: !0 })), h = x(() => {
+    var e;
+    if (p.value)
+      return a.minCollapsedNum ? (e = p.value) == null ? void 0 : e.slice(0, a.minCollapsedNum) : p.value;
+  }), q = x(() => {
+    var e, l, t;
+    if (p.value)
+      return a.minCollapsedNum && ((e = p.value) == null ? void 0 : e.length) > (((l = h.value) == null ? void 0 : l.length) ?? 0) - a.minCollapsedNum ? (t = p.value) == null ? void 0 : t.slice(a.minCollapsedNum) : [];
+  });
+  function W(e) {
+    y.value || (n.value = e.target.value, m.value.length || (m.value = n.value));
+  }
+  function _(e) {
+    var l;
+    e.type === "compositionend" ? (y.value = !1, v.value = "", W(e)) : (y.value = !0, (v.value.length || (l = e.data) != null && l.length) && (T.value = v.value), v.value = n.value + (e.data ?? ""));
+  }
+  function ue(e) {
+    var t;
+    e.preventDefault();
+    const l = n.value ? String(n.value).trim() : "";
+    l && u.value && (a.max && ((t = u.value) == null ? void 0 : t.length) >= a.max ? o("exceed", l, e) : !a.checkInputValue || a.checkInputValue(l) ? (u.value = xe(u.value) ? u.value.concat(String(l)) : [l], n.value = "", m.value = "", S(u.value)) : o("check-input-value-fail", l, e), o("press-enter", l, e));
+  }
+  function te(e) {
+    var l;
+    if (e.key.toLowerCase() === "backspace" && u.value && u.value.length)
+      if (T.value.length || (l = n.value) != null && l.length || m.value.length)
+        T.value = v.value.length ? v.value : "", m.value = n.value ?? "";
+      else {
+        const t = p.value.length - 1;
+        E(p.value[t].value, t, e);
+      }
+  }
+  function A(e) {
+    var l;
+    o("focus", e), (l = i.value) == null || l.focus();
+  }
+  function G(e) {
+    var l;
+    o("blur", e), (l = i.value) == null || l.blur();
+  }
+  function ne(e) {
+    !a.disabled && a.allowClear && (u.value = [], S(u.value), o("clear", e));
+  }
+  function E(e, l, t) {
+    var C;
+    if (t.type !== "click" && (y.value || v.value.length || (C = n.value) != null && C.length || m.value.length))
+      return t.preventDefault(), void t.stopPropagation();
+    if (!u.value)
+      return;
+    const b = [...u.value];
+    b.splice(l, 1), u.value = b, S(u.value), o("remove", e, t);
+  }
+  function se(e) {
+    i.value && (e.preventDefault(), i.value.focus());
+  }
+  function H() {
+    var e;
+    V.value && (e = V.value.offsetWidth, j.width = e > 15 ? `${e}px` : "15px");
+  }
+  const oe = x(() => ["layui-tag-input", `layui-tag-input-${a.size}`, { "layui-tag-input-disabled": a.disabled }]);
+  be(V, () => {
+    H();
+  }), w(() => n.value, (e) => {
+    i.value && !y.value && de(() => {
+      i.value.value = e ?? "";
+    });
+  });
+  const ie = x(() => p.value && h.value ? p.value.length - h.value.length : "");
+  return ve(() => {
+    var l;
+    H();
+    const e = ke();
+    (l = e == null ? void 0 : e.setInputEl) == null || l.call(e, i.value), i.value && (i.value.value = n.value);
+  }), ee({ focus: A, blur: G }), (e, l) => {
+    var t, b, C, J;
+    return s(), r("div", { class: ce(oe.value), onMousedown: se }, [z("span", { ref_key: "mirrorRefEl", ref: V, class: "layui-tag-input-mirror" }, $(v.value || n.value || e.placeholder), 513), g(O).prepend ? (s(), r("div", Ne, [I(e.$slots, "prepend")])) : c("", !0), e.$slots.prefix ? (s(), r("span", Ve, [I(e.$slots, "prefix")])) : c("", !0), z("span", we, [(s(!0), r(P, null, X(h.value, (d, k) => (s(), D(K, R({ key: `${d}-${k}` }, g(B), { closable: !e.disabled && d.closable, size: e.size, onClose: (L) => E(d.value, k, L) }), { default: N(() => [F($(d.label), 1)]), _: 2 }, 1040, ["closable", "size", "onClose"]))), 128)), ((t = h.value) == null ? void 0 : t.length) !== ((b = u.value) == null ? void 0 : b.length) ? (s(), r(P, { key: 0 }, [(C = q.value) != null && C.length ? (s(), D(Ce, { key: 0, "is-dark": !1, trigger: "hover", "popper-style": "padding:6px", disabled: !e.collapseTagsTooltip }, { content: N(() => [z("div", ze, [(s(!0), r(P, null, X(q.value, (d, k) => (s(), D(K, R({ key: `${d}-${k}` }, g(B), { closable: !e.disabled && d.closable, size: e.size, onClose: (L) => E(d.value, k + (e.minCollapsedNum ?? 0), L) }), { default: N(() => [F($(d.label), 1)]), _: 2 }, 1040, ["closable", "size", "onClose"]))), 128))])]), default: N(() => [Y(K, R(g(B), { key: "more", closable: !1, size: e.size }), { default: N(() => [F(" +" + $(ie.value) + "... ", 1)]), _: 1 }, 16, ["size"])]), _: 1 }, 8, ["disabled"])) : c("", !0)], 64)) : c("", !0), z("input", { ref_key: "inputRefEl", ref: i, class: "layui-tag-input-inner-input", style: me(j), disabled: e.disabled || e.disabledInput, placeholder: e.placeholder, readonly: e.readonly, onKeydown: Z(ue, ["enter"]), onKeyup: Z(te, ["delete"]), onInput: W, onFocus: A, onBlur: G, onCompositionstart: _, onCompositionupdate: _, onCompositionend: _ }, null, 44, $e), e.disabledInput ? (s(), r("div", Ie)) : c("", !0)]), e.allowClear && ((J = u.value) != null && J.length) && !e.disabled ? (s(), r("span", Te, [Y(g(ge), { type: "layui-icon-close-fill", onClick: fe(ne, ["stop"]) })])) : c("", !0), e.$slots.suffix ? (s(), r("span", Be, [I(e.$slots, "suffix")])) : c("", !0), g(O).append ? (s(), r("div", Se, [I(e.$slots, "append")])) : c("", !0)], 34);
+  };
+} });
+export {
+  Me as default
+};

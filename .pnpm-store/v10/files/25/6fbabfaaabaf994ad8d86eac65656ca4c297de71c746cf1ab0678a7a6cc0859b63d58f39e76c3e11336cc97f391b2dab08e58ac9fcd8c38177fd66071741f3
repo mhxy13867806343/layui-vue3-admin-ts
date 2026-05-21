@@ -1,0 +1,169 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        type: {
+            type: import("vue").PropType<"dot" | "rim">;
+            default: string;
+        };
+        position: {
+            type: import("vue").PropType<import("./index.vue").Position>;
+            default: string;
+        };
+        color: {
+            type: import("vue").PropType<string>;
+        };
+        max: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        value: {
+            type: import("vue").PropType<string | number>;
+            default: number;
+        };
+        theme: {
+            type: import("vue").PropType<string>;
+        };
+        ripple: {
+            type: import("vue").PropType<boolean>;
+        };
+        badgeStyle: {
+            type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+        };
+        showZero: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+    }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        type: {
+            type: import("vue").PropType<"dot" | "rim">;
+            default: string;
+        };
+        position: {
+            type: import("vue").PropType<import("./index.vue").Position>;
+            default: string;
+        };
+        color: {
+            type: import("vue").PropType<string>;
+        };
+        max: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        value: {
+            type: import("vue").PropType<string | number>;
+            default: number;
+        };
+        theme: {
+            type: import("vue").PropType<string>;
+        };
+        ripple: {
+            type: import("vue").PropType<boolean>;
+        };
+        badgeStyle: {
+            type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+        };
+        showZero: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+    }>>, {
+        type: "dot" | "rim";
+        position: import("./index.vue").Position;
+        max: number;
+        value: string | number;
+        showZero: boolean;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        type: {
+            type: import("vue").PropType<"dot" | "rim">;
+            default: string;
+        };
+        position: {
+            type: import("vue").PropType<import("./index.vue").Position>;
+            default: string;
+        };
+        color: {
+            type: import("vue").PropType<string>;
+        };
+        max: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        value: {
+            type: import("vue").PropType<string | number>;
+            default: number;
+        };
+        theme: {
+            type: import("vue").PropType<string>;
+        };
+        ripple: {
+            type: import("vue").PropType<boolean>;
+        };
+        badgeStyle: {
+            type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+        };
+        showZero: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+    }>>, {}, {}, {}, {}, {
+        type: "dot" | "rim";
+        position: import("./index.vue").Position;
+        max: number;
+        value: string | number;
+        showZero: boolean;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    type: {
+        type: import("vue").PropType<"dot" | "rim">;
+        default: string;
+    };
+    position: {
+        type: import("vue").PropType<import("./index.vue").Position>;
+        default: string;
+    };
+    color: {
+        type: import("vue").PropType<string>;
+    };
+    max: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    value: {
+        type: import("vue").PropType<string | number>;
+        default: number;
+    };
+    theme: {
+        type: import("vue").PropType<string>;
+    };
+    ripple: {
+        type: import("vue").PropType<boolean>;
+    };
+    badgeStyle: {
+        type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+    };
+    showZero: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+}>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {
+    type: "dot" | "rim";
+    position: import("./index.vue").Position;
+    max: number;
+    value: string | number;
+    showZero: boolean;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        default?(_: {}): any;
+        custom?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

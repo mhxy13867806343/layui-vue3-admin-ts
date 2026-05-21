@@ -1,0 +1,13 @@
+import { defineComponent as n, watch as c, ref as i, provide as d, openBlock as p, createElementBlock as r, renderSlot as u } from "vue";
+/* empty css           */
+const m = { class: "layui-collapse" }, v = n({ name: "LayCollapse", __name: "index", props: { accordion: { type: Boolean, default: !1 }, modelValue: { default: () => [] }, collapseTransition: { type: Boolean, default: !0 } }, emits: ["update:modelValue", "change"], setup(l, { emit: t }) {
+  const e = l;
+  c(() => e.modelValue, (a) => {
+    o.value = [].concat(a);
+  });
+  const s = t, o = i([].concat(e.modelValue));
+  return d("layCollapse", { accordion: e.accordion, collapseTransition: e.collapseTransition, activeValues: o, emit: s }), (a, f) => (p(), r("div", m, [u(a.$slots, "default")]));
+} });
+export {
+  v as default
+};

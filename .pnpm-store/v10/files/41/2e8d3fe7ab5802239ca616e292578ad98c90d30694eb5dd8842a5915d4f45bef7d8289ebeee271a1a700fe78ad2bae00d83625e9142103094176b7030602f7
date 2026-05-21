@@ -1,0 +1,27 @@
+import { useThrottleFn as $ } from "@vueuse/core";
+let r = !1, c = null, l = null, s = null, d = null, m = 0, u = 0, i = 0;
+const f = $((o) => {
+  if (!r)
+    return;
+  const t = o.clientX - m, n = u + t;
+  if (n < 0)
+    return !1;
+  c.width = `${n}px`, l && (l.style.width = `${i + t}px`), s && (s.style.width = `${i + t}px`), d && (d.style.width = `${i + t}px`);
+}, 20);
+function v() {
+  m = 0, u = 0, i = 0, c = null, l = null, s = null, r = !1, document.removeEventListener("mousemove", f), document.removeEventListener("mouseup", v);
+}
+function W(o, t, n, w, x) {
+  var a, p;
+  document.addEventListener("mousemove", f), document.addEventListener("mouseup", v), l = n, s = w, d = x, c = t, m = o.clientX;
+  const h = [];
+  if (n && ((p = (a = n.firstChild) == null ? void 0 : a.childNodes) == null || p.forEach((e) => {
+    e.clientWidth && h.push(e.clientWidth);
+  })), i = h.reduce((e, E) => e + E, 0), r = !0, u = o.target.parentNode.offsetWidth, t.width) {
+    const e = t.width.match(/^(\d+)px$/i);
+    e && (u = +e[1]);
+  }
+}
+export {
+  W as startResize
+};

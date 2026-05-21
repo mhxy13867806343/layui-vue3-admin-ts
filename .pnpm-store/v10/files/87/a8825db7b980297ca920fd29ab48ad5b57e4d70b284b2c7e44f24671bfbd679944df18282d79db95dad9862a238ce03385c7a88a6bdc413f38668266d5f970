@@ -1,0 +1,6 @@
+import { defineComponent as t, openBlock as o, createElementBlock as a, renderSlot as n } from "vue";
+/* empty css           */
+const s = { class: "layui-btn-group" }, m = t({ name: "LayButtonGroup", __name: "index", setup: (l) => (e, r) => (o(), a("div", s, [n(e.$slots, "default")])) });
+export {
+  m as default
+};

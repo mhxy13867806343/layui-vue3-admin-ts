@@ -1,0 +1,153 @@
+import { ref as O, computed as h, watch as x, nextTick as S } from "vue";
+import { treeReplaceFields as j } from "../constant.js";
+import { normalizeValue as B, isBoolean as M } from "../../utils/type.js";
+import { isArray as w } from "../../utils/arrayUtil.js";
+function q(c, b) {
+  const s = O([]), u = h(() => Object.assign({}, j, c.replaceFields)), r = h(() => {
+    const e = [], d = (a) => {
+      a.forEach((n) => {
+        var l;
+        e.push(n), (l = n.children) != null && l.length && d(n.children);
+      });
+    };
+    return d(s.value), e;
+  }), I = h(() => r.value.filter((e) => e.mock)), m = h(() => r.value.filter((e) => e.checked)), N = h(() => m.value.map((e) => e.id)), T = h(() => m.value.map((e) => g(e.id).map((d) => d.id))), A = h(() => m.value.map((e) => e.title)), D = h(() => m.value.map((e) => g(e.id).map((d) => d.title))), y = h(() => r.value.filter((e) => e.expanded).map((e) => e.id)), K = h(() => y.value.map((e) => g(e).map((d) => d.id)));
+  function z(e) {
+    return new Promise((d) => {
+      var a, n;
+      if (c.lazy) {
+        if (!e)
+          return (a = c.load) == null || a.call(c, void 0, (i) => {
+            (i = i.filter((t) => t)).length && k(i);
+          }), d();
+        if (e != null && e.children.length || e.leaf)
+          return d();
+        e.loading = !0;
+        const l = e.disabled;
+        l || (e.disabled = !0), (n = c.load) == null || n.call(c, e.original, (i) => {
+          e.loading = !1, l || (e.disabled = !1), k(i = i.filter((t) => t), e.id), i.length || (e.leaf = !0), d();
+        });
+      } else
+        d();
+    });
+  }
+  function k(e, d, a = !1) {
+    if (e.length)
+      if (a && (e = e.map((n) => ({ ...n, mock: !0 }))), d) {
+        const n = r.value.find((l) => l.id === d);
+        n && (n.children = [...n.children, ...E(e, d)]);
+      } else
+        s.value = [...s.value, ...E(e)];
+    !a && P(e), !c.checkStrictly && v(), S(() => {
+      b("update:expand-keys", y.value), b("update:checked-keys", N.value);
+    });
+  }
+  function E(e, d) {
+    return e.map((a) => {
+      const n = function(i, t) {
+        return { id: i[u.value.id], title: i[u.value.title], children: [], parent: t, disabled: !!(i[u.value.disabled] ?? !1), checked: !!(i[u.value.checked] ?? !1), expanded: !!(i[u.value.expanded] ?? !1), isIndeterminate: !1, loading: !1, leaf: !!(i[u.value.leaf] ?? !1), original: i, mock: i.mock ?? !1, slot: i.slot, visible: !0 };
+      }(a, d), l = a[u.value.children];
+      return n.children = l != null && l.length ? E(l, n.id) : [], n.leaf = n.leaf || !(c.lazy || n.children.length || n.slot), n;
+    });
+  }
+  function P(e) {
+    const d = e.map((a) => a[u.value.id]);
+    I.value.filter((a) => d.includes(a.id)).forEach((a) => {
+      var n;
+      (n = p(a.id)) == null || n.forEach((l) => {
+        const i = ((t) => {
+          if (t && t.parent !== void 0) {
+            const f = o(t == null ? void 0 : t.parent);
+            return f == null ? void 0 : f.children.splice(f == null ? void 0 : f.children.indexOf(a), 1);
+          }
+          return s.value.splice(s.value.indexOf(a), 1);
+        })(l);
+        i == null || i.forEach((t) => {
+          const f = o(t.id);
+          f && Object.assign(f, { checked: t.checked, isIndeterminate: t.isIndeterminate, expanded: t.expanded });
+        });
+      });
+    });
+  }
+  function p(e) {
+    return r.value.filter((d) => d.id === e && d.mock);
+  }
+  function v() {
+    r.value.filter((e) => !e.disabled && !e.children.length).forEach((e) => {
+      const d = o(e.parent);
+      d && (d.checked = d.children.every((a) => a.checked), d.checked || (d.isIndeterminate = d.children.some((a) => a.isIndeterminate || a.checked)));
+    }), r.value.filter((e) => !e.disabled && e.parent).forEach((e) => {
+      const d = o(e.parent);
+      d && (d.checked = d.children.every((a) => a.checked), d.checked || (d.isIndeterminate = d.children.some((a) => a.isIndeterminate || a.checked)));
+    }), r.value.filter((e) => !e.disabled && !e.parent && e.children.length).forEach((e) => {
+      e.checked = e.children.every((d) => d.checked), e.checked || (e.isIndeterminate = e.children.some((d) => d.isIndeterminate || d.checked));
+    });
+  }
+  function o(e) {
+    return r.value.find((d) => d.id === e && !d.mock);
+  }
+  x(() => [c.data, c.cacheData], () => {
+    s.value = [], function(e) {
+      e.length ? k(e) : z().catch(console.error), c.cacheData && k(c.cacheData, void 0, !0), I.value.length && P(r.value.filter((d) => !d.mock).map((d) => d.original));
+    }(B(w(c.data) ? c.data : [c.data]));
+  }, { deep: !0, immediate: !0 });
+  function g(e) {
+    let d = o(e);
+    const a = [];
+    if (d)
+      for (a.push(d); d != null && d.parent && (d = o(d.parent), d); )
+        a.push(d);
+    return a.reverse();
+  }
+  return x(() => c.defaultExpandAll, (e) => {
+    !c.lazy && M(e) && S(() => {
+      r.value.forEach((d) => {
+        d.expanded = e;
+      }), c.checkStrictly || v();
+    });
+  }, { immediate: !0 }), x(() => c.checkedKeys, (e, d) => {
+    var a;
+    (a = d == null ? void 0 : d.filter((n) => !(e != null && e.includes(n)))) == null || a.forEach((n) => {
+      var l;
+      o(n) && (o(n).checked = !1), (l = p(n)) == null || l.forEach((i) => i.checked = !1);
+    }), e == null || e.forEach((n) => {
+      var l;
+      o(n) && (o(n).checked = !0), (l = p(n)) == null || l.forEach((i) => i.checked = !0);
+    }), c.checkStrictly || v();
+  }, { immediate: !0 }), x(() => c.expandKeys, (e, d) => {
+    var a;
+    (a = d == null ? void 0 : d.filter((n) => !(e != null && e.includes(n)))) == null || a.forEach((n) => {
+      var l;
+      o(n) && (o(n).expanded = !1), (l = p(n)) == null || l.forEach((i) => i.expanded = !1);
+    }), e == null || e.forEach((n) => {
+      var l;
+      o(n) && (o(n).expanded = !0), (l = p(n)) == null || l.forEach((i) => i.expanded = !0);
+    }), c.checkStrictly || v();
+  }, { immediate: !0 }), { treeData: s, flatTree: r, findNode: o, findMockNodes: p, findNodePath: g, findParentNode: (e) => {
+    const d = r.value.find((a) => a.id === e);
+    return r.value.find((a) => a.id === (d == null ? void 0 : d.parent));
+  }, findSiblingsNodes: (e) => {
+    var a;
+    const d = r.value.find((n) => n.id === e);
+    return d != null && d.parent ? (a = r.value.find((n) => n.id === d.parent)) == null ? void 0 : a.children : s.value;
+  }, findAllLeafNodes: function e(d) {
+    const a = r.value.find((n) => n.id === d);
+    if (a)
+      return B(a.children.flatMap((n) => n.children.length ? e(n.id) : n));
+  }, lazyLoad: z, reloadAllNodeStatus: v, filter: function(e) {
+    const d = function(a) {
+      a.forEach((n) => {
+        const l = n.children;
+        if (n.visible = c.searchNodeMethod(n.original, e), d(l), !n.visible && l.length) {
+          let i = !0;
+          i = !l.some((t) => t.visible), n.visible = i === !1;
+        }
+        e && (!n.visible || n.expanded || c.lazy || (n.expanded = !0));
+      });
+    };
+    d(s.value);
+  }, expandedKeys: y, expandedPath: K, checkedKeys: N, checkedPath: T, checkedTitle: A, checkedTitlePath: D };
+}
+export {
+  q as useTree
+};

@@ -1,0 +1,14 @@
+import { defineComponent as n, useSlots as r, computed as o, openBlock as u, createElementBlock as i, normalizeClass as m, renderSlot as c } from "vue";
+import p from "../header/index2.js";
+import d from "../footer/index2.js";
+/* empty css           */
+const x = n({ name: "LayLayout", __name: "index", props: { isVertical: { type: Boolean, default: !1 } }, setup(f) {
+  const a = r(), s = o(() => a.default ? a.default().some((t) => {
+    const e = t.type.name;
+    return !!e && ([p.name].includes(e) || [d.name].includes(e));
+  }) : !1), l = o(() => ["layui-layout", { "layui-layout-vertical": s.value }]);
+  return (t, e) => (u(), i("section", { class: m(l.value) }, [c(t.$slots, "default")], 2));
+} });
+export {
+  x as default
+};

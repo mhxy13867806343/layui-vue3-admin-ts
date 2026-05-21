@@ -1,0 +1,204 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        size: {
+            type: import("vue").PropType<string>;
+        };
+        modelValue: {
+            type: import("vue").PropType<any>;
+            default: {
+                r: number;
+                g: number;
+                b: number;
+                a: number;
+            };
+        };
+        teleportProps: {
+            type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+        };
+        contentClass: {
+            type: import("vue").PropType<string | object | (string | object)[]>;
+        };
+        contentStyle: {
+            type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+        };
+        allowClear: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        preset: {
+            type: import("vue").PropType<any>;
+            default: string[];
+        };
+        eyeDropper: {
+            type: import("vue").PropType<boolean>;
+        };
+        simple: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+    }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "update:modelValue"[], import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        size: {
+            type: import("vue").PropType<string>;
+        };
+        modelValue: {
+            type: import("vue").PropType<any>;
+            default: {
+                r: number;
+                g: number;
+                b: number;
+                a: number;
+            };
+        };
+        teleportProps: {
+            type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+        };
+        contentClass: {
+            type: import("vue").PropType<string | object | (string | object)[]>;
+        };
+        contentStyle: {
+            type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+        };
+        allowClear: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        preset: {
+            type: import("vue").PropType<any>;
+            default: string[];
+        };
+        eyeDropper: {
+            type: import("vue").PropType<boolean>;
+        };
+        simple: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+    }, {
+        disabled: boolean;
+        modelValue: any;
+        allowClear: boolean;
+        preset: any;
+        simple: boolean;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        size: {
+            type: import("vue").PropType<string>;
+        };
+        modelValue: {
+            type: import("vue").PropType<any>;
+            default: {
+                r: number;
+                g: number;
+                b: number;
+                a: number;
+            };
+        };
+        teleportProps: {
+            type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+        };
+        contentClass: {
+            type: import("vue").PropType<string | object | (string | object)[]>;
+        };
+        contentStyle: {
+            type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+        };
+        allowClear: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        preset: {
+            type: import("vue").PropType<any>;
+            default: string[];
+        };
+        eyeDropper: {
+            type: import("vue").PropType<boolean>;
+        };
+        simple: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+    }, {}, {}, {}, {}, {
+        disabled: boolean;
+        modelValue: any;
+        allowClear: boolean;
+        preset: any;
+        simple: boolean;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    disabled: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    size: {
+        type: import("vue").PropType<string>;
+    };
+    modelValue: {
+        type: import("vue").PropType<any>;
+        default: {
+            r: number;
+            g: number;
+            b: number;
+            a: number;
+        };
+    };
+    teleportProps: {
+        type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+    };
+    contentClass: {
+        type: import("vue").PropType<string | object | (string | object)[]>;
+    };
+    contentStyle: {
+        type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+    };
+    allowClear: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    preset: {
+        type: import("vue").PropType<any>;
+        default: string[];
+    };
+    eyeDropper: {
+        type: import("vue").PropType<boolean>;
+    };
+    simple: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+}>> & {
+    "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", {
+    disabled: boolean;
+    modelValue: any;
+    allowClear: boolean;
+    preset: any;
+    simple: boolean;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & import("vue").Plugin<any[]>;
+export default component;

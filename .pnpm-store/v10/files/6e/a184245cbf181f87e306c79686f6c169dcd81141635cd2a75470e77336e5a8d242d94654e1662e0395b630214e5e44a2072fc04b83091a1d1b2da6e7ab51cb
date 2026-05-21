@@ -1,0 +1,7 @@
+import type { TabProps } from "../interface";
+export declare function useTab(props: TabProps): {
+    classTab: import("vue").ComputedRef<(string | {
+        [x: string]: "default" | "brief" | "card" | import("../interface").TabPosition | undefined;
+    })[]>;
+};
+export type UseTab = ReturnType<typeof useTab>;

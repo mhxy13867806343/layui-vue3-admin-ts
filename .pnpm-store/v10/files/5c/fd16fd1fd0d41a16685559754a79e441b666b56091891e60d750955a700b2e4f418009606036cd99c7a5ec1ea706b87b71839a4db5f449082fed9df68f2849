@@ -1,0 +1,112 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        name: {
+            type: import("vue").PropType<string>;
+        };
+        disabled: {
+            type: import("vue").PropType<boolean>;
+        };
+        label: {
+            type: import("vue").PropType<string>;
+        };
+        size: {
+            type: import("vue").PropType<import("./typing").RadioButtonSize>;
+        };
+        modelValue: {
+            type: import("vue").PropType<string | number | boolean>;
+        };
+        value: {
+            type: import("vue").PropType<string | number | boolean>;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((value: string | number | boolean | undefined) => any) | undefined;
+        onChange?: ((value: string | number | boolean | undefined) => any) | undefined;
+    }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+        "update:modelValue": (value: string | number | boolean | undefined) => void;
+        change: (value: string | number | boolean | undefined) => void;
+    }, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        name: {
+            type: import("vue").PropType<string>;
+        };
+        disabled: {
+            type: import("vue").PropType<boolean>;
+        };
+        label: {
+            type: import("vue").PropType<string>;
+        };
+        size: {
+            type: import("vue").PropType<import("./typing").RadioButtonSize>;
+        };
+        modelValue: {
+            type: import("vue").PropType<string | number | boolean>;
+        };
+        value: {
+            type: import("vue").PropType<string | number | boolean>;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((value: string | number | boolean | undefined) => any) | undefined;
+        onChange?: ((value: string | number | boolean | undefined) => any) | undefined;
+    }, {}, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        name: {
+            type: import("vue").PropType<string>;
+        };
+        disabled: {
+            type: import("vue").PropType<boolean>;
+        };
+        label: {
+            type: import("vue").PropType<string>;
+        };
+        size: {
+            type: import("vue").PropType<import("./typing").RadioButtonSize>;
+        };
+        modelValue: {
+            type: import("vue").PropType<string | number | boolean>;
+        };
+        value: {
+            type: import("vue").PropType<string | number | boolean>;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((value: string | number | boolean | undefined) => any) | undefined;
+        onChange?: ((value: string | number | boolean | undefined) => any) | undefined;
+    }, {}, {}, {}, {}, {}>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    name: {
+        type: import("vue").PropType<string>;
+    };
+    disabled: {
+        type: import("vue").PropType<boolean>;
+    };
+    label: {
+        type: import("vue").PropType<string>;
+    };
+    size: {
+        type: import("vue").PropType<import("./typing").RadioButtonSize>;
+    };
+    modelValue: {
+        type: import("vue").PropType<string | number | boolean>;
+    };
+    value: {
+        type: import("vue").PropType<string | number | boolean>;
+    };
+}>> & {
+    "onUpdate:modelValue"?: ((value: string | number | boolean | undefined) => any) | undefined;
+    onChange?: ((value: string | number | boolean | undefined) => any) | undefined;
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+    "update:modelValue": (value: string | number | boolean | undefined) => void;
+    change: (value: string | number | boolean | undefined) => void;
+}, string, {}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        default?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

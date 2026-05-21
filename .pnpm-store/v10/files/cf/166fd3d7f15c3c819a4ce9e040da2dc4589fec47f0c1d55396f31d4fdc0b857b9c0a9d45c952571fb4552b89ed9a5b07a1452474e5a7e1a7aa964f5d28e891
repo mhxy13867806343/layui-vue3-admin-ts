@@ -1,0 +1,5 @@
+const e = { id: "id", title: "title", parent: "parent", checked: "checked", children: "children", disabled: "disabled", expanded: "spread", leaf: "leaf" }, d = Symbol("LayTreeContext");
+export {
+  d as LAY_TREE_CONTEXT,
+  e as treeReplaceFields
+};

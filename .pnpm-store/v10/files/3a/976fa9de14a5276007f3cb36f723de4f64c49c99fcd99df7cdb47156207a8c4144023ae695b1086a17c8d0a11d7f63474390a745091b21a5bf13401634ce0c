@@ -1,0 +1,404 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        style: {
+            type: import("vue").PropType<{
+                stripe?: boolean | undefined;
+                loadingTheme?: string | undefined;
+            }>;
+            default: () => {
+                stripe: boolean;
+                loadingTheme: string;
+            };
+        };
+        multiple: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        load: {
+            type: import("vue").PropType<import("@layui/component/component/cascaderPanel/interface").CascaderPanelLazyloadFunction>;
+            default: undefined;
+        };
+        options: {
+            type: import("vue").PropType<import("@layui/component/component/cascaderPanel/interface").CascaderPanelItemProps[]>;
+            default: () => never[];
+        };
+        modelValue: {
+            type: import("vue").PropType<string | string[]>;
+            default: () => never[];
+        };
+        replaceFields: {
+            type: import("vue").PropType<{
+                label?: string | undefined;
+                value?: string | undefined;
+                children?: string | undefined;
+            }>;
+            default: () => {
+                label: string;
+                value: string;
+                children: string;
+            };
+        };
+        value: {
+            type: import("vue").PropType<string | string[]>;
+        };
+        height: {
+            type: import("vue").PropType<string | number>;
+            default: string;
+        };
+        decollator: {
+            type: import("vue").PropType<string>;
+            default: () => "/";
+        };
+        onlyLastLevel: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        lazy: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        alwaysLazy: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        checkStrictly: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        changeOnSelect: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        fullpath: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((value: string[]) => any) | undefined;
+        onChange?: ((value: string[]) => any) | undefined;
+        "onUpdate:multipleSelectItem"?: ((value: Map<string, import("@layui/component/component/cascaderPanel/interface").CascaderPanelItemPropsInternal>) => any) | undefined;
+    }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+        "update:modelValue": (value: string[]) => void;
+        "update:multipleSelectItem": (value: Map<string, import("@layui/component/component/cascaderPanel/interface").CascaderPanelItemPropsInternal>) => void;
+        change: (value: string[]) => void;
+    }, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        style: {
+            type: import("vue").PropType<{
+                stripe?: boolean | undefined;
+                loadingTheme?: string | undefined;
+            }>;
+            default: () => {
+                stripe: boolean;
+                loadingTheme: string;
+            };
+        };
+        multiple: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        load: {
+            type: import("vue").PropType<import("@layui/component/component/cascaderPanel/interface").CascaderPanelLazyloadFunction>;
+            default: undefined;
+        };
+        options: {
+            type: import("vue").PropType<import("@layui/component/component/cascaderPanel/interface").CascaderPanelItemProps[]>;
+            default: () => never[];
+        };
+        modelValue: {
+            type: import("vue").PropType<string | string[]>;
+            default: () => never[];
+        };
+        replaceFields: {
+            type: import("vue").PropType<{
+                label?: string | undefined;
+                value?: string | undefined;
+                children?: string | undefined;
+            }>;
+            default: () => {
+                label: string;
+                value: string;
+                children: string;
+            };
+        };
+        value: {
+            type: import("vue").PropType<string | string[]>;
+        };
+        height: {
+            type: import("vue").PropType<string | number>;
+            default: string;
+        };
+        decollator: {
+            type: import("vue").PropType<string>;
+            default: () => "/";
+        };
+        onlyLastLevel: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        lazy: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        alwaysLazy: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        checkStrictly: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        changeOnSelect: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        fullpath: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((value: string[]) => any) | undefined;
+        onChange?: ((value: string[]) => any) | undefined;
+        "onUpdate:multipleSelectItem"?: ((value: Map<string, import("@layui/component/component/cascaderPanel/interface").CascaderPanelItemPropsInternal>) => any) | undefined;
+    }, {
+        style: {
+            stripe?: boolean | undefined;
+            loadingTheme?: string | undefined;
+        };
+        multiple: boolean;
+        load: import("@layui/component/component/cascaderPanel/interface").CascaderPanelLazyloadFunction;
+        options: import("@layui/component/component/cascaderPanel/interface").CascaderPanelItemProps[];
+        modelValue: string | string[];
+        replaceFields: {
+            label?: string | undefined;
+            value?: string | undefined;
+            children?: string | undefined;
+        };
+        height: string | number;
+        decollator: string;
+        onlyLastLevel: boolean;
+        lazy: boolean;
+        alwaysLazy: boolean;
+        checkStrictly: boolean;
+        changeOnSelect: boolean;
+        fullpath: boolean;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        style: {
+            type: import("vue").PropType<{
+                stripe?: boolean | undefined;
+                loadingTheme?: string | undefined;
+            }>;
+            default: () => {
+                stripe: boolean;
+                loadingTheme: string;
+            };
+        };
+        multiple: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        load: {
+            type: import("vue").PropType<import("@layui/component/component/cascaderPanel/interface").CascaderPanelLazyloadFunction>;
+            default: undefined;
+        };
+        options: {
+            type: import("vue").PropType<import("@layui/component/component/cascaderPanel/interface").CascaderPanelItemProps[]>;
+            default: () => never[];
+        };
+        modelValue: {
+            type: import("vue").PropType<string | string[]>;
+            default: () => never[];
+        };
+        replaceFields: {
+            type: import("vue").PropType<{
+                label?: string | undefined;
+                value?: string | undefined;
+                children?: string | undefined;
+            }>;
+            default: () => {
+                label: string;
+                value: string;
+                children: string;
+            };
+        };
+        value: {
+            type: import("vue").PropType<string | string[]>;
+        };
+        height: {
+            type: import("vue").PropType<string | number>;
+            default: string;
+        };
+        decollator: {
+            type: import("vue").PropType<string>;
+            default: () => "/";
+        };
+        onlyLastLevel: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        lazy: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        alwaysLazy: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        checkStrictly: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        changeOnSelect: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        fullpath: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((value: string[]) => any) | undefined;
+        onChange?: ((value: string[]) => any) | undefined;
+        "onUpdate:multipleSelectItem"?: ((value: Map<string, import("@layui/component/component/cascaderPanel/interface").CascaderPanelItemPropsInternal>) => any) | undefined;
+    }, {}, {}, {}, {}, {
+        style: {
+            stripe?: boolean | undefined;
+            loadingTheme?: string | undefined;
+        };
+        multiple: boolean;
+        load: import("@layui/component/component/cascaderPanel/interface").CascaderPanelLazyloadFunction;
+        options: import("@layui/component/component/cascaderPanel/interface").CascaderPanelItemProps[];
+        modelValue: string | string[];
+        replaceFields: {
+            label?: string | undefined;
+            value?: string | undefined;
+            children?: string | undefined;
+        };
+        height: string | number;
+        decollator: string;
+        onlyLastLevel: boolean;
+        lazy: boolean;
+        alwaysLazy: boolean;
+        checkStrictly: boolean;
+        changeOnSelect: boolean;
+        fullpath: boolean;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    style: {
+        type: import("vue").PropType<{
+            stripe?: boolean | undefined;
+            loadingTheme?: string | undefined;
+        }>;
+        default: () => {
+            stripe: boolean;
+            loadingTheme: string;
+        };
+    };
+    multiple: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    load: {
+        type: import("vue").PropType<import("@layui/component/component/cascaderPanel/interface").CascaderPanelLazyloadFunction>;
+        default: undefined;
+    };
+    options: {
+        type: import("vue").PropType<import("@layui/component/component/cascaderPanel/interface").CascaderPanelItemProps[]>;
+        default: () => never[];
+    };
+    modelValue: {
+        type: import("vue").PropType<string | string[]>;
+        default: () => never[];
+    };
+    replaceFields: {
+        type: import("vue").PropType<{
+            label?: string | undefined;
+            value?: string | undefined;
+            children?: string | undefined;
+        }>;
+        default: () => {
+            label: string;
+            value: string;
+            children: string;
+        };
+    };
+    value: {
+        type: import("vue").PropType<string | string[]>;
+    };
+    height: {
+        type: import("vue").PropType<string | number>;
+        default: string;
+    };
+    decollator: {
+        type: import("vue").PropType<string>;
+        default: () => "/";
+    };
+    onlyLastLevel: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    lazy: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    alwaysLazy: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    checkStrictly: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    changeOnSelect: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    fullpath: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+}>> & {
+    "onUpdate:modelValue"?: ((value: string[]) => any) | undefined;
+    onChange?: ((value: string[]) => any) | undefined;
+    "onUpdate:multipleSelectItem"?: ((value: Map<string, import("@layui/component/component/cascaderPanel/interface").CascaderPanelItemPropsInternal>) => any) | undefined;
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+    "update:modelValue": (value: string[]) => void;
+    "update:multipleSelectItem": (value: Map<string, import("@layui/component/component/cascaderPanel/interface").CascaderPanelItemPropsInternal>) => void;
+    change: (value: string[]) => void;
+}, string, {
+    style: {
+        stripe?: boolean | undefined;
+        loadingTheme?: string | undefined;
+    };
+    multiple: boolean;
+    load: import("@layui/component/component/cascaderPanel/interface").CascaderPanelLazyloadFunction;
+    options: import("@layui/component/component/cascaderPanel/interface").CascaderPanelItemProps[];
+    modelValue: string | string[];
+    replaceFields: {
+        label?: string | undefined;
+        value?: string | undefined;
+        children?: string | undefined;
+    };
+    height: string | number;
+    decollator: string;
+    onlyLastLevel: boolean;
+    lazy: boolean;
+    alwaysLazy: boolean;
+    checkStrictly: boolean;
+    changeOnSelect: boolean;
+    fullpath: boolean;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: Partial<Record<any, (_: {}) => any>> & {
+        default?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

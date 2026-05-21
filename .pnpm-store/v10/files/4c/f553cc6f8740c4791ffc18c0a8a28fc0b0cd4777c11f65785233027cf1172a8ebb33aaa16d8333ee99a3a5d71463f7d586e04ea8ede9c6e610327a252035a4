@@ -1,0 +1,13 @@
+import { defineComponent as n, inject as l, unref as e, openBlock as d, createBlock as i, mergeProps as c, renderSlot as p } from "vue";
+import u from "../../../_components/render.js";
+import { DATE_PICKER_CONTEXT as m } from "../../interface.js";
+const _ = n({ name: "DatePickerRender", inheritAttrs: !1, __name: "DatePickerRender", props: { type: {}, unix: {}, dayjs: {}, current: {}, start: {}, end: {}, render: { default: "default" } }, setup(a) {
+  const t = a, r = l(m);
+  return (o, f) => {
+    var s;
+    return (s = e(r).datePickerSlots) != null && s[t.render] ? (d(), i(e(u), c({ key: 0, slots: e(r).datePickerSlots }, t), null, 16, ["slots"])) : p(o.$slots, "default", { key: 1 });
+  };
+} });
+export {
+  _ as default
+};

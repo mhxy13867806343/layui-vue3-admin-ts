@@ -1,0 +1,44 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        shadow: {
+            type: import("vue").PropType<import("./interface").PanelShadow>;
+            default: string;
+        };
+    }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        shadow: {
+            type: import("vue").PropType<import("./interface").PanelShadow>;
+            default: string;
+        };
+    }>>, {
+        shadow: import("./interface").PanelShadow;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        shadow: {
+            type: import("vue").PropType<import("./interface").PanelShadow>;
+            default: string;
+        };
+    }>>, {}, {}, {}, {}, {
+        shadow: import("./interface").PanelShadow;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    shadow: {
+        type: import("vue").PropType<import("./interface").PanelShadow>;
+        default: string;
+    };
+}>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {
+    shadow: import("./interface").PanelShadow;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        default?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

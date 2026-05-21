@@ -1,0 +1,6 @@
+import t from "./descriptions.js";
+import { withInstall as o } from "../utils/withInstall.js";
+const a = o(t);
+export {
+  a as default
+};

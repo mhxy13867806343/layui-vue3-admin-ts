@@ -1,0 +1,24 @@
+import { isVNode as a } from "vue";
+const t = (n) => {
+  const e = Array.isArray(n) ? n : [n], r = [];
+  return e.forEach((o) => {
+    var s;
+    Array.isArray(o) ? r.push(...t(o)) : a(o) && Array.isArray(o.children) ? r.push(...t(o.children)) : (r.push(o), a(o) && ((s = o.component) != null && s.subTree) && r.push(...t(o.component.subTree)));
+  }), r;
+};
+function i(n) {
+  let e;
+  return (n == null || (e = n.ownerDocument) == null ? void 0 : e.defaultView) || window;
+}
+function c(n) {
+  return u(n) ? (n.nodeName || "").toLowerCase() : "#document";
+}
+function u(n) {
+  return n instanceof Node || n instanceof i(n).Node;
+}
+export {
+  t as flattedChildren,
+  c as getNodeName,
+  i as getWindow,
+  u as isNode
+};

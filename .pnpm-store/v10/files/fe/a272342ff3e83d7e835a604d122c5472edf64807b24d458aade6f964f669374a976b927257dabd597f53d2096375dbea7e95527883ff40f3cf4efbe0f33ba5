@@ -1,0 +1,47 @@
+import type { SlotsType, PropType } from "vue";
+import type { FormItemProps } from "./types";
+declare const _default: import("vue").DefineComponent<{
+    itemSlots: {
+        type: PropType<Readonly<{
+            [name: string]: import("vue").Slot<any> | undefined;
+        }>>;
+        default: () => {};
+    };
+    isRequired: {
+        type: BooleanConstructor;
+        default: boolean;
+    };
+    outProps: {
+        type: PropType<FormItemProps>;
+        default: () => {};
+    };
+}, () => JSX.Element, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+    itemSlots: {
+        type: PropType<Readonly<{
+            [name: string]: import("vue").Slot<any> | undefined;
+        }>>;
+        default: () => {};
+    };
+    isRequired: {
+        type: BooleanConstructor;
+        default: boolean;
+    };
+    outProps: {
+        type: PropType<FormItemProps>;
+        default: () => {};
+    };
+}>>, {
+    itemSlots: Readonly<{
+        [name: string]: import("vue").Slot<any> | undefined;
+    }>;
+    isRequired: boolean;
+    outProps: FormItemProps;
+}, SlotsType<{
+    label: {
+        props: Object;
+    };
+    required: {
+        props: Object;
+    };
+}>>;
+export default _default;

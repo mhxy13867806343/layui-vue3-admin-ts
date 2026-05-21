@@ -56,5 +56,17 @@ export default defineConfig(function (_a) {
             target: 'es2020',
             chunkSizeWarningLimit: 1500,
         },
+        optimizeDeps: {
+            include: [
+                'vue',
+                'vue-router',
+                'pinia',
+                'axios',
+                'dayjs',
+                'lodash-es',
+                '@wangeditor/editor',
+                '@wangeditor/editor-for-vue',
+            ],
+        },
     };
 });

@@ -1,0 +1,15 @@
+import { defineComponent as u, openBlock as t, createElementBlock as m, createVNode as d, unref as a, isRef as p, withCtx as c, Fragment as f, renderList as g, createBlock as b } from "vue";
+import { useI18n as v } from "../../language/index.js";
+import { usePage as k } from "../usePage.js";
+import V from "../../select/index.js";
+import h from "../../selectOption/index.js";
+const y = { class: "layui-page-limits" }, $ = u({ name: "LayPageLimits", __name: "limits", setup(B) {
+  const { t: s } = v(), { inlimit: l, disabled: r, limits: n } = k();
+  return (L, i) => (t(), m("div", y, [d(a(V), { modelValue: a(l), "onUpdate:modelValue": i[0] || (i[0] = (e) => p(l) ? l.value = e : null), placeholder: "请选择", disabled: a(r), autoFitWidth: !1 }, { default: c(() => [(t(!0), m(f, null, g(a(n), (e) => {
+    return t(), b(a(h), { value: e, label: (o = e, `${o} ${s("page.item") + "/" + s("page.page")}`), key: e }, null, 8, ["value", "label"]);
+    var o;
+  }), 128))]), _: 1 }, 8, ["modelValue", "disabled"])]));
+} });
+export {
+  $ as default
+};

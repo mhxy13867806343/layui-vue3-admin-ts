@@ -1,0 +1,99 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        theme: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        locale: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        locales: {
+            type: import("vue").PropType<import("../types").Recordable[]>;
+        };
+        themeVariable: {
+            type: import("vue").PropType<any>;
+        };
+        darkPartial: {
+            type: import("vue").PropType<any>;
+        };
+    }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        theme: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        locale: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        locales: {
+            type: import("vue").PropType<import("../types").Recordable[]>;
+        };
+        themeVariable: {
+            type: import("vue").PropType<any>;
+        };
+        darkPartial: {
+            type: import("vue").PropType<any>;
+        };
+    }>>, {
+        theme: string;
+        locale: string;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        theme: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        locale: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        locales: {
+            type: import("vue").PropType<import("../types").Recordable[]>;
+        };
+        themeVariable: {
+            type: import("vue").PropType<any>;
+        };
+        darkPartial: {
+            type: import("vue").PropType<any>;
+        };
+    }>>, {}, {}, {}, {}, {
+        theme: string;
+        locale: string;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    theme: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    locale: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    locales: {
+        type: import("vue").PropType<import("../types").Recordable[]>;
+    };
+    themeVariable: {
+        type: import("vue").PropType<any>;
+    };
+    darkPartial: {
+        type: import("vue").PropType<any>;
+    };
+}>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {
+    theme: string;
+    locale: string;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        default?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

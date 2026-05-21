@@ -1,0 +1,2 @@
+import type { TableColumn } from "../typing";
+export declare function startResize(e: MouseEvent, column: TableColumn, tableHeaderTableRef: HTMLElement | null, tableBodyTableRef: HTMLElement | null, tableTotalTableRef: HTMLElement | null): void;

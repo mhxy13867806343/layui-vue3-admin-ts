@@ -1,0 +1,23 @@
+export declare function check(arr: any[], value: any): boolean;
+export declare function isValueNull(v: any): boolean;
+export declare function isArray(val: any): val is Array<any>;
+export declare function isValueArray(val: unknown): val is ArrayLike<unknown>;
+export declare function normalizeArray<T>(value?: T | T[]): T[];
+type callback = (item: any, index: number, parent?: any) => void;
+type loopForEachCallback = callback | callback[];
+/**
+ * 递归遍历array，执行 callback
+ * @param array 数据源
+ * @param children  子节点字段 | `callback`
+ * @param callback 回调函数 `() => void` | `Array<() => void>` | `parent`
+ * @param parent 上级节点
+ */
+export declare function loopForEach(array: any[] | undefined, children: string, callback: loopForEachCallback, parent?: any): void;
+export declare function loopForEach(array: any[] | undefined, callback: loopForEachCallback, parent?: any): void;
+/**
+ * 递归找出某级所有节点
+ */
+export declare function loopSomeLevelALLChildren(lists: any[], childrenKey: string, level: number): any[];
+export declare function loopSomeLevelALLChildren(lists: any[], childrenKey: number): any[];
+export declare function arrayEverySame<T extends any[]>(arr1: T, arr2: T): boolean;
+export {};

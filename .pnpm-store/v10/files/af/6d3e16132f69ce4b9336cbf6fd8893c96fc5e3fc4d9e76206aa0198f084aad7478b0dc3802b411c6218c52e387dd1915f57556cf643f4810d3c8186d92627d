@@ -1,0 +1,151 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        offset: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        theme: {
+            type: import("vue").PropType<string>;
+        };
+        margin: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        borderStyle: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        direction: {
+            type: import("vue").PropType<"horizontal" | "vertical">;
+            default: string;
+        };
+        borderWidth: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        contentPosition: {
+            type: import("vue").PropType<"center" | "left" | "right">;
+            default: string;
+        };
+    }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        offset: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        theme: {
+            type: import("vue").PropType<string>;
+        };
+        margin: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        borderStyle: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        direction: {
+            type: import("vue").PropType<"horizontal" | "vertical">;
+            default: string;
+        };
+        borderWidth: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        contentPosition: {
+            type: import("vue").PropType<"center" | "left" | "right">;
+            default: string;
+        };
+    }>>, {
+        offset: string;
+        margin: string;
+        borderStyle: string;
+        direction: "horizontal" | "vertical";
+        borderWidth: string;
+        contentPosition: "center" | "left" | "right";
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        offset: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        theme: {
+            type: import("vue").PropType<string>;
+        };
+        margin: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        borderStyle: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        direction: {
+            type: import("vue").PropType<"horizontal" | "vertical">;
+            default: string;
+        };
+        borderWidth: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        contentPosition: {
+            type: import("vue").PropType<"center" | "left" | "right">;
+            default: string;
+        };
+    }>>, {}, {}, {}, {}, {
+        offset: string;
+        margin: string;
+        borderStyle: string;
+        direction: "horizontal" | "vertical";
+        borderWidth: string;
+        contentPosition: "center" | "left" | "right";
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    offset: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    theme: {
+        type: import("vue").PropType<string>;
+    };
+    margin: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    borderStyle: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    direction: {
+        type: import("vue").PropType<"horizontal" | "vertical">;
+        default: string;
+    };
+    borderWidth: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    contentPosition: {
+        type: import("vue").PropType<"center" | "left" | "right">;
+        default: string;
+    };
+}>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {
+    offset: string;
+    margin: string;
+    borderStyle: string;
+    direction: "horizontal" | "vertical";
+    borderWidth: string;
+    contentPosition: "center" | "left" | "right";
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        default?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

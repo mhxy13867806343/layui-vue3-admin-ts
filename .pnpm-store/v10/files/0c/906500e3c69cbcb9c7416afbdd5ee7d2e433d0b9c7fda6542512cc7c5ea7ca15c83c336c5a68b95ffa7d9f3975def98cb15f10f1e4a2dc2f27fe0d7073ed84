@@ -1,0 +1,93 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        target: {
+            type: import("vue").PropType<HTMLElement>;
+        };
+        position: {
+            type: import("vue").PropType<string>;
+        };
+        zIndex: {
+            type: import("vue").PropType<string>;
+        };
+        immersive: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+    }>> & {
+        onFullscreenchange?: ((...args: any[]) => any) | undefined;
+    }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "fullscreenchange"[], import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        target: {
+            type: import("vue").PropType<HTMLElement>;
+        };
+        position: {
+            type: import("vue").PropType<string>;
+        };
+        zIndex: {
+            type: import("vue").PropType<string>;
+        };
+        immersive: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+    }>> & {
+        onFullscreenchange?: ((...args: any[]) => any) | undefined;
+    }, {
+        immersive: boolean;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        target: {
+            type: import("vue").PropType<HTMLElement>;
+        };
+        position: {
+            type: import("vue").PropType<string>;
+        };
+        zIndex: {
+            type: import("vue").PropType<string>;
+        };
+        immersive: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+    }>> & {
+        onFullscreenchange?: ((...args: any[]) => any) | undefined;
+    }, {}, {}, {}, {}, {
+        immersive: boolean;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    target: {
+        type: import("vue").PropType<HTMLElement>;
+    };
+    position: {
+        type: import("vue").PropType<string>;
+    };
+    zIndex: {
+        type: import("vue").PropType<string>;
+    };
+    immersive: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+}>> & {
+    onFullscreenchange?: ((...args: any[]) => any) | undefined;
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "fullscreenchange"[], "fullscreenchange", {
+    immersive: boolean;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        default?(_: {
+            isFullscreen: any;
+            enter: any;
+            exit: any;
+            toggle: any;
+        }): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

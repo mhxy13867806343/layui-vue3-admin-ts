@@ -1,0 +1,8 @@
+import { StyledMark, DefaultValueSliderPropsType } from "../types/sliderType";
+export declare const useSliderMark: (props: DefaultValueSliderPropsType) => {
+    marksList: import("vue").ComputedRef<{
+        pos: number;
+        mark: StyledMark;
+    }[]>;
+    getSortMarks: import("vue").ComputedRef<number[]>;
+};

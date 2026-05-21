@@ -1,0 +1,17 @@
+import { autoUpdate as D, computePosition as R } from "@floating-ui/dom";
+import { computed as e, unref as a, ref as l, shallowRef as $, watch as b } from "vue";
+import { unRefRealElement as w } from "./utils.js";
+function j(x, g, n = {}) {
+  const h = e(() => a(n.middleware)), d = e(() => a(n.strategy) || "fixed"), i = e(() => a(n.placement) || "bottom"), t = e(() => w(x.value)), u = e(() => w(g.value)), s = l(0), r = l(0), p = l(d.value), f = l(i.value), c = $({}), U = e(() => ({ x: a(s), y: a(r), strategy: a(p) })), A = e(() => ({ top: `${r.value}px`, left: `${s.value}px`, position: p.value })), o = l(), m = l();
+  function y() {
+    t.value !== null && u.value !== null && R(t.value, u.value, { placement: i.value, strategy: d.value, middleware: h.value }).then((v) => {
+      s.value = v.x, r.value = v.y, p.value = v.strategy, f.value = v.placement, c.value = v.middlewareData;
+    });
+  }
+  return m.value = () => {
+    typeof o.value == "function" && (o.value(), o.value = void 0), t.value !== null && u.value !== null && (o.value = D(t.value, u.value, y));
+  }, b([t, u], m.value, { flush: "sync" }), { position: U, strategy: p, placement: f, popperStyle: A, middlewareData: c, update: y, stopAutoUpdate: o, startAutoUpdate: m };
+}
+export {
+  j as usePopper
+};

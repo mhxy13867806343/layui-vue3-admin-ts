@@ -1,0 +1,13 @@
+import a from "dayjs";
+import { computed as r } from "vue";
+import { normalizeDayjsValue as m } from "../util.js";
+import { isArray as i } from "../../utils/arrayUtil.js";
+function o(e) {
+  return { defaultTimeValue: r(() => e.type !== "datetime" ? [] : (i(e.defaultTime) ? e.defaultTime : [e.defaultTime, e.defaultTime]).map((t) => m(t, "HH:mm:ss"))), getDefaultValue: () => {
+    const t = a(e.defaultValue);
+    return t.isValid() ? t.startOf("day") : a().startOf("day");
+  } };
+}
+export {
+  o as useBaseDatePicker
+};

@@ -1,0 +1,61 @@
+/** __vue_virtual_code_placeholder */
+import "./index.less";
+import { TagShape, TagType, TagVariant } from "./interface";
+export interface TagProps {
+    type?: TagType;
+    color?: string;
+    closable?: boolean;
+    size?: string;
+    bordered?: boolean;
+    disabled?: boolean;
+    shape?: TagShape;
+    maxWidth?: string;
+    variant?: TagVariant;
+}
+declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<TagProps>, {
+    size: string;
+    shape: string;
+    variant: string;
+    bordered: boolean;
+}>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("close" | "check" | "update:checked")[], "close" | "check" | "update:checked", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<TagProps>, {
+    size: string;
+    shape: string;
+    variant: string;
+    bordered: boolean;
+}>>> & {
+    onClose?: ((...args: any[]) => any) | undefined;
+    onCheck?: ((...args: any[]) => any) | undefined;
+    "onUpdate:checked"?: ((...args: any[]) => any) | undefined;
+}, {
+    size: string;
+    bordered: boolean;
+    shape: TagShape;
+    variant: TagVariant;
+}, {}>, {
+    icon?(_: {}): any;
+    default?(_: {}): any;
+    "close-icon"?(_: {}): any;
+}>;
+export default _default;
+type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
+type __VLS_TypePropsToRuntimeProps<T> = {
+    [K in keyof T]-?: {} extends Pick<T, K> ? {
+        type: import('vue').PropType<__VLS_NonUndefinedable<T[K]>>;
+    } : {
+        type: import('vue').PropType<T[K]>;
+        required: true;
+    };
+};
+type __VLS_WithDefaults<P, D> = {
+    [K in keyof Pick<P, keyof P>]: K extends keyof D ? __VLS_Prettify<P[K] & {
+        default: D[K];
+    }> : P[K];
+};
+type __VLS_WithTemplateSlots<T, S> = T & {
+    new (): {
+        $slots: S;
+    };
+};
+type __VLS_Prettify<T> = {
+    [K in keyof T]: T[K];
+} & {};

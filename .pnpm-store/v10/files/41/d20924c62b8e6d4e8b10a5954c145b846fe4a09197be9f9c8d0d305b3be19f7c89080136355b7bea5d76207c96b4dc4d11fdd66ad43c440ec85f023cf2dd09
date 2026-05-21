@@ -1,0 +1,137 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        size: {
+            type: import("vue").PropType<"lg" | "md" | "sm" | "xs">;
+            default: string;
+        };
+        icon: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        src: {
+            type: import("vue").PropType<string>;
+        };
+        radius: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        alt: {
+            type: import("vue").PropType<string>;
+        };
+        autoFixSize: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        fallback: {
+            type: import("vue").PropType<string>;
+        };
+    }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        size: {
+            type: import("vue").PropType<"lg" | "md" | "sm" | "xs">;
+            default: string;
+        };
+        icon: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        src: {
+            type: import("vue").PropType<string>;
+        };
+        radius: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        alt: {
+            type: import("vue").PropType<string>;
+        };
+        autoFixSize: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        fallback: {
+            type: import("vue").PropType<string>;
+        };
+    }>>, {
+        size: "lg" | "md" | "sm" | "xs";
+        icon: string;
+        radius: boolean;
+        autoFixSize: boolean;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        size: {
+            type: import("vue").PropType<"lg" | "md" | "sm" | "xs">;
+            default: string;
+        };
+        icon: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        src: {
+            type: import("vue").PropType<string>;
+        };
+        radius: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        alt: {
+            type: import("vue").PropType<string>;
+        };
+        autoFixSize: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        fallback: {
+            type: import("vue").PropType<string>;
+        };
+    }>>, {}, {}, {}, {}, {
+        size: "lg" | "md" | "sm" | "xs";
+        icon: string;
+        radius: boolean;
+        autoFixSize: boolean;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    size: {
+        type: import("vue").PropType<"lg" | "md" | "sm" | "xs">;
+        default: string;
+    };
+    icon: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    src: {
+        type: import("vue").PropType<string>;
+    };
+    radius: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    alt: {
+        type: import("vue").PropType<string>;
+    };
+    autoFixSize: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    fallback: {
+        type: import("vue").PropType<string>;
+    };
+}>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {
+    size: "lg" | "md" | "sm" | "xs";
+    icon: string;
+    radius: boolean;
+    autoFixSize: boolean;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        default?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

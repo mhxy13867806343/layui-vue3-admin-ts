@@ -1,0 +1,6 @@
+import { defineComponent as e } from "vue";
+const t = e({ name: "LayDescriptionsItem", __name: "descriptionsItem", props: { label: {}, span: { default: 1 }, align: { default: "left" }, labelAlign: { default: "left" }, style: {}, class: {}, labelStyle: {}, labelClass: {} }, setup: (l) => () => {
+} });
+export {
+  t as default
+};

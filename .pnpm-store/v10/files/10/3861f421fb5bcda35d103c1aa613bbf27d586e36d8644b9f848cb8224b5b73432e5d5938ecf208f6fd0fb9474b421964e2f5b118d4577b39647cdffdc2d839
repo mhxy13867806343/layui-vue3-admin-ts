@@ -1,0 +1,3 @@
+import type { TableProps } from "../typing";
+export declare function useTablePage(_: TableProps): {};
+export type useTableSelectedReturn = ReturnType<typeof useTablePage>;

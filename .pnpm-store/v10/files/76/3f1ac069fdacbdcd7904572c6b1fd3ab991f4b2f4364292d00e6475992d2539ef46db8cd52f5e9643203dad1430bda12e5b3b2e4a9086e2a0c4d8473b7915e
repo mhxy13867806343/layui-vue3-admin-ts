@@ -1,0 +1,13 @@
+const a = (t, e) => ({ year: t.getFullYear(), month: t.getMonth() + 1, day: t.getDate(), hour: t.getHours(), minute: t.getMinutes(), second: t.getSeconds(), ...e }), r = (t) => /* @__PURE__ */ new Date(`${t.year ?? 1970}-${t.month ?? 1}-${t.day ?? 1} ${t.hour ?? 0}:${t.minute ?? 0}:${t.second ?? 0}`), i = function* (t, e) {
+  for (; ; )
+    yield t, t = new Date(t.getTime() + e);
+}, m = (t, e, o) => {
+  const n = e.getTime() - t.getTime();
+  return Math.floor(n / o / 1e3);
+};
+export {
+  m as calcInterval,
+  a as fromTime,
+  i as timeInterval,
+  r as toTime
+};

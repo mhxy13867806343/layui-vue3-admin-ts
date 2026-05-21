@@ -1,0 +1,52 @@
+import { defineComponent as L, useSlots as _, computed as B, watch as m, ref as I, provide as y, openBlock as p, createElementBlock as c, normalizeStyle as A, createElementVNode as u, renderSlot as D, Fragment as b, renderList as N, normalizeClass as $, withModifiers as j, toDisplayString as E, createCommentVNode as q } from "vue";
+/* empty css           */
+import F from "../carouselItem/index2.js";
+const G = ["lay-anim", "lay-indicator", "lay-arrow"], J = { "carousel-item": "" }, K = { class: "layui-carousel-ind" }, P = ["onClick"], W = L({ name: "LayCarousel", __name: "index", props: { width: { default: "100%" }, height: { default: "280px" }, modelValue: {}, autoplay: { type: Boolean, default: !0 }, arrow: { default: "hover" }, anim: { default: "default" }, indicator: { default: "inside" }, pauseOnHover: { type: Boolean, default: !0 }, interval: { default: 3e3 } }, emits: ["update:modelValue", "change"], setup(H, { expose: M, emit: O }) {
+  const l = H, f = _(), i = B({ get: () => l.modelValue, set(a) {
+    h("update:modelValue", a);
+  } }), r = B(() => l.anim), h = O, w = (a) => i.value = a;
+  m(() => i.value, (a) => h("change", a));
+  const o = I([]), g = I(!0), C = function(a) {
+    const t = a == null ? void 0 : a.filter((e) => e.children != "v-if");
+    t == null || t.forEach((e) => {
+      e.type.name != F.name ? C(e.children) : o.value.push(e);
+    });
+  };
+  m(g, () => {
+    o.value = [], C(f.default && f.default());
+  }, { immediate: !0, deep: !0 });
+  const k = () => {
+    var a, t;
+    i.value = (t = (a = o.value.at(o.value.findIndex((e) => {
+      var n;
+      return ((n = e.props) == null ? void 0 : n.id) === i.value;
+    }) - 1)) == null ? void 0 : a.props) == null ? void 0 : t.id;
+  }, v = () => {
+    var t, e;
+    const a = (o.value.findIndex((n) => {
+      var s;
+      return ((s = n.props) == null ? void 0 : s.id) === i.value;
+    }) + 1) % o.value.length;
+    i.value = (e = (t = o.value.at(a)) == null ? void 0 : t.props) == null ? void 0 : e.id;
+  }, x = () => {
+    v();
+  };
+  let d = 0;
+  const S = () => {
+    l.autoplay && l.pauseOnHover && (window.clearInterval(d), d = 0);
+  }, z = () => {
+    l.autoplay && l.pauseOnHover && (d = window.setInterval(x, l.interval));
+  };
+  return m(() => l.autoplay, () => {
+    l.autoplay && (d = window.setInterval(x, l.interval));
+  }, { immediate: !0 }), y("active", i), y("slotsChange", g), y("anim", r), M({ setActive: w, prev: k, next: v }), (a, t) => (p(), c("div", { class: "layui-carousel", "lay-anim": r.value, "lay-indicator": a.indicator, "lay-arrow": a.arrow, style: A({ width: a.width, height: a.height }), onMouseenter: S, onMouseleave: z }, [u("div", J, [D(a.$slots, "default")]), o.value.length > 1 ? (p(), c(b, { key: 0 }, [u("div", K, [u("ul", null, [(p(!0), c(b, null, N(o.value, (e, n) => {
+    var s;
+    return p(), c("li", { key: n, class: $([((s = e.props) == null ? void 0 : s.id) === i.value ? "layui-this" : ""]), onClick: j((Q) => {
+      var V;
+      return w((V = e.props) == null ? void 0 : V.id);
+    }, ["stop"]) }, null, 10, P);
+  }), 128))])]), u("button", { class: "layui-icon layui-carousel-arrow", "lay-type": "sub", onClick: k }, E(r.value === "updown" ? "" : ""), 1), u("button", { class: "layui-icon layui-carousel-arrow", "lay-type": "add", onClick: v }, E(r.value === "updown" ? "" : ""), 1)], 64)) : q("", !0)], 44, G));
+} });
+export {
+  W as default
+};

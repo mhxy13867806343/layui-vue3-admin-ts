@@ -1,0 +1,4 @@
+import r from "./skip.js";
+export {
+  r as default
+};

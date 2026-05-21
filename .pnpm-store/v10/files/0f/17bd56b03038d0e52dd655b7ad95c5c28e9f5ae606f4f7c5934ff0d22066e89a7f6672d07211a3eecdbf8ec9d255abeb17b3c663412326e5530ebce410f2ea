@@ -1,0 +1,21 @@
+import { defineComponent as V, inject as x, computed as t, useSlots as g, openBlock as A, createElementBlock as z, withModifiers as B, unref as n, createElementVNode as i, normalizeClass as C, renderSlot as G, createTextVNode as I, toDisplayString as L, createCommentVNode as N, createVNode as O } from "vue";
+import { LayIcon as w } from "@layui/icons-vue";
+/* empty css           */
+import S from "./index.hooks.js";
+const _ = ["size"], j = ["name", "value"], E = ["lay-skin"], P = { class: "layui-checkbox-label" }, q = V({ name: "LayCheckbox", __name: "index", props: { name: {}, skin: {}, label: { default: "" }, value: {}, modelValue: { type: [Boolean, Array], default: !1 }, isIndeterminate: { type: Boolean, default: !1 }, size: {}, disabled: { type: Boolean, default: !1 } }, emits: ["update:modelValue", "change"], setup(m, { expose: p, emit: y }) {
+  const e = m, { size: v } = S(e), o = x("checkboxGroup", {}), d = t(() => o != null && (o == null ? void 0 : o.name) === "LayCheckboxGroup"), s = y, b = g(), u = t({ get: () => d.value ? o.modelValue.value.includes(e.value) : Array.isArray(e.modelValue) ? e.modelValue.includes(e.value) : e.modelValue, set(a) {
+    d.value ? k(a) : Array.isArray(e.modelValue) ? h(a) : (s("update:modelValue", a), s("change", a));
+  } }), f = t(() => Array.isArray(e.modelValue) ? [...e.modelValue] : []), k = function(a) {
+    let l = [...o.modelValue.value];
+    a ? l.push(e.value) : l.splice(l.indexOf(e.value), 1), o.changeCheckboxGroup(l);
+  }, h = function(a) {
+    let l = [...f.value];
+    a ? l.push(e.value) : l.splice(l.indexOf(e.value), 1), s("update:modelValue", l), s("change", l);
+  }, c = function() {
+    r.value || (u.value = !u.value);
+  }, r = t(() => !!e.disabled || !(!o.hasOwnProperty("disabled") || !o.disabled.value));
+  return p({ toggle: c }), (a, l) => (A(), z("span", { onClick: B(c, ["stop"]), class: "layui-checkbox", size: n(v) }, [i("input", { type: "checkbox", name: a.name, value: a.value }, null, 8, j), i("div", { class: C(["layui-form-checkbox", { "layui-form-checked": u.value, "layui-checkbox-disabled layui-disabled": r.value }]), "lay-skin": a.skin }, [i("span", P, [n(b).default || a.label ? G(a.$slots, "default", { key: 0 }, () => [I(L(a.label), 1)]) : N("", !0)]), O(n(w), { type: e.isIndeterminate && u.value ? "layui-icon-subtraction" : u.value ? "layui-icon-ok" : "" }, null, 8, ["type"])], 10, E)], 8, _));
+} });
+export {
+  q as default
+};

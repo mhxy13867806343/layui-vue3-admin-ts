@@ -1,0 +1,286 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        size: {
+            type: import("vue").PropType<"lg" | "md" | "sm" | "xs">;
+        };
+        required: {
+            type: import("vue").PropType<boolean>;
+        };
+        mode: {
+            type: import("vue").PropType<"block" | "inline">;
+        };
+        model: {
+            type: import("vue").PropType<import("../../types").modelType>;
+            default: () => {};
+        };
+        rules: {
+            type: import("vue").PropType<import("async-validator").Rules>;
+        };
+        pane: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        initValidate: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        useCN: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        labelPosition: {
+            type: import("vue").PropType<"top" | "left" | "right">;
+            default: string;
+        };
+        labelWidth: {
+            type: import("vue").PropType<string | number>;
+        };
+        inlineWidth: {
+            type: import("vue").PropType<string | number>;
+        };
+        requiredIcons: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        requiredErrorMessage: {
+            type: import("vue").PropType<string>;
+        };
+        validateMessage: {
+            type: import("vue").PropType<import("async-validator").ValidateMessages>;
+        };
+        isLabelTooltip: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        tooltipProps: {
+            type: import("vue").PropType<import("../tooltip/types").TooltipProps>;
+        };
+    }>> & {
+        onSubmit?: ((...args: any[]) => any) | undefined;
+    }, {
+        validate: (fields?: string | string[] | import("../../types").FormCallback | null | undefined, callback?: import("../../types").FormCallback | null | undefined) => Promise<unknown>;
+        clearValidate: (fields?: string | string[] | undefined) => void;
+        reset: () => void;
+    }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "submit"[], import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        size: {
+            type: import("vue").PropType<"lg" | "md" | "sm" | "xs">;
+        };
+        required: {
+            type: import("vue").PropType<boolean>;
+        };
+        mode: {
+            type: import("vue").PropType<"block" | "inline">;
+        };
+        model: {
+            type: import("vue").PropType<import("../../types").modelType>;
+            default: () => {};
+        };
+        rules: {
+            type: import("vue").PropType<import("async-validator").Rules>;
+        };
+        pane: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        initValidate: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        useCN: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        labelPosition: {
+            type: import("vue").PropType<"top" | "left" | "right">;
+            default: string;
+        };
+        labelWidth: {
+            type: import("vue").PropType<string | number>;
+        };
+        inlineWidth: {
+            type: import("vue").PropType<string | number>;
+        };
+        requiredIcons: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        requiredErrorMessage: {
+            type: import("vue").PropType<string>;
+        };
+        validateMessage: {
+            type: import("vue").PropType<import("async-validator").ValidateMessages>;
+        };
+        isLabelTooltip: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        tooltipProps: {
+            type: import("vue").PropType<import("../tooltip/types").TooltipProps>;
+        };
+    }>> & {
+        onSubmit?: ((...args: any[]) => any) | undefined;
+    }, {
+        model: import("../../types").modelType;
+        pane: boolean;
+        initValidate: boolean;
+        useCN: boolean;
+        labelPosition: "top" | "left" | "right";
+        requiredIcons: string;
+        isLabelTooltip: boolean;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        size: {
+            type: import("vue").PropType<"lg" | "md" | "sm" | "xs">;
+        };
+        required: {
+            type: import("vue").PropType<boolean>;
+        };
+        mode: {
+            type: import("vue").PropType<"block" | "inline">;
+        };
+        model: {
+            type: import("vue").PropType<import("../../types").modelType>;
+            default: () => {};
+        };
+        rules: {
+            type: import("vue").PropType<import("async-validator").Rules>;
+        };
+        pane: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        initValidate: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        useCN: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        labelPosition: {
+            type: import("vue").PropType<"top" | "left" | "right">;
+            default: string;
+        };
+        labelWidth: {
+            type: import("vue").PropType<string | number>;
+        };
+        inlineWidth: {
+            type: import("vue").PropType<string | number>;
+        };
+        requiredIcons: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        requiredErrorMessage: {
+            type: import("vue").PropType<string>;
+        };
+        validateMessage: {
+            type: import("vue").PropType<import("async-validator").ValidateMessages>;
+        };
+        isLabelTooltip: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        tooltipProps: {
+            type: import("vue").PropType<import("../tooltip/types").TooltipProps>;
+        };
+    }>> & {
+        onSubmit?: ((...args: any[]) => any) | undefined;
+    }, {
+        validate: (fields?: string | string[] | import("../../types").FormCallback | null | undefined, callback?: import("../../types").FormCallback | null | undefined) => Promise<unknown>;
+        clearValidate: (fields?: string | string[] | undefined) => void;
+        reset: () => void;
+    }, {}, {}, {}, {
+        model: import("../../types").modelType;
+        pane: boolean;
+        initValidate: boolean;
+        useCN: boolean;
+        labelPosition: "top" | "left" | "right";
+        requiredIcons: string;
+        isLabelTooltip: boolean;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    size: {
+        type: import("vue").PropType<"lg" | "md" | "sm" | "xs">;
+    };
+    required: {
+        type: import("vue").PropType<boolean>;
+    };
+    mode: {
+        type: import("vue").PropType<"block" | "inline">;
+    };
+    model: {
+        type: import("vue").PropType<import("../../types").modelType>;
+        default: () => {};
+    };
+    rules: {
+        type: import("vue").PropType<import("async-validator").Rules>;
+    };
+    pane: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    initValidate: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    useCN: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    labelPosition: {
+        type: import("vue").PropType<"top" | "left" | "right">;
+        default: string;
+    };
+    labelWidth: {
+        type: import("vue").PropType<string | number>;
+    };
+    inlineWidth: {
+        type: import("vue").PropType<string | number>;
+    };
+    requiredIcons: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    requiredErrorMessage: {
+        type: import("vue").PropType<string>;
+    };
+    validateMessage: {
+        type: import("vue").PropType<import("async-validator").ValidateMessages>;
+    };
+    isLabelTooltip: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    tooltipProps: {
+        type: import("vue").PropType<import("../tooltip/types").TooltipProps>;
+    };
+}>> & {
+    onSubmit?: ((...args: any[]) => any) | undefined;
+}, {
+    validate: (fields?: string | string[] | import("../../types").FormCallback | null | undefined, callback?: import("../../types").FormCallback | null | undefined) => Promise<unknown>;
+    clearValidate: (fields?: string | string[] | undefined) => void;
+    reset: () => void;
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "submit"[], "submit", {
+    model: import("../../types").modelType;
+    pane: boolean;
+    initValidate: boolean;
+    useCN: boolean;
+    labelPosition: "top" | "left" | "right";
+    requiredIcons: string;
+    isLabelTooltip: boolean;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        default?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

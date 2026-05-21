@@ -1,0 +1,10 @@
+import { defineComponent as l, inject as n, h as t } from "vue";
+import { DESCRIPTIONS_INJECTION_KEY as c } from "./descriptions3.js";
+import r from "./descriptions-cell.js";
+const d = l({ name: "LayDescriptionsRow", props: { row: { type: Array, default: () => [] } }, setup(o) {
+  const { direction: a, border: p } = n(c, {});
+  return () => a === "vertical" ? [t("tr", o.row.map((e) => t(r, { cell: e, tag: "th", type: "label" }))), t("tr", o.row.map((e) => t(r, { cell: e, tag: "td", type: "content" })))] : t("tr", o.row.map((e) => p ? [t(r, { cell: e, tag: "td", type: "label" }), t(r, { cell: e, tag: "td", type: "content" })] : t(r, { cell: e, tag: "td", type: "item" })));
+} });
+export {
+  d as default
+};

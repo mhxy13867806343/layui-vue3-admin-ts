@@ -1,0 +1,61 @@
+import { defineComponent as X, inject as Y, useSlots as q, ref as J, computed as Q, openBlock as t, createElementBlock as s, normalizeStyle as W, unref as n, Fragment as S, renderList as z, normalizeClass as x, createVNode as Z, withCtx as ee, withModifiers as ae, renderSlot as w, createElementVNode as le, createBlock as k, createCommentVNode as N, createTextVNode as te, toDisplayString as ie } from "vue";
+import { CASCADER_CONTEXT_KEY as ne } from "../cascader/cascader.js";
+import ue from "../checkboxV2/index2.js";
+import oe from "../empty/index2.js";
+import ce from "../radio/index2.js";
+import de from "../scroll/index2.js";
+import { LayIcon as M } from "@layui/icons-vue";
+import se from "./index.hook.js";
+import { FLUSH_SIGNAL as c } from "./interface.js";
+/* empty css           */
+const re = { key: 0, class: "layui-cascader-panel-container" }, me = ["title", "onClick"], pe = { class: "layui-cascader-panel-selection" }, Ce = X({ name: "LayCascaderPanel", __name: "index", props: { options: { default: () => [] }, modelValue: { default: () => [] }, decollator: { default: () => "/" }, replaceFields: { default: () => ({ label: "label", value: "value", children: "children" }) }, style: { default: () => ({ stripe: !1, loadingTheme: "" }) }, multiple: { type: Boolean, default: !1 }, onlyLastLevel: { type: Boolean, default: !1 }, lazy: { type: Boolean, default: !1 }, load: { type: Function, default: void 0 }, alwaysLazy: { type: Boolean, default: !1 }, value: {}, height: { default: "200px" }, checkStrictly: { type: Boolean, default: !1 }, changeOnSelect: { type: Boolean, default: !1 }, fullpath: { type: Boolean, default: !0 } }, emits: ["update:modelValue", "update:multipleSelectItem", "change"], setup(_, { emit: G }) {
+  var U;
+  const u = _, L = G, { dataSource: E, sanitizer: H, multiple: p, checkStrictly: V, multipleSelectItem: y, alwaysLazy: P, loadingTheme: F, selectKeys: C, showKeys: r, flatData: D, changeOnSelect: K, buildMultipleStatus: O, modelValue: b } = (Y(ne) || null) ?? se(u), $ = q(), j = J((U = u.style) == null ? void 0 : U.stripe), B = Q(() => typeof u.height == "number" ? `${u.height}px` : u.height ?? "200px");
+  function h(a) {
+    switch (a) {
+      case c.CHANGE:
+        L("change", r.value);
+        break;
+      case c.SINGLE:
+        L("update:modelValue", C.value);
+        break;
+      case c.MULTIPLE:
+        O(), L("update:multipleSelectItem", y.value), L("update:modelValue", Array.from(y.value.keys()));
+    }
+  }
+  function A(a) {
+    var f;
+    p.value && (!((f = a.children) != null && f.length) || V.value ? a.checked ? y.value.set(a.value, a) : y.value.delete(a.value) : a.children.forEach((m) => {
+      m.checked = a.checked, A(m);
+    }));
+  }
+  function T(a, f) {
+    var m;
+    (function(l, e) {
+      if (l.disabled)
+        return;
+      let i = r.value;
+      for (e < i.length && (i = i.filter((o, d) => d <= e)); i.length <= e; )
+        i.push(p.value ? l.value : "");
+      r.value = i, r.value[e] = l.value;
+    })(a, f), K.value && h(c.CHANGE), u.lazy && u.load ? function(l) {
+      var e, i;
+      !P.value && ((e = l.children) != null && e.length) || (l.loading = !0, (i = u.load) == null || i.call(u, l, (o) => {
+        var d;
+        l.children = [], o || (o = []), l.children = H(o, l), l.orig.children = o, l.loading = !1, (d = l.children) != null && d.length ? Array.isArray(b.value) && b.value.forEach((v) => {
+          const g = D.value.find((I) => I.value === v);
+          g ? (g.checked = !0, y.value.set(v, g)) : y.value.delete(v);
+        }) : (C.value = r.value, h(p.value ? c.MULTIPLE : c.SINGLE));
+      }));
+    }(a) : (m = a.children) != null && m.length && !V.value || (C.value = r.value, h(p.value ? c.MULTIPLE : c.SINGLE));
+  }
+  function R(a) {
+    A(a), h(c.MULTIPLE);
+  }
+  return (a, f) => (t(), s("div", { class: "layui-cascader-panel", style: W({ height: B.value, minHeight: B.value }) }, [n(E) && n(E).length ? (t(), s("div", re, [(t(!0), s(S, null, z(n(E), (m, l) => (t(), s("ul", { key: l, class: x(["layui-cascader-panel-list", [{ "layui-cascader-panel-list-striped": j.value }]]) }, [Z(de, null, { default: ee(() => [(t(!0), s(S, null, z(m, (e, i) => (t(), s("li", { key: i, class: x(["layui-cascader-panel-item", [{ "layui-cascader-panel-item-active": e.value === n(r).at(l), "layui-cascader-panel-item-disabled": e.disabled }]]), title: e.label, onClick: ae((o) => T(e, l), ["stop"]) }, [w(a.$slots, "default", {}, () => [le("div", pe, [n(V) || n(p) ? (t(), s(S, { key: 0 }, [n(p) ? e.loading ? N("", !0) : (t(), k(ue, { key: 1, modelValue: e.checked, "onUpdate:modelValue": [(o) => e.checked = o, (o) => R(e)], size: "md", skin: "primary", value: e.checked ? 1 : 0, "is-indeterminate": e.indeterminate }, null, 8, ["modelValue", "onUpdate:modelValue", "value", "is-indeterminate"])) : (t(), k(ce, { key: 0, value: !e.selected, "onUpdate:modelValue": (o) => function(d, v) {
+    E.value.forEach((g) => g.forEach((I) => I.selected = !1)), d.selected = !d.selected, T(d, v), h(c.CHANGE);
+  }(e, l) }, null, 8, ["value", "onUpdate:modelValue"]))], 64)) : N("", !0), e.slot && n($)[e.slot] ? w(a.$slots, e.slot, { key: 1 }) : (t(), s(S, { key: 2 }, [te(ie(e.label), 1)], 64))]), e.loading ? (t(), k(n(M), { key: 0, class: "layui-cascader-panel-item-icon layui-anim layui-anim-rotate layui-anim-loop", type: "layui-icon-loading", theme: n(F) }, null, 8, ["theme"])) : e.children && e.children.length ? (t(), k(n(M), { key: 1, class: "layui-cascader-panel-item-icon", type: "layui-icon-right" })) : N("", !0)])], 10, me))), 128))]), _: 2 }, 1024)], 2))), 128))])) : (t(), k(oe, { key: 1 }))], 4));
+} });
+export {
+  Ce as default
+};

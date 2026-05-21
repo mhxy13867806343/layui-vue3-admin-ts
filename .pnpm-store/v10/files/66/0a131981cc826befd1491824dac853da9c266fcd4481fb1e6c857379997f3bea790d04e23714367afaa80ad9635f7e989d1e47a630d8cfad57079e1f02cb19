@@ -1,0 +1,82 @@
+/** __vue_virtual_code_placeholder */
+import type { TreeProps as _TreeProps, OriginalTreeData } from "./interface";
+import "./index.less";
+export type TreeProps = _TreeProps;
+declare function getNode(): (val: OriginalTreeData["id"]) => OriginalTreeData | undefined;
+declare function filter(value: string): void;
+declare const _default: import("vue").DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<_TreeProps>, {
+    showCheckbox: boolean;
+    collapseTransition: boolean;
+    checkStrictly: boolean;
+    onlyIconControl: boolean;
+    standalone: boolean;
+    showLine: boolean;
+    tailNodeIcon: string;
+    checkedKeys: () => never[];
+    expandKeys: () => never[];
+    defaultExpandAll: undefined;
+    lazy: boolean;
+}>, {
+    filter: typeof filter;
+    getTree: () => import("vue").Ref<import("./interface").TreeData[]>;
+    getFlatTree: () => import("vue").ComputedRef<import("./interface").TreeData[]>;
+    getNode: typeof getNode;
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+    "update:selected-key": (key: string | number) => void;
+    "update:checked-keys": (keys: (string | number)[]) => void;
+    "update:expand-keys": (keys: (string | number)[]) => void;
+    "node-click": (node: OriginalTreeData) => void;
+    "check-change": (node: OriginalTreeData, checked: boolean) => void;
+    "node-double": (event: MouseEvent, node: OriginalTreeData) => void;
+    "node-contextmenu": (event: MouseEvent, node: OriginalTreeData) => void;
+}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<_TreeProps>, {
+    showCheckbox: boolean;
+    collapseTransition: boolean;
+    checkStrictly: boolean;
+    onlyIconControl: boolean;
+    standalone: boolean;
+    showLine: boolean;
+    tailNodeIcon: string;
+    checkedKeys: () => never[];
+    expandKeys: () => never[];
+    defaultExpandAll: undefined;
+    lazy: boolean;
+}>>> & {
+    "onUpdate:selected-key"?: ((key: string | number) => any) | undefined;
+    "onUpdate:checked-keys"?: ((keys: (string | number)[]) => any) | undefined;
+    "onUpdate:expand-keys"?: ((keys: (string | number)[]) => any) | undefined;
+    "onNode-click"?: ((node: OriginalTreeData) => any) | undefined;
+    "onCheck-change"?: ((node: OriginalTreeData, checked: boolean) => any) | undefined;
+    "onNode-double"?: ((event: MouseEvent, node: OriginalTreeData) => any) | undefined;
+    "onNode-contextmenu"?: ((event: MouseEvent, node: OriginalTreeData) => any) | undefined;
+}, {
+    lazy: boolean;
+    checkStrictly: string | boolean;
+    collapseTransition: boolean;
+    defaultExpandAll: boolean;
+    expandKeys: import("./interface").KeysType;
+    checkedKeys: import("./interface").KeysType;
+    onlyIconControl: boolean;
+    showLine: boolean;
+    standalone: boolean;
+    showCheckbox: boolean;
+    tailNodeIcon: string | boolean | ((node: import("./interface").TreeData) => string);
+}, {}>;
+export default _default;
+type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
+type __VLS_TypePropsToRuntimeProps<T> = {
+    [K in keyof T]-?: {} extends Pick<T, K> ? {
+        type: import('vue').PropType<__VLS_NonUndefinedable<T[K]>>;
+    } : {
+        type: import('vue').PropType<T[K]>;
+        required: true;
+    };
+};
+type __VLS_WithDefaults<P, D> = {
+    [K in keyof Pick<P, keyof P>]: K extends keyof D ? __VLS_Prettify<P[K] & {
+        default: D[K];
+    }> : P[K];
+};
+type __VLS_Prettify<T> = {
+    [K in keyof T]: T[K];
+} & {};

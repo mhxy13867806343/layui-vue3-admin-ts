@@ -1,0 +1,5 @@
+import r from "./index2.js";
+/* empty css       */
+export {
+  r as default
+};

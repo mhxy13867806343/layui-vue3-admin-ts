@@ -1,0 +1,486 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        search: {
+            type: import("vue").PropType<boolean>;
+        };
+        size: {
+            type: import("vue").PropType<import("./interface").CascaderSize>;
+        };
+        multiple: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        load: {
+            type: import("vue").PropType<import("@layui/component/component/cascaderPanel/interface").CascaderPanelLazyloadFunction>;
+            default: undefined;
+        };
+        options: {
+            type: import("vue").PropType<import("@layui/component/component/cascaderPanel/interface").CascaderPanelItemProps[]>;
+            default: undefined;
+        };
+        trigger: {
+            type: import("vue").PropType<import("./interface").DropdownTrigger | import("./interface").DropdownTrigger[]>;
+            default: () => string[];
+        };
+        modelValue: {
+            type: import("vue").PropType<string | string[]>;
+            default: string;
+        };
+        teleportProps: {
+            type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+        };
+        contentClass: {
+            type: import("vue").PropType<string | object | (string | object)[]>;
+        };
+        contentStyle: {
+            type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+        };
+        allowClear: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        placeholder: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        replaceFields: {
+            type: import("vue").PropType<{
+                label?: string | undefined;
+                value?: string | undefined;
+                children?: string | undefined;
+            }>;
+            default: () => {
+                label: string;
+                value: string;
+                children: string;
+            };
+        };
+        decollator: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        onlyLastLevel: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        lazy: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        checkStrictly: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        changeOnSelect: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        fullpath: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        minCollapsedNum: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        collapseTagsTooltip: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        searchMethod: {
+            type: import("vue").PropType<(value: string) => import("@layui/component/component/cascaderPanel/interface").CascaderPanelItemProps[]>;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+        onClear?: ((...args: any[]) => any) | undefined;
+        onChange?: ((...args: any[]) => any) | undefined;
+    }, {
+        getSelectLabel: import("vue").ComputedRef<string | string[]>;
+    }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("clear" | "change" | "update:modelValue")[], import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        search: {
+            type: import("vue").PropType<boolean>;
+        };
+        size: {
+            type: import("vue").PropType<import("./interface").CascaderSize>;
+        };
+        multiple: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        load: {
+            type: import("vue").PropType<import("@layui/component/component/cascaderPanel/interface").CascaderPanelLazyloadFunction>;
+            default: undefined;
+        };
+        options: {
+            type: import("vue").PropType<import("@layui/component/component/cascaderPanel/interface").CascaderPanelItemProps[]>;
+            default: undefined;
+        };
+        trigger: {
+            type: import("vue").PropType<import("./interface").DropdownTrigger | import("./interface").DropdownTrigger[]>;
+            default: () => string[];
+        };
+        modelValue: {
+            type: import("vue").PropType<string | string[]>;
+            default: string;
+        };
+        teleportProps: {
+            type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+        };
+        contentClass: {
+            type: import("vue").PropType<string | object | (string | object)[]>;
+        };
+        contentStyle: {
+            type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+        };
+        allowClear: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        placeholder: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        replaceFields: {
+            type: import("vue").PropType<{
+                label?: string | undefined;
+                value?: string | undefined;
+                children?: string | undefined;
+            }>;
+            default: () => {
+                label: string;
+                value: string;
+                children: string;
+            };
+        };
+        decollator: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        onlyLastLevel: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        lazy: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        checkStrictly: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        changeOnSelect: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        fullpath: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        minCollapsedNum: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        collapseTagsTooltip: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        searchMethod: {
+            type: import("vue").PropType<(value: string) => import("@layui/component/component/cascaderPanel/interface").CascaderPanelItemProps[]>;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+        onClear?: ((...args: any[]) => any) | undefined;
+        onChange?: ((...args: any[]) => any) | undefined;
+    }, {
+        disabled: boolean;
+        multiple: boolean;
+        load: import("@layui/component/component/cascaderPanel/interface").CascaderPanelLazyloadFunction;
+        options: import("@layui/component/component/cascaderPanel/interface").CascaderPanelItemProps[];
+        trigger: import("./interface").DropdownTrigger | import("./interface").DropdownTrigger[];
+        modelValue: string | string[];
+        allowClear: boolean;
+        placeholder: string;
+        replaceFields: {
+            label?: string | undefined;
+            value?: string | undefined;
+            children?: string | undefined;
+        };
+        decollator: string;
+        onlyLastLevel: boolean;
+        lazy: boolean;
+        checkStrictly: boolean;
+        changeOnSelect: boolean;
+        fullpath: boolean;
+        minCollapsedNum: number;
+        collapseTagsTooltip: boolean;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        search: {
+            type: import("vue").PropType<boolean>;
+        };
+        size: {
+            type: import("vue").PropType<import("./interface").CascaderSize>;
+        };
+        multiple: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        load: {
+            type: import("vue").PropType<import("@layui/component/component/cascaderPanel/interface").CascaderPanelLazyloadFunction>;
+            default: undefined;
+        };
+        options: {
+            type: import("vue").PropType<import("@layui/component/component/cascaderPanel/interface").CascaderPanelItemProps[]>;
+            default: undefined;
+        };
+        trigger: {
+            type: import("vue").PropType<import("./interface").DropdownTrigger | import("./interface").DropdownTrigger[]>;
+            default: () => string[];
+        };
+        modelValue: {
+            type: import("vue").PropType<string | string[]>;
+            default: string;
+        };
+        teleportProps: {
+            type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+        };
+        contentClass: {
+            type: import("vue").PropType<string | object | (string | object)[]>;
+        };
+        contentStyle: {
+            type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+        };
+        allowClear: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        placeholder: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        replaceFields: {
+            type: import("vue").PropType<{
+                label?: string | undefined;
+                value?: string | undefined;
+                children?: string | undefined;
+            }>;
+            default: () => {
+                label: string;
+                value: string;
+                children: string;
+            };
+        };
+        decollator: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        onlyLastLevel: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        lazy: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        checkStrictly: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        changeOnSelect: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        fullpath: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        minCollapsedNum: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        collapseTagsTooltip: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        searchMethod: {
+            type: import("vue").PropType<(value: string) => import("@layui/component/component/cascaderPanel/interface").CascaderPanelItemProps[]>;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+        onClear?: ((...args: any[]) => any) | undefined;
+        onChange?: ((...args: any[]) => any) | undefined;
+    }, {
+        getSelectLabel: import("vue").ComputedRef<string | string[]>;
+    }, {}, {}, {}, {
+        disabled: boolean;
+        multiple: boolean;
+        load: import("@layui/component/component/cascaderPanel/interface").CascaderPanelLazyloadFunction;
+        options: import("@layui/component/component/cascaderPanel/interface").CascaderPanelItemProps[];
+        trigger: import("./interface").DropdownTrigger | import("./interface").DropdownTrigger[];
+        modelValue: string | string[];
+        allowClear: boolean;
+        placeholder: string;
+        replaceFields: {
+            label?: string | undefined;
+            value?: string | undefined;
+            children?: string | undefined;
+        };
+        decollator: string;
+        onlyLastLevel: boolean;
+        lazy: boolean;
+        checkStrictly: boolean;
+        changeOnSelect: boolean;
+        fullpath: boolean;
+        minCollapsedNum: number;
+        collapseTagsTooltip: boolean;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    disabled: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    search: {
+        type: import("vue").PropType<boolean>;
+    };
+    size: {
+        type: import("vue").PropType<import("./interface").CascaderSize>;
+    };
+    multiple: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    load: {
+        type: import("vue").PropType<import("@layui/component/component/cascaderPanel/interface").CascaderPanelLazyloadFunction>;
+        default: undefined;
+    };
+    options: {
+        type: import("vue").PropType<import("@layui/component/component/cascaderPanel/interface").CascaderPanelItemProps[]>;
+        default: undefined;
+    };
+    trigger: {
+        type: import("vue").PropType<import("./interface").DropdownTrigger | import("./interface").DropdownTrigger[]>;
+        default: () => string[];
+    };
+    modelValue: {
+        type: import("vue").PropType<string | string[]>;
+        default: string;
+    };
+    teleportProps: {
+        type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+    };
+    contentClass: {
+        type: import("vue").PropType<string | object | (string | object)[]>;
+    };
+    contentStyle: {
+        type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+    };
+    allowClear: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    placeholder: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    replaceFields: {
+        type: import("vue").PropType<{
+            label?: string | undefined;
+            value?: string | undefined;
+            children?: string | undefined;
+        }>;
+        default: () => {
+            label: string;
+            value: string;
+            children: string;
+        };
+    };
+    decollator: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    onlyLastLevel: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    lazy: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    checkStrictly: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    changeOnSelect: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    fullpath: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    minCollapsedNum: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    collapseTagsTooltip: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    searchMethod: {
+        type: import("vue").PropType<(value: string) => import("@layui/component/component/cascaderPanel/interface").CascaderPanelItemProps[]>;
+    };
+}>> & {
+    "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+    onClear?: ((...args: any[]) => any) | undefined;
+    onChange?: ((...args: any[]) => any) | undefined;
+}, {
+    getSelectLabel: import("vue").ComputedRef<string | string[]>;
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("clear" | "change" | "update:modelValue")[], "clear" | "change" | "update:modelValue", {
+    disabled: boolean;
+    multiple: boolean;
+    load: import("@layui/component/component/cascaderPanel/interface").CascaderPanelLazyloadFunction;
+    options: import("@layui/component/component/cascaderPanel/interface").CascaderPanelItemProps[];
+    trigger: import("./interface").DropdownTrigger | import("./interface").DropdownTrigger[];
+    modelValue: string | string[];
+    allowClear: boolean;
+    placeholder: string;
+    replaceFields: {
+        label?: string | undefined;
+        value?: string | undefined;
+        children?: string | undefined;
+    };
+    decollator: string;
+    onlyLastLevel: boolean;
+    lazy: boolean;
+    checkStrictly: boolean;
+    changeOnSelect: boolean;
+    fullpath: boolean;
+    minCollapsedNum: number;
+    collapseTagsTooltip: boolean;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: Partial<Record<any, (_: {}) => any>> & {
+        default?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

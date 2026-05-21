@@ -1,0 +1,47 @@
+import { unref as o } from "vue";
+import { arrow as s } from "@floating-ui/dom";
+const f = Symbol("LayPopperV2");
+function p({ arrowRef: r, padding: e }) {
+  return { name: "arrow", options: { element: r, padding: e }, fn(t) {
+    const a = o(r);
+    return a ? s({ element: a, padding: e }).fn(t) : {};
+  } };
+}
+function m() {
+  return { name: "ArrowPlacement", fn: (r) => {
+    const e = r.placement.split("-")[0];
+    return r.elements.floating.setAttribute("data-popper-placement", e), {};
+  } };
+}
+function i({ arrowRef: r }) {
+  return { name: "ArrowOffer", fn: (e) => {
+    var a, n;
+    const t = o(r);
+    if (!t)
+      return {};
+    switch (t.style.cssText = "", e.placement) {
+      case "bottom":
+      case "top":
+      case "bottom-start":
+      case "top-start":
+      case "bottom-end":
+      case "top-end":
+        t.style.left = "0", t.style.transform = `translate(${(a = e.middlewareData.arrow) == null ? void 0 : a.x}px, 0px)`;
+        break;
+      case "left":
+      case "right":
+      case "left-start":
+      case "right-start":
+      case "left-end":
+      case "right-end":
+        t.style.top = "0", t.style.transform = `translate(0px, ${(n = e.middlewareData.arrow) == null ? void 0 : n.y}px`;
+    }
+    return {};
+  } };
+}
+export {
+  f as POPPER_INJECTION_KEY,
+  p as arrowMiddleware,
+  i as getArrowOffer,
+  m as getArrowPlacement
+};

@@ -1,0 +1,36 @@
+import { defineComponent as x, ref as u, watch as b, provide as w, createVNode as E } from "vue";
+/* empty css           */
+import { SPLITPANEL_INJECTION_KEY as L } from "./interface.js";
+import { flattedVNode as z } from "../utils/vueUtil.js";
+const C = x({ name: "LaySplitPanel", props: { vertical: { type: Boolean, default: () => !1 }, minSize: { type: Number, default: 50 } }, setup(s, { slots: f }) {
+  const o = u(), n = u(), r = u(), v = (e) => {
+    var t;
+    const { left: i, top: a } = o.value.getBoundingClientRect();
+    window.getSelection != null && ((t = window.getSelection()) == null || t.removeAllRanges()), r.value && n.value && (s.vertical ? m(e.clientY - a, n.value.target.previousElementSibling.offsetTop, n.value.target.previousElementSibling.offsetHeight, n.value.target.nextElementSibling.offsetHeight, o.value.offsetHeight) : m(e.clientX - i, n.value.target.previousElementSibling.offsetLeft, n.value.target.previousElementSibling.offsetWidth, n.value.target.nextElementSibling.offsetWidth, o.value.offsetWidth));
+  }, m = (e, i, a, t, l) => {
+    const p = n.value.target.previousElementSibling, h = n.value.target.nextElementSibling, g = l - (a + t + 3), d = (a + t + 3) / l * 100;
+    if (e - i < s.minSize || l - (e - i) - g < s.minSize)
+      return !1;
+    p.style.flexBasis = (e - i) / (a + t + 3) * d + "%", h.style.flexBasis = (l - (e - i) - g) / (a + t + 3) * d + "%";
+  }, S = (e) => {
+    n.value = e, r.value = !0, o.value.addEventListener("mousemove", v);
+  }, y = () => {
+    n.value = null, r.value = !1, o.value.removeEventListener("mousemove", v);
+  }, c = u([]);
+  return b(() => c.value, (e) => {
+    const i = e.filter((l) => l.space).map((l) => l.space), a = i.join(" - ") || "0px", t = e.length - i.length;
+    e.forEach((l, p) => {
+      l.setIndex(p), l.space ? l.itemEl.style.flexBasis = `calc(${l.space} - 3px)` : l.itemEl.style.flexBasis = `calc(((100% - ${a}) / ${t}) - 3px)`;
+    });
+  }, { flush: "post", deep: !0 }), w(L, { props: s, steps: c }), () => {
+    var i;
+    const e = f.default && ((i = z(f.default())) == null ? void 0 : i.filter((a) => {
+      var t;
+      return ((t = a.type) == null ? void 0 : t.name) === "LaySplitPanelItem";
+    }).map((a, t) => t ? [E("div", { class: "lay-split-panel-line", onMousedown: S }, null), a] : a).flat()) || [];
+    return E("div", { ref: o, class: ["lay-split-panel", "lay-split-panel-" + (s.vertical ? "vertical" : "horizontal")], style: { cursor: r.value ? s.vertical ? "row-resize" : "col-resize" : "" }, onMouseup: y }, [e]);
+  };
+} });
+export {
+  C as default
+};

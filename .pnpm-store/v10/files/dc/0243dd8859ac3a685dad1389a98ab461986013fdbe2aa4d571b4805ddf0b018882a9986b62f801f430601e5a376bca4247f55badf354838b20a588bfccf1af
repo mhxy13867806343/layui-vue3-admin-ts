@@ -1,0 +1,64 @@
+import { defineComponent as Y, inject as Z, ref as d, computed as p, watch as ee, onMounted as le, reactive as L, toRefs as O, onUnmounted as ae, useSlots as se, openBlock as u, createElementBlock as b, normalizeClass as P, unref as r, normalizeStyle as S, createBlock as B, mergeProps as re, withCtx as oe, createVNode as te, createCommentVNode as R, createElementVNode as F, renderSlot as ie, toDisplayString as W } from "vue";
+/* empty css                    */
+import ue from "async-validator";
+import ne from "./cnValidateMessage.js";
+import de from "./index.hooks.js";
+import pe from "../tooltip/index2.js";
+import I from "./FormItemLabel.js";
+import { isNumber as A } from "../utils/type.js";
+const me = ["size"], ce = { key: 0, class: "layui-form-tips" }, ke = Y({ name: "LayFormItem", __name: "index", props: { prop: {}, mode: {}, label: {}, labelPosition: {}, labelWidth: {}, errorMessage: {}, rules: {}, required: { type: Boolean }, requiredErrorMessage: {}, size: {}, tips: { default: "" }, inlineWidth: {} }, setup(D, { expose: T }) {
+  const e = D, { size: U, mode: m, labelWidth: h, labelPosition: G, isRequired: $, tooltipProps: H, isLabelTooltip: J, inlineWidth: q } = de(e), a = Z("LayForm", {}), E = d(), k = d(), N = p(() => {
+    const l = e.prop;
+    if (!l)
+      return {};
+    let s = [];
+    return (e.required || a.required) && s.push({ required: !0 }), e.rules && (s = s.concat(e.rules)), a.rules && a.rules[l] && (s = s.concat(a.rules[l])), s;
+  }), C = p(() => e.prop ? e.prop.indexOf(".") != -1 ? function(l, s, v) {
+    const y = s.replace(/\[(\d+)\]/g, ".$1").split(".");
+    let t = l;
+    for (const o of y)
+      if (t = Object(t)[o], t === void 0)
+        return v;
+    return t;
+  }(a.model, e.prop) : a.model[e.prop] : void 0);
+  ee(() => C.value, (l) => c(), { deep: !0 });
+  const M = d(), n = d(!1), c = (l) => new Promise((s) => {
+    if (e.prop && N.value.length > 0) {
+      const v = {};
+      v[a.useCN && e.label || e.prop] = N.value;
+      const y = new ue(v);
+      let t = {}, o = null;
+      a.useCN ? (o = Object.assign({}, ne, a.validateMessage), t[e.label || e.prop] = C.value) : (a.validateMessage && (o = a.validateMessage), t[e.prop] = C.value), a.requiredErrorMessage && (o = Object.assign(o, { required: a.requiredErrorMessage })), e.requiredErrorMessage && (o = Object.assign(o, { required: e.requiredErrorMessage })), o && y.messages(o), y.validate(t, (x, V) => {
+        var _;
+        n.value = x !== null && x.length > 0;
+        const i = k.value;
+        if (n.value) {
+          const g = x;
+          a.useCN && g.forEach((j) => {
+            j.label = e.label, j.field = e.prop;
+          }), M.value = e.errorMessage ?? g[0].message, (i == null ? void 0 : i.childElementCount) > 0 && ((_ = i == null ? void 0 : i.firstElementChild) == null || _.classList.add("layui-form-danger")), l && l(g, V), s({ errors: g, fields: V });
+        } else
+          s(void 0), f();
+      });
+    } else
+      s(void 0);
+  }), f = () => {
+    var s;
+    n.value = !1, M.value = "";
+    const l = k.value;
+    (l == null ? void 0 : l.childElementCount) > 0 && ((s = l == null ? void 0 : l.firstElementChild) == null || s.classList.remove("layui-form-danger"));
+  };
+  T({ validate: c, clearValidate: f }), le(() => {
+    e.prop && a.addField(L({ ...O(e), $el: E, validate: c, clearValidate: f }));
+  }), ae(() => {
+    e.prop && a.removeField(L({ ...O(e), $el: E, validate: c, clearValidate: f }));
+  });
+  const w = se(), z = d(), K = p(() => {
+    var l;
+    return (w.label || e.label) && ((l = z.value) == null ? void 0 : l.style.width) !== "0px";
+  }), Q = p(() => ({ width: A(h.value) ? `${h.value}px` : h.value })), X = p(() => m.value === "inline" ? { width: A(q.value) ? `${q.value}px` : q.value } : {});
+  return (l, s) => (u(), b("div", { class: P(["layui-form-item", [`layui-form-item-${r(G)}`, `layui-form-item-${r(m)}`]]), size: r(U), ref_key: "formItemRef", ref: E }, [K.value ? (u(), b("label", { key: 0, class: "layui-form-label", style: S(Q.value), ref_key: "labelRef", ref: z }, [r(J) ? (u(), B(pe, re({ key: 0 }, r(H), { content: l.label, isAutoShow: !0 }), { default: oe(() => [te(r(I), { "item-slots": r(w), isRequired: r($), outProps: e }, null, 8, ["item-slots", "isRequired"])]), _: 1 }, 16, ["content"])) : (u(), B(r(I), { key: 1, "item-slots": r(w), isRequired: r($), outProps: e }, null, 8, ["item-slots", "isRequired"]))], 4)) : R("", !0), F("div", { class: P([r(m) ? "layui-input-" + r(m) : ""]), style: S(X.value) }, [F("div", { ref_key: "slotParent", ref: k }, [ie(l.$slots, "default", { props: { ...e, model: r(a).model } })], 512), l.tips ? (u(), b("span", ce, W(l.tips), 1)) : R("", !0), n.value ? (u(), b("span", { key: 1, class: P(["layui-error-message", { "layui-error-message-anim": n.value }]) }, W(M.value), 3)) : R("", !0)], 6)], 10, me));
+} });
+export {
+  ke as default
+};

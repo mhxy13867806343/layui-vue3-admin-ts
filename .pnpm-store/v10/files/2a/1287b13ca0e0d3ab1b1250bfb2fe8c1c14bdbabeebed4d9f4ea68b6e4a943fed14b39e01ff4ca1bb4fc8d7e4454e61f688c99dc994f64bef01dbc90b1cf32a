@@ -1,0 +1,6 @@
+import { defineComponent as o, openBlock as a, createElementBlock as t, renderSlot as l } from "vue";
+/* empty css           */
+const s = { class: "layui-logo" }, i = o({ name: "LayLogo", __name: "index", setup: (n) => (e, m) => (a(), t("div", s, [l(e.$slots, "default")])) });
+export {
+  i as default
+};

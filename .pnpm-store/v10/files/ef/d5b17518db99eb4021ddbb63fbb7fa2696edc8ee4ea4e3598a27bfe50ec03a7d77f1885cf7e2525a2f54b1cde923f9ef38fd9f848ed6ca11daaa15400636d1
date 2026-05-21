@@ -1,0 +1,7 @@
+const o = (e, r) => {
+  let t = !1;
+  return e.removedNodes.length && r && (t = Array.from(e.removedNodes).includes(r)), e.type === "attributes" && e.target === r && (t = !0), t;
+};
+export {
+  o as reRendering
+};

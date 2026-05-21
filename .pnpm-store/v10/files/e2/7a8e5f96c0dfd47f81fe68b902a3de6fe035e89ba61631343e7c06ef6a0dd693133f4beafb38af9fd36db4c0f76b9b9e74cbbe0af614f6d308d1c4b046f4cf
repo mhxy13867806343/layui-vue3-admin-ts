@@ -1,0 +1,10 @@
+import { defineComponent as p, openBlock as l, createElementBlock as i, normalizeClass as m, unref as e, renderSlot as u, createTextVNode as d, toDisplayString as g } from "vue";
+import { useI18n as v } from "../../language/index.js";
+import { usePage as c } from "../usePage.js";
+const f = ["data-page"], B = p({ name: "LayPagePrev", __name: "prev", setup(P) {
+  const { t: a } = v(), { pageCount: C, currentPage: o, handlePrev: s } = c();
+  return (t, r) => (l(), i("div", { class: m(["layui-page-prev", [{ "is-disabled": e(o) <= 1 }]]), onClick: r[0] || (r[0] = (...n) => e(s) && e(s)(...n)), "data-page": e(a)("page.previous") }, [u(t.$slots, "prev", {}, () => [d(g(e(a)("page.previous")), 1)])], 10, f));
+} });
+export {
+  B as default
+};

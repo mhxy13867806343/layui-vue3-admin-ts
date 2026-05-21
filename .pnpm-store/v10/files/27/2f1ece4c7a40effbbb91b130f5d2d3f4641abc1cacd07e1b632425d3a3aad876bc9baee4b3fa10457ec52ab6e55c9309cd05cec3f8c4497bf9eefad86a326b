@@ -1,0 +1,14 @@
+import r from "dayjs";
+const Y = ["一", "二", "三", "四", "五", "六", "日"], D = (t) => {
+  const a = r(t).daysInMonth();
+  return Array(a).fill(r).map((o, e) => r(t).set("date", e + 1).format("YYYY-MM-DD"));
+}, M = (t) => {
+  const a = r(t).startOf("month").day(), o = (a === 0 ? 7 : a) + 7 - 7 - 1, e = r(t).subtract(1, "month").endOf("month").date();
+  return Array(o).fill(o).map((m, n) => r(t).subtract(1, "month").set("date", e - (o - n - 1)).format("YYYY-MM-DD"));
+}, d = (t, a) => Array(a).fill(a).map((o, e) => r(t).add(1, "month").set("date", e + 1).format("YYYY-MM-DD"));
+export {
+  D as getMonthDay,
+  M as getPrevMonthDay,
+  d as nextMonthDay,
+  Y as weekDays
+};

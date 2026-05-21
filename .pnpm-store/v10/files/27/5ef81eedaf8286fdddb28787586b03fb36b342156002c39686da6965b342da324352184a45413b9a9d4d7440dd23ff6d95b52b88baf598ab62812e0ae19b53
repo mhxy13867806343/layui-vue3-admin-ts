@@ -1,0 +1,8 @@
+import { defineComponent as m, inject as o, openBlock as a, createElementBlock as t, Fragment as n, createElementVNode as l, mergeProps as d, renderSlot as u, createTextVNode as i, toDisplayString as p, unref as s, normalizeClass as y } from "vue";
+const f = { "lay-separator": "" }, B = m({ name: "LayBreadcrumbItem", __name: "index", props: { title: {} }, setup(k) {
+  const c = o("separator"), r = o("separatorIcon");
+  return (e, g) => (a(), t(n, null, [l("a", d({ href: "javascript:void(0);" }, e.$attrs), [u(e.$slots, "default", {}, () => [i(p(e.title), 1)])], 16), l("span", f, [s(r) ? (a(), t("i", { key: 0, class: y(["layui-icon", s(r)]) }, null, 2)) : (a(), t(n, { key: 1 }, [i(p(s(c)), 1)], 64))])], 64));
+} });
+export {
+  B as default
+};

@@ -1,0 +1,4 @@
+const e = Symbol("LayDatePicker");
+export {
+  e as DATE_PICKER_CONTEXT
+};

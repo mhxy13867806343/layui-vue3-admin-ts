@@ -1,0 +1,401 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        data: {
+            type: import("vue").PropType<import("./interface").OriginalTreeData | import("./interface").OriginalTreeData[]>;
+        };
+        load: {
+            type: import("vue").PropType<import("./interface").LoadFunction>;
+        };
+        replaceFields: {
+            type: import("vue").PropType<Partial<import("./interface").ReplaceFieldsOptions>>;
+        };
+        lazy: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        checkStrictly: {
+            type: import("vue").PropType<string | boolean>;
+            default: boolean;
+        };
+        accordion: {
+            type: import("vue").PropType<boolean>;
+        };
+        collapseTransition: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        selectedKey: {
+            type: import("vue").PropType<import("../../types").NumberOrString>;
+        };
+        defaultExpandAll: {
+            type: import("vue").PropType<boolean>;
+            default: undefined;
+        };
+        expandKeys: {
+            type: import("vue").PropType<import("./interface").KeysType>;
+            default: () => never[];
+        };
+        checkedKeys: {
+            type: import("vue").PropType<import("./interface").KeysType>;
+            default: () => never[];
+        };
+        onlyIconControl: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        showLine: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        standalone: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        showCheckbox: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        shouldIconBorder: {
+            type: import("vue").PropType<(iconName: string) => boolean>;
+        };
+        tailNodeIcon: {
+            type: import("vue").PropType<string | boolean | ((node: import("./interface").TreeData) => string)>;
+            default: string;
+        };
+        cacheData: {
+            type: import("vue").PropType<import("./interface").OriginalTreeData[]>;
+        };
+        loadOnCheck: {
+            type: import("vue").PropType<boolean>;
+        };
+        searchNodeMethod: {
+            type: import("vue").PropType<import("./interface").SearchNodeMethodType>;
+        };
+    }>> & {
+        "onUpdate:selected-key"?: ((key: string | number) => any) | undefined;
+        "onUpdate:checked-keys"?: ((keys: (string | number)[]) => any) | undefined;
+        "onUpdate:expand-keys"?: ((keys: (string | number)[]) => any) | undefined;
+        "onNode-click"?: ((node: import("./interface").OriginalTreeData) => any) | undefined;
+        "onCheck-change"?: ((node: import("./interface").OriginalTreeData, checked: boolean) => any) | undefined;
+        "onNode-double"?: ((event: MouseEvent, node: import("./interface").OriginalTreeData) => any) | undefined;
+        "onNode-contextmenu"?: ((event: MouseEvent, node: import("./interface").OriginalTreeData) => any) | undefined;
+    }, {
+        filter: (value: string) => void;
+        getTree: () => import("vue").Ref<import("./interface").TreeData[]>;
+        getFlatTree: () => import("vue").ComputedRef<import("./interface").TreeData[]>;
+        getNode: () => (val: import("../../types").NumberOrString | undefined) => import("./interface").OriginalTreeData | undefined;
+    }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+        "update:selected-key": (key: string | number) => void;
+        "update:checked-keys": (keys: (string | number)[]) => void;
+        "update:expand-keys": (keys: (string | number)[]) => void;
+        "node-click": (node: import("./interface").OriginalTreeData) => void;
+        "check-change": (node: import("./interface").OriginalTreeData, checked: boolean) => void;
+        "node-double": (event: MouseEvent, node: import("./interface").OriginalTreeData) => void;
+        "node-contextmenu": (event: MouseEvent, node: import("./interface").OriginalTreeData) => void;
+    }, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        data: {
+            type: import("vue").PropType<import("./interface").OriginalTreeData | import("./interface").OriginalTreeData[]>;
+        };
+        load: {
+            type: import("vue").PropType<import("./interface").LoadFunction>;
+        };
+        replaceFields: {
+            type: import("vue").PropType<Partial<import("./interface").ReplaceFieldsOptions>>;
+        };
+        lazy: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        checkStrictly: {
+            type: import("vue").PropType<string | boolean>;
+            default: boolean;
+        };
+        accordion: {
+            type: import("vue").PropType<boolean>;
+        };
+        collapseTransition: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        selectedKey: {
+            type: import("vue").PropType<import("../../types").NumberOrString>;
+        };
+        defaultExpandAll: {
+            type: import("vue").PropType<boolean>;
+            default: undefined;
+        };
+        expandKeys: {
+            type: import("vue").PropType<import("./interface").KeysType>;
+            default: () => never[];
+        };
+        checkedKeys: {
+            type: import("vue").PropType<import("./interface").KeysType>;
+            default: () => never[];
+        };
+        onlyIconControl: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        showLine: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        standalone: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        showCheckbox: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        shouldIconBorder: {
+            type: import("vue").PropType<(iconName: string) => boolean>;
+        };
+        tailNodeIcon: {
+            type: import("vue").PropType<string | boolean | ((node: import("./interface").TreeData) => string)>;
+            default: string;
+        };
+        cacheData: {
+            type: import("vue").PropType<import("./interface").OriginalTreeData[]>;
+        };
+        loadOnCheck: {
+            type: import("vue").PropType<boolean>;
+        };
+        searchNodeMethod: {
+            type: import("vue").PropType<import("./interface").SearchNodeMethodType>;
+        };
+    }>> & {
+        "onUpdate:selected-key"?: ((key: string | number) => any) | undefined;
+        "onUpdate:checked-keys"?: ((keys: (string | number)[]) => any) | undefined;
+        "onUpdate:expand-keys"?: ((keys: (string | number)[]) => any) | undefined;
+        "onNode-click"?: ((node: import("./interface").OriginalTreeData) => any) | undefined;
+        "onCheck-change"?: ((node: import("./interface").OriginalTreeData, checked: boolean) => any) | undefined;
+        "onNode-double"?: ((event: MouseEvent, node: import("./interface").OriginalTreeData) => any) | undefined;
+        "onNode-contextmenu"?: ((event: MouseEvent, node: import("./interface").OriginalTreeData) => any) | undefined;
+    }, {
+        lazy: boolean;
+        checkStrictly: string | boolean;
+        collapseTransition: boolean;
+        defaultExpandAll: boolean;
+        expandKeys: import("./interface").KeysType;
+        checkedKeys: import("./interface").KeysType;
+        onlyIconControl: boolean;
+        showLine: boolean;
+        standalone: boolean;
+        showCheckbox: boolean;
+        tailNodeIcon: string | boolean | ((node: import("./interface").TreeData) => string);
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        data: {
+            type: import("vue").PropType<import("./interface").OriginalTreeData | import("./interface").OriginalTreeData[]>;
+        };
+        load: {
+            type: import("vue").PropType<import("./interface").LoadFunction>;
+        };
+        replaceFields: {
+            type: import("vue").PropType<Partial<import("./interface").ReplaceFieldsOptions>>;
+        };
+        lazy: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        checkStrictly: {
+            type: import("vue").PropType<string | boolean>;
+            default: boolean;
+        };
+        accordion: {
+            type: import("vue").PropType<boolean>;
+        };
+        collapseTransition: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        selectedKey: {
+            type: import("vue").PropType<import("../../types").NumberOrString>;
+        };
+        defaultExpandAll: {
+            type: import("vue").PropType<boolean>;
+            default: undefined;
+        };
+        expandKeys: {
+            type: import("vue").PropType<import("./interface").KeysType>;
+            default: () => never[];
+        };
+        checkedKeys: {
+            type: import("vue").PropType<import("./interface").KeysType>;
+            default: () => never[];
+        };
+        onlyIconControl: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        showLine: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        standalone: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        showCheckbox: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        shouldIconBorder: {
+            type: import("vue").PropType<(iconName: string) => boolean>;
+        };
+        tailNodeIcon: {
+            type: import("vue").PropType<string | boolean | ((node: import("./interface").TreeData) => string)>;
+            default: string;
+        };
+        cacheData: {
+            type: import("vue").PropType<import("./interface").OriginalTreeData[]>;
+        };
+        loadOnCheck: {
+            type: import("vue").PropType<boolean>;
+        };
+        searchNodeMethod: {
+            type: import("vue").PropType<import("./interface").SearchNodeMethodType>;
+        };
+    }>> & {
+        "onUpdate:selected-key"?: ((key: string | number) => any) | undefined;
+        "onUpdate:checked-keys"?: ((keys: (string | number)[]) => any) | undefined;
+        "onUpdate:expand-keys"?: ((keys: (string | number)[]) => any) | undefined;
+        "onNode-click"?: ((node: import("./interface").OriginalTreeData) => any) | undefined;
+        "onCheck-change"?: ((node: import("./interface").OriginalTreeData, checked: boolean) => any) | undefined;
+        "onNode-double"?: ((event: MouseEvent, node: import("./interface").OriginalTreeData) => any) | undefined;
+        "onNode-contextmenu"?: ((event: MouseEvent, node: import("./interface").OriginalTreeData) => any) | undefined;
+    }, {
+        filter: (value: string) => void;
+        getTree: () => import("vue").Ref<import("./interface").TreeData[]>;
+        getFlatTree: () => import("vue").ComputedRef<import("./interface").TreeData[]>;
+        getNode: () => (val: import("../../types").NumberOrString | undefined) => import("./interface").OriginalTreeData | undefined;
+    }, {}, {}, {}, {
+        lazy: boolean;
+        checkStrictly: string | boolean;
+        collapseTransition: boolean;
+        defaultExpandAll: boolean;
+        expandKeys: import("./interface").KeysType;
+        checkedKeys: import("./interface").KeysType;
+        onlyIconControl: boolean;
+        showLine: boolean;
+        standalone: boolean;
+        showCheckbox: boolean;
+        tailNodeIcon: string | boolean | ((node: import("./interface").TreeData) => string);
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    data: {
+        type: import("vue").PropType<import("./interface").OriginalTreeData | import("./interface").OriginalTreeData[]>;
+    };
+    load: {
+        type: import("vue").PropType<import("./interface").LoadFunction>;
+    };
+    replaceFields: {
+        type: import("vue").PropType<Partial<import("./interface").ReplaceFieldsOptions>>;
+    };
+    lazy: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    checkStrictly: {
+        type: import("vue").PropType<string | boolean>;
+        default: boolean;
+    };
+    accordion: {
+        type: import("vue").PropType<boolean>;
+    };
+    collapseTransition: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    selectedKey: {
+        type: import("vue").PropType<import("../../types").NumberOrString>;
+    };
+    defaultExpandAll: {
+        type: import("vue").PropType<boolean>;
+        default: undefined;
+    };
+    expandKeys: {
+        type: import("vue").PropType<import("./interface").KeysType>;
+        default: () => never[];
+    };
+    checkedKeys: {
+        type: import("vue").PropType<import("./interface").KeysType>;
+        default: () => never[];
+    };
+    onlyIconControl: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    showLine: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    standalone: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    showCheckbox: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    shouldIconBorder: {
+        type: import("vue").PropType<(iconName: string) => boolean>;
+    };
+    tailNodeIcon: {
+        type: import("vue").PropType<string | boolean | ((node: import("./interface").TreeData) => string)>;
+        default: string;
+    };
+    cacheData: {
+        type: import("vue").PropType<import("./interface").OriginalTreeData[]>;
+    };
+    loadOnCheck: {
+        type: import("vue").PropType<boolean>;
+    };
+    searchNodeMethod: {
+        type: import("vue").PropType<import("./interface").SearchNodeMethodType>;
+    };
+}>> & {
+    "onUpdate:selected-key"?: ((key: string | number) => any) | undefined;
+    "onUpdate:checked-keys"?: ((keys: (string | number)[]) => any) | undefined;
+    "onUpdate:expand-keys"?: ((keys: (string | number)[]) => any) | undefined;
+    "onNode-click"?: ((node: import("./interface").OriginalTreeData) => any) | undefined;
+    "onCheck-change"?: ((node: import("./interface").OriginalTreeData, checked: boolean) => any) | undefined;
+    "onNode-double"?: ((event: MouseEvent, node: import("./interface").OriginalTreeData) => any) | undefined;
+    "onNode-contextmenu"?: ((event: MouseEvent, node: import("./interface").OriginalTreeData) => any) | undefined;
+}, {
+    filter: (value: string) => void;
+    getTree: () => import("vue").Ref<import("./interface").TreeData[]>;
+    getFlatTree: () => import("vue").ComputedRef<import("./interface").TreeData[]>;
+    getNode: () => (val: import("../../types").NumberOrString | undefined) => import("./interface").OriginalTreeData | undefined;
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+    "update:selected-key": (key: string | number) => void;
+    "update:checked-keys": (keys: (string | number)[]) => void;
+    "update:expand-keys": (keys: (string | number)[]) => void;
+    "node-click": (node: import("./interface").OriginalTreeData) => void;
+    "check-change": (node: import("./interface").OriginalTreeData, checked: boolean) => void;
+    "node-double": (event: MouseEvent, node: import("./interface").OriginalTreeData) => void;
+    "node-contextmenu": (event: MouseEvent, node: import("./interface").OriginalTreeData) => void;
+}, string, {
+    lazy: boolean;
+    checkStrictly: string | boolean;
+    collapseTransition: boolean;
+    defaultExpandAll: boolean;
+    expandKeys: import("./interface").KeysType;
+    checkedKeys: import("./interface").KeysType;
+    onlyIconControl: boolean;
+    showLine: boolean;
+    standalone: boolean;
+    showCheckbox: boolean;
+    tailNodeIcon: string | boolean | ((node: import("./interface").TreeData) => string);
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & import("vue").Plugin<any[]>;
+export default component;

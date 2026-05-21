@@ -1,0 +1,211 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        circle: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        text: {
+            type: import("vue").PropType<string>;
+        };
+        color: {
+            type: import("vue").PropType<string>;
+        };
+        size: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        theme: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        animationDuration: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        percent: {
+            type: import("vue").PropType<string | number | import("./index.vue").ProgressLineProps[]>;
+            required: true;
+        };
+        showText: {
+            type: import("vue").PropType<boolean>;
+        };
+        circleSize: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        circleWidth: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        animated: {
+            type: import("vue").PropType<boolean>;
+        };
+        indeterminate: {
+            type: import("vue").PropType<boolean>;
+        };
+    }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        circle: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        text: {
+            type: import("vue").PropType<string>;
+        };
+        color: {
+            type: import("vue").PropType<string>;
+        };
+        size: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        theme: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        animationDuration: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        percent: {
+            type: import("vue").PropType<string | number | import("./index.vue").ProgressLineProps[]>;
+            required: true;
+        };
+        showText: {
+            type: import("vue").PropType<boolean>;
+        };
+        circleSize: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        circleWidth: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        animated: {
+            type: import("vue").PropType<boolean>;
+        };
+        indeterminate: {
+            type: import("vue").PropType<boolean>;
+        };
+    }>>, {
+        circle: boolean;
+        size: string;
+        theme: string;
+        animationDuration: number;
+        circleSize: number;
+        circleWidth: number;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        circle: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        text: {
+            type: import("vue").PropType<string>;
+        };
+        color: {
+            type: import("vue").PropType<string>;
+        };
+        size: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        theme: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        animationDuration: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        percent: {
+            type: import("vue").PropType<string | number | import("./index.vue").ProgressLineProps[]>;
+            required: true;
+        };
+        showText: {
+            type: import("vue").PropType<boolean>;
+        };
+        circleSize: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        circleWidth: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        animated: {
+            type: import("vue").PropType<boolean>;
+        };
+        indeterminate: {
+            type: import("vue").PropType<boolean>;
+        };
+    }>>, {}, {}, {}, {}, {
+        circle: boolean;
+        size: string;
+        theme: string;
+        animationDuration: number;
+        circleSize: number;
+        circleWidth: number;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    circle: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    text: {
+        type: import("vue").PropType<string>;
+    };
+    color: {
+        type: import("vue").PropType<string>;
+    };
+    size: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    theme: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    animationDuration: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    percent: {
+        type: import("vue").PropType<string | number | import("./index.vue").ProgressLineProps[]>;
+        required: true;
+    };
+    showText: {
+        type: import("vue").PropType<boolean>;
+    };
+    circleSize: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    circleWidth: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    animated: {
+        type: import("vue").PropType<boolean>;
+    };
+    indeterminate: {
+        type: import("vue").PropType<boolean>;
+    };
+}>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {
+    circle: boolean;
+    size: string;
+    theme: string;
+    animationDuration: number;
+    circleSize: number;
+    circleWidth: number;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & import("vue").Plugin<any[]>;
+export default component;

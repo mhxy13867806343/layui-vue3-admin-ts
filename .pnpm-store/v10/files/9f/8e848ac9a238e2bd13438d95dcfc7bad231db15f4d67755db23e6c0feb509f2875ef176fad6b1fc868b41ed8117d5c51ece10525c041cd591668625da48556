@@ -1,0 +1,187 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        label: {
+            type: import("vue").PropType<string>;
+        };
+        size: {
+            type: import("vue").PropType<"lg" | "md" | "sm" | "xs">;
+        };
+        required: {
+            type: import("vue").PropType<boolean>;
+        };
+        mode: {
+            type: import("vue").PropType<"block" | "inline">;
+        };
+        rules: {
+            type: import("vue").PropType<import("async-validator").Rule>;
+        };
+        labelPosition: {
+            type: import("vue").PropType<"top" | "left" | "right">;
+        };
+        labelWidth: {
+            type: import("vue").PropType<string | number>;
+        };
+        inlineWidth: {
+            type: import("vue").PropType<string | number>;
+        };
+        requiredErrorMessage: {
+            type: import("vue").PropType<string>;
+        };
+        prop: {
+            type: import("vue").PropType<string>;
+        };
+        errorMessage: {
+            type: import("vue").PropType<string>;
+        };
+        tips: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+    }>>, {
+        validate: (callback?: import("async-validator").ValidateCallback | undefined) => Promise<import("../../types").FormItemValidateReturn>;
+        clearValidate: () => void;
+    }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        label: {
+            type: import("vue").PropType<string>;
+        };
+        size: {
+            type: import("vue").PropType<"lg" | "md" | "sm" | "xs">;
+        };
+        required: {
+            type: import("vue").PropType<boolean>;
+        };
+        mode: {
+            type: import("vue").PropType<"block" | "inline">;
+        };
+        rules: {
+            type: import("vue").PropType<import("async-validator").Rule>;
+        };
+        labelPosition: {
+            type: import("vue").PropType<"top" | "left" | "right">;
+        };
+        labelWidth: {
+            type: import("vue").PropType<string | number>;
+        };
+        inlineWidth: {
+            type: import("vue").PropType<string | number>;
+        };
+        requiredErrorMessage: {
+            type: import("vue").PropType<string>;
+        };
+        prop: {
+            type: import("vue").PropType<string>;
+        };
+        errorMessage: {
+            type: import("vue").PropType<string>;
+        };
+        tips: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+    }>>, {
+        tips: string;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        label: {
+            type: import("vue").PropType<string>;
+        };
+        size: {
+            type: import("vue").PropType<"lg" | "md" | "sm" | "xs">;
+        };
+        required: {
+            type: import("vue").PropType<boolean>;
+        };
+        mode: {
+            type: import("vue").PropType<"block" | "inline">;
+        };
+        rules: {
+            type: import("vue").PropType<import("async-validator").Rule>;
+        };
+        labelPosition: {
+            type: import("vue").PropType<"top" | "left" | "right">;
+        };
+        labelWidth: {
+            type: import("vue").PropType<string | number>;
+        };
+        inlineWidth: {
+            type: import("vue").PropType<string | number>;
+        };
+        requiredErrorMessage: {
+            type: import("vue").PropType<string>;
+        };
+        prop: {
+            type: import("vue").PropType<string>;
+        };
+        errorMessage: {
+            type: import("vue").PropType<string>;
+        };
+        tips: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+    }>>, {
+        validate: (callback?: import("async-validator").ValidateCallback | undefined) => Promise<import("../../types").FormItemValidateReturn>;
+        clearValidate: () => void;
+    }, {}, {}, {}, {
+        tips: string;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    label: {
+        type: import("vue").PropType<string>;
+    };
+    size: {
+        type: import("vue").PropType<"lg" | "md" | "sm" | "xs">;
+    };
+    required: {
+        type: import("vue").PropType<boolean>;
+    };
+    mode: {
+        type: import("vue").PropType<"block" | "inline">;
+    };
+    rules: {
+        type: import("vue").PropType<import("async-validator").Rule>;
+    };
+    labelPosition: {
+        type: import("vue").PropType<"top" | "left" | "right">;
+    };
+    labelWidth: {
+        type: import("vue").PropType<string | number>;
+    };
+    inlineWidth: {
+        type: import("vue").PropType<string | number>;
+    };
+    requiredErrorMessage: {
+        type: import("vue").PropType<string>;
+    };
+    prop: {
+        type: import("vue").PropType<string>;
+    };
+    errorMessage: {
+        type: import("vue").PropType<string>;
+    };
+    tips: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+}>>, {
+    validate: (callback?: import("async-validator").ValidateCallback | undefined) => Promise<import("../../types").FormItemValidateReturn>;
+    clearValidate: () => void;
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {
+    tips: string;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        default?(_: {
+            props: any;
+        }): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

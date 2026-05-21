@@ -1,0 +1,22 @@
+import type { InjectionKey, Ref } from "vue";
+import type { Middleware, MiddlewareState, Padding } from "./usePopper/index";
+export interface PopperContext {
+    TriggerRef: Ref<HTMLElement | null>;
+    onShow: () => void;
+    onHidden: () => void;
+}
+export declare const POPPER_INJECTION_KEY: InjectionKey<PopperContext>;
+interface arrowMiddlewareParamsType {
+    arrowRef: Ref<HTMLDivElement | null>;
+    padding?: Padding;
+}
+export declare function arrowMiddleware({ arrowRef, padding, }: arrowMiddlewareParamsType): Middleware;
+export declare function getArrowPlacement(): {
+    name: string;
+    fn: (args: MiddlewareState) => {};
+};
+export declare function getArrowOffer({ arrowRef, }: Pick<arrowMiddlewareParamsType, "arrowRef">): {
+    name: string;
+    fn: (args: MiddlewareState) => {};
+};
+export {};

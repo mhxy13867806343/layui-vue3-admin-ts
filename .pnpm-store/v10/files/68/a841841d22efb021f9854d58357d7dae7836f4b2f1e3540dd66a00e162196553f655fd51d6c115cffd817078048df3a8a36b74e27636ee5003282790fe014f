@@ -1,0 +1,9 @@
+const s = (n) => {
+  const t = n;
+  return t.install = (o) => {
+    o.component(t.name, n);
+  }, t;
+};
+export {
+  s as withInstall
+};

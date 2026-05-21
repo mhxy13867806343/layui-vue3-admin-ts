@@ -1,0 +1,81 @@
+import { defineComponent as se, provide as ie, useSlots as de, ref as i, computed as U, watch as D, nextTick as ce, openBlock as c, createElementBlock as g, unref as m, normalizeClass as S, createVNode as b, withCtx as f, withDirectives as j, createSlots as ne, renderList as R, renderSlot as $, createCommentVNode as re, vShow as H, createElementVNode as pe, Fragment as ve, toDisplayString as me, createBlock as K, withKeys as fe, withModifiers as ye } from "vue";
+import he from "../cascaderPanel/index.hook.js";
+import ge from "../cascaderPanel/index2.js";
+import be from "../dropdown/index2.js";
+import Ve from "../empty/index2.js";
+import ke from "../input/index2.js";
+import Ce from "../scroll/index2.js";
+import Se from "../tagInput/index2.js";
+import { LayIcon as P } from "@layui/icons-vue";
+import { CASCADER_CONTEXT_KEY as we } from "./cascader.js";
+import Be from "./index.hooks.js";
+/* empty css           */
+import { isValueArray as xe } from "../utils/arrayUtil.js";
+const ze = ["size"], Ke = { key: 0, class: "slot-area" }, Le = { key: 1 }, _e = ["onClick"], He = se({ name: "LayCascader", __name: "index", props: { options: { default: void 0 }, modelValue: { default: "" }, decollator: { default: "/" }, placeholder: { default: "" }, onlyLastLevel: { type: Boolean, default: !1 }, disabled: { type: Boolean, default: !1 }, replaceFields: { default: () => ({ label: "label", value: "value", children: "children" }) }, allowClear: { type: Boolean, default: !1 }, size: {}, trigger: { default: () => ["click"] }, contentClass: {}, contentStyle: { type: [Boolean, null, String, Object, Array] }, changeOnSelect: { type: Boolean, default: !1 }, multiple: { type: Boolean, default: !1 }, lazy: { type: Boolean, default: !1 }, load: { type: Function, default: void 0 }, checkStrictly: { type: Boolean, default: !1 }, fullpath: { type: Boolean, default: !0 }, search: { type: Boolean }, searchMethod: {}, minCollapsedNum: { default: 3 }, collapseTagsTooltip: { type: Boolean, default: !0 }, teleportProps: {} }, emits: ["update:modelValue", "change", "clear"], setup(X, { expose: Y, emit: q }) {
+  var M, N, A;
+  const a = X, n = q, u = he(a);
+  ie(we, u);
+  const { size: L } = Be(a), _ = de(), V = i(), v = i(!1), y = i(!1), w = i(""), B = i([]), G = i(a.options), r = i(a.multiple), x = i(a.decollator), J = i(a.onlyLastLevel), Q = i(a.disabled), E = i(a.checkStrictly), W = i({ label: ((M = a.replaceFields) == null ? void 0 : M.label) ?? "label", value: ((N = a.replaceFields) == null ? void 0 : N.value) ?? "value", children: ((A = a.replaceFields) == null ? void 0 : A.children) ?? "children" }), o = i(u.selectKeys.value), h = U(() => u.selectLabel.value), Z = i(a.changeOnSelect), ee = U(() => r.value ? xe(a.modelValue) : !!a.modelValue);
+  function I() {
+    u.multipleSelectItem.value.forEach((e) => e.checked = e.indeterminate = !1), u.buildMultipleStatus(), u.multipleSelectItem.value.clear(), u.selectKeys.value = [], o.value = [], n("update:modelValue", r.value ? [] : void 0), n("clear");
+  }
+  function le(e) {
+    var z;
+    const l = e.split(x.value), t = l.shift();
+    let s = u.flatData.value.find((d) => d.label === t);
+    for (; s && l.length; ) {
+      const d = l.shift();
+      s = (z = s.children) == null ? void 0 : z.find((k) => k.label === d);
+    }
+    s !== void 0 && u.selectKeys.value.splice(u.selectKeys.value.findIndex((d) => d === s.value), 1), s.checked = s.indeterminate = !1, u.multipleSelectItem.value.delete(s.value), u.buildMultipleStatus(), o.value = [...o.value.filter((d) => d !== s.value)], n("update:modelValue", o.value), V.value.hide();
+  }
+  function ae(e) {
+    u.selectKeys.value = typeof e == "string" ? e.split(a.decollator) : e, r.value || V.value.hide();
+    const l = typeof a.modelValue == "string" ? typeof e == "string" ? e : e.join(a.decollator) : e;
+    n("update:modelValue", l);
+  }
+  function te(e) {
+    n("update:modelValue", Array.from(e.keys()));
+  }
+  function oe(e) {
+    n("update:modelValue", e);
+  }
+  function T(e, l = !1) {
+    let t = e;
+    const s = [];
+    for (; t; )
+      s.push(l ? t.value : t.label), t = t.parent;
+    return l ? s.reverse() : s.reverse().join(x.value);
+  }
+  function F(e) {
+    var l;
+    y.value = e.length > 0, y.value && (V.value.show(), B.value = (l = e, a.search && a.searchMethod && u.sanitizer(a.searchMethod(l), void 0) || u.flatData.value.filter((t) => t.label.includes(l))));
+  }
+  return D(() => v.value, (e) => {
+    e || (!r.value && a.search && (u.selectKeys.value = [], ce(() => {
+      u.selectKeys.value = u.showKeys.value = o.value;
+    })), y.value = !1, w.value = "");
+  }), D(() => a.modelValue, () => {
+    u.modelValue.value = a.modelValue;
+  }), Y({ getSelectLabel: u.selectLabel }), (e, l) => (c(), g("div", { size: m(L), class: S(["layui-cascader", [{ "layui-cascader-opend": v.value, "layui-cascader-disabled": e.disabled, "layui-cascader-multiple": e.multiple, "has-content": ee.value, "has-clear": e.allowClear }]]) }, [b(be, { ref_key: "dropdownRef", ref: V, trigger: e.trigger, "auto-fit-min-width": !1, disabled: e.disabled, "content-class": e.contentClass, "content-style": e.contentStyle, onShow: l[5] || (l[5] = (t) => v.value = !0), onHide: l[6] || (l[6] = (t) => v.value = !1) }, { content: f(() => [j(b(ge, { modelValue: o.value, "onUpdate:modelValue": [l[4] || (l[4] = (t) => o.value = t), ae], options: G.value, "replace-fields": W.value, multiple: r.value, decollator: x.value, "only-last-level": J.value, disabled: Q.value, "check-strictly": E.value, lazy: a.lazy, load: a.load, "change-on-select": Z.value, fullpath: a.fullpath, onChange: oe, "onUpdate:multipleSelectItem": te }, ne({ _: 2 }, [R(m(_), (t, s) => ({ name: s, fn: f(() => [s !== "default" ? $(e.$slots, s, { key: 0 }) : re("", !0)]) }))]), 1032, ["modelValue", "options", "replace-fields", "multiple", "decollator", "only-last-level", "disabled", "check-strictly", "lazy", "load", "change-on-select", "fullpath"]), [[H, !y.value]]), j(pe("div", null, [b(Ce, { height: "200px", class: "layui-cascader-search-result-list" }, { default: f(() => [B.value.length > 0 ? (c(!0), g(ve, { key: 0 }, R(B.value, (t, s) => (c(), g("div", { key: s, class: S(["layui-cascader-search-result-item", [{ "layui-cascader-search-result-item-active": e.multiple ? o.value.includes(t.value) : o.value.at(o.value.length - 1) === t.value }]]), onClick: (z) => function(d) {
+    if (r.value)
+      if (E.value)
+        o.value.includes(d.value) ? o.value.splice(o.value.indexOf(d.value), 1) : o.value.push(d.value);
+      else {
+        const k = [], O = (p) => {
+          var C;
+          (C = p.children) != null && C.length ? p.children.forEach((ue) => O(ue)) : k.push(p);
+        };
+        O(d), k.forEach((p) => {
+          o.value.includes(p.value) ? o.value = [...o.value.filter((C) => C !== p.value)] : o.value = [...o.value, p.value];
+        });
+      }
+    else
+      o.value = T(d, !0);
+    n("update:modelValue", o.value);
+  }(t) }, me(T(t)), 11, _e))), 128)) : (c(), K(Ve, { key: 1, class: "layui-cascader-empty" }))]), _: 1 })], 512), [[H, y.value]])]), default: f(() => [m(_).default ? (c(), g("div", Ke, [$(e.$slots, "default")])) : (c(), g("div", Le, [r.value ? (c(), K(Se, { key: 1, modelValue: h.value, "onUpdate:modelValue": l[1] || (l[1] = (t) => h.value = t), "input-value": w.value, "onUpdate:inputValue": [l[2] || (l[2] = (t) => w.value = t), F], placeholder: e.placeholder, "allow-clear": e.allowClear, disabled: e.disabled, readonly: !e.search, "min-collapsed-num": e.minCollapsedNum, "collapse-tags-tooltip": e.collapseTagsTooltip, onClear: I, onRemove: le, onKeyupCapture: l[3] || (l[3] = fe(ye(() => {
+  }, ["prevent", "stop"]), ["delete"])) }, { suffix: f(() => [b(m(P), { class: S({ "is-expand": v.value }), type: "layui-icon-triangle-d" }, null, 8, ["class"])]), _: 1 }, 8, ["modelValue", "input-value", "placeholder", "allow-clear", "disabled", "readonly", "min-collapsed-num", "collapse-tags-tooltip"])) : (c(), K(ke, { key: 0, modelValue: h.value, "onUpdate:modelValue": l[0] || (l[0] = (t) => h.value = t), "suffix-icon": "layui-icon-triangle-d", placeholder: e.placeholder, title: h.value, "allow-clear": e.allowClear, disabled: e.disabled, readonly: !e.search, size: m(L), onClear: I, onInput: F }, { suffix: f(() => [b(m(P), { class: S({ "is-expand": v.value }), type: "layui-icon-triangle-d" }, null, 8, ["class"])]), _: 1 }, 8, ["modelValue", "placeholder", "title", "allow-clear", "disabled", "readonly", "size"]))]))]), _: 3 }, 8, ["trigger", "disabled", "content-class", "content-style"])], 10, ze));
+} });
+export {
+  He as default
+};

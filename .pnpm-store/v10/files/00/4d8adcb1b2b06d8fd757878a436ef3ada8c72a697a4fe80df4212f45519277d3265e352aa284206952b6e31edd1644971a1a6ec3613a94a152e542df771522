@@ -1,0 +1,212 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        collapse: {
+            type: import("vue").PropType<string | boolean>;
+            default: boolean;
+        };
+        theme: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        collapseTransition: {
+            type: import("vue").PropType<string | boolean>;
+            default: boolean;
+        };
+        level: {
+            type: import("vue").PropType<string | boolean>;
+            default: boolean;
+        };
+        selectedKey: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        openKeys: {
+            type: import("vue").PropType<string[]>;
+            default: () => never[];
+        };
+        tree: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        inverted: {
+            type: import("vue").PropType<string | boolean>;
+            default: boolean;
+        };
+        indent: {
+            type: import("vue").PropType<string | boolean>;
+            default: boolean;
+        };
+    }>> & {
+        "onUpdate:selectedKey"?: ((...args: any[]) => any) | undefined;
+        "onUpdate:openKeys"?: ((...args: any[]) => any) | undefined;
+        onChangeSelectedKey?: ((...args: any[]) => any) | undefined;
+        onChangeOpenKeys?: ((...args: any[]) => any) | undefined;
+    }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("update:selectedKey" | "update:openKeys" | "changeSelectedKey" | "changeOpenKeys")[], import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        collapse: {
+            type: import("vue").PropType<string | boolean>;
+            default: boolean;
+        };
+        theme: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        collapseTransition: {
+            type: import("vue").PropType<string | boolean>;
+            default: boolean;
+        };
+        level: {
+            type: import("vue").PropType<string | boolean>;
+            default: boolean;
+        };
+        selectedKey: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        openKeys: {
+            type: import("vue").PropType<string[]>;
+            default: () => never[];
+        };
+        tree: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        inverted: {
+            type: import("vue").PropType<string | boolean>;
+            default: boolean;
+        };
+        indent: {
+            type: import("vue").PropType<string | boolean>;
+            default: boolean;
+        };
+    }>> & {
+        "onUpdate:selectedKey"?: ((...args: any[]) => any) | undefined;
+        "onUpdate:openKeys"?: ((...args: any[]) => any) | undefined;
+        onChangeSelectedKey?: ((...args: any[]) => any) | undefined;
+        onChangeOpenKeys?: ((...args: any[]) => any) | undefined;
+    }, {
+        collapse: string | boolean;
+        theme: string;
+        collapseTransition: string | boolean;
+        level: string | boolean;
+        selectedKey: string;
+        openKeys: string[];
+        tree: boolean;
+        inverted: string | boolean;
+        indent: string | boolean;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        collapse: {
+            type: import("vue").PropType<string | boolean>;
+            default: boolean;
+        };
+        theme: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        collapseTransition: {
+            type: import("vue").PropType<string | boolean>;
+            default: boolean;
+        };
+        level: {
+            type: import("vue").PropType<string | boolean>;
+            default: boolean;
+        };
+        selectedKey: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        openKeys: {
+            type: import("vue").PropType<string[]>;
+            default: () => never[];
+        };
+        tree: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        inverted: {
+            type: import("vue").PropType<string | boolean>;
+            default: boolean;
+        };
+        indent: {
+            type: import("vue").PropType<string | boolean>;
+            default: boolean;
+        };
+    }>> & {
+        "onUpdate:selectedKey"?: ((...args: any[]) => any) | undefined;
+        "onUpdate:openKeys"?: ((...args: any[]) => any) | undefined;
+        onChangeSelectedKey?: ((...args: any[]) => any) | undefined;
+        onChangeOpenKeys?: ((...args: any[]) => any) | undefined;
+    }, {}, {}, {}, {}, {
+        collapse: string | boolean;
+        theme: string;
+        collapseTransition: string | boolean;
+        level: string | boolean;
+        selectedKey: string;
+        openKeys: string[];
+        tree: boolean;
+        inverted: string | boolean;
+        indent: string | boolean;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    collapse: {
+        type: import("vue").PropType<string | boolean>;
+        default: boolean;
+    };
+    theme: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    collapseTransition: {
+        type: import("vue").PropType<string | boolean>;
+        default: boolean;
+    };
+    level: {
+        type: import("vue").PropType<string | boolean>;
+        default: boolean;
+    };
+    selectedKey: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    openKeys: {
+        type: import("vue").PropType<string[]>;
+        default: () => never[];
+    };
+    tree: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    inverted: {
+        type: import("vue").PropType<string | boolean>;
+        default: boolean;
+    };
+    indent: {
+        type: import("vue").PropType<string | boolean>;
+        default: boolean;
+    };
+}>> & {
+    "onUpdate:selectedKey"?: ((...args: any[]) => any) | undefined;
+    "onUpdate:openKeys"?: ((...args: any[]) => any) | undefined;
+    onChangeSelectedKey?: ((...args: any[]) => any) | undefined;
+    onChangeOpenKeys?: ((...args: any[]) => any) | undefined;
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("update:selectedKey" | "update:openKeys" | "changeSelectedKey" | "changeOpenKeys")[], "update:selectedKey" | "update:openKeys" | "changeSelectedKey" | "changeOpenKeys", {
+    collapse: string | boolean;
+    theme: string;
+    collapseTransition: string | boolean;
+    level: string | boolean;
+    selectedKey: string;
+    openKeys: string[];
+    tree: boolean;
+    inverted: string | boolean;
+    indent: string | boolean;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & import("vue").Plugin<any[]>;
+export default component;

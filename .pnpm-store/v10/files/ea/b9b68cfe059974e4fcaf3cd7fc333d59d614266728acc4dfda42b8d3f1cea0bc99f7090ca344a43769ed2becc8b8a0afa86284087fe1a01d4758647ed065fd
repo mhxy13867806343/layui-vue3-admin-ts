@@ -1,0 +1,21 @@
+import { defineComponent as m, ref as i, computed as h, onMounted as w, watch as x, openBlock as R, createElementBlock as k, mergeProps as z, toHandlerKey as S, createElementVNode as C, normalizeClass as E, normalizeStyle as B, renderSlot as M } from "vue";
+/* empty css           */
+const b = m({ name: "LayRipple", __name: "index", props: { type: { default: "inset" }, color: { default: "currentColor" }, borderRadius: { default: "0" }, spreadWidth: { default: "6px" }, spreadSize: {}, trigger: { default: "click" }, center: { type: Boolean, default: !1 } }, setup(y) {
+  const t = y, l = i(!1), r = i("0px"), u = i(null), o = i(null), p = h(() => t.type === "out"), d = i(void 0), c = i(void 0), v = function(e) {
+    if (l.value = !0, t.type === "inset" && !t.spreadSize && !t.center) {
+      const a = e.currentTarget.getBoundingClientRect(), n = event.clientX - a.left, s = event.clientY - a.top, f = Math.max(n, a.width - n), g = Math.max(s, a.height - s);
+      d.value = n + "px", c.value = s + "px", r.value = 2 * Math.sqrt(f ** 2 + g ** 2) + "px";
+    }
+  };
+  return w(() => {
+    (function() {
+      let e = o.value, a = u.value;
+      e && a && (t.type == "out" ? a.style.width = e.clientWidth + "px" : (e.style.overflow = "hidden", !t.spreadSize || t.center ? r.value = 1.1 * e.clientWidth + "px" : r.value = t.spreadSize), a.addEventListener("animationend", () => {
+        l.value = !1;
+      }, !1));
+    })();
+  }), x(() => t.trigger, (e) => l.value = e === "always", { immediate: !0 }), (e, a) => (R(), k("div", z({ class: "layui-water-ripples-container", ref_key: "waterRipplesContainerRefEl", ref: o }, { [S(e.trigger)]: v }), [C("div", { ref_key: "ripplesRefEl", ref: u, class: E({ "layui-out-ripples": p.value, "layui-inset-ripples": e.type == "inset", "layui-animate-always--out": l.value && e.trigger == "always" && e.type == "out", "layui-animate-once--out": l.value && (e.trigger == "mouseenter" || e.trigger == "click") && e.type == "out", "layui-animate-always--inset": l.value && e.trigger == "always" && e.type == "inset", "layui-animate-once--inset": l.value && (e.trigger == "mouseenter" || e.trigger == "click") && e.type == "inset" }), style: B({ borderRadius: p.value ? e.borderRadius : "50%", left: d.value, top: c.value, "--layui-ripple-color": e.color, "--layui-spread-width": e.spreadWidth, "--layui-spread-size": r.value }) }, null, 6), M(e.$slots, "default")], 16));
+} });
+export {
+  b as default
+};

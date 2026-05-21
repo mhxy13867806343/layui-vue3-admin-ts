@@ -1,0 +1,39 @@
+import type { RenderFunc } from "@layui/component/component/_components/render";
+import type { TabItemProps } from "@layui/component/component/tabItem/interface";
+import type { StyleValue } from "vue";
+import type { TabHeaderProps } from "../components/interface";
+export declare function useTabHeader(props: TabHeaderProps): {
+    isHorizontal: import("vue").ComputedRef<boolean>;
+    preRef: import("vue").Ref<HTMLSpanElement | null>;
+    nextRef: import("vue").Ref<HTMLSpanElement | null>;
+    ulRef: import("vue").Ref<HTMLUListElement | null>;
+    liSRefS: import("vue").Ref<HTMLLIElement[]>;
+    isShowPreNext: import("vue").Ref<boolean>;
+    classTabHead: import("vue").ComputedRef<(string | {
+        [x: string]: import("../interface").TabPosition | undefined;
+    })[]>;
+    styleTabHead: import("vue").ComputedRef<{
+        paddingLeft: string;
+        paddingRight: string;
+        paddingTop?: undefined;
+        paddingBottom?: undefined;
+    } | {
+        paddingTop: string;
+        paddingBottom: string;
+        paddingLeft?: undefined;
+        paddingRight?: undefined;
+    } | undefined>;
+    classTabTitle: import("vue").ComputedRef<(string | {
+        [x: string]: import("../interface").TabPosition | undefined;
+    })[]>;
+    styleTabTitle: import("vue").ComputedRef<StyleValue>;
+    styleTabBar: import("vue").Ref<StyleValue>;
+    renderTabIcon: (params: Parameters<RenderFunc>[0]) => any;
+    renderTabTitle: (params: Parameters<RenderFunc>[0]) => any;
+    handleChange: (id: TabItemProps["id"]) => void;
+    handlePreClick: () => void;
+    handleNextClick: () => void;
+    handleUlScroll: (e: WheelEvent) => void;
+    handleClose: (id: TabItemProps["id"], index: number) => void;
+};
+export type UseTabHeader = ReturnType<typeof useTabHeader>;

@@ -1,0 +1,59 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        vertical: {
+            type: import("vue").PropType<boolean | undefined>;
+            default: () => boolean;
+        };
+        minSize: {
+            type: import("vue").PropType<number | undefined>;
+            default: number;
+        };
+    }>>, () => JSX.Element, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        vertical: {
+            type: import("vue").PropType<boolean | undefined>;
+            default: () => boolean;
+        };
+        minSize: {
+            type: import("vue").PropType<number | undefined>;
+            default: number;
+        };
+    }>>, {
+        vertical: boolean | undefined;
+        minSize: number | undefined;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        vertical: {
+            type: import("vue").PropType<boolean | undefined>;
+            default: () => boolean;
+        };
+        minSize: {
+            type: import("vue").PropType<number | undefined>;
+            default: number;
+        };
+    }>>, () => JSX.Element, {}, {}, {}, {
+        vertical: boolean | undefined;
+        minSize: number | undefined;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    vertical: {
+        type: import("vue").PropType<boolean | undefined>;
+        default: () => boolean;
+    };
+    minSize: {
+        type: import("vue").PropType<number | undefined>;
+        default: number;
+    };
+}>>, () => JSX.Element, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {
+    vertical: boolean | undefined;
+    minSize: number | undefined;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & import("vue").Plugin<any[]>;
+export default component;

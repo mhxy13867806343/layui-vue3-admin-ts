@@ -1,0 +1,26 @@
+import { defineComponent as C, useSlots as S, computed as D, ref as V, watch as w, openBlock as s, createElementBlock as n, createElementVNode as o, Fragment as p, renderList as m, unref as B, toDisplayString as f, normalizeClass as v, renderSlot as E } from "vue";
+import b from "dayjs";
+import { getMonthDay as L, getPrevMonthDay as _, nextMonthDay as j, weekDays as z } from "./utils.js";
+const A = { class: "layui-calendar-table", cellspacing: "0", cellpadding: "0" }, F = ["onClick"], q = C({ name: "LayCalendarDateTable", __name: "date-table", props: { date: { default: Date.now() }, fullscreen: { type: Boolean, default: !0 }, disabledDate: {} }, emits: ["click", "update:modelValue"], setup(x, { emit: k }) {
+  const l = x, y = k;
+  S();
+  const g = D(() => {
+    const e = L(l.date).map((a) => ({ text: a, type: "current" })), u = [..._(l.date).map((a) => ({ text: a, type: "prev" })), ...e], t = 7 - (u.length % 7 || 7), r = j(l.date, t).map((a) => ({ text: a, type: "next" }));
+    return h([...u, ...r]);
+  }), h = (e) => Array(e.length / 7).fill(e.length / 7).map((u, t) => {
+    const r = 7 * t;
+    return e.slice(r, r + 7);
+  }), d = V(b(l.date).format("YYYY-MM-DD")), Y = D(() => l.date);
+  return w(() => Y, (e) => {
+    d.value = b(e.value).format("YYYY-MM-DD"), y("update:modelValue", d.value);
+  }, { deep: !0 }), (e, u) => (s(), n("table", A, [o("thead", null, [(s(!0), n(p, null, m(B(z), (t) => (s(), n("th", { key: t }, f(t), 1))), 128))]), o("tbody", null, [(s(!0), n(p, null, m(g.value, (t, r) => (s(), n("tr", { key: r }, [(s(!0), n(p, null, m(t, (a, M) => {
+    return s(), n("td", { class: v(["layui-calendar-" + a.type]), key: M }, [o("div", { onClick: (N) => {
+      return i = a.text, void (l.disabledDate && l.disabledDate(i) || (d.value = i, y("click", d.value)));
+      var i;
+    }, class: v([e.fullscreen ? "layui-calendar-day" : "layui-calendar-isfullscreen", { "layui-calendar-is-selcted": d.value === a.text, "layui-calendar-is-disabled": e.disabledDate && e.disabledDate(a.text) }]) }, [E(e.$slots, "cell", { data: (c = a, { ...c, isSelected: d.value === c.text }) }, () => [o("span", null, f(a.text), 1)], !0)], 10, F)], 2);
+    var c;
+  }), 128))]))), 128))])]));
+} });
+export {
+  q as default
+};

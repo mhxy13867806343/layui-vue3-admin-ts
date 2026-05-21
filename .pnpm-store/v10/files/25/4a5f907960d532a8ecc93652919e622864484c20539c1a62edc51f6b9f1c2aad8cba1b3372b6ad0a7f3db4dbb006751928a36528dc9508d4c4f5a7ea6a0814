@@ -1,0 +1,14 @@
+import { defineComponent as p, computed as s, openBlock as t, createElementBlock as n, withModifiers as y, unref as g, createElementVNode as i, normalizeClass as u, normalizeStyle as V, toDisplayString as f, createCommentVNode as v, Fragment as k, renderSlot as c } from "vue";
+/* empty css           */
+import b from "./index.hooks.js";
+const x = ["size"], C = ["name", "value"], B = { key: 0 }, E = p({ name: "LaySwitch", __name: "index", props: { name: {}, modelValue: { type: [String, Number, Boolean] }, disabled: { type: Boolean, default: !1 }, onswitchColor: {}, unswitchColor: {}, onswitchText: {}, unswitchText: {}, onswitchValue: { type: [String, Number, Boolean], default: !0 }, unswitchValue: { type: [String, Number, Boolean], default: !1 }, size: {}, loadingIcon: { default: "layui-icon-loading-one" }, loading: { type: Boolean } }, emits: ["update:modelValue", "change"], setup(d, { emit: m }) {
+  const a = d, { size: r } = b(a), o = m, l = s({ get: () => a.modelValue === a.onswitchValue, set(e) {
+    e ? (o("change", a.onswitchValue), o("update:modelValue", a.onswitchValue)) : (o("change", a.unswitchValue), o("update:modelValue", a.unswitchValue));
+  } }), h = () => {
+    a.disabled || (l.value = !l.value);
+  }, w = s(() => ({ "background-color": l.value ? a.onswitchColor : a.unswitchColor }));
+  return (e, S) => (t(), n("span", { onClick: y(h, ["stop"]), class: "layui-switch-container", size: g(r) }, [i("input", { class: "layui-switch-input", name: e.name, value: e.modelValue }, null, 8, C), i("div", { class: u(["layui-unselect layui-form-switch", { "layui-form-onswitch": l.value, "layui-switch-disabled": e.disabled }]), style: V(w.value) }, [e.onswitchText || e.unswitchText ? (t(), n("em", B, f(l.value == 1 ? e.onswitchText : e.unswitchText), 1)) : v("", !0), i("span", null, [i("div", null, [e.loading ? (t(), n("i", { key: 0, class: u(["layui-icon layui-anim layui-anim-rotate layui-anim-loop", e.loadingIcon]) }, null, 2)) : (t(), n(k, { key: 1 }, [l.value ? c(e.$slots, "onswitch-icon", { key: 0 }) : c(e.$slots, "unswitch-icon", { key: 1 })], 64))])])], 6)], 8, x));
+} });
+export {
+  E as default
+};

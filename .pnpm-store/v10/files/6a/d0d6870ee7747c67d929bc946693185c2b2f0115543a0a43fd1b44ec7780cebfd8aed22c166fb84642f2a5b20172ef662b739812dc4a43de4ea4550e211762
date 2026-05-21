@@ -1,0 +1,39 @@
+import { defineComponent as O, ref as d, watch as V, reactive as _, onUnmounted as z, onMounted as C, withDirectives as L, openBlock as i, createElementBlock as r, normalizeStyle as c, createElementVNode as x, createBlock as u, unref as v, createCommentVNode as w, toDisplayString as g, createVNode as M, withCtx as k, Fragment as N, renderList as $, createTextVNode as E, vShow as R, nextTick as S } from "vue";
+import D from "../carousel/index2.js";
+import U from "../carouselItem/index2.js";
+import { LayIcon as b } from "@layui/icons-vue";
+const j = { key: 1, class: "layui-notice-bar-warp-slot" }, H = O({ name: "LayNoticeBar", __name: "index", props: { mode: {}, text: { default: "" }, textlist: { default: () => [] }, color: { default: () => "var(--color-warning)" }, background: { default: () => "var(--color-warning-light-9)" }, size: { default: 14 }, height: { default: 40 }, delay: { default: 1 }, speed: { default: 100 }, scrollable: { type: Boolean, default: !1 }, leftIcon: {}, rightIcon: {} }, emits: ["close", "link"], setup(T, { emit: W }) {
+  var y;
+  const a = T, m = W, p = d(), o = d(), n = d((y = a.textlist[0]) == null ? void 0 : y.id);
+  V(() => a.textlist, () => {
+    n.value = a.textlist[0].id;
+  }, { deep: !0 });
+  const e = _({ order: 1, oneTime: 0, twoTime: 0, warpOWidth: 0, textOWidth: 0, isMode: !1, height: 40 });
+  var s;
+  z(() => {
+    clearInterval(s), s = null;
+  });
+  const I = () => {
+    e.oneTime = e.textOWidth / a.speed, e.twoTime = (e.textOWidth + e.warpOWidth) / a.speed;
+  }, f = () => {
+    e.order === 1 ? (o.value.style.cssText = `animation: around1 ${e.oneTime}s  linear; opactity: 1;`, e.order = 2) : (o.value.style.cssText = `animation: around2 ${e.twoTime}s linear  ; opactity: 1;`, e.order = 1);
+  }, B = () => {
+    if (!a.mode)
+      return !1;
+    a.mode === "closeable" ? (e.isMode = !0, m("close")) : a.mode === "link" && m("link");
+  };
+  return C(() => {
+    if (a.scrollable)
+      return !1;
+    S(() => {
+      e.warpOWidth = p.value.offsetWidth, e.textOWidth = o.value.offsetWidth, I(), s = setTimeout(() => {
+        f();
+      }, 1e3 * a.delay);
+    }), o.value.addEventListener("animationend", () => {
+      f();
+    }, !1);
+  }), (t, h) => L((i(), r("div", { class: "layui-notice-bar", style: c({ background: t.background, height: `${t.height}px` }) }, [x("div", { class: "layui-notice-bar-warp", style: c({ color: t.color, "font-size": `${t.size}px` }) }, [t.leftIcon ? (i(), u(v(b), { key: 0, class: "layui-notice-bar-warp-left-icon", type: t.leftIcon }, null, 8, ["type"])) : w("", !0), x("div", { class: "layui-notice-bar-warp-text-box", ref_key: "noticeBarWarpRef", ref: p, style: c("--textWidth--:" + t.text.length + "em") }, [t.scrollable ? (i(), r("div", j, [M(D, { modelValue: n.value, "onUpdate:modelValue": h[0] || (h[0] = (l) => n.value = l), indicator: "none", anim: "updown", arrow: "none", style: { height: "40px" } }, { default: k(() => [(i(!0), r(N, null, $(t.textlist, (l) => (i(), u(U, { key: l.id, id: l.id, class: "layui-anim layui-anim-up" }, { default: k(() => [E(g(l.text), 1)]), _: 2 }, 1032, ["id"]))), 128))]), _: 1 }, 8, ["modelValue"])])) : (i(), r("div", { key: 0, class: "layui-notice-bar-warp-text", ref_key: "noticeBarTextRef", ref: o }, g(t.text), 513))], 4), t.rightIcon ? (i(), u(v(b), { key: 1, type: t.rightIcon, class: "layui-notice-bar-warp-right-icon", onClick: B }, null, 8, ["type"])) : w("", !0)], 4)], 4)), [[R, !e.isMode]]);
+} });
+export {
+  H as default
+};

@@ -1,0 +1,56 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        separator: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        separatorIcon: {
+            type: import("vue").PropType<string>;
+        };
+    }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        separator: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        separatorIcon: {
+            type: import("vue").PropType<string>;
+        };
+    }>>, {
+        separator: string;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        separator: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        separatorIcon: {
+            type: import("vue").PropType<string>;
+        };
+    }>>, {}, {}, {}, {}, {
+        separator: string;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    separator: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    separatorIcon: {
+        type: import("vue").PropType<string>;
+    };
+}>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {
+    separator: string;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        default?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

@@ -1,0 +1,96 @@
+import { ref as g, reactive as V, watch as G, watchEffect as z } from "vue";
+import { useAutoColsWidth as B } from "./useAutoColsWidth.js";
+import { useTableColumns as H } from "./useTableColumns.js";
+import { useTableExpand as J } from "./useTableExpand.js";
+import { useTableSelected as K } from "./useTableSelected.js";
+import { loopForEach as O, isValueArray as h } from "../../utils/arrayUtil.js";
+import { isEqual as y } from "../../utils/type.js";
+function ee(f, A) {
+  const p = /* @__PURE__ */ new WeakMap(), v = g([]), w = g([]), C = g([]), k = g(!1), R = H(f.columns, p), j = K(f, A), q = J(f, A), S = V([...f.dataSource]);
+  G(() => f.dataSource, (e) => {
+    S.splice(0, S.length, ...e);
+  }, { deep: !0 });
+  const a = g([]);
+  function E(e, t) {
+    for (let l = 0; l < e.length; l++) {
+      const i = e[l], s = h(t) ? t : [i];
+      p.set(i, s), h(i.children) && E(i.children, [...s, i]);
+    }
+  }
+  function D(e) {
+    h(e.children) || (w.value.push(e), !e.hide && C.value.push(e));
+  }
+  function L(e, t = 0) {
+    v.value[t] || (v.value[t] = []);
+    for (const l of e)
+      v.value[t].push(l), h(l.children) && L(l.children, t + 1);
+  }
+  function F(e) {
+    e.totalRow && (k.value = !0);
+  }
+  function I(e) {
+    const t = p.get(e), [l] = t;
+    return l.fixed && l.fixed === "left" ? { left: `${i(t) + s(t)}px` } : l.fixed && l.fixed === "right" ? { right: `${i(t, !1) + s(t, !1)}px` } : {};
+    function i(m, u = !0) {
+      if (m.length > 1) {
+        let n = function(x) {
+          const r = u ? x : [...x].reverse();
+          for (let b = 0; b < r.length; b++) {
+            const c = r[b];
+            if (y(c, e))
+              return !0;
+            if (h(c == null ? void 0 : c.children)) {
+              if (n(c.children))
+                return !0;
+            } else
+              o += W(c);
+          }
+          return !1;
+        }, o = 0;
+        const [d] = m;
+        return n((d == null ? void 0 : d.children) || []), o;
+      }
+      return 0;
+    }
+    function s(m, u = !0) {
+      const [n] = m, o = u ? a.value : [...a.value].reverse();
+      let d = o.findIndex((r) => y(r, n)) - 1;
+      const x = [];
+      for (; d > -1; ) {
+        const r = o[d];
+        r.fixed && r.fixed === (u ? "left" : "right") && x.push(r), d--;
+      }
+      return function r(b, c) {
+        return b.reduce((T, $) => (h($.children) ? r($.children, T) : T += W($), T), c);
+      }(x, 0);
+    }
+  }
+  function M(e) {
+    const [t] = p.get(e);
+    let l = "", i = "";
+    const s = a.value.findLast((n) => n.fixed === "left"), m = a.value.find((n) => n.fixed === "right");
+    function u(n, o) {
+      return !!y(n, e) || !!h(n.children) && u(o === "left" ? n.children.at(-1) : n.children[0], o);
+    }
+    return y(t, s) && u(t, "left") && (l = "layui-table-fixed-left-last"), y(t, m) && u(t, "right") && (i = "layui-table-fixed-right-first"), `${l} ${i}`;
+  }
+  function N(e) {
+    const [t] = p.get(e);
+    return (t.fixed && `layui-table-fixed-${t.fixed}`) ?? "";
+  }
+  function W(e) {
+    return e.hide || !e.width ? 0 : Number(e.width.replace("px", ""));
+  }
+  return G(() => f.columns, (e) => {
+    a.value = e;
+  }, { immediate: !0, deep: !0 }), z(() => {
+    f.autoColsWidth && B(a.value, S), E(a.value, []), v.value = [], w.value = [], C.value = [], O(a.value, [D, F]), L(a.value);
+  }), { hierarchicalColumns: v, lastLevelAllColumns: w, lastLevelShowColumns: C, tableDataSource: S, columnsState: R, selectedState: j, expandState: q, hasTotalRow: k, commonGetClasses: function(e, ...t) {
+    return ["layui-table-cell", M(e), N(e), e.type === "checkbox" ? "layui-table-cell-checkbox" : "", e.type === "radio" ? "layui-table-cell-radio" : "", e.type === "number" ? "layui-table-cell-number" : "", ...t];
+  }, commonGetStylees: function(e, ...t) {
+    return [{ textAlign: e.align, ...I(e) }, ...t];
+  } };
+}
+export {
+  ee as useTable
+};

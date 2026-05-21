@@ -1,0 +1,267 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        name: {
+            type: import("vue").PropType<string>;
+        };
+        disabled: {
+            type: import("vue").PropType<boolean>;
+        };
+        size: {
+            type: import("vue").PropType<import("./index.vue").AutocompleteSize>;
+        };
+        modelValue: {
+            type: import("vue").PropType<string>;
+            required: true;
+        };
+        teleportProps: {
+            type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+        };
+        autoFitWidth: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        contentClass: {
+            type: import("vue").PropType<string | object | (string | object)[]>;
+        };
+        contentStyle: {
+            type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+        };
+        allowClear: {
+            type: import("vue").PropType<boolean>;
+        };
+        placeholder: {
+            type: import("vue").PropType<string>;
+        };
+        fetchSuggestions: {
+            type: import("vue").PropType<Function>;
+            required: true;
+        };
+        replaceFields: {
+            type: import("vue").PropType<{
+                value: string;
+            }>;
+            default: () => {
+                value: string;
+            };
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((value: string) => any) | undefined;
+        onInput?: ((value: string) => any) | undefined;
+        onClear?: (() => any) | undefined;
+        onBlur?: ((eventParam: FocusEvent) => any) | undefined;
+        onChange?: ((value: string) => any) | undefined;
+        onFocus?: ((eventParam: FocusEvent) => any) | undefined;
+        onSelect?: ((option: any) => any) | undefined;
+    }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+        "update:modelValue": ((value: string) => void) & ((value: string) => void);
+        select: (option: any) => void;
+        blur: (eventParam: FocusEvent) => void;
+        input: (value: string) => void;
+        change: (value: string) => void;
+        focus: (eventParam: FocusEvent) => void;
+        clear: () => void;
+    }, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        name: {
+            type: import("vue").PropType<string>;
+        };
+        disabled: {
+            type: import("vue").PropType<boolean>;
+        };
+        size: {
+            type: import("vue").PropType<import("./index.vue").AutocompleteSize>;
+        };
+        modelValue: {
+            type: import("vue").PropType<string>;
+            required: true;
+        };
+        teleportProps: {
+            type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+        };
+        autoFitWidth: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        contentClass: {
+            type: import("vue").PropType<string | object | (string | object)[]>;
+        };
+        contentStyle: {
+            type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+        };
+        allowClear: {
+            type: import("vue").PropType<boolean>;
+        };
+        placeholder: {
+            type: import("vue").PropType<string>;
+        };
+        fetchSuggestions: {
+            type: import("vue").PropType<Function>;
+            required: true;
+        };
+        replaceFields: {
+            type: import("vue").PropType<{
+                value: string;
+            }>;
+            default: () => {
+                value: string;
+            };
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((value: string) => any) | undefined;
+        onInput?: ((value: string) => any) | undefined;
+        onClear?: (() => any) | undefined;
+        onBlur?: ((eventParam: FocusEvent) => any) | undefined;
+        onChange?: ((value: string) => any) | undefined;
+        onFocus?: ((eventParam: FocusEvent) => any) | undefined;
+        onSelect?: ((option: any) => any) | undefined;
+    }, {
+        autoFitWidth: boolean;
+        replaceFields: {
+            value: string;
+        };
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        name: {
+            type: import("vue").PropType<string>;
+        };
+        disabled: {
+            type: import("vue").PropType<boolean>;
+        };
+        size: {
+            type: import("vue").PropType<import("./index.vue").AutocompleteSize>;
+        };
+        modelValue: {
+            type: import("vue").PropType<string>;
+            required: true;
+        };
+        teleportProps: {
+            type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+        };
+        autoFitWidth: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        contentClass: {
+            type: import("vue").PropType<string | object | (string | object)[]>;
+        };
+        contentStyle: {
+            type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+        };
+        allowClear: {
+            type: import("vue").PropType<boolean>;
+        };
+        placeholder: {
+            type: import("vue").PropType<string>;
+        };
+        fetchSuggestions: {
+            type: import("vue").PropType<Function>;
+            required: true;
+        };
+        replaceFields: {
+            type: import("vue").PropType<{
+                value: string;
+            }>;
+            default: () => {
+                value: string;
+            };
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((value: string) => any) | undefined;
+        onInput?: ((value: string) => any) | undefined;
+        onClear?: (() => any) | undefined;
+        onBlur?: ((eventParam: FocusEvent) => any) | undefined;
+        onChange?: ((value: string) => any) | undefined;
+        onFocus?: ((eventParam: FocusEvent) => any) | undefined;
+        onSelect?: ((option: any) => any) | undefined;
+    }, {}, {}, {}, {}, {
+        autoFitWidth: boolean;
+        replaceFields: {
+            value: string;
+        };
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    name: {
+        type: import("vue").PropType<string>;
+    };
+    disabled: {
+        type: import("vue").PropType<boolean>;
+    };
+    size: {
+        type: import("vue").PropType<import("./index.vue").AutocompleteSize>;
+    };
+    modelValue: {
+        type: import("vue").PropType<string>;
+        required: true;
+    };
+    teleportProps: {
+        type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+    };
+    autoFitWidth: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    contentClass: {
+        type: import("vue").PropType<string | object | (string | object)[]>;
+    };
+    contentStyle: {
+        type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+    };
+    allowClear: {
+        type: import("vue").PropType<boolean>;
+    };
+    placeholder: {
+        type: import("vue").PropType<string>;
+    };
+    fetchSuggestions: {
+        type: import("vue").PropType<Function>;
+        required: true;
+    };
+    replaceFields: {
+        type: import("vue").PropType<{
+            value: string;
+        }>;
+        default: () => {
+            value: string;
+        };
+    };
+}>> & {
+    "onUpdate:modelValue"?: ((value: string) => any) | undefined;
+    onInput?: ((value: string) => any) | undefined;
+    onClear?: (() => any) | undefined;
+    onBlur?: ((eventParam: FocusEvent) => any) | undefined;
+    onChange?: ((value: string) => any) | undefined;
+    onFocus?: ((eventParam: FocusEvent) => any) | undefined;
+    onSelect?: ((option: any) => any) | undefined;
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+    "update:modelValue": ((value: string) => void) & ((value: string) => void);
+    select: (option: any) => void;
+    blur: (eventParam: FocusEvent) => void;
+    input: (value: string) => void;
+    change: (value: string) => void;
+    focus: (eventParam: FocusEvent) => void;
+    clear: () => void;
+}, string, {
+    autoFitWidth: boolean;
+    replaceFields: {
+        value: string;
+    };
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        prefix?(_: {}): any;
+        suffix?(_: {}): any;
+        prepend?(_: {}): any;
+        append?(_: {}): any;
+        default?(_: {
+            option: any;
+        }): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

@@ -1,0 +1,2 @@
+import type { ComponentPublicInstance } from "vue";
+export declare function unRefRealElement<T>(element: T): Exclude<T, ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}, {}, string, {}>, {}, {}>> | null;

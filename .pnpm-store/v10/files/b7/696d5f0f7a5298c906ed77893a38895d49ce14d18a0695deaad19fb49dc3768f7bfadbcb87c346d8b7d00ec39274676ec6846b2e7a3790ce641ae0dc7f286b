@@ -1,0 +1,14 @@
+import { defineComponent as x, useSlots as B, toRefs as P, watch as _, openBlock as l, createElementBlock as i, unref as e, normalizeStyle as $, createVNode as U, withCtx as c, renderSlot as r, createTextVNode as C, toDisplayString as L } from "vue";
+import M from "../../tooltip/index2.js";
+import { useSliderProvide as N } from "../use-slider.js";
+import { useSliderBar as T } from "./use-slider-bar.js";
+const j = { key: 0, class: "layui-slider-handle-thumb" }, z = { key: 1, class: "layui-slider-handle-button" }, F = x({ name: "LaySliderBar", __name: "bar", props: { modelValue: { default: 0 } }, emits: ["update:modelValue"], setup(f, { expose: y, emit: h }) {
+  const v = h, d = B(), k = f, { tooltipProp: w, alwayShowTooltip: u } = N(), { isDark: S, placement: b, disabled: D } = P(w), { dragging: n, wrapperStyle: V, formatValue: m, tooltip: a, setUpDatePos: g, handleDown: p } = T(k, v);
+  return _(() => [n, u, a], () => {
+    var s, t, o;
+    n.value ? (s = a.value) == null || s.show() : (t = a.value) == null || t.hide(), u.value && a && ((o = a.value) == null || o.show());
+  }, { immediate: !0, deep: !0 }), y({ setUpDatePos: g }), (s, t) => (l(), i("div", { class: "layui-slider-handle", onMousedown: t[0] || (t[0] = (...o) => e(p) && e(p)(...o)), style: $(e(V)) }, [U(M, { isDark: e(S), disabled: e(D), position: e(b), ref_key: "tooltip", ref: a }, { content: c(() => [e(d).custom ? r(s.$slots, "custom", { key: 0, value: e(m) }) : r(s.$slots, "default", { key: 1 }, () => [C(L(e(m)), 1)])]), default: c(() => [e(d).thumb ? (l(), i("div", j, [r(s.$slots, "thumb")])) : (l(), i("div", z))]), _: 3 }, 8, ["isDark", "disabled", "position"])], 36));
+} });
+export {
+  F as default
+};

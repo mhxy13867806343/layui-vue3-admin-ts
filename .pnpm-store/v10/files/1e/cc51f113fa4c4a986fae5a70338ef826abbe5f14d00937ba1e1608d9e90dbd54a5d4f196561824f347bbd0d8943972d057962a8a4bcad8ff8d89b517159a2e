@@ -1,0 +1,6 @@
+import { LayIcon as o } from "@layui/icons-vue";
+import { withInstall as t } from "../utils/withInstall.js";
+const s = t(o);
+export {
+  s as default
+};

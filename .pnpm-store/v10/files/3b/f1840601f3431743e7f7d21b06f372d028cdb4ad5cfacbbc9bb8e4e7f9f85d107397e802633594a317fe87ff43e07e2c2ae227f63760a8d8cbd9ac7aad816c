@@ -1,0 +1,4 @@
+var G = ((L) => (L[L.CHANGE = 0] = "CHANGE", L[L.MULTIPLE = 1] = "MULTIPLE", L[L.SINGLE = 2] = "SINGLE", L))(G || {});
+export {
+  G as FLUSH_SIGNAL
+};

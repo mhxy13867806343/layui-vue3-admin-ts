@@ -1,0 +1,9 @@
+import { defineComponent as s } from "vue";
+import { normalizeProps as o } from "../utils/vueUtil.js";
+const i = s({ name: "LayRender", inheritAttrs: !1, props: { render: { type: [String, Function] }, slots: { type: Object } }, setup: (e, t) => () => {
+  var r, n;
+  return typeof e.render == "string" ? (n = (r = e.slots) == null ? void 0 : r[e.render]) == null ? void 0 : n.call(r, o(t.attrs)) : e.render(o(t.attrs));
+} });
+export {
+  i as default
+};

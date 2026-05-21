@@ -1,0 +1,19 @@
+import { computed as m, isVNode as e } from "vue";
+const k = (s) => ({ marksList: m(() => s.marks ? Object.keys(s.marks).map(parseFloat).sort((t, a) => t - a).filter((t) => t >= s.min && t <= s.max).map((t) => {
+  let a = {};
+  if (typeof s.marks[t] != "object" || e(s.marks[t]))
+    a = { label: s.marks[t], point: t };
+  else {
+    const { label: r, style: o } = s.marks[t];
+    a = { label: r, style: o, point: t };
+  }
+  return { pos: 100 * (t - s.min) / (s.max - s.min), mark: a };
+}) : []), getSortMarks: m(() => {
+  if (!s.marks)
+    return [];
+  const t = Object.keys(s.marks).map(parseFloat);
+  return t.push(s.min, s.max), t.sort((a, r) => a - r);
+}) });
+export {
+  k as useSliderMark
+};

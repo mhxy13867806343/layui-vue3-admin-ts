@@ -1,0 +1,24 @@
+import { reactive as c, watch as p } from "vue";
+import { loopForEach as s } from "../../utils/arrayUtil.js";
+function u(e, t) {
+  const a = c([...e.expandKeys]);
+  return p(() => e.expandKeys, () => {
+    a.splice(0, a.length, ...e.expandKeys);
+  }, { deep: !0 }), p(() => [e.defaultExpandAll, e.dataSource], () => {
+    if (e.defaultExpandAll) {
+      const n = [];
+      s(e.dataSource, e.childrenColumnName, (d) => {
+        n.push(d[e.id]);
+      }), a.splice(0, a.length, ...n);
+    }
+  }, { immediate: !0, deep: !0 }), p(() => [e.defaultExpandAll], () => {
+    e.defaultExpandAll || a.splice(0, a.length);
+  }, { deep: !0 }), { checkExpand: function(n) {
+    return a.includes(n);
+  }, toggleExpand: function(n, d) {
+    d ? a.push(n) : a.splice(a.indexOf(n), 1), t("update:expandKeys", a);
+  } };
+}
+export {
+  u as useTableExpand
+};

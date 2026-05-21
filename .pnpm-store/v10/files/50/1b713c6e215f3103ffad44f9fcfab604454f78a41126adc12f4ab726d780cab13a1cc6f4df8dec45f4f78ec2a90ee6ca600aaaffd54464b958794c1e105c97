@@ -1,0 +1,243 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        layout: {
+            type: import("vue").PropType<import("./interface").LayoutKey[]>;
+            default: () => string[];
+        };
+        modelValue: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        theme: {
+            type: import("vue").PropType<string>;
+        };
+        total: {
+            type: import("vue").PropType<number>;
+            required: true;
+            default: number;
+        };
+        simple: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        limits: {
+            type: import("vue").PropType<number[]>;
+            default: () => number[];
+        };
+        ellipsisTooltip: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        limit: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        pages: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        hideOnSinglePage: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+        onChange?: ((...args: any[]) => any) | undefined;
+        "onUpdate:limit"?: ((...args: any[]) => any) | undefined;
+    }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("change" | "update:modelValue" | "update:limit")[], import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        layout: {
+            type: import("vue").PropType<import("./interface").LayoutKey[]>;
+            default: () => string[];
+        };
+        modelValue: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        theme: {
+            type: import("vue").PropType<string>;
+        };
+        total: {
+            type: import("vue").PropType<number>;
+            required: true;
+            default: number;
+        };
+        simple: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        limits: {
+            type: import("vue").PropType<number[]>;
+            default: () => number[];
+        };
+        ellipsisTooltip: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        limit: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        pages: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        hideOnSinglePage: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+        onChange?: ((...args: any[]) => any) | undefined;
+        "onUpdate:limit"?: ((...args: any[]) => any) | undefined;
+    }, {
+        disabled: boolean;
+        layout: import("./interface").LayoutKey[];
+        modelValue: number;
+        total: number;
+        simple: boolean;
+        limits: number[];
+        ellipsisTooltip: boolean;
+        limit: number;
+        pages: number;
+        hideOnSinglePage: boolean;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        layout: {
+            type: import("vue").PropType<import("./interface").LayoutKey[]>;
+            default: () => string[];
+        };
+        modelValue: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        theme: {
+            type: import("vue").PropType<string>;
+        };
+        total: {
+            type: import("vue").PropType<number>;
+            required: true;
+            default: number;
+        };
+        simple: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        limits: {
+            type: import("vue").PropType<number[]>;
+            default: () => number[];
+        };
+        ellipsisTooltip: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        limit: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        pages: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        hideOnSinglePage: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+        onChange?: ((...args: any[]) => any) | undefined;
+        "onUpdate:limit"?: ((...args: any[]) => any) | undefined;
+    }, {}, {}, {}, {}, {
+        disabled: boolean;
+        layout: import("./interface").LayoutKey[];
+        modelValue: number;
+        total: number;
+        simple: boolean;
+        limits: number[];
+        ellipsisTooltip: boolean;
+        limit: number;
+        pages: number;
+        hideOnSinglePage: boolean;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    disabled: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    layout: {
+        type: import("vue").PropType<import("./interface").LayoutKey[]>;
+        default: () => string[];
+    };
+    modelValue: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    theme: {
+        type: import("vue").PropType<string>;
+    };
+    total: {
+        type: import("vue").PropType<number>;
+        required: true;
+        default: number;
+    };
+    simple: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    limits: {
+        type: import("vue").PropType<number[]>;
+        default: () => number[];
+    };
+    ellipsisTooltip: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    limit: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    pages: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    hideOnSinglePage: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+}>> & {
+    "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+    onChange?: ((...args: any[]) => any) | undefined;
+    "onUpdate:limit"?: ((...args: any[]) => any) | undefined;
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("change" | "update:modelValue" | "update:limit")[], "change" | "update:modelValue" | "update:limit", {
+    disabled: boolean;
+    layout: import("./interface").LayoutKey[];
+    modelValue: number;
+    total: number;
+    simple: boolean;
+    limits: number[];
+    ellipsisTooltip: boolean;
+    limit: number;
+    pages: number;
+    hideOnSinglePage: boolean;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & import("vue").Plugin<any[]>;
+export default component;

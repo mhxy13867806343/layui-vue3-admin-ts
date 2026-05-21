@@ -1,0 +1,4 @@
+import o from "./YearRange.js";
+export {
+  o as default
+};

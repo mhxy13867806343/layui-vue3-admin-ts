@@ -1,0 +1,62 @@
+import { defineComponent as F, useSlots as G, ref as t, computed as h, watch as v, h as n, provide as I, openBlock as g, createElementBlock as V, normalizeClass as J, Fragment as w, renderList as K, createBlock as E, resolveDynamicComponent as Y, createCommentVNode as M } from "vue";
+/* empty css           */
+import q from "./components/count.js";
+import Q from "./components/prev.js";
+import U from "./components/pager.js";
+import W from "./components/next.js";
+import X from "./components/limits.js";
+import Z from "./components/refresh.js";
+import $ from "./components/skip.js";
+import ee from "./components/simple.js";
+import { LAYUI_PAGE_KEY as ae } from "./usePage.js";
+const de = F({ name: "LayPage", __name: "index", props: { total: { default: 0 }, limit: { default: 10 }, theme: {}, pages: { default: 5 }, limits: { default: () => [10, 20, 30, 40, 50] }, simple: { type: Boolean, default: !1 }, modelValue: { default: 1 }, hideOnSinglePage: { type: Boolean, default: !1 }, ellipsisTooltip: { type: Boolean, default: !1 }, disabled: { type: Boolean, default: !1 }, layout: { default: () => ["prev", "page", "next", "limits"] } }, emits: ["update:modelValue", "change", "update:limit"], setup(O, { emit: R }) {
+  const e = O, b = G(), S = t(e.limits), o = t(e.pages), x = t(e.layout), a = t(e.modelValue), m = t(e.limit), N = t(e.theme), T = t(e.ellipsisTooltip), f = R, C = t(!0), L = t(!0);
+  let P = t({ resetLeft: [], resetRight: [] });
+  const s = t(e.modelValue), k = h(() => e.simple), d = t(e.disabled), D = h(() => !(l.value < 2 && e.hideOnSinglePage));
+  v(() => e.limit, () => {
+    m.value = e.limit;
+  }), v(() => e.disabled, () => {
+    d.value = e.disabled;
+  }), v(() => e.theme, () => {
+    N.value = e.theme;
+  }), v(() => e.ellipsisTooltip, () => {
+    T.value = e.ellipsisTooltip;
+  }), v(() => m, (u) => {
+    f("update:limit", +u.value), f("change", { current: +a.value, limit: +m.value });
+  }, { deep: !0 }), v(() => e.layout, () => {
+    x.value = e.layout;
+  }), v(() => e.modelValue, () => {
+    a.value = e.modelValue;
+  }), v(a, (u) => {
+    s.value = u, f("update:modelValue", +a.value), f("change", { current: +a.value, limit: +m.value });
+  });
+  const H = h(() => e.total), l = h(() => Math.ceil(e.total / m.value) || 1), j = h(() => {
+    let u = [];
+    o.value <= 0 && (o.value = 1);
+    const r = l.value > o.value ? Math.ceil((a.value + 1) / o.value) : 1, c = Math.floor((o.value - 1) / 2);
+    let y = r > 1 ? a.value - c : 1, p = r > 1 ? (() => {
+      const i = a.value + (o.value - c - 1);
+      return i > l.value ? l.value : i;
+    })() : o.value;
+    p > l.value && (p = l.value), l.value > o.value && p - y < o.value - 1 && (y = p - o.value + 1), a.value > l.value && (a.value = l.value), P.value.resetLeft = Array.from({ length: y - 2 }).map((i, B) => B + 2).reverse(), P.value.resetRight = Array.from({ length: l.value - p - 1 }).map((i, B) => p + B + 1);
+    for (let i = y; i <= p; i++)
+      u.push(i);
+    return u;
+  }), A = (u) => {
+    d.value || (u <= 0 && (u = 1), u >= l.value && (u = l.value), L.value = !0, C.value = !0, a.value = u);
+  }, _ = { count: n(q), prev: n(Q, {}, b), page: n(U), next: n(W, {}, b), limits: n(X), refresh: n(Z), skip: n($) }, z = h(() => x.value.reduce((u, r) => (u.push({ componentName: _[r], show: !!_[r], name: r }), u), []));
+  return I(ae, { pageCount: l, pageTotal: H, currentPage: a, pageOpionData: P, iconNextHover: L, iconPrevHover: C, inlimit: m, limits: S, disabled: d, handleRefresh: () => {
+    f("change", { current: a.value, limit: m.value });
+  }, handleNext: () => {
+    d.value || a.value !== l.value && a.value++;
+  }, handlePrev: () => {
+    d.value || a.value <= 1 || a.value--;
+  }, handlePage: A, jumpNumber: s, handleJumpPage: () => {
+    A(+s.value);
+  }, handleBlur: () => {
+    k.value ? (a.value >= l.value && (a.value = l.value), a.value <= 1 && (a.value = 1)) : (+s.value >= l.value && (s.value = l.value), +s.value < 1 && (s.value = 1));
+  }, ellipsisTooltip: T, theme: N, setPage: j }), (u, r) => D.value ? (g(), V("div", { key: 0, class: J(["layui-page", d.value ? "is-disabled" : "", k.value ? "layui-page-simple" : ""]) }, [k.value ? (g(), E(ee, { key: 1 })) : (g(!0), V(w, { key: 0 }, K(z.value, (c) => (g(), V(w, { key: c }, [c.show ? (g(), E(Y(c.componentName), { key: 0 })) : M("", !0)], 64))), 128))], 2)) : M("", !0);
+} });
+export {
+  de as default
+};

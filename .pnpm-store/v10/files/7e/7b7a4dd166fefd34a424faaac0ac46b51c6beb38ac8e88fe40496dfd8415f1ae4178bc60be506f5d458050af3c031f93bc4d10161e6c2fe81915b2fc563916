@@ -1,0 +1,8 @@
+import o from "./popper.js";
+import { CONTENT_INJECTION_KEY as s } from "./types.js";
+import { withInstall as t } from "../utils/withInstall.js";
+const p = t(o);
+export {
+  s as CONTENT_INJECTION_KEY,
+  p as default
+};

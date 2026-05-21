@@ -1,0 +1,4 @@
+import r from "./InputBlock.js";
+export {
+  r as default
+};

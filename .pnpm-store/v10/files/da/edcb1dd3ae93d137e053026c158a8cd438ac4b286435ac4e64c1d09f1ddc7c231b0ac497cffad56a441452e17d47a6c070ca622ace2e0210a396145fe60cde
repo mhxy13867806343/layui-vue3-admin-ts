@@ -1,0 +1,10 @@
+import { defineComponent as s, openBlock as n, createElementBlock as p, toDisplayString as t, unref as a } from "vue";
+import { useI18n as r } from "../../language/index.js";
+import { usePage as m } from "../usePage.js";
+const l = { class: "layui-page-total-text" }, d = s({ name: "LayPageCount", __name: "count", setup(u) {
+  const { t: e } = r(), { pageTotal: o } = m();
+  return (i, c) => (n(), p("span", l, t(a(e)("page.total")) + " " + t(a(o)) + " " + t(a(e)("page.item")), 1));
+} });
+export {
+  d as default
+};

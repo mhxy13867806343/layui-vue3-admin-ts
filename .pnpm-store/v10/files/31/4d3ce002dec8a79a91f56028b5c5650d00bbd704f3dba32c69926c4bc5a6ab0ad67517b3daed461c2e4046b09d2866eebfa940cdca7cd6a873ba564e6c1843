@@ -1,0 +1,135 @@
+/** __vue_virtual_code_placeholder */
+import "./index.less";
+import { Recordable } from "../../types";
+import Cropper from "cropperjs";
+export interface LayerButton {
+    text: string;
+    callback: Function;
+}
+export interface LayerModal {
+    title?: string;
+    resize?: boolean;
+    move?: boolean;
+    maxmin?: boolean;
+    offset?: string[];
+    content?: string;
+    shade?: boolean;
+    shadeClose?: boolean;
+    shadeOpacity?: number;
+    zIndex?: number;
+    type?: "component" | "iframe";
+    closeBtn?: boolean;
+    area?: string[];
+    btn?: LayerButton[];
+    btnAlign?: "l" | "r" | "c";
+    anim?: boolean;
+    isOutAnim?: boolean;
+}
+export interface CutOptions {
+    layerOption?: LayerModal;
+    copperOption?: Cropper.Options;
+}
+export interface UploadProps {
+    url?: string;
+    data?: any;
+    headers?: Recordable;
+    acceptMime?: string;
+    field?: string;
+    size?: number;
+    multiple?: boolean;
+    number?: number;
+    drag?: boolean;
+    disabled?: boolean;
+    disabledPreview?: boolean;
+    cut?: boolean;
+    cutOptions?: CutOptions;
+    text?: string;
+    dragText?: string;
+    modelValue?: any;
+    auto?: boolean;
+    directory?: boolean;
+    beforeUpload?: Function;
+    onProgress?: Function;
+}
+declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<UploadProps>, {
+    field: string;
+    acceptMime: string;
+    size: number;
+    multiple: boolean;
+    number: number;
+    drag: boolean;
+    disabled: boolean;
+    disabledPreview: boolean;
+    cut: boolean;
+    cutOptions: undefined;
+    modelValue: null;
+    auto: boolean;
+    onProgress: (event: ProgressEvent<EventTarget>) => void;
+}>, {
+    submit: () => void;
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("done" | "error" | "update:modelValue" | "choose" | "before" | "cutdone" | "cutcancel" | "on-change")[], "done" | "error" | "update:modelValue" | "choose" | "before" | "cutdone" | "cutcancel" | "on-change", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<UploadProps>, {
+    field: string;
+    acceptMime: string;
+    size: number;
+    multiple: boolean;
+    number: number;
+    drag: boolean;
+    disabled: boolean;
+    disabledPreview: boolean;
+    cut: boolean;
+    cutOptions: undefined;
+    modelValue: null;
+    auto: boolean;
+    onProgress: (event: ProgressEvent<EventTarget>) => void;
+}>>> & {
+    "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+    onError?: ((...args: any[]) => any) | undefined;
+    onDone?: ((...args: any[]) => any) | undefined;
+    onChoose?: ((...args: any[]) => any) | undefined;
+    onBefore?: ((...args: any[]) => any) | undefined;
+    onCutdone?: ((...args: any[]) => any) | undefined;
+    onCutcancel?: ((...args: any[]) => any) | undefined;
+    "onOn-change"?: ((...args: any[]) => any) | undefined;
+}, {
+    number: number;
+    disabled: boolean;
+    auto: boolean;
+    size: number;
+    drag: boolean;
+    multiple: boolean;
+    cut: boolean;
+    modelValue: any;
+    onProgress: Function;
+    acceptMime: string;
+    field: string;
+    disabledPreview: boolean;
+    cutOptions: CutOptions;
+}, {}>, {
+    default?(_: {
+        disabled: any;
+    }): any;
+    preview?(_: {}): any;
+}>;
+export default _default;
+type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
+type __VLS_TypePropsToRuntimeProps<T> = {
+    [K in keyof T]-?: {} extends Pick<T, K> ? {
+        type: import('vue').PropType<__VLS_NonUndefinedable<T[K]>>;
+    } : {
+        type: import('vue').PropType<T[K]>;
+        required: true;
+    };
+};
+type __VLS_WithDefaults<P, D> = {
+    [K in keyof Pick<P, keyof P>]: K extends keyof D ? __VLS_Prettify<P[K] & {
+        default: D[K];
+    }> : P[K];
+};
+type __VLS_WithTemplateSlots<T, S> = T & {
+    new (): {
+        $slots: S;
+    };
+};
+type __VLS_Prettify<T> = {
+    [K in keyof T]: T[K];
+} & {};

@@ -1,0 +1,113 @@
+import { ref as r, computed as S, watch as b, onMounted as D } from "vue";
+function $(u) {
+  var x, z, F, M;
+  const y = r([]), w = r(u.onlyLastLevel), o = r(u.multiple), h = r(u.decollator), s = r(/* @__PURE__ */ new Map()), j = r(u.alwaysLazy), K = r((x = u.style) == null ? void 0 : x.loadingTheme), m = r(u.checkStrictly), O = r(u.changeOnSelect), p = r([]), i = r(u.modelValue ?? []), v = r(typeof i.value == "string" ? i.value.split(h.value ?? "/") : Array.isArray(i.value) ? [...i.value] : []), k = r({ label: ((z = u.replaceFields) == null ? void 0 : z.label) ?? "label", value: ((F = u.replaceFields) == null ? void 0 : F.value) ?? "value", children: ((M = u.replaceFields) == null ? void 0 : M.children) ?? "children" }), g = (e, a) => e.map((t) => {
+    const l = { label: t[k.value.label], value: t[k.value.value], loading: !1, slot: t.slot, indeterminate: !1, checked: !1, selected: !1, disabled: t.disabled, children: void 0, orig: void 0, parent: a };
+    return l.children = t[k.value.children] ? g(t[k.value.children], l) : void 0, l.orig = t, l;
+  });
+  y.value = g(u.options ?? [], void 0);
+  const d = S(() => {
+    const e = [], a = (t) => {
+      t.forEach((l) => {
+        var n;
+        e.push(l), (n = l.children) != null && n.length && a(l.children);
+      });
+    };
+    return a(y.value), e;
+  }), T = S(() => {
+    const e = o.value ? [...s.value.values()].map((l) => d.value.find((n) => n.value === l.value)) : v.value.map((l) => d.value.find((n) => n.value === l)), a = (l) => {
+      if (!l)
+        return [];
+      let n = [];
+      return n = l.parent ? [...a(l.parent), l.label] : [l.label], n;
+    }, t = e.map((l) => u.fullpath && o.value ? a(l).join(u.decollator) : (l == null ? void 0 : l.label) ?? "");
+    return o.value ? t : w.value ? (t == null ? void 0 : t.pop()) ?? "" : t.join(` ${u.decollator} `);
+  }), V = S(() => ((e) => {
+    const a = [];
+    a.push(e);
+    let t = e;
+    return p.value.forEach((l) => {
+      var n;
+      t = Array.isArray(t) ? t.find((c) => c.value === l) : (n = t == null ? void 0 : t.children) == null ? void 0 : n.find((c) => c.value === l), a.push((t == null ? void 0 : t.children) ?? []);
+    }), a.filter((l) => l.length);
+  })(y.value).filter((e, a) => a <= p.value.length));
+  b(() => u.options, () => {
+    y.value = g(u.options ?? [], void 0);
+  }, { deep: !0 }), b(() => u.checkStrictly, (e) => m.value = e ?? !1), b(() => o.value, () => {
+    const e = s.value.values();
+    let a = e.next();
+    do {
+      if (a.done)
+        break;
+      a.value.checked = !1, a = e.next();
+    } while (!a.done);
+    s.value.clear();
+  });
+  const A = () => {
+    m.value || (d.value.filter((e) => {
+      var a;
+      return !((a = e.children) != null && a.length);
+    }).forEach((e) => {
+      var a, t;
+      e.parent && (e.parent.checked = ((a = e.parent.children) == null ? void 0 : a.every((l) => l.checked)) || !1, e.parent.checked || (e.parent.indeterminate = ((t = e.parent.children) == null ? void 0 : t.some((l) => l.checked)) || !1));
+    }), d.value.filter((e) => e.parent).forEach((e) => {
+      var a, t;
+      e.parent.checked = ((a = e.parent.children) == null ? void 0 : a.every((l) => l.checked)) || !1, e.parent.checked || (e.parent.indeterminate = ((t = e.parent.children) == null ? void 0 : t.some((l) => l.checked || l.indeterminate)) || !1);
+    }), d.value.filter((e) => {
+      var a;
+      return !e.parent && ((a = e.children) == null ? void 0 : a.length);
+    }).forEach((e) => {
+      var a, t;
+      e.checked = ((a = e.children) == null ? void 0 : a.every((l) => l.checked)) || !1, e.checked || (e.indeterminate = ((t = e.children) == null ? void 0 : t.some((l) => l.indeterminate || l.checked)) || !1);
+    }));
+  }, L = () => {
+    var e;
+    if ((e = i.value) != null && e.length)
+      if (o.value) {
+        let a = i.value;
+        typeof a == "string" && (a = a.split(h.value ?? "")), o.value && a.forEach((t) => {
+          const l = d.value.find((n) => n.value === t);
+          l && (l.checked = !0, s.value.set(t, l));
+        }), A();
+      } else {
+        if (v.value = Array.isArray(i.value) ? i.value : i.value.split(h.value ?? ""), m.value) {
+          const a = d.value.find((t) => t.value === v.value.at(v.value.length - 1));
+          a && (a.selected = !0);
+        }
+        v.value.length && (p.value = v.value);
+      }
+    else
+      v.value = [];
+  };
+  return b(() => i.value, (e, a) => {
+    if (o.value) {
+      if (Array.isArray(e)) {
+        const [t, l] = function(n = [], c = []) {
+          const f = n.filter((E) => !c.includes(E)) || [], C = c.filter((E) => !n.includes(E)) || [];
+          return [f, C];
+        }(e, a);
+        t.forEach((n) => {
+          const c = d.value.find((f) => f.value === n);
+          c && (c.checked = !0, s.value.set(n, c));
+        }), l.forEach((n) => {
+          const c = d.value.find((f) => f.value === n);
+          c && (c.checked = !1, s.value.delete(n));
+        });
+      }
+      A();
+    } else
+      v.value = Array.isArray(e) ? e : e.split(h.value ?? ""), v.value.length && (p.value = v.value);
+  }), D(() => L()), { dataSource: V, sanitizer: g, onlyLastLevel: w, multiple: o, checkStrictly: m, decollator: h, multipleSelectItem: s, alwaysLazy: j, loadingTheme: K, selectKeys: v, showKeys: p, selectLabel: T, iterCollector: (e) => {
+    const a = [];
+    let t = e.next();
+    do {
+      if (t.done)
+        break;
+      a.push(t.value), t = e.next();
+    } while (!t.done);
+    return a;
+  }, flatData: d, changeOnSelect: O, buildMultipleStatus: A, modelValue: i, setup: L };
+}
+export {
+  $ as default
+};

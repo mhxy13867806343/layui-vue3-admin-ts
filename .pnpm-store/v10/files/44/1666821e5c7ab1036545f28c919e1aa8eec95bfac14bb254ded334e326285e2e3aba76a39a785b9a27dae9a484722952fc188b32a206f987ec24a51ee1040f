@@ -1,0 +1,11 @@
+import { defineComponent as o, useSlots as m, openBlock as a, createElementBlock as r, normalizeStyle as k, unref as n, renderSlot as i, Fragment as t, isVNode as y, createBlock as c, resolveDynamicComponent as p, createTextVNode as d, toDisplayString as u } from "vue";
+const x = o({ name: "LaySliderMark", __name: "mark", props: { mark: {} }, setup(S) {
+  const l = m();
+  return (e, f) => {
+    var s;
+    return a(), r("div", { class: "layui-slider-mark-text", style: k((s = e.mark) == null ? void 0 : s.style) }, [n(l).mark ? i(e.$slots, "mark", { key: 0, mark: e.mark }) : (a(), r(t, { key: 1 }, [y(e.mark.label) ? (a(), c(p(e.mark.label), { key: 0 })) : (a(), r(t, { key: 1 }, [d(u(e.mark.label), 1)], 64))], 64))], 4);
+  };
+} });
+export {
+  x as default
+};

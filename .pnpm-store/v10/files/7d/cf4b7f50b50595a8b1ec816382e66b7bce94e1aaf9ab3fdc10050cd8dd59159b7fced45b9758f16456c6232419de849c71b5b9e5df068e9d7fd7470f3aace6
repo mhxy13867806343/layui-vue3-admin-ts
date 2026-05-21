@@ -1,0 +1,17 @@
+import { defineComponent as p, ref as u, watch as d, provide as i, openBlock as n, createElementBlock as m, renderSlot as c } from "vue";
+/* empty css           */
+const v = { class: "layui-checkcard-group" }, g = p({ name: "LayCheckcardGroup", __name: "index", props: { modelValue: { type: [Array, String, Number, Boolean], default: void 0 }, disabled: { type: Boolean, default: !1 }, single: { type: Boolean, default: !1 } }, emits: ["update:modelValue", "change"], setup(t, { emit: s }) {
+  const l = t, o = s, r = u(l.disabled), a = u(l.modelValue);
+  return d(() => l.single, (e) => {
+    e && Array.isArray(a.value) && (a.value = ""), e || Array.isArray(a.value) || (a.value = []);
+  }, { deep: !0, immediate: !0 }), i("checkcardGroup", { name: "LayCheckCardGroup", modelVal: a, disabled: r }), d(() => a, (e) => {
+    o("update:modelValue", e.value), o("change", e.value);
+  }, { deep: !0 }), d(() => l.disabled, (e) => {
+    r.value = e;
+  }, { deep: !0 }), d(() => l.modelValue, (e) => {
+    a.value = e;
+  }, { deep: !0 }), (e, y) => (n(), m("div", v, [c(e.$slots, "default")]));
+} });
+export {
+  g as default
+};

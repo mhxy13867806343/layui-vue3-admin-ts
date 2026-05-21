@@ -1,0 +1,53 @@
+import { defineComponent as A, useSlots as D, ref as r, computed as m, watch as V, openBlock as o, createElementBlock as i, normalizeClass as w, unref as u, renderSlot as c, createCommentVNode as p, createElementVNode as C, createBlock as f, createVNode as G, withModifiers as H, nextTick as v } from "vue";
+/* empty css           */
+import { LayIcon as d } from "@layui/icons-vue";
+import J from "./index.hooks.js";
+const K = ["size"], O = { key: 0, class: "layui-input-prepend" }, P = { key: 0, class: "layui-input-prefix" }, Q = ["type", "name", "disabled", "placeholder", "autofocus", "autocomplete", "maxlength", "max", "min", "readonly", "value"], T = { key: 2, class: "layui-input-clear" }, U = { key: 3, class: "layui-input-suffix" }, W = { key: 1, class: "layui-input-append" }, ae = A({ name: "LayInput", __name: "index", props: { name: {}, type: {}, prefixIcon: {}, suffixIcon: {}, modelValue: { default: "" }, allowClear: { type: Boolean, default: !1 }, autocomplete: {}, placeholder: {}, autofocus: { type: Boolean, default: !1 }, disabled: { type: Boolean, default: !1 }, readonly: { type: Boolean, default: !1 }, password: { type: Boolean, default: !1 }, size: {}, maxlength: {}, max: {}, min: {} }, emits: ["blur", "input", "update:modelValue", "change", "focus", "clear"], setup(I, { expose: B, emit: S }) {
+  const a = I, { size: z } = J(a), t = S, n = D(), s = r(a.type), y = r(), b = r(String(a.modelValue == null ? "" : a.modelValue)), k = m(() => {
+    var e;
+    return s.value == "number" ? a.modelValue > (a.min || 0) : ((e = a.modelValue) == null ? void 0 : e.length) > 0;
+  }), g = m(() => s.value == "password"), x = r(!1);
+  V(() => a.type, () => {
+    s.value = a.type;
+  }), V(() => a.modelValue, () => {
+    b.value = String(a.modelValue == null ? "" : a.modelValue);
+  });
+  const h = function(e) {
+    const l = e.target.value;
+    x.value || (t("update:modelValue", l), v(() => {
+      t("input", l);
+    }));
+  }, N = () => {
+    a.type === "number" ? t("update:modelValue", a.min ? String(a.min) : "0") : t("update:modelValue", ""), t("clear");
+  }, $ = (e) => {
+    t("focus", e);
+  }, _ = (e) => {
+    const l = e.target.value;
+    t("change", l);
+  }, E = (e) => {
+    a.type === "number" && L(e), t("blur", e);
+  }, L = (e) => {
+    let l = e.target.value;
+    l === "" ? l = a.min ? String(a.min) : "0" : (a.max && a.max < Number(l) && (l = a.max.toString()), a.min && a.min > Number(l) && (l = a.min.toString())), t("update:modelValue", l);
+  }, F = () => {
+    x.value = !0;
+  }, M = (e) => {
+    x.value = !1, h(e);
+  }, R = m(() => ({ "layui-input-has-prefix": n.prefix || a.prefixIcon })), j = m(() => ({ "layui-input-disabled": a.disabled })), q = () => {
+    g.value ? s.value = "text" : s.value = "password";
+  };
+  return B({ focus: () => {
+    v(() => {
+      var e;
+      (e = y.value) == null || e.focus();
+    });
+  }, blur: () => {
+    v(() => {
+      var e;
+      (e = y.value) == null || e.blur();
+    });
+  } }), (e, l) => (o(), i("div", { class: w(["layui-input", R.value]), size: u(z) }, [u(n).prepend ? (o(), i("div", O, [c(e.$slots, "prepend", { disabled: e.disabled })])) : p("", !0), C("div", { class: w(["layui-input-wrapper", j.value]) }, [u(n).prefix || a.prefixIcon ? (o(), i("span", P, [u(n).prefix ? c(e.$slots, "prefix", { key: 0 }) : (o(), f(u(d), { key: 1, type: a.prefixIcon, class: "layui-input-prefix-icon" }, null, 8, ["type"]))])) : p("", !0), C("input", { type: s.value, name: e.name, disabled: e.disabled, placeholder: e.placeholder, autofocus: e.autofocus, autocomplete: e.autocomplete, maxlength: e.maxlength, max: e.max, min: e.min, readonly: e.readonly, value: b.value, onBlur: E, onInput: h, onFocus: $, onChange: _, onCompositionstart: F, onCompositionend: M, ref_key: "inputRef", ref: y }, null, 40, Q), e.password && k.value ? (o(), i("span", { key: 1, class: "layui-input-password", onClick: q }, [g.value ? (o(), f(u(d), { key: 0, type: "layui-icon-show" })) : (o(), f(u(d), { key: 1, type: "layui-icon-hide" }))])) : p("", !0), e.allowClear && k.value && !e.disabled ? (o(), i("span", T, [G(u(d), { type: "layui-icon-close-fill", onClick: H(N, ["stop"]) })])) : p("", !0), u(n).suffix || a.suffixIcon ? (o(), i("span", U, [u(n).suffix ? c(e.$slots, "suffix", { key: 0 }) : (o(), f(u(d), { key: 1, type: a.suffixIcon, class: "layui-input-suffix-icon" }, null, 8, ["type"]))])) : p("", !0)], 2), u(n).append ? (o(), i("div", W, [c(e.$slots, "append", { disabled: e.disabled })])) : p("", !0)], 10, K));
+} });
+export {
+  ae as default
+};

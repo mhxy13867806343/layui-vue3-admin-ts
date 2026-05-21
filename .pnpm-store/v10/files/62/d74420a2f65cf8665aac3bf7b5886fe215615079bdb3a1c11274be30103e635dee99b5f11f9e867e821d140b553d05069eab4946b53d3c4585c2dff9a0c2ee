@@ -1,0 +1,36 @@
+import { defineComponent as v, ref as p, shallowRef as m, computed as h, unref as b, onMounted as k, nextTick as r, openBlock as n, createBlock as g, mergeProps as w, withCtx as u, renderSlot as i, createElementBlock as d, toDisplayString as B, createCommentVNode as S, createElementVNode as A } from "vue";
+import { useEventListener as x, useMutationObserver as C, useResizeObserver as _ } from "@vueuse/core";
+import D from "../popper/popper.js";
+/* empty css           */
+const P = { key: 0 }, $ = v({ name: "LayTooltip", inheritAttrs: !1, __name: "index", props: { content: {}, position: { default: "top" }, isDark: { type: Boolean }, disabled: { type: Boolean }, isAutoShow: { type: Boolean }, visible: { type: Boolean }, trigger: { default: "hover" }, enterable: { type: Boolean, default: !0 }, popperClass: {}, popperStyle: { type: [Boolean, null, String, Object, Array] }, teleportProps: {} }, setup(c, { expose: f }) {
+  const t = c, a = p(!1), o = m(void 0), l = p(), y = h(() => ({ modelValue: t.visible, trigger: t.trigger, placement: t.position, enterable: t.enterable, showArrow: !0, disabled: t.disabled || b(a), popperClass: ["lay-tooltip", "layui-anim-fadein", { "layui-dark": t.isDark }, t.popperClass], popperStyle: t.popperStyle, teleportProps: t.teleportProps }));
+  function s() {
+    if (o.value) {
+      const e = o.value;
+      e.scrollWidth > e.clientWidth || e.scrollHeight > e.clientHeight ? a.value = !1 : a.value = !0;
+    } else
+      a.value = !1;
+  }
+  return k(() => {
+    t.isAutoShow && (x("resize", () => {
+      s();
+    }), o.value && (C(o.value, s, { childList: !0, attributes: !0, characterData: !0, subtree: !0 }), _(o.value, s))), r(() => {
+      s();
+    });
+  }), f({ show: function() {
+    r(() => {
+      l.value.show();
+    });
+  }, hide: function() {
+    r(() => {
+      l.value.hidden();
+    });
+  }, update: function() {
+    r(() => {
+      l.value.update();
+    });
+  } }), (e, R) => (n(), g(D, w({ ref_key: "popperRef", ref: l }, y.value), { content: u(() => [i(e.$slots, "content", {}, () => [e.content ? (n(), d("span", P, B(e.content), 1)) : S("", !0)])]), default: u(() => [e.isAutoShow ? (n(), d("div", { key: 0, ref_key: "tooltipRef", ref: o, class: "lay-tooltip-content" }, [A("span", null, [i(e.$slots, "default")])], 512)) : i(e.$slots, "default", { key: 1 })]), _: 3 }, 16));
+} });
+export {
+  $ as default
+};

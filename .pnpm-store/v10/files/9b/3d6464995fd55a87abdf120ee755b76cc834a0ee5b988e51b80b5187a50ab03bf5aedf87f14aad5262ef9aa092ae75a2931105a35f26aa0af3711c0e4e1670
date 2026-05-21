@@ -1,0 +1,11 @@
+import { defineComponent as v, inject as p, computed as s, openBlock as t, createBlock as f, withCtx as r, createElementVNode as o, normalizeClass as h, renderSlot as a, createElementBlock as l, createCommentVNode as n, createVNode as b, unref as $ } from "vue";
+import g from "../dropdown/index2.js";
+import { LayIcon as P } from "@layui/icons-vue";
+import k from "../menu/useLevel.js";
+const x = { class: "layui-nav-item layui-sub-menu-popup" }, j = { href: "javascript:void(0)", style: { "justify-content": "space-between" } }, w = { key: 0, class: "layui-sub-menu-icon" }, C = { key: 1 }, M = { key: 0, class: "layui-nav-more" }, E = v({ name: "SubMenuPopup", __name: "SubMenuPopup", props: { id: {}, title: {}, teleportProps: {} }, setup(B) {
+  const { level: u } = k(), i = p("isTree"), c = p("menuTheme"), m = s(() => c.value === "light" ? "-light" : ""), d = s(() => i.value ? "layui-icon-right" : u.value === 2 ? "layui-icon-down" : "layui-icon-right"), y = s(() => i.value || u.value !== 2 ? "right-start" : "bottom");
+  return (e, I) => (t(), f(g, { trigger: "hover", placement: y.value, autoFitMinWidth: !1, teleportProps: e.teleportProps, contentOffset: 3 }, { content: r(() => [o("div", { class: h(["layui-sub-menu-popup-content", `layui-sub-menu-popup-theme${m.value}`]) }, [a(e.$slots, "default")], 2)]), default: r(() => [o("li", x, [o("a", j, [o("div", null, [e.$slots.icon ? (t(), l("i", w, [a(e.$slots, "icon")])) : n("", !0), e.$slots.title ? (t(), l("span", C, [a(e.$slots, "title")])) : n("", !0)]), e.$slots.expandIcon ? (t(), l("span", M, [a(e.$slots, "expandIcon", {}, () => [b($(P), { type: d.value }, null, 8, ["type"])])])) : n("", !0)])])]), _: 3 }, 8, ["placement", "teleportProps"]));
+} });
+export {
+  E as default
+};

@@ -1,0 +1,24 @@
+import { defineComponent as f, ref as a, createVNode as c, Fragment as l } from "vue";
+const u = Array.isArray, d = f({ props: { setRef: { type: Function, required: !0 } }, setup(s, { slots: r }) {
+  const i = /* @__PURE__ */ function(...e) {
+    return (n) => {
+      e.forEach((t) => {
+        typeof t == "function" ? t(n) : t.value = n;
+      });
+    };
+  }(a(), (e) => {
+    e ? s.setRef(e.nextElementSibling) : s.setRef(null);
+  });
+  return () => {
+    var t;
+    const [e] = ((t = r.default) == null ? void 0 : t.call(r)) || [], n = function(o) {
+      if (!u(o) || o.length > 1)
+        throw new Error("expect to receive a single Vue element child");
+      return o[0];
+    }(e.children);
+    return c(l, { ref: i }, [n]);
+  };
+} });
+export {
+  d as default
+};

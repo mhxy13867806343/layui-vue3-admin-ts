@@ -1,0 +1,82 @@
+import { defineComponent as K, ref as V, computed as b, watch as P, openBlock as f, createElementBlock as k, unref as m, withDirectives as C, createBlock as S, withCtx as $, createVNode as h, createElementVNode as R, toDisplayString as U, createCommentVNode as Q } from "vue";
+/* empty css           */
+import T from "../input/index2.js";
+import { LayIcon as F } from "@layui/icons-vue";
+import M from "../button/index2.js";
+import W from "./index.hooks.js";
+import { isUndefined as g, isNumber as r } from "../utils/type.js";
+import { vRepeatClick as _ } from "../directives/repeat-click/index.js";
+const X = ["position", "size"], Y = { class: "layui-input-number-input" }, Z = { key: 0, class: "layui-input-number-indicator" }, re = K({ name: "LayInputNumber", __name: "index", props: { modelValue: { default: 0 }, name: {}, disabled: { type: Boolean, default: !1 }, disabledInput: { type: Boolean, default: !1 }, size: {}, step: { default: 1 }, stepStrictly: { type: Boolean, default: !1 }, precision: {}, position: {}, min: { default: -1 / 0 }, max: { default: 1 / 0 }, indicator: { default: "" } }, emits: ["update:modelValue", "change", "input", "focus", "blur"], setup(E, { emit: D }) {
+  const t = E, { size: L } = W(t), v = V(!0), o = D;
+  let s = V(t.modelValue), u = V(null);
+  const y = (e) => {
+    const { max: a, min: l, step: i, stepStrictly: c, precision: x } = t;
+    if (l > a)
+      throw new Error("input-number: props.max应大于props.min");
+    let n = Number(e);
+    return e == null || Number.isNaN(n) ? null : (c && (n = N(Math.round(n / i) * i, x)), g(x) || (n = N(n, x)), (n > a || n < l) && (n = n > a ? a : l, o("update:modelValue", n)), n);
+  }, N = (e, a) => {
+    if (a || (a = O.value), a === 0)
+      return Math.round(e);
+    let l = String(e);
+    const i = l.indexOf(".");
+    if (i === -1 || !l.replace(".", "").split("")[i + a])
+      return e;
+    const c = l.length;
+    return l.charAt(c - 1) === "5" && (l = `${l.slice(0, Math.max(0, c - 1))}6`), Number.parseFloat(Number(l).toFixed(a));
+  }, I = (e) => {
+    if (!e)
+      return 0;
+    const a = e.toString(), l = a.indexOf(".");
+    let i = 0;
+    return l !== -1 && (i = a.length - l - 1), i;
+  }, w = (e, a = 1) => r(e) ? N(e + t.step * a) : s.value, O = b(() => {
+    const e = I(t.step);
+    return g(t.precision) ? Math.max(I(t.modelValue), e) : (e > t.precision && console.warn("input-number: props.precision不应小于props.step的小数位"), t.precision);
+  }), d = b(() => {
+    if (u.value !== null)
+      return u.value;
+    let e = s.value;
+    if (e == null)
+      return "";
+    if (r(e)) {
+      if (Number.isNaN(e))
+        return "";
+      g(t.precision) || (e = e.toFixed(t.precision));
+    }
+    return e;
+  });
+  P(() => t.modelValue, (e) => {
+    const a = y(u.value), l = y(e);
+    r(a) || a && a === l || (s.value = l, u.value = null);
+  }, { immediate: !0 });
+  const p = (e, a = !0) => {
+    const l = s.value, i = y(e);
+    a ? l !== i && (u.value = null, o("update:modelValue", i), o("change", i, l), s.value = i) : o("update:modelValue", i);
+  }, A = (e) => {
+    u.value = e;
+    const a = e === "" ? null : Number(e);
+    p(a, !1);
+  }, j = (e) => {
+    const a = e === "" ? null : Number(e);
+    (r(a) && !Number.isNaN(a) || e === "") && p(a), u.value = null;
+  }, q = (e) => {
+    o("blur", e), v.value = !0;
+  }, G = (e) => {
+    o("focus", e), v.value = !1;
+  }, H = () => {
+    if (t.disabledInput || z.value)
+      return;
+    const e = Number(d.value) || 0, a = w(e);
+    p(a);
+  }, J = () => {
+    if (t.disabledInput || B.value)
+      return;
+    const e = Number(d.value) || 0, a = w(e, -1);
+    p(a);
+  }, B = b(() => !!t.disabled || t.min !== -1 / 0 && r(t.modelValue) && Number(t.min) >= t.modelValue), z = b(() => !!t.disabled || t.max !== 1 / 0 && r(t.modelValue) && Number(t.max) <= t.modelValue);
+  return (e, a) => (f(), k("div", { class: "layui-input-number", position: e.position, size: m(L) }, [C((f(), S(M, { size: "lg", disabled: B.value, class: "layui-control-btn layui-subtraction-btn" }, { default: $(() => [h(m(F), { type: e.position === "right" ? "layui-icon-down" : "layui-icon-subtraction" }, null, 8, ["type"])]), _: 1 }, 8, ["disabled"])), [[m(_), J]]), R("div", Y, [h(T, { title: `${d.value}${e.indicator}`, max: e.max, min: e.min, name: e.name, modelValue: d.value, readonly: e.disabledInput || e.disabled, disabled: e.disabledInput || e.disabled, onInput: A, onChange: j, onBlur: q, onFocus: G, type: "number" }, null, 8, ["title", "max", "min", "name", "modelValue", "readonly", "disabled"]), v.value && e.indicator ? (f(), k("div", Z, U(`${d.value}${e.indicator}`), 1)) : Q("", !0)]), C((f(), S(M, { size: "lg", disabled: z.value, class: "layui-control-btn layui-addition-btn" }, { default: $(() => [h(m(F), { type: e.position === "right" ? "layui-icon-up" : "layui-icon-addition" }, null, 8, ["type"])]), _: 1 }, 8, ["disabled"])), [[m(_), H]])], 8, X));
+} });
+export {
+  re as default
+};

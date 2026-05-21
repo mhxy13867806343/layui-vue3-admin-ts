@@ -1,0 +1,20 @@
+import { getCurrentInstance as a } from "vue";
+import { createI18n as n, useI18n as r } from "vue-i18n";
+import s from "./locales/zh_CN.js";
+import c from "./locales/en_US.js";
+const m = n({ legacy: !1, locale: "zh_CN", messages: { zh_CN: s, en_US: c } });
+function C() {
+  var o;
+  let e;
+  const t = (o = a()) == null ? void 0 : o.appContext.app;
+  try {
+    e = r();
+  } catch {
+    t == null || t.use(m), e = r();
+  }
+  return e;
+}
+export {
+  m as default,
+  C as useI18n
+};

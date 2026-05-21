@@ -1,0 +1,62 @@
+/** __vue_virtual_code_placeholder */
+import "./index.less";
+import { SwitchSize } from "./interface";
+export interface SwitchProps {
+    name?: string;
+    modelValue?: string | number | boolean;
+    disabled?: boolean;
+    onswitchColor?: string;
+    unswitchColor?: string;
+    onswitchText?: string;
+    unswitchText?: string;
+    onswitchValue?: string | number | boolean;
+    unswitchValue?: string | number | boolean;
+    size?: SwitchSize;
+    loadingIcon?: string;
+    loading?: boolean;
+}
+declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<SwitchProps>, {
+    disabled: boolean;
+    onswitchValue: boolean;
+    unswitchValue: boolean;
+    loadingIcon: string;
+}>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("change" | "update:modelValue")[], "change" | "update:modelValue", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<SwitchProps>, {
+    disabled: boolean;
+    onswitchValue: boolean;
+    unswitchValue: boolean;
+    loadingIcon: string;
+}>>> & {
+    "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+    onChange?: ((...args: any[]) => any) | undefined;
+}, {
+    disabled: boolean;
+    loadingIcon: string;
+    onswitchValue: string | number | boolean;
+    unswitchValue: string | number | boolean;
+}, {}>, {
+    "onswitch-icon"?(_: {}): any;
+    "unswitch-icon"?(_: {}): any;
+}>;
+export default _default;
+type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
+type __VLS_TypePropsToRuntimeProps<T> = {
+    [K in keyof T]-?: {} extends Pick<T, K> ? {
+        type: import('vue').PropType<__VLS_NonUndefinedable<T[K]>>;
+    } : {
+        type: import('vue').PropType<T[K]>;
+        required: true;
+    };
+};
+type __VLS_WithDefaults<P, D> = {
+    [K in keyof Pick<P, keyof P>]: K extends keyof D ? __VLS_Prettify<P[K] & {
+        default: D[K];
+    }> : P[K];
+};
+type __VLS_WithTemplateSlots<T, S> = T & {
+    new (): {
+        $slots: S;
+    };
+};
+type __VLS_Prettify<T> = {
+    [K in keyof T]: T[K];
+} & {};

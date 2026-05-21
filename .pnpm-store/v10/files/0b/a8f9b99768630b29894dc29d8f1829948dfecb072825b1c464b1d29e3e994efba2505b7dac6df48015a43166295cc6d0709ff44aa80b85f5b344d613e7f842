@@ -1,0 +1,83 @@
+/** __vue_virtual_code_placeholder */
+export interface CountUpProps {
+    startVal?: number;
+    endVal?: number;
+    decimal?: string;
+    decimalPlaces?: number;
+    useGrouping?: boolean;
+    separator?: string;
+    autoplay?: boolean;
+    useEasing?: boolean;
+    easingFn?: any;
+    duration?: number;
+    prefix?: string;
+    suffix?: string;
+}
+declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<CountUpProps>, {
+    startVal: number;
+    endVal: number;
+    decimal: string;
+    decimalPlaces: number;
+    useGrouping: boolean;
+    separator: string;
+    autoplay: boolean;
+    useEasing: boolean;
+    easingFn: [number, number, number, number] | ((n: number) => number);
+    duration: number;
+    prefix: string;
+    suffix: string;
+}>, {
+    start: () => void;
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<CountUpProps>, {
+    startVal: number;
+    endVal: number;
+    decimal: string;
+    decimalPlaces: number;
+    useGrouping: boolean;
+    separator: string;
+    autoplay: boolean;
+    useEasing: boolean;
+    easingFn: [number, number, number, number] | ((n: number) => number);
+    duration: number;
+    prefix: string;
+    suffix: string;
+}>>>, {
+    separator: string;
+    prefix: string;
+    autoplay: boolean;
+    startVal: number;
+    endVal: number;
+    decimal: string;
+    decimalPlaces: number;
+    useGrouping: boolean;
+    useEasing: boolean;
+    easingFn: any;
+    duration: number;
+    suffix: string;
+}, {}>, {
+    prefix?(_: {}): any;
+    suffix?(_: {}): any;
+}>;
+export default _default;
+type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
+type __VLS_TypePropsToRuntimeProps<T> = {
+    [K in keyof T]-?: {} extends Pick<T, K> ? {
+        type: import('vue').PropType<__VLS_NonUndefinedable<T[K]>>;
+    } : {
+        type: import('vue').PropType<T[K]>;
+        required: true;
+    };
+};
+type __VLS_WithDefaults<P, D> = {
+    [K in keyof Pick<P, keyof P>]: K extends keyof D ? __VLS_Prettify<P[K] & {
+        default: D[K];
+    }> : P[K];
+};
+type __VLS_WithTemplateSlots<T, S> = T & {
+    new (): {
+        $slots: S;
+    };
+};
+type __VLS_Prettify<T> = {
+    [K in keyof T]: T[K];
+} & {};

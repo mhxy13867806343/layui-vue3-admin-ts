@@ -1,0 +1,4 @@
+const l = Symbol("LaySplitPanel");
+export {
+  l as SPLITPANEL_INJECTION_KEY
+};

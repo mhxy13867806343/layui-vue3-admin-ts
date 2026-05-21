@@ -1,0 +1,96 @@
+import { defineComponent as X, useSlots as Z, computed as v, ref as n, watch as _, provide as $, openBlock as x, createElementBlock as ee, normalizeClass as z, createVNode as h, withCtx as g, createElementVNode as le, mergeProps as P, createSlots as ae, renderList as te, unref as i, createBlock as j, withKeys as M, withModifiers as O } from "vue";
+import oe from "../_components/render.js";
+import ue from "../dropdown/index2.js";
+import ne from "../input/index2.js";
+import se from "../tagInput/index2.js";
+import { treeReplaceFields as re } from "../tree/constant.js";
+import ie from "../tree/index2.js";
+import { LayIcon as H } from "@layui/icons-vue";
+import { useDebounceFn as de } from "@vueuse/core";
+import ce from "./index.hooks.js";
+import { LAYUI_TREE_SELECT as pe } from "./useTreeSelect.js";
+/* empty css           */
+import { isArray as me, isValueArray as ve } from "../utils/arrayUtil.js";
+const fe = { class: "layui-tree-select-content" }, ze = X({ name: "LayTreeSelect", __name: "index", props: { modelValue: {}, data: {}, size: {}, multiple: { type: Boolean, default: !1 }, allowClear: { type: Boolean, default: !1 }, disabled: { type: Boolean, default: !1 }, placeholder: {}, checkStrictly: { type: Boolean, default: !0 }, collapseTagsTooltip: { type: Boolean, default: !0 }, minCollapsedNum: { default: 3 }, search: { type: Boolean, default: !1 }, searchNodeMethod: { type: Function, default: (b, k) => b.title.includes(k) }, lazy: { type: Boolean }, load: {}, contentClass: {}, contentStyle: { type: [Boolean, null, String, Object, Array] }, replaceFields: {}, defaultExpandAll: { type: Boolean, default: void 0 }, teleportProps: {}, tailNodeIcon: {}, cacheData: {} }, emits: ["update:modelValue", "change", "search"], setup(b, { emit: k }) {
+  const a = b, u = k, T = Z(), { size: A } = ce(a), d = v(() => Object.assign({}, re, a.replaceFields)), f = n(""), N = n(""), C = n([]), c = n(!1), w = n(), V = n(!1), y = n(), Y = v(() => {
+    const e = [], l = (t) => {
+      t.forEach((o) => {
+        e.push(o);
+        const m = o[d.value.children];
+        ve(m) && l(m);
+      });
+    };
+    return l(me(a.data) ? a.data : [a.data]), [...e, ...a.cacheData || []];
+  });
+  function B(e) {
+    var t;
+    const { id: l } = d.value;
+    return y.value ? (t = y.value.getFlatTree().value.find((o) => o.id === e)) == null ? void 0 : t.original : Y.value.find((o) => o[l] === e);
+  }
+  const p = n(!1), s = v({ get: () => a.multiple ? "" : a.modelValue, set(e) {
+    a.multiple || a.modelValue === e || (u("update:modelValue", e), p.value && u("change", e)), p.value || (p.value = !0);
+  } }), r = v({ get: () => a.multiple ? a.modelValue : [], set(e) {
+    a.multiple && (u("update:modelValue", e), p.value && u("change", e)), p.value || (p.value = !0);
+  } });
+  function F() {
+    a.multiple ? u("update:modelValue", []) : u("update:modelValue", "");
+  }
+  function q() {
+    a.multiple || w.value.hide();
+  }
+  function G(e) {
+    if (w.value.hide(), a.checkStrictly)
+      u("update:modelValue", r.value.filter((l) => l !== e));
+    else {
+      const l = function(t) {
+        const o = [], { id: m, children: R } = d.value;
+        function U(S, D) {
+          D.push(S[m]), S[R] && S[R].forEach((W) => {
+            U(W, D);
+          });
+        }
+        return U(t, o), o;
+      }(B(e));
+      u("update:modelValue", r.value.filter((t) => !l.includes(t)));
+    }
+  }
+  _(() => [s.value, r.value, a.data], () => {
+    if (a.multiple)
+      try {
+        C.value = r.value.map((e) => {
+          let l = B(e);
+          return l = l ? { label: l.title || l[d.value.title], value: l.id, closable: !l.disabled } : { label: e, value: e, closable: !0 }, l;
+        });
+      } catch {
+        throw new Error("v-model / model-value is not an array type");
+      }
+    else {
+      const e = B(s.value);
+      N.value = e ? String(e.title || e[d.value.title]) : "";
+    }
+  }, { immediate: !0, deep: !0 });
+  const I = v(() => a.multiple ? r.value.length > 0 : Array.isArray(s.value) ? s.value.length : s.value), K = v(() => I.value ? "" : a.placeholder);
+  function E(e) {
+    V.value || (u("search", e), f.value = e);
+  }
+  function J() {
+    V.value = !0;
+  }
+  function Q(e) {
+    V.value = !1, E(e.target.value);
+  }
+  _(f, de(() => {
+    y.value && y.value.filter(f.value);
+  }, 500)), _(c, () => {
+    c.value || (f.value = "");
+  });
+  const L = n(null);
+  return $(pe, { inputEl: L, setInputEl: function(e) {
+    a.search && (L.value = e);
+  } }), (e, l) => (x(), ee("div", { class: z(["layui-tree-select", { "layui-disabled": e.disabled, "has-content": I.value, "has-clear": e.allowClear }]) }, [h(ue, { ref_key: "dropdownRef", ref: w, disabled: e.disabled, "content-class": e.contentClass, "content-style": e.contentStyle, "teleport-props": e.teleportProps, "click-to-close": !1, onShow: l[5] || (l[5] = (t) => c.value = !0), onHide: l[6] || (l[6] = (t) => c.value = !1) }, { content: g(() => [le("div", fe, [h(ie, P({ ref_key: "treeRef", ref: y }, a, { "selected-key": s.value, "onUpdate:selectedKey": l[3] || (l[3] = (t) => s.value = t), "checked-keys": r.value, "onUpdate:checkedKeys": l[4] || (l[4] = (t) => r.value = t), "only-icon-control": !0, "show-checkbox": e.multiple, "replace-fields": d.value, onNodeClick: q }), ae({ _: 2 }, [te(i(T), (t, o) => ({ name: o, fn: g((m) => [h(i(oe), P({ slots: i(T), render: o }, m), null, 16, ["slots", "render"])]) }))]), 1040, ["selected-key", "checked-keys", "show-checkbox", "replace-fields"])])]), default: g(() => [e.multiple ? (x(), j(se, { key: 0, modelValue: C.value, "onUpdate:modelValue": l[0] || (l[0] = (t) => C.value = t), size: i(A), "allow-clear": e.allowClear, placeholder: K.value, "collapse-tags-tooltip": e.collapseTagsTooltip, "min-collapsed-num": e.minCollapsedNum, "disabled-input": !e.search, "input-value": f.value, onInputValueChange: E, onRemove: G, onClear: F, onKeyupCapture: l[1] || (l[1] = M(O(() => {
+  }, ["prevent", "stop"]), ["delete"])), onKeydownCapture: l[2] || (l[2] = M(O(() => {
+  }, ["prevent", "stop"]), ["enter"])) }, { suffix: g(() => [h(i(H), { type: "layui-icon-triangle-d", class: z({ triangle: c.value }) }, null, 8, ["class"])]), _: 1 }, 8, ["modelValue", "size", "allow-clear", "placeholder", "collapse-tags-tooltip", "min-collapsed-num", "disabled-input", "input-value"])) : (x(), j(ne, { key: 1, "model-value": N.value, "allow-clear": e.allowClear, placeholder: K.value, disabled: e.disabled, readonly: !e.search, size: i(A), onClear: F, onInput: E, onCompositionstart: J, onCompositionend: Q }, { suffix: g(() => [h(i(H), { type: "layui-icon-triangle-d", class: z({ triangle: c.value }) }, null, 8, ["class"])]), _: 1 }, 8, ["model-value", "allow-clear", "placeholder", "disabled", "readonly", "size"]))]), _: 1 }, 8, ["disabled", "content-class", "content-style", "teleport-props"])], 2));
+} });
+export {
+  ze as default
+};

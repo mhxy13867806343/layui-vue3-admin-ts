@@ -1,0 +1,3 @@
+import { InjectionKey } from "vue";
+export declare const LAYUI_PAGE_KEY: InjectionKey<any>;
+export declare const usePage: () => any;

@@ -1,0 +1,6 @@
+import { inject as a } from "vue";
+const o = Symbol("layui-avatar"), t = () => a(o, {});
+export {
+  o as LAYUI_AVATAR_KEY,
+  t as useAvatarProvide
+};

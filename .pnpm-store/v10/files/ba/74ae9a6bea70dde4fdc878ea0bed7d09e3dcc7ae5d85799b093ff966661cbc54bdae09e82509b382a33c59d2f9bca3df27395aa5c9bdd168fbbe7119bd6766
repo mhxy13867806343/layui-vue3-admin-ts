@@ -1,0 +1,14 @@
+import { inject as e } from "vue";
+import { DATE_PICKER_CONTEXT as m } from "../interface.js";
+import { normalizeDayjsValue as a } from "../util.js";
+import { isFunction as n } from "../../utils/type.js";
+function l() {
+  const t = e(m);
+  return (o) => {
+    const r = n(o.value) ? o.value() : o.value;
+    return [a(r[0], t.format), a(r[1], t.format)].filter(Boolean);
+  };
+}
+export {
+  l as useShortcutsRange
+};

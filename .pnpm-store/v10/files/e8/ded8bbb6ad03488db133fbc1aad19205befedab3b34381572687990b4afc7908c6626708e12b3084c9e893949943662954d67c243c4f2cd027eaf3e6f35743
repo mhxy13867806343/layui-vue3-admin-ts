@@ -1,0 +1,4 @@
+import o from "./Date.js";
+export {
+  o as default
+};

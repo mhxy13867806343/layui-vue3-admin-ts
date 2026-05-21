@@ -1,0 +1,182 @@
+import { defineComponent as ve, computed as i, useSlots as ge, watch as ye, ref as y, onMounted as be, nextTick as D, onUnmounted as he, openBlock as g, createElementBlock as b, normalizeClass as V, createElementVNode as v, withModifiers as U, unref as r, renderSlot as I, createBlock as we, withCtx as P, createTextVNode as Oe, toDisplayString as F, createVNode as xe, Fragment as Te, renderList as ke, createCommentVNode as Ce } from "vue";
+/* empty css           */
+import { LayLayer as De, layer as Ve } from "@layui/layer-vue";
+import { templateRef as _e } from "@vueuse/core";
+import Ee from "../button/index2.js";
+import Me from "cropperjs";
+import { useI18n as Be } from "../language/index.js";
+import { isValueNull as Se } from "../utils/arrayUtil.js";
+const ze = ["name", "field", "multiple", "accept", "disabled", "webkitdirectory"], Le = { key: 0 }, Ae = v("i", { class: "layui-icon" }, "", -1), je = v("div", { class: "layui-hide", id: "uploadDemoView" }, [v("hr"), v("img", { src: "", alt: "上传成功后渲染", style: { "max-width": "196px" } })], -1), Re = ["src", "id"], Xe = ve({ name: "LayUpload", __name: "index", props: { url: {}, data: {}, headers: {}, acceptMime: { default: "MIME_type" }, field: { default: "file" }, size: { default: 0 }, multiple: { type: Boolean, default: !1 }, number: { default: 0 }, drag: { type: Boolean, default: !1 }, disabled: { type: Boolean, default: !1 }, disabledPreview: { type: Boolean, default: !1 }, cut: { type: Boolean, default: !1 }, cutOptions: { default: void 0 }, text: {}, dragText: {}, modelValue: { default: null }, auto: { type: Boolean, default: !0 }, directory: { type: Boolean }, beforeUpload: {}, onProgress: { type: Function, default: (_) => {
+} } }, emits: ["choose", "before", "done", "error", "cutdone", "cutcancel", "update:modelValue", "on-change"], setup(_, { expose: N, emit: $ }) {
+  const q = () => {
+    if (h) {
+      let e = h.getCroppedCanvas().toDataURL(L.value), l = (/* @__PURE__ */ new Date()).valueOf(), a = O.value[0];
+      c("cutdone", Object.assign({ currentTimeStamp: l, cutResult: e, orginal: a }));
+      let o = ne(e);
+      if (!t.auto)
+        return c("update:modelValue", [o]), void X();
+      j([o]), D(() => m());
+    } else
+      T(Z.value);
+  }, H = () => {
+    let e = (/* @__PURE__ */ new Date()).valueOf();
+    c("cutcancel", Object.assign({ currentTimeStamp: e })), D(() => m());
+  }, m = () => {
+    O.value = [], x.value = [], w.value = !1, k.value.value = "", h = null;
+  }, X = () => {
+    O.value = [], x.value = [], w.value = !1, h = null;
+  }, { t: d } = Be(), G = i(() => t.text ? t.text : d("upload.text")), J = i(() => t.dragText ? t.dragText : d("upload.dragText")), K = i(() => d("upload.defaultErrorMsg")), Q = i(() => d("upload.urlErrorMsg")), W = i(() => d("upload.numberErrorMsg")), Y = i(() => d("upload.occurFileSizeErrorMsg")), Z = i(() => d("upload.cutInitErrorMsg")), E = i(() => d("upload.uploadSuccess")), ee = i(() => d("upload.startUploadMsg")), ae = i(() => d("upload.cannotSupportCutMsg")), te = i(() => d("upload.title")), le = i(() => d("upload.confirmBtn")), oe = i(() => d("upload.cancelBtn"));
+  let M = i(() => ({ aspectRatio: 16 / 9 })), B = i(() => ({ type: "component", title: te.value, shade: !0, shadeClose: !0, btn: [{ text: le.value, callback: q }, { text: oe.value, callback: H }] }));
+  const t = _, se = ge(), c = $;
+  ye(() => t.modelValue, () => {
+    t.modelValue || m();
+  });
+  const ie = y(!1), O = y([]), x = y([]), k = _e("orgFileInput");
+  let h = null, p = i(() => {
+    var e;
+    return t.cutOptions && t.cutOptions.layerOption ? Object.assign(B.value, (e = t.cutOptions) == null ? void 0 : e.layerOption) : B.value;
+  }), ue = i(() => {
+    var e;
+    return t.cutOptions && t.cutOptions.copperOption ? Object.assign(M.value, (e = t.cutOptions) == null ? void 0 : e.copperOption) : M.value;
+  });
+  const w = y(!1), S = (e) => {
+    const { url: l, files: a } = e;
+    let o = new FormData();
+    if (l.length <= 5)
+      T(Q.value);
+    else {
+      if (t.multiple)
+        for (let s = 0; s < a.length; s++) {
+          let n = a[s];
+          o.append(t.field + "[" + s + "]", n);
+        }
+      else {
+        let s = a[0];
+        o.append(t.field, s);
+      }
+      var u;
+      if (t.beforeUpload != null && (u = t.multiple ? t.beforeUpload(a) : t.beforeUpload(a[0])), t.data && t.data instanceof Object) {
+        let s = t.data;
+        for (const n in s)
+          o.append(n, s[n]);
+      }
+      if (u === void 0 || u === !0) {
+        let s = window.setTimeout(() => {
+          z({ url: l, formData: o }, function() {
+            clearTimeout(s);
+          });
+        }, 200);
+      } else
+        u instanceof Promise ? u.then((s) => {
+          if (s) {
+            let n = window.setTimeout(() => {
+              z({ url: l, formData: o }, function() {
+                clearTimeout(n);
+              });
+            }, 200);
+          } else
+            m();
+        }) : m();
+    }
+  }, ne = (e) => {
+    let l = e.split(","), a = "";
+    l.length > 0 && (a = l[0].match(/:(.*?);/)[1]);
+    let o = atob(l[1]), u = o.length, s = new Uint8Array(u);
+    for (; u--; )
+      s[u] = o.charCodeAt(u);
+    return new Blob([s], { type: a });
+  }, T = (e) => {
+    let l = (/* @__PURE__ */ new Date()).valueOf(), a = e || K;
+    a = `layui-vue:${a}`, console.warn(a), Ve.msg(a, { icon: 2, time: 1e3 }, function(o) {
+    }), c("error", Object.assign({ currentTimeStamp: l, msg: a }));
+  }, z = (e, l) => {
+    let a = new XMLHttpRequest(), o = e.url, u = e.formData;
+    const s = l;
+    if (a.onreadystatechange = function() {
+      let n = (/* @__PURE__ */ new Date()).valueOf();
+      if (a.readyState === 1) {
+        if (a.status >= 200 && a.status <= 300 || a.status === 304 || a.status == 0) {
+          let C = ee.value;
+          c("before", Object.assign({ currentTimeStamp: n, msg: C, ...e }));
+        }
+      } else if (a.readyState === 4) {
+        let C = a.responseText ? a.responseText : E;
+        if (a.status >= 200 && a.status <= 300 || a.status === 304 || a.status == 0) {
+          let fe = a.responseText;
+          c("done", { currentTimeStamp: n, msg: C, data: fe });
+        }
+      }
+    }, a.upload.onprogress = function(n) {
+      t.onProgress(n);
+    }, a.open("post", o, !0), t.headers)
+      for (let n in t.headers)
+        a.setRequestHeader(n, t.headers[n]);
+    else
+      a.setRequestHeader("Accept", "application/json, text/javascript");
+    a.send(u), s && typeof s == "function" && s(), m();
+  }, L = y("image/png"), re = (e, l) => {
+    const a = new FileReader();
+    a.onloadend = function(o) {
+      l(o.target.result);
+    }, a.readAsDataURL(e);
+  }, de = i(() => t.cut && /image/i.test(t.acceptMime)), A = (e) => {
+    var a;
+    e.preventDefault();
+    const l = e.target.files || ((a = e.dataTransfer) == null ? void 0 : a.files);
+    if (l && l.length !== 0)
+      if (L.value = l[0].type, t.multiple && t.number != 0 && t.number < l.length)
+        T(W.value);
+      else {
+        if (t.size && t.size != 0) {
+          for (let o = 0; o < l.length; o++)
+            if (l[o].size > 1024 * t.size)
+              return void T(Y.value);
+        }
+        if (c("on-change", l), de.value) {
+          if (!t.multiple) {
+            for (let o of Array.from(l))
+              O.value.push(o), re(o, function(u) {
+                x.value.push(u);
+              });
+            return w.value = !0, void setTimeout(() => {
+              const o = document.getElementsByClassName("_lay_upload_img");
+              if (o && o.length > 0) {
+                const u = o[0];
+                h = new Me(u, ue.value);
+              } else
+                m();
+            }, 200);
+          }
+          console.warn(ae.value);
+        }
+        t.auto ? j(l) : c("update:modelValue", l);
+      }
+  }, j = (e) => {
+    let l = (/* @__PURE__ */ new Date()).valueOf(), a = E;
+    t.url ? S({ url: t.url, files: e }) : (c("done", { currentTimeStamp: l, msg: a, data: e }), m());
+  }, R = () => {
+    let e = k.value;
+    e && e.click();
+  }, pe = () => {
+    let e = (/* @__PURE__ */ new Date()).valueOf();
+    c("choose", e);
+  }, f = y();
+  function ce(e) {
+    e.stopPropagation(), e.preventDefault();
+  }
+  function me(e) {
+    e.stopPropagation(), e.preventDefault();
+  }
+  return be(() => {
+    D(() => {
+      f.value && (f.value.addEventListener("dragenter", ce, !1), f.value.addEventListener("dragover", me, !1), f.value.addEventListener("drop", A, !1));
+    });
+  }), he(() => {
+    f.value && (f.value.removeEventListener("dragenter"), f.value.removeEventListener("dragover"), f.value.removeEventListener("drop"));
+  }), N({ submit: () => {
+    t.url && !Se(t.modelValue) && S({ url: t.url, files: t.modelValue });
+  } }), (e, l) => (g(), b("div", { class: V(["layui-upload layui-upload-wrap", e.disabledPreview ? "layui-upload-file-disabled" : ""]) }, [v("input", { type: "file", class: "layui-upload-file", ref_key: "orgFileInput", ref: k, name: e.field, field: e.field, multiple: e.multiple, accept: e.acceptMime, disabled: e.disabled, webkitdirectory: e.directory, onClick: pe, onChange: A }, null, 40, ze), e.drag ? (g(), b("div", { key: 1, ref_key: "dragRef", ref: f, class: V(["layui-upload-drag", e.disabled ? "layui-upload-drag-disable" : ie.value ? "layui-upload-drag-draging" : ""]), onClick: U(R, ["stop"]) }, [Ae, v("p", null, F(J.value), 1), je], 2)) : (g(), b("div", Le, [v("div", { class: "layui-upload-btn-box", onClick: U(R, ["stop"]) }, [r(se).default ? I(e.$slots, "default", { key: 0, disabled: e.disabled }) : (g(), we(Ee, { key: 1, type: "primary", disabled: e.disabled }, { default: P(() => [Oe(F(G.value), 1)]), _: 1 }, 8, ["disabled"]))])])), xe(r(De), { modelValue: w.value, "onUpdate:modelValue": l[0] || (l[0] = (a) => w.value = a), title: r(p).title, move: r(p).move, resize: r(p).resize, shade: r(p).shade, shadeClose: r(p).shadeClose, shadeOpacity: r(p).shadeOpacity, zIndex: r(p).zIndex, btnAlign: r(p).btnAlign, area: r(p).area, anim: r(p).anim, isOutAnim: r(p).isOutAnim, btn: r(p).btn, onClose: m }, { default: P(() => [(g(!0), b(Te, null, ke(x.value, (a, o) => (g(), b("div", { class: "copper-container", key: `file${o}` }, [v("img", { src: a, id: `_lay_upload_img${o}`, class: "_lay_upload_img" }, null, 8, Re)]))), 128))]), _: 1 }, 8, ["modelValue", "title", "move", "resize", "shade", "shadeClose", "shadeOpacity", "zIndex", "btnAlign", "area", "anim", "isOutAnim", "btn"]), e.$slots.preview ? (g(), b("div", { key: 2, class: V(["layui-upload-list", e.disabledPreview ? "layui-upload-list-disabled" : ""]) }, [I(e.$slots, "preview")], 2)) : Ce("", !0)], 2));
+} });
+export {
+  Xe as default
+};

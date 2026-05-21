@@ -1,0 +1,3 @@
+import type { VNodeTypes } from "vue";
+import type { PropsContentType } from "../types";
+export declare const renderContent: (content: PropsContentType) => VNodeTypes;

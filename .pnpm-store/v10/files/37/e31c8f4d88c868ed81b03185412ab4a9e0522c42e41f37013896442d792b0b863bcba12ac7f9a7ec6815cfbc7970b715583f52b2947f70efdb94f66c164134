@@ -1,0 +1,16 @@
+import { defineComponent as y, inject as v, computed as f, openBlock as c, createElementBlock as u, createElementVNode as t, normalizeClass as C, renderSlot as r, createTextVNode as b, toDisplayString as x, normalizeStyle as V, unref as s, createVNode as h, withCtx as g, createCommentVNode as k } from "vue";
+import N from "../transition/index2.js";
+const _ = { class: "layui-colla-item" }, B = { key: 0 }, S = { class: "layui-colla-content" }, T = y({ name: "LayCollapseItem", __name: "index", props: { id: {}, title: {}, disabled: { type: Boolean, default: !1 } }, setup(p) {
+  const e = p, { accordion: o, activeValues: a, emit: n, collapseTransition: d } = v("layCollapse");
+  let i = f(() => a.value.includes(e.id));
+  const m = function() {
+    if (e.disabled)
+      return;
+    const l = i.value;
+    o ? a.value = l ? [] : [e.id] : l ? a.value.splice(a.value.indexOf(e.id), 1) : a.value.push(e.id), n("update:modelValue", o ? a.value[0] || null : a.value), n("change", e.id, !l, a.value);
+  };
+  return (l, $) => (c(), u("div", _, [t("h2", { class: C(["layui-colla-title", { "layui-disabled": l.disabled }]), onClick: m }, [r(l.$slots, "title", { props: e }, () => [b(x(l.title), 1)]), t("i", { class: "layui-icon layui-colla-icon layui-icon-right", style: V({ transform: s(i) ? "rotate(90deg)" : "none", transition: s(d) ? "all 0.2s ease 0s" : "" }) }, null, 4)], 2), h(N, { enable: s(d) }, { default: g(() => [s(i) ? (c(), u("div", B, [t("div", S, [t("p", null, [r(l.$slots, "default", { props: e })])])])) : k("", !0)]), _: 3 }, 8, ["enable"])]));
+} });
+export {
+  T as default
+};

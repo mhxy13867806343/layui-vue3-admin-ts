@@ -1,0 +1,72 @@
+/** __vue_virtual_code_placeholder */
+import "./index.less";
+import { BooleanOrString, Recordable } from "../../types";
+export interface TransferProps {
+    id?: string;
+    title?: string[];
+    width?: string;
+    height?: string;
+    showSearch?: BooleanOrString;
+    dataSource: Recordable[];
+    modelValue?: Recordable[];
+    searchMethod?: Function;
+}
+declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<TransferProps>, {
+    id: string;
+    title: () => string[];
+    dataSource: () => never[];
+    showSearch: boolean;
+    modelValue: () => never[];
+    width: string;
+    height: string;
+}>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("change" | "update:modelValue")[], "change" | "update:modelValue", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<TransferProps>, {
+    id: string;
+    title: () => string[];
+    dataSource: () => never[];
+    showSearch: boolean;
+    modelValue: () => never[];
+    width: string;
+    height: string;
+}>>> & {
+    "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+    onChange?: ((...args: any[]) => any) | undefined;
+}, {
+    title: string[];
+    modelValue: Recordable[];
+    width: string;
+    height: string;
+    id: string;
+    dataSource: Recordable[];
+    showSearch: BooleanOrString;
+}, {}>, {
+    leftTitle?(_: {}): any;
+    item?(_: {
+        data: any;
+    }): any;
+    leftFooter?(_: {}): any;
+    rightTitle?(_: {}): any;
+    rightFooter?(_: {}): any;
+}>;
+export default _default;
+type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
+type __VLS_TypePropsToRuntimeProps<T> = {
+    [K in keyof T]-?: {} extends Pick<T, K> ? {
+        type: import('vue').PropType<__VLS_NonUndefinedable<T[K]>>;
+    } : {
+        type: import('vue').PropType<T[K]>;
+        required: true;
+    };
+};
+type __VLS_WithDefaults<P, D> = {
+    [K in keyof Pick<P, keyof P>]: K extends keyof D ? __VLS_Prettify<P[K] & {
+        default: D[K];
+    }> : P[K];
+};
+type __VLS_WithTemplateSlots<T, S> = T & {
+    new (): {
+        $slots: S;
+    };
+};
+type __VLS_Prettify<T> = {
+    [K in keyof T]: T[K];
+} & {};

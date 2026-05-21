@@ -1,0 +1,5 @@
+import r from "./fadeTransition.js";
+/* empty css                */
+export {
+  r as default
+};

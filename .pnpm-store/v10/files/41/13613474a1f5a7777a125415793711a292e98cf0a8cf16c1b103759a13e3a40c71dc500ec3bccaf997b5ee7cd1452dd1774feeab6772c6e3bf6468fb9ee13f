@@ -1,0 +1,14 @@
+import { defineComponent as f, inject as b, computed as o, openBlock as u, createElementBlock as s, unref as g, createElementVNode as n, normalizeClass as V, withModifiers as N, renderSlot as h, createTextVNode as z, toDisplayString as B } from "vue";
+import S from "./index.hooks.js";
+/* empty css           */
+const k = ["size"], x = ["value", "name"], G = { key: 0, class: "layui-anim layui-icon layui-anim-scaleSpring" }, C = { key: 1, class: "layui-icon layui-form-radioed" }, _ = f({ name: "LayRadio", __name: "index", props: { name: {}, size: {}, disabled: { type: Boolean }, modelValue: { type: [String, Boolean, Number] }, value: { type: [String, Boolean, Number] }, label: {} }, emits: ["update:modelValue", "change"], setup(m, { emit: p }) {
+  const e = m, { size: v } = S(e), d = p, a = b("radioGroup", {}), t = o(() => a != null && (a == null ? void 0 : a.name) === "LayRadioGroup"), c = o(() => a.naiveName ? a.naiveName : e.name), i = o({ get: () => t.value ? a.modelValue.value === e.value : e.modelValue === e.value, set(l) {
+    t.value ? a.changeRadioGroup(e.value) : l && (d("change", e.value), d("update:modelValue", e.value));
+  } }), y = function() {
+    r.value || (i.value = !i.value);
+  }, r = o(() => !!e.disabled || !(!a.hasOwnProperty("disabled") || !a.disabled.value));
+  return (l, R) => (u(), s("span", { class: "layui-radio", size: g(v) }, [n("input", { type: "radio", value: l.value, name: c.value }, null, 8, x), n("div", { class: V(["layui-unselect layui-form-radio", { "layui-form-radioed": i.value, "layui-radio-disabled layui-disabled": r.value }]), onClick: N(y, ["stop"]) }, [i.value ? (u(), s("i", G, "")) : (u(), s("i", C, "")), n("span", null, [h(l.$slots, "default", {}, () => [z(B(l.label), 1)])])], 2)], 8, k));
+} });
+export {
+  _ as default
+};

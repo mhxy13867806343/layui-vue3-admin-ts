@@ -1,0 +1,33 @@
+import { defineComponent as y, ref as a, computed as d, watch as C, provide as A, openBlock as b, createElementBlock as P, Fragment as V, createVNode as p, normalizeProps as B, guardReactiveProps as S, withCtx as n, renderSlot as u, mergeProps as _ } from "vue";
+import k from "./component/content.js";
+import E from "./component/trigger.js";
+import T from "./hook/useDelayTrigger.js";
+import { POPPER_INJECTION_KEY as O } from "./utils.js";
+/* empty css           */
+import { normalizeArray as i } from "../utils/arrayUtil.js";
+const F = y({ name: "LayPopper", __name: "popper", props: { modelValue: { type: Boolean, default: !1 }, trigger: { default: "hover" }, disabled: { type: Boolean, default: !1 }, placement: { default: "bottom" }, showArrow: { type: Boolean, default: !1 }, offset: { default: 10 }, enterable: { type: Boolean, default: !0 }, showAfter: { default: 0 }, hideAfter: { default: 200 }, popperClass: {}, popperStyle: { type: [Boolean, null, String, Object, Array] }, clickOutsideToClose: { type: Boolean, default: !0 }, middlewares: {}, teleportProps: { default: () => ({ to: "body" }) }, triggerCustomEvents: {} }, emits: ["update:modelValue"], setup(f, { expose: m, emit: c }) {
+  const e = f, l = c, r = a(e.modelValue), s = a(null), g = d(() => ({ trigger: i(e.trigger), triggerCustomEvents: e.triggerCustomEvents })), h = d(() => ({ modelValue: r.value, trigger: i(e.trigger), placement: e.placement, disabled: e.disabled, showArrow: e.showArrow, offset: e.offset, enterable: e.enterable, popperClass: e.popperClass, popperStyle: e.popperStyle, clickOutsideToClose: e.clickOutsideToClose, middlewares: e.middlewares, teleportProps: e.teleportProps }));
+  C(() => e.modelValue, () => {
+    r.value = e.modelValue;
+  });
+  const { onShow: w, onHidden: v } = T({ showAfter: e.showAfter, hideAfter: e.hideAfter, show: function() {
+    e.disabled || (r.value = !0, l("update:modelValue", !0));
+  }, hidden: function() {
+    r.value = !1, l("update:modelValue", !1);
+  } });
+  A(O, { TriggerRef: s, onShow: w, onHidden: v });
+  const t = a();
+  return m({ show: () => {
+    var o;
+    return (o = t.value) == null ? void 0 : o.show();
+  }, hidden: () => {
+    var o;
+    return (o = t.value) == null ? void 0 : o.hidden();
+  }, update: () => {
+    var o;
+    return (o = t.value) == null ? void 0 : o.update();
+  }, TriggerRef: s, ContentRef: t }), (o, R) => (b(), P(V, null, [p(E, B(S(g.value)), { default: n(() => [u(o.$slots, "default")]), _: 3 }, 16), p(k, _(h.value, { ref_key: "ContentRef", ref: t }), { default: n(() => [u(o.$slots, "content")]), _: 3 }, 16)], 64));
+} });
+export {
+  F as default
+};

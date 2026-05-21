@@ -1,0 +1,118 @@
+/** __vue_virtual_code_placeholder */
+import type { TableProps as _TableProps } from "./typing";
+import "./index.less";
+export type TableProps = _TableProps;
+declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<_TableProps>, {
+    id: string;
+    size: string;
+    indentSize: number;
+    childrenColumnName: string;
+    dataSource: () => never[];
+    selectedKeys: () => never[];
+    defaultToolbar: boolean;
+    selectedKey: string;
+    maxHeight: string;
+    even: boolean;
+    rowClassName: string;
+    cellClassName: string;
+    expandIndex: number;
+    rowStyle: string;
+    cellStyle: string;
+    defaultExpandAll: boolean;
+    spanMethod: () => void;
+    expandKeys: () => never[];
+    loading: boolean;
+    getCheckboxProps: () => void;
+    getRadioProps: () => void;
+    resize: boolean;
+    autoColsWidth: boolean;
+    initSort: () => {
+        field: string;
+        type: string;
+    };
+}>, {
+    getCheckData: () => import("../../types").Recordable[];
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, string[], string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<_TableProps>, {
+    id: string;
+    size: string;
+    indentSize: number;
+    childrenColumnName: string;
+    dataSource: () => never[];
+    selectedKeys: () => never[];
+    defaultToolbar: boolean;
+    selectedKey: string;
+    maxHeight: string;
+    even: boolean;
+    rowClassName: string;
+    cellClassName: string;
+    expandIndex: number;
+    rowStyle: string;
+    cellStyle: string;
+    defaultExpandAll: boolean;
+    spanMethod: () => void;
+    expandKeys: () => never[];
+    loading: boolean;
+    getCheckboxProps: () => void;
+    getRadioProps: () => void;
+    resize: boolean;
+    autoColsWidth: boolean;
+    initSort: () => {
+        field: string;
+        type: string;
+    };
+}>>> & {
+    [x: `on${Capitalize<string>}`]: ((...args: any[]) => any) | undefined;
+}, {
+    size: string;
+    resize: boolean;
+    loading: boolean;
+    id: string;
+    dataSource: import("../../types").Recordable[];
+    maxHeight: string;
+    selectedKey: string | number;
+    defaultToolbar: boolean | import("./typing").TableDefaultToolbar[];
+    selectedKeys: (string | number)[];
+    indentSize: number;
+    childrenColumnName: string;
+    even: boolean;
+    expandIndex: number;
+    rowClassName: string | Function;
+    cellClassName: string | Function;
+    rowStyle: string | Function;
+    cellStyle: string | Function;
+    spanMethod: Function;
+    defaultExpandAll: boolean;
+    expandKeys: (string | number)[];
+    getCheckboxProps: Function;
+    getRadioProps: Function;
+    autoColsWidth: boolean;
+    initSort: import("./typing").initSort;
+}, {}>, {
+    header?(_: {}): any;
+    empty?(_: {}): any;
+    footer?(_: {}): any;
+    page?(_: {}): any;
+}>;
+export default _default;
+type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
+type __VLS_TypePropsToRuntimeProps<T> = {
+    [K in keyof T]-?: {} extends Pick<T, K> ? {
+        type: import('vue').PropType<__VLS_NonUndefinedable<T[K]>>;
+    } : {
+        type: import('vue').PropType<T[K]>;
+        required: true;
+    };
+};
+type __VLS_WithDefaults<P, D> = {
+    [K in keyof Pick<P, keyof P>]: K extends keyof D ? __VLS_Prettify<P[K] & {
+        default: D[K];
+    }> : P[K];
+};
+type __VLS_WithTemplateSlots<T, S> = T & {
+    new (): {
+        $slots: S;
+    };
+};
+type __VLS_Prettify<T> = {
+    [K in keyof T]: T[K];
+} & {};

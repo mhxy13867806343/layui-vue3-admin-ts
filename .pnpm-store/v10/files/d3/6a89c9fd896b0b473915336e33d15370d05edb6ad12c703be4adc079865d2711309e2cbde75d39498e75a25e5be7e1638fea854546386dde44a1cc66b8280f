@@ -1,0 +1,32 @@
+import { watch as s, computed as m } from "vue";
+import { loopForEach as p, isValueArray as h } from "../../utils/arrayUtil.js";
+import { isEqual as a } from "../../utils/type.js";
+function y(t, u) {
+  function f(i, e, n) {
+    var d;
+    (d = i.children) != null && d.every((r) => r.hide) && (i.hide = !0), n != null && n.hide && !a(n.hide, i == null ? void 0 : i.hide) && (i.hide = n.hide), n != null && n.fixed && !a(n.fixed, i == null ? void 0 : i.fixed) && (i.fixed = n.fixed), i.fixed && !i.width && (i.type ? i.width = "50px" : i.width = "100px"), i.minWidth || (i.minWidth = "50px");
+  }
+  s(() => t, (i) => {
+    p(i, [f]);
+  }, { immediate: !0, deep: !0 });
+  const c = m(() => function i(e) {
+    let n = 0;
+    for (const d of e) {
+      const r = h(d.children) ? i(d.children) : 0;
+      n = Math.max(n, r);
+    }
+    return e.every((d) => d.hide) ? n : n + 1;
+  }(t));
+  return { setRowSpanValue: function(i) {
+    const e = u.get(i);
+    return h(i.children) ? 1 : e.length > 1 ? c.value - e.length - 1 : c.value;
+  }, setColSpanValue: function(i) {
+    let e = 0;
+    return e = h(i.children) ? function n(d, r = 0) {
+      return d.reduce((o, l) => h(l.children) ? o + n(l.children) : (!l.hide && (o += 1), o), r);
+    }(i.children) : 1, e;
+  } };
+}
+export {
+  y as useTableColumns
+};

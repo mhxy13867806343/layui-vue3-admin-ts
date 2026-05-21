@@ -1,0 +1,260 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        separator: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        prefix: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        autoplay: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        startVal: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        endVal: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        decimal: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        decimalPlaces: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        useGrouping: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        useEasing: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        easingFn: {
+            type: import("vue").PropType<any>;
+            default: [number, number, number, number] | ((n: number) => number);
+        };
+        duration: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        suffix: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+    }>>, {
+        start: () => void;
+    }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        separator: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        prefix: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        autoplay: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        startVal: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        endVal: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        decimal: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        decimalPlaces: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        useGrouping: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        useEasing: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        easingFn: {
+            type: import("vue").PropType<any>;
+            default: [number, number, number, number] | ((n: number) => number);
+        };
+        duration: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        suffix: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+    }>>, {
+        separator: string;
+        prefix: string;
+        autoplay: boolean;
+        startVal: number;
+        endVal: number;
+        decimal: string;
+        decimalPlaces: number;
+        useGrouping: boolean;
+        useEasing: boolean;
+        easingFn: any;
+        duration: number;
+        suffix: string;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        separator: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        prefix: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        autoplay: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        startVal: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        endVal: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        decimal: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        decimalPlaces: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        useGrouping: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        useEasing: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        easingFn: {
+            type: import("vue").PropType<any>;
+            default: [number, number, number, number] | ((n: number) => number);
+        };
+        duration: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        suffix: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+    }>>, {
+        start: () => void;
+    }, {}, {}, {}, {
+        separator: string;
+        prefix: string;
+        autoplay: boolean;
+        startVal: number;
+        endVal: number;
+        decimal: string;
+        decimalPlaces: number;
+        useGrouping: boolean;
+        useEasing: boolean;
+        easingFn: any;
+        duration: number;
+        suffix: string;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    separator: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    prefix: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    autoplay: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    startVal: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    endVal: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    decimal: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    decimalPlaces: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    useGrouping: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    useEasing: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    easingFn: {
+        type: import("vue").PropType<any>;
+        default: [number, number, number, number] | ((n: number) => number);
+    };
+    duration: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    suffix: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+}>>, {
+    start: () => void;
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {
+    separator: string;
+    prefix: string;
+    autoplay: boolean;
+    startVal: number;
+    endVal: number;
+    decimal: string;
+    decimalPlaces: number;
+    useGrouping: boolean;
+    useEasing: boolean;
+    easingFn: any;
+    duration: number;
+    suffix: string;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        prefix?(_: {}): any;
+        suffix?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

@@ -1,0 +1,4 @@
+import o from "./Shortcuts.js";
+export {
+  o as default
+};

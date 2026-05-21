@@ -1,0 +1,319 @@
+export * from "./types";
+export * from "./usePopper/types";
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        offset: {
+            type: import("vue").PropType<import("@floating-ui/dom").OffsetOptions>;
+            default: number;
+        };
+        placement: {
+            type: import("vue").PropType<import("@floating-ui/utils").Placement>;
+            default: string;
+        };
+        trigger: {
+            type: import("vue").PropType<import("./types").PopperTrigger | import("./types").PopperTrigger[]>;
+            default: string;
+        };
+        triggerCustomEvents: {
+            type: import("vue").PropType<import("./types").TriggerCustomEvents>;
+        };
+        modelValue: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        showArrow: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        enterable: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        showAfter: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        hideAfter: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        popperClass: {
+            type: import("vue").PropType<string | object | (string | object)[]>;
+        };
+        popperStyle: {
+            type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+        };
+        clickOutsideToClose: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        middlewares: {
+            type: import("vue").PropType<import("./usePopper/types").Middlewares>;
+        };
+        teleportProps: {
+            type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+            default: () => {
+                to: string;
+            };
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+    }, {
+        show: () => void | undefined;
+        hidden: () => void | undefined;
+        update: () => void | undefined;
+        TriggerRef: import("vue").Ref<HTMLElement | null>;
+        ContentRef: import("vue").Ref<import("./types").ContentComponentInstance | undefined>;
+    }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "update:modelValue"[], import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        offset: {
+            type: import("vue").PropType<import("@floating-ui/dom").OffsetOptions>;
+            default: number;
+        };
+        placement: {
+            type: import("vue").PropType<import("@floating-ui/utils").Placement>;
+            default: string;
+        };
+        trigger: {
+            type: import("vue").PropType<import("./types").PopperTrigger | import("./types").PopperTrigger[]>;
+            default: string;
+        };
+        triggerCustomEvents: {
+            type: import("vue").PropType<import("./types").TriggerCustomEvents>;
+        };
+        modelValue: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        showArrow: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        enterable: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        showAfter: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        hideAfter: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        popperClass: {
+            type: import("vue").PropType<string | object | (string | object)[]>;
+        };
+        popperStyle: {
+            type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+        };
+        clickOutsideToClose: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        middlewares: {
+            type: import("vue").PropType<import("./usePopper/types").Middlewares>;
+        };
+        teleportProps: {
+            type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+            default: () => {
+                to: string;
+            };
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+    }, {
+        disabled: boolean;
+        offset: import("@floating-ui/dom").OffsetOptions;
+        placement: import("@floating-ui/utils").Placement;
+        trigger: import("./types").PopperTrigger | import("./types").PopperTrigger[];
+        modelValue: boolean;
+        showArrow: boolean;
+        enterable: boolean;
+        showAfter: number;
+        hideAfter: number;
+        clickOutsideToClose: boolean;
+        teleportProps: Partial<import("vue").TeleportProps>;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        offset: {
+            type: import("vue").PropType<import("@floating-ui/dom").OffsetOptions>;
+            default: number;
+        };
+        placement: {
+            type: import("vue").PropType<import("@floating-ui/utils").Placement>;
+            default: string;
+        };
+        trigger: {
+            type: import("vue").PropType<import("./types").PopperTrigger | import("./types").PopperTrigger[]>;
+            default: string;
+        };
+        triggerCustomEvents: {
+            type: import("vue").PropType<import("./types").TriggerCustomEvents>;
+        };
+        modelValue: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        showArrow: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        enterable: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        showAfter: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        hideAfter: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        popperClass: {
+            type: import("vue").PropType<string | object | (string | object)[]>;
+        };
+        popperStyle: {
+            type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+        };
+        clickOutsideToClose: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        middlewares: {
+            type: import("vue").PropType<import("./usePopper/types").Middlewares>;
+        };
+        teleportProps: {
+            type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+            default: () => {
+                to: string;
+            };
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+    }, {
+        show: () => void | undefined;
+        hidden: () => void | undefined;
+        update: () => void | undefined;
+        TriggerRef: import("vue").Ref<HTMLElement | null>;
+        ContentRef: import("vue").Ref<import("./types").ContentComponentInstance | undefined>;
+    }, {}, {}, {}, {
+        disabled: boolean;
+        offset: import("@floating-ui/dom").OffsetOptions;
+        placement: import("@floating-ui/utils").Placement;
+        trigger: import("./types").PopperTrigger | import("./types").PopperTrigger[];
+        modelValue: boolean;
+        showArrow: boolean;
+        enterable: boolean;
+        showAfter: number;
+        hideAfter: number;
+        clickOutsideToClose: boolean;
+        teleportProps: Partial<import("vue").TeleportProps>;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    disabled: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    offset: {
+        type: import("vue").PropType<import("@floating-ui/dom").OffsetOptions>;
+        default: number;
+    };
+    placement: {
+        type: import("vue").PropType<import("@floating-ui/utils").Placement>;
+        default: string;
+    };
+    trigger: {
+        type: import("vue").PropType<import("./types").PopperTrigger | import("./types").PopperTrigger[]>;
+        default: string;
+    };
+    triggerCustomEvents: {
+        type: import("vue").PropType<import("./types").TriggerCustomEvents>;
+    };
+    modelValue: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    showArrow: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    enterable: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    showAfter: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    hideAfter: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    popperClass: {
+        type: import("vue").PropType<string | object | (string | object)[]>;
+    };
+    popperStyle: {
+        type: import("vue").PropType<string | false | import("vue").CSSProperties | import("vue").StyleValue[] | null>;
+    };
+    clickOutsideToClose: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    middlewares: {
+        type: import("vue").PropType<import("./usePopper/types").Middlewares>;
+    };
+    teleportProps: {
+        type: import("vue").PropType<Partial<import("vue").TeleportProps>>;
+        default: () => {
+            to: string;
+        };
+    };
+}>> & {
+    "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+}, {
+    show: () => void | undefined;
+    hidden: () => void | undefined;
+    update: () => void | undefined;
+    TriggerRef: import("vue").Ref<HTMLElement | null>;
+    ContentRef: import("vue").Ref<import("./types").ContentComponentInstance | undefined>;
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", {
+    disabled: boolean;
+    offset: import("@floating-ui/dom").OffsetOptions;
+    placement: import("@floating-ui/utils").Placement;
+    trigger: import("./types").PopperTrigger | import("./types").PopperTrigger[];
+    modelValue: boolean;
+    showArrow: boolean;
+    enterable: boolean;
+    showAfter: number;
+    hideAfter: number;
+    clickOutsideToClose: boolean;
+    teleportProps: Partial<import("vue").TeleportProps>;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        default?(_: {}): any;
+        content?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

@@ -1,0 +1,8 @@
+import type { Ref, InjectionKey } from "vue";
+type InjectionKeyType = {
+    inputEl?: Ref<HTMLInputElement | null>;
+    setInputEl?: (inputEl: HTMLInputElement) => void;
+};
+export declare const LAYUI_TREE_SELECT: InjectionKey<InjectionKeyType>;
+export declare const useTreeSelectProvide: () => InjectionKeyType;
+export {};

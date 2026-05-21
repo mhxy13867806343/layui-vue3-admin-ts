@@ -1,0 +1,161 @@
+/** __vue_virtual_code_placeholder */
+import type { DatePickerProps as _DatePickerProps, DatePickerDefaultSlotParams, DatePickerFooterSlotParams } from "./interface";
+import dayjs from "dayjs";
+import "./index.less";
+export type DatePickerProps = _DatePickerProps;
+declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<_DatePickerProps>, {
+    modelValue: null;
+    size: string;
+    type: string;
+    disabled: boolean;
+    readonly: boolean;
+    allowClear: boolean;
+    simple: boolean;
+    range: boolean;
+    rangeSeparator: string;
+    prefixIcon: string;
+    suffixIcon: string;
+    timestamp: boolean;
+    defaultValue: null;
+    defaultTime: null;
+    yearPage: number;
+    static: boolean;
+}>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<_DatePickerProps>, {
+    modelValue: null;
+    size: string;
+    type: string;
+    disabled: boolean;
+    readonly: boolean;
+    allowClear: boolean;
+    simple: boolean;
+    range: boolean;
+    rangeSeparator: string;
+    prefixIcon: string;
+    suffixIcon: string;
+    timestamp: boolean;
+    defaultValue: null;
+    defaultTime: null;
+    yearPage: number;
+    static: boolean;
+}>>>, {
+    disabled: boolean;
+    type: import("./interface").DatePickerType;
+    static: boolean;
+    size: import("../../types").CommonSize;
+    range: boolean;
+    modelValue: string | number | Date | dayjs.Dayjs | {
+        years?: string | number | undefined;
+        year?: string | number | undefined;
+        y?: string | number | undefined;
+        months?: string | number | undefined;
+        month?: string | number | undefined;
+        M?: string | number | undefined;
+        days?: string | number | undefined;
+        day?: string | number | undefined;
+        d?: string | number | undefined;
+        dates?: string | number | undefined;
+        date?: string | number | undefined;
+        D?: string | number | undefined;
+        hours?: string | number | undefined;
+        hour?: string | number | undefined;
+        h?: string | number | undefined;
+        minutes?: string | number | undefined;
+        minute?: string | number | undefined;
+        m?: string | number | undefined;
+        seconds?: string | number | undefined;
+        second?: string | number | undefined;
+        s?: string | number | undefined;
+        milliseconds?: string | number | undefined;
+        millisecond?: string | number | undefined;
+        ms?: string | number | undefined;
+    } | dayjs.ConfigType[] | null;
+    prefixIcon: string;
+    suffixIcon: string;
+    allowClear: boolean;
+    readonly: boolean;
+    simple: boolean;
+    rangeSeparator: string;
+    timestamp: boolean;
+    defaultValue: string | number | Date | dayjs.Dayjs | {
+        years?: string | number | undefined;
+        year?: string | number | undefined;
+        y?: string | number | undefined;
+        months?: string | number | undefined;
+        month?: string | number | undefined;
+        M?: string | number | undefined;
+        days?: string | number | undefined;
+        day?: string | number | undefined;
+        d?: string | number | undefined;
+        dates?: string | number | undefined;
+        date?: string | number | undefined;
+        D?: string | number | undefined;
+        hours?: string | number | undefined;
+        hour?: string | number | undefined;
+        h?: string | number | undefined;
+        minutes?: string | number | undefined;
+        minute?: string | number | undefined;
+        m?: string | number | undefined;
+        seconds?: string | number | undefined;
+        second?: string | number | undefined;
+        s?: string | number | undefined;
+        milliseconds?: string | number | undefined;
+        millisecond?: string | number | undefined;
+        ms?: string | number | undefined;
+    } | dayjs.ConfigType[] | null;
+    defaultTime: string | number | Date | dayjs.Dayjs | {
+        years?: string | number | undefined;
+        year?: string | number | undefined;
+        y?: string | number | undefined;
+        months?: string | number | undefined;
+        month?: string | number | undefined;
+        M?: string | number | undefined;
+        days?: string | number | undefined;
+        day?: string | number | undefined;
+        d?: string | number | undefined;
+        dates?: string | number | undefined;
+        date?: string | number | undefined;
+        D?: string | number | undefined;
+        hours?: string | number | undefined;
+        hour?: string | number | undefined;
+        h?: string | number | undefined;
+        minutes?: string | number | undefined;
+        minute?: string | number | undefined;
+        m?: string | number | undefined;
+        seconds?: string | number | undefined;
+        second?: string | number | undefined;
+        s?: string | number | undefined;
+        milliseconds?: string | number | undefined;
+        millisecond?: string | number | undefined;
+        ms?: string | number | undefined;
+    } | dayjs.ConfigType[] | null;
+    yearPage: number;
+}, {}>, __VLS_ToTemplateSlots<{
+    default?: ((props: DatePickerDefaultSlotParams) => any) | undefined;
+    footer?: ((props: DatePickerFooterSlotParams) => any) | undefined;
+}>>;
+export default _default;
+type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
+type __VLS_TypePropsToRuntimeProps<T> = {
+    [K in keyof T]-?: {} extends Pick<T, K> ? {
+        type: import('vue').PropType<__VLS_NonUndefinedable<T[K]>>;
+    } : {
+        type: import('vue').PropType<T[K]>;
+        required: true;
+    };
+};
+type __VLS_WithDefaults<P, D> = {
+    [K in keyof Pick<P, keyof P>]: K extends keyof D ? __VLS_Prettify<P[K] & {
+        default: D[K];
+    }> : P[K];
+};
+type __VLS_WithTemplateSlots<T, S> = T & {
+    new (): {
+        $slots: S;
+    };
+};
+type __VLS_ToTemplateSlots<T> = {
+    [K in keyof T]: NonNullable<T[K]> extends (...args: any[]) => any ? T[K] : (props: T[K]) => any;
+};
+type __VLS_Prettify<T> = {
+    [K in keyof T]: T[K];
+} & {};

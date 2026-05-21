@@ -1,0 +1,29 @@
+import { defineComponent as E, useSlots as I, inject as o, computed as C, ref as T, watchEffect as _, openBlock as t, createElementBlock as n, createElementVNode as k, normalizeStyle as w, unref as l, renderSlot as a, createCommentVNode as v, normalizeClass as g, createBlock as $, withCtx as u, createSlots as j } from "vue";
+import z from "../transition/index2.js";
+import B from "./SubMenuPopup.js";
+import { indentHandle as K } from "../menu/utils.js";
+import L, { provideLevel as M } from "../menu/useLevel.js";
+const N = { key: 0, class: "layui-nav-item" }, O = { key: 0, class: "layui-sub-menu-icon" }, V = { key: 1, class: "layui-nav-more" }, q = { key: 0 }, H = { class: "layui-nav-child" }, R = E({ name: "LaySubMenu", __name: "index", props: { id: {}, title: {}, teleportProps: { default: () => ({ disabled: !0 }) } }, setup(b) {
+  const s = I(), d = b, { level: m } = L(), i = o("isTree");
+  o("selectedKey");
+  const r = o("openKeys"), h = o("indent"), f = o("isCollapse"), P = o("isCollapseTransition"), y = C(() => r.value.includes(d.id || "")), S = C(() => m.value + 1);
+  M(S);
+  const c = T(!1);
+  return _(() => {
+    if (i.value) {
+      const e = f.value === !0 || f.value === "true";
+      e && m.value === 1 ? setTimeout(() => {
+        c.value = i.value && e;
+      }, 200) : c.value = i.value && e;
+    } else
+      s.default && s.default().length > 0 && (c.value = !0);
+  }), (e, x) => c.value ? (t(), $(B, { key: 1, id: e.id, teleportProps: e.teleportProps }, j({ expandIcon: u(() => [a(e.$slots, "expandIcon")]), default: u(() => [a(e.$slots, "default")]), _: 2 }, [l(s).icon ? { name: "icon", fn: u(() => [a(e.$slots, "icon")]), key: "0" } : void 0, l(s).title ? { name: "title", fn: u(() => [a(e.$slots, "title")]), key: "1" } : void 0]), 1032, ["id", "teleportProps"])) : (t(), n("li", N, [k("a", { href: "javascript:void(0)", onClick: x[0] || (x[0] = (A) => function() {
+    if (!f.value) {
+      let p = [...r.value];
+      r.value.includes(d.id || "") ? p.splice(p.indexOf(d.id || ""), 1) : p.push(d.id || ""), r.value = p;
+    }
+  }()), style: w(l(K)({ indent: l(h), level: l(m), basePadding: 23, isTree: l(i) })) }, [l(s).icon ? (t(), n("i", O, [a(e.$slots, "icon")])) : v("", !0), k("span", null, [l(s).title ? a(e.$slots, "title", { key: 0 }) : v("", !0)]), l(s).expandIcon ? (t(), n("i", V, [a(e.$slots, "expandIcon", { isExpand: y.value })])) : (t(), n("i", { key: 2, class: g([y.value ? "layui-nav-mored" : "", "layui-icon layui-icon-down", "layui-nav-more"]) }, null, 2))], 4), l(i) ? (t(), $(z, { key: 0, enable: l(P) }, { default: u(() => [y.value ? (t(), n("div", q, [k("dl", H, [a(e.$slots, "default")])])) : v("", !0)]), _: 3 }, 8, ["enable"])) : v("", !0)]));
+} });
+export {
+  R as default
+};

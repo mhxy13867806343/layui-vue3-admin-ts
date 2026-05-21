@@ -1,0 +1,21 @@
+import { defineComponent as L, inject as C, computed as g, openBlock as o, createElementBlock as s, normalizeStyle as i, createElementVNode as n, Fragment as d, renderList as y, normalizeClass as v, unref as b } from "vue";
+import { LAY_TABLE_CONTEXT as B } from "../constant.js";
+const M = ["width"], _ = { class: "layui-table-total" }, x = ["innerHTML"], N = L({ name: "LayTableTotal", __name: "TableTotal", props: { lastLevelShowColumns: {}, tableBodyScrollWidth: {} }, setup(h) {
+  const m = h, { tableTotalRef: f, tableTotalTableRef: T, tableDataSource: c, commonGetClasses: w, commonGetStylees: S } = C(B);
+  function k(l) {
+    if (l.totalRow)
+      return l.totalRow !== !0 ? l.totalRow : l.totalRowMethod ? l.totalRowMethod(l, c) : function(p, e) {
+        let a = 0;
+        const u = e.map((t) => Number(t[p.key]));
+        return u.forEach((t) => {
+          const r = `${t}`.split(".")[1];
+          a = Math.max(a, r ? r.length : 0);
+        }), u.reduce((t, r) => Number.parseFloat((t + r).toFixed(Math.min(a, 20))), 0);
+      }(l, c);
+  }
+  const R = g(() => ({ "padding-right": `${m.tableBodyScrollWidth}px`, "margin-top": (m.tableBodyScrollWidth ? 1 : 0) + "px" }));
+  return (l, p) => (o(), s("div", { class: "table-total-wrapper", style: i(R.value) }, [n("div", { ref_key: "tableTotalRef", ref: f, class: "table-total-wrapper-main" }, [n("table", { ref_key: "tableTotalTableRef", ref: T, class: "layui-table" }, [n("colgroup", null, [(o(!0), s(d, null, y(l.lastLevelShowColumns, (e, a) => (o(), s("col", { key: e.key || e.type || a, width: e.width, style: i({ minWidth: e.minWidth }) }, null, 12, M))), 128))]), n("tbody", null, [n("tr", _, [(o(!0), s(d, null, y(l.lastLevelShowColumns, (e, a) => (o(), s("td", { key: e.key || e.type || a, class: v(b(w)(e, { "layui-table-is-sort": !!e.sort })), style: i(b(S)(e, { whiteSpace: e.ellipsisTooltip ? "nowrap" : "normal" })), innerHTML: k(e) }, null, 14, x))), 128))])])], 512)], 512)], 4));
+} });
+export {
+  N as default
+};

@@ -1,0 +1,9 @@
+import { defineComponent as d, useSlots as r, unref as u, openBlock as s, createElementBlock as a, createElementVNode as l, renderSlot as t, createTextVNode as i, toDisplayString as o } from "vue";
+/* empty css           */
+const c = { key: 0, class: "layui-field" }, f = { class: "layui-field-box" }, m = { key: 1, class: "layui-field layui-field-title" }, p = { name: "docend" }, S = d({ name: "LayField", __name: "index", props: { title: {} }, setup(y) {
+  const n = r();
+  return (e, k) => u(n).default ? (s(), a("fieldset", c, [l("legend", null, [t(e.$slots, "title", {}, () => [i(o(e.title), 1)])]), l("div", f, [t(e.$slots, "default")])])) : (s(), a("fieldset", m, [l("legend", null, [l("a", p, [t(e.$slots, "title", {}, () => [i(o(e.title), 1)])])])]));
+} });
+export {
+  S as default
+};

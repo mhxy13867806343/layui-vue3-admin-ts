@@ -1,0 +1,25 @@
+import { defineComponent as z, useCssVars as _, ref as v, computed as n, watchEffect as q, openBlock as o, createElementBlock as u, normalizeClass as w, createElementVNode as y, Fragment as A, renderList as B, withModifiers as E, createCommentVNode as I, renderSlot as L, normalizeProps as N, guardReactiveProps as P, toDisplayString as j } from "vue";
+import { isString as D } from "../utils/type.js";
+const F = { class: "layui-segmented-container" }, H = ["onClick"], M = ["name", "value"], R = { key: 1, class: "layui-segmented-item-slot" }, T = { key: 2, class: "layui-segmented-item-label" }, J = z({ name: "LaySegmented", __name: "index", props: { options: {}, modelValue: { default: "" }, size: { default: "md" }, name: {}, disabled: { type: Boolean, default: !1 } }, emits: ["change", "update:modelValue"], setup(h, { emit: b }) {
+  _((a) => ({ "33bcd1fd": C.value, "37f7b46e": V.value, a5a04102: S.value, "43d9a45f": $.value }));
+  const g = b, l = h, k = v(), s = v(), x = n(() => l.disabled), c = n(() => l.options.map((a) => D(a) ? { label: a } : a)), t = v({ left: "0px", top: "0px", width: "0px", height: "0px" }), V = n(() => t.value.width), S = n(() => t.value.height), $ = n(() => t.value.left), C = n(() => t.value.top);
+  return q(() => {
+    var e, m, p, d;
+    if (l.name) {
+      (e = s.value) == null || e.querySelectorAll(".layui-segmented-item-radio").forEach((f) => {
+        f.checked = !1;
+      });
+      const r = (m = s.value) == null ? void 0 : m.querySelectorAll(".layui-segmented-item-radio").item(c.value.findIndex((f) => f.label === l.modelValue));
+      r && (r.checked = !0);
+    }
+    const a = ((d = s == null ? void 0 : s.value) == null ? void 0 : d.querySelectorAll(".layui-segmented-item").item((p = c.value) == null ? void 0 : p.findIndex((r) => r.label === l.modelValue))) || {};
+    var i;
+    i = a, t.value.width = `${i.clientWidth ?? 0}px`, t.value.height = `${i.clientHeight ?? 0}px`, t.value.left = `${i.offsetLeft ?? 0}px`, t.value.top = `${i.offsetTop ?? 0}px`;
+  }), (a, i) => (o(), u("div", { class: w(["layui-segmented", [a.disabled && "layui-segmented-disabled", `layui-segmented-size-${l.size}`]]), ref_key: "segment", ref: s }, [y("div", F, [(o(!0), u(A, null, B(c.value, (e, m) => (o(), u("div", { class: "layui-segmented-item", key: m, onClick: E((p) => {
+    return d = e.label, void (x.value || (g("change", d), g("update:modelValue", d)));
+    var d;
+  }, ["prevent", "stop"]) }, [l.name ? (o(), u("input", { key: 0, class: "layui-segmented-item-radio", type: "radio", name: l.name, value: (e == null ? void 0 : e.value) ?? e.label }, null, 8, M)) : I("", !0), e.slot || a.$slots.default ? (o(), u("div", R, [L(a.$slots, e.slot || "default", N(P(e)))])) : (o(), u("span", T, j(e.label), 1))], 8, H))), 128)), y("div", { class: "layui-segmented-indicator", ref_key: "segmentIndicator", ref: k }, null, 512)])], 2));
+} });
+export {
+  J as default
+};

@@ -1,0 +1,37 @@
+import { defineComponent as v, ref as w, onMounted as y, nextTick as f, watch as x, openBlock as C, createElementBlock as b, createElementVNode as E } from "vue";
+import { isString as _ } from "@vue/shared";
+import q from "qrcode";
+/* empty css           */
+const A = { class: "layui-qrcode" }, z = v({ name: "LayQrcode", __name: "index", props: { text: {}, backgroundColor: {}, width: {}, color: {}, options: {}, images: {} }, setup(p) {
+  const e = p, n = w();
+  y(() => {
+    f(() => {
+      g();
+    });
+  }), x(() => e, () => {
+    g();
+  }, { deep: !0 });
+  const g = () => {
+    q.toCanvas(n.value, e.text, { width: e.width, color: { dark: e.color, light: e.backgroundColor }, ...e.options }).then(() => {
+      var s;
+      (s = e.images) != null && s.length && f(() => {
+        var m;
+        const a = (m = n.value) == null ? void 0 : m.getContext("2d");
+        a && (Array.isArray(e.images) ? e.images : [e.images]).forEach((i) => {
+          let { image: h, width: o = 32, height: t = 32, top: c = a.canvas.height / 2 - t / 2, left: l = a.canvas.width / 2 - o / 2, size: d, background: u = !0, backgroundColor: k = "#fff" } = _(i) ? { image: i } : i;
+          d && (o = d, t = d, c = a.canvas.height / 2 - t / 2, l = a.canvas.width / 2 - o / 2);
+          const r = document.createElement("img");
+          r.src = h, r.onload = () => {
+            u && (a.fillStyle = k, a.fillRect(l, c, o, t)), a.drawImage(r, l, c, o, t);
+          }, r.onerror = () => {
+            console.error(`LayQrcode images:${h} Parsing failed`);
+          };
+        });
+      });
+    });
+  };
+  return (s, a) => (C(), b("div", A, [E("canvas", { ref_key: "qrcode", ref: n }, null, 512)]));
+} });
+export {
+  z as default
+};

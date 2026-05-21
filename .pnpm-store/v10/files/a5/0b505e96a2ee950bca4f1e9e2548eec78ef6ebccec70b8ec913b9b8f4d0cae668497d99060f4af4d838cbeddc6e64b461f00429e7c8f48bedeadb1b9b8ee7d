@@ -1,0 +1,10 @@
+export default function useProps(props: any): {
+    size: import("vue").ComputedRef<any>;
+    mode: import("vue").ComputedRef<any>;
+    labelWidth: import("vue").ComputedRef<any>;
+    labelPosition: import("vue").ComputedRef<any>;
+    isRequired: import("vue").ComputedRef<any>;
+    tooltipProps: import("vue").ComputedRef<any>;
+    isLabelTooltip: import("vue").ComputedRef<boolean | undefined>;
+    inlineWidth: import("vue").ComputedRef<any>;
+};

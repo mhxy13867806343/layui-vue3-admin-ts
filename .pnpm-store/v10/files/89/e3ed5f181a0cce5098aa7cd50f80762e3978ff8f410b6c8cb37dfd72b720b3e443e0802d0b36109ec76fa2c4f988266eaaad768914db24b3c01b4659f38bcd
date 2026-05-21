@@ -1,0 +1,12 @@
+import { defineComponent as r, inject as f, openBlock as a, createElementBlock as o, normalizeClass as p, normalizeStyle as u, createElementVNode as c, renderSlot as t, createCommentVNode as l } from "vue";
+import { DROPDOWN_INJECTION_KEY as m } from "../dropdown/interface.js";
+const x = { class: "layui-menu-body-title" }, y = { key: 0, class: "layui-dropdown-menu-prefix" }, b = { key: 0, class: "layui-dropdown-menu-suffix" }, N = r({ name: "LayDropdownMenuItem", __name: "index", props: { disabled: { type: Boolean, default: !1 } }, setup(n) {
+  const i = n, s = f(m, {});
+  function d() {
+    i.disabled || s != null && s.hide && (s == null || s.hide());
+  }
+  return (e, $) => (a(), o("li", { class: p({ "layui-disabled": e.disabled }), style: u(e.$slots.suffix ? "justify-content: space-between;" : ""), onClick: d }, [c("span", x, [e.$slots.prefix ? (a(), o("span", y, [t(e.$slots, "prefix")])) : l("", !0), t(e.$slots, "default")]), e.$slots.suffix ? (a(), o("span", b, [t(e.$slots, "suffix")])) : l("", !0)], 6));
+} });
+export {
+  N as default
+};

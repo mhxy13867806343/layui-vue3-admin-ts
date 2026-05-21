@@ -1,0 +1,151 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        type: {
+            type: import("vue").PropType<import("./interface").RippleType>;
+            default: string;
+        };
+        center: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        color: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        trigger: {
+            type: import("vue").PropType<import("./interface").RippleTrigger>;
+            default: string;
+        };
+        borderRadius: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        spreadWidth: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        spreadSize: {
+            type: import("vue").PropType<string>;
+        };
+    }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        type: {
+            type: import("vue").PropType<import("./interface").RippleType>;
+            default: string;
+        };
+        center: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        color: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        trigger: {
+            type: import("vue").PropType<import("./interface").RippleTrigger>;
+            default: string;
+        };
+        borderRadius: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        spreadWidth: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        spreadSize: {
+            type: import("vue").PropType<string>;
+        };
+    }>>, {
+        type: import("./interface").RippleType;
+        center: boolean;
+        color: string;
+        trigger: import("./interface").RippleTrigger;
+        borderRadius: string;
+        spreadWidth: string;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        type: {
+            type: import("vue").PropType<import("./interface").RippleType>;
+            default: string;
+        };
+        center: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        color: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        trigger: {
+            type: import("vue").PropType<import("./interface").RippleTrigger>;
+            default: string;
+        };
+        borderRadius: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        spreadWidth: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        spreadSize: {
+            type: import("vue").PropType<string>;
+        };
+    }>>, {}, {}, {}, {}, {
+        type: import("./interface").RippleType;
+        center: boolean;
+        color: string;
+        trigger: import("./interface").RippleTrigger;
+        borderRadius: string;
+        spreadWidth: string;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    type: {
+        type: import("vue").PropType<import("./interface").RippleType>;
+        default: string;
+    };
+    center: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    color: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    trigger: {
+        type: import("vue").PropType<import("./interface").RippleTrigger>;
+        default: string;
+    };
+    borderRadius: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    spreadWidth: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    spreadSize: {
+        type: import("vue").PropType<string>;
+    };
+}>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {
+    type: import("./interface").RippleType;
+    center: boolean;
+    color: string;
+    trigger: import("./interface").RippleTrigger;
+    borderRadius: string;
+    spreadWidth: string;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        default?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

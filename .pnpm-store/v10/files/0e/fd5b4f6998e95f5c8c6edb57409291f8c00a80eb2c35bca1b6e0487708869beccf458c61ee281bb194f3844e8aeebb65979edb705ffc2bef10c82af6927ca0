@@ -1,0 +1,35 @@
+import type { Dayjs } from "dayjs";
+import type { DatePickerRenderComponentProps, RequiredDatePickerProps } from "../interface";
+export declare function useDatePicker(props: RequiredDatePickerProps): {
+    RenderComponent: import("vue").ComputedRef<import("vue").Component<any, any, any, import("vue").ComputedOptions, import("vue").MethodOptions>>;
+    renderComponentProps: import("vue").ComputedRef<DatePickerRenderComponentProps>;
+    datePickerContext: {
+        modelValue: Dayjs | Dayjs[] | null;
+        format: string;
+        inputFormat: string;
+        size: import("../../../types").CommonSize;
+        type: import("../interface").DatePickerType;
+        disabled: boolean;
+        readonly: boolean;
+        allowClear: boolean;
+        simple: boolean;
+        range: boolean;
+        rangeSeparator: string;
+        prefixIcon: string;
+        suffixIcon: string;
+        timestamp: boolean;
+        yearPage: number;
+        name?: string | undefined;
+        placeholder?: string | string[] | undefined;
+        max?: string | undefined;
+        min?: string | undefined;
+        defaultValue?: import("dayjs").ConfigType | import("dayjs").ConfigType[];
+        defaultTime?: import("dayjs").ConfigType | import("dayjs").ConfigType[];
+        contentStyle?: import("vue").StyleValue;
+        contentClass?: import("../../../types").CommonClass | undefined;
+        disabledDate?: ((date: Date) => boolean) | undefined;
+        shortcuts?: import("../interface").Shortcuts[] | undefined;
+        static?: boolean | undefined;
+        teleportProps?: Partial<import("vue").TeleportProps> | undefined;
+    };
+};

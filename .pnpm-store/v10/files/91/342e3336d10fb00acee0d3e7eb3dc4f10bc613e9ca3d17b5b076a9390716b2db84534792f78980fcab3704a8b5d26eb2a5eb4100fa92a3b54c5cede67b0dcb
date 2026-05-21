@@ -1,0 +1,45 @@
+import type { SliderTooltipProps, DefaultValueSliderPropsType } from "./types/sliderType";
+import type { Ref, ToRefs } from "vue";
+import { InjectionKey, ComputedRef } from "vue";
+type InitValType = {
+    firstVal: number;
+    secondVal: number;
+};
+interface SliderContext extends ToRefs<DefaultValueSliderPropsType> {
+    tooltipProp: Required<SliderTooltipProps>;
+    firstVal: Ref<InitValType["firstVal"]>;
+    secondVal: Ref<InitValType["secondVal"]>;
+    updateDragging: (v: boolean) => void;
+    getCalcPos: (e: MouseEvent) => number;
+}
+export declare const LAYUI_SLIDER_KEY: InjectionKey<SliderContext>;
+export declare const useSliderProvide: () => SliderContext;
+export declare const useSlider: (props: DefaultValueSliderPropsType, emit: any, getSortMarks: ComputedRef<number[]>) => {
+    firstVal: Ref<number>;
+    secondVal: Ref<number>;
+    handClick: (e: MouseEvent) => Promise<void>;
+    barStyle: ComputedRef<{
+        [x: string]: string;
+        height: string;
+        width?: undefined;
+    } | {
+        [x: string]: string;
+        width: string;
+        height?: undefined;
+    }>;
+    getStop: ComputedRef<number[]>;
+    dotStyle: (dot: number) => {
+        bottom: string;
+        left?: undefined;
+    } | {
+        left: string;
+        bottom?: undefined;
+    };
+    laySliderBar1: Ref<any>;
+    laySliderBar2: Ref<any>;
+    slider: Ref<HTMLElement | null>;
+    getCalcPos: (e: MouseEvent) => number;
+    updateDragging: (val: boolean) => void;
+    tooltipProp: Required<SliderTooltipProps>;
+};
+export {};

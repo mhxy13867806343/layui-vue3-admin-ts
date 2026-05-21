@@ -1,0 +1,38 @@
+import { defineComponent as d, inject as m, watch as p, openBlock as v, createBlock as E, unref as h, withCtx as C, renderSlot as _ } from "vue";
+import { POPPER_INJECTION_KEY as k } from "../utils.js";
+import x from "./forward-ref.js";
+const j = d({ __name: "trigger", props: { trigger: {}, triggerCustomEvents: {} }, setup(c) {
+  const t = c, { TriggerRef: i, onShow: n, onHidden: o } = m(k), u = { click: function() {
+    var e;
+    (e = t.trigger) != null && e.includes("click") && n();
+  }, mouseenter: function() {
+    var e;
+    (e = t.trigger) != null && e.includes("hover") && n();
+  }, mouseleave: function() {
+    var e;
+    (e = t.trigger) != null && e.includes("hover") && o();
+  }, contextmenu: function(e) {
+    var r;
+    (r = t.trigger) != null && r.includes("contextMenu") && (e.preventDefault(), n());
+  }, focusin: function() {
+    var e;
+    (e = t.trigger) != null && e.includes("focus") && n();
+  }, focusout: function() {
+    var e;
+    (e = t.trigger) != null && e.includes("focus") && o();
+  }, ...t.triggerCustomEvents };
+  function f(e) {
+    i.value = e;
+  }
+  function s(e, r, g) {
+    e && Object.entries(r).forEach(([a, l]) => {
+      e[g](a, l);
+    });
+  }
+  return p(i, (e, r) => {
+    s(e, u, "addEventListener"), s(r, u, "removeEventListener");
+  }), (e, r) => (v(), E(h(x), { "set-ref": f }, { default: C(() => [_(e.$slots, "default")]), _: 3 }));
+} });
+export {
+  j as default
+};

@@ -1,0 +1,5 @@
+const o = ["radio", "checkbox", "number"], e = Symbol("LayTableContext");
+export {
+  e as LAY_TABLE_CONTEXT,
+  o as columnsTypeList
+};

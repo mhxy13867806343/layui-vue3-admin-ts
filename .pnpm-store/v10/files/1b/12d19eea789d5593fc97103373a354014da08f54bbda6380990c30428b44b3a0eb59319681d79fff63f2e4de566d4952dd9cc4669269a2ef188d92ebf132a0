@@ -1,0 +1,12 @@
+import { defineComponent as _, useSlots as $, inject as o, computed as N, openBlock as t, createElementBlock as s, normalizeClass as T, unref as e, normalizeStyle as j, createBlock as x, withCtx as v, renderSlot as l, createCommentVNode as r, createElementVNode as E } from "vue";
+import { DROPDOWN_INJECTION_KEY as I } from "../dropdown/interface.js";
+import g from "../menu/useLevel.js";
+import { indentHandle as B } from "../menu/utils.js";
+import K from "../tooltip/index2.js";
+const O = { href: "javascript:void(0)" }, S = { key: 0 }, b = { key: 0 }, w = { key: 1, href: "javascript:void(0)" }, D = { key: 0, class: "layui-sub-menu-icon" }, L = { key: 1 }, M = { key: 2 }, R = _({ name: "LayMenuItem", __name: "index", props: { id: {}, title: {} }, setup(y) {
+  const k = y, n = $(), { level: d } = g(), m = o("selectedKey"), c = o("isTree"), u = o("isCollapse"), f = o("menuTheme"), h = o("indent"), a = o(I, void 0), C = N(() => c.value && (u.value === !0 || u.value === "true") && d.value === 1);
+  return (i, p) => (t(), s("li", { class: T(["layui-nav-item", [{ "layui-this": e(m) === i.id }]]), style: j(e(B)({ indent: e(h), level: e(d), isTree: e(c) })), onClick: p[0] || (p[0] = (V) => (m.value = k.id, void ((a == null ? void 0 : a.hide) && (a == null ? void 0 : a.hide())))) }, [C.value ? (t(), x(K, { key: 0, position: "right", "is-dark": e(f) !== "light" }, { content: v(() => [e(n).title ? (t(), s("span", b, [l(i.$slots, "title")])) : r("", !0)]), default: v(() => [E("a", O, [e(n).icon ? (t(), s("i", S, [l(i.$slots, "icon")])) : r("", !0)])]), _: 3 }, 8, ["is-dark"])) : (t(), s("a", w, [e(n).icon ? (t(), s("i", D, [l(i.$slots, "icon")])) : r("", !0), e(n).title ? (t(), s("span", L, [l(i.$slots, "title")])) : (t(), s("span", M, [l(i.$slots, "default")]))]))], 6));
+} });
+export {
+  R as default
+};

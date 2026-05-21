@@ -1,0 +1,7 @@
+import t from "./index2.js";
+/* empty css       */
+import { withInstall as o } from "../utils/withInstall.js";
+const a = o(t);
+export {
+  a as default
+};

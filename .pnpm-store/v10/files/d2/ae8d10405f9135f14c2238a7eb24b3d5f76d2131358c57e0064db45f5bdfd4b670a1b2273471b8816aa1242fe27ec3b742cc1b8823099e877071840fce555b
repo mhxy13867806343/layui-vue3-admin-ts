@@ -1,0 +1,47 @@
+import s from "dayjs";
+function d(e, n) {
+  const a = s(e, n);
+  return s(e).isValid() ? s(e) : a.isValid() ? a : null;
+}
+function g(e, n) {
+  const a = s(e, n);
+  return s(e).isValid() ? s(e).format(n) : a.isValid() ? a.format(n) : "";
+}
+function p(e) {
+  const [n, a] = e;
+  return !(!n || !a) && n.isValid() && a.isValid();
+}
+function y(e, n = 15, a = 1) {
+  const i = [], r = typeof e == "number" ? e : (e == null ? void 0 : e.getFullYear()) ?? 1970, u = (o = n, (t = r) === 0 ? o : ((t - 1) % o + o) % o + 1);
+  var t, o;
+  for (let l = r - (u - 1); l <= r + n - u; l += a)
+    i.push(l);
+  return i;
+}
+function c(e, n) {
+  return new Date(e, n + 1, 0).getDate();
+}
+function D(e, n) {
+  const a = c(e, n), i = c(e, n - 1), r = [];
+  for (let t = i - new Date(e, n, 1).getDay() + 1; t <= i; t++)
+    r.push({ day: t, value: +new Date(e, n - 1, t), isRange: !1, isSelected: !1, type: "prev" });
+  for (let t = 1; t <= a; t++)
+    r.push({ day: t, value: +new Date(e, n, t), isRange: !1, isSelected: !1, type: "current" });
+  const u = 7 - r.length % 7;
+  if (u !== 7)
+    for (let t = 1; t <= u; t++)
+      r.push({ day: t, value: +new Date(e, n + 1, t), isRange: !1, isSelected: !1, type: "next" });
+  return r;
+}
+function h(e, n) {
+  return e.hour(n.hour()).minute(n.minute()).second(n.second());
+}
+export {
+  p as checkRangeValue,
+  g as dayjsToString,
+  c as getDayLength,
+  y as getYears,
+  d as normalizeDayjsValue,
+  D as setDateList,
+  h as setHMS
+};

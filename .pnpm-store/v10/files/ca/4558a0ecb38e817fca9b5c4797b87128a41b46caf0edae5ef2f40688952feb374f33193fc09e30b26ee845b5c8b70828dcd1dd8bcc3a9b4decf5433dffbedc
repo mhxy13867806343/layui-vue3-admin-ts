@@ -1,0 +1,22 @@
+import { defineComponent as D, ref as F, inject as G, getCurrentInstance as M, computed as a, reactive as N, onMounted as V, onBeforeUnmount as q, openBlock as p, createElementBlock as m, normalizeClass as u, normalizeStyle as A, createElementVNode as o, renderSlot as k, createBlock as C, unref as g, Fragment as H, toDisplayString as n, createTextVNode as J } from "vue";
+import { LayIcon as B } from "@layui/icons-vue";
+const K = { key: 0 }, T = { class: "lay-step-item-content-title" }, Q = D({ name: "LayStepItem", __name: "index", props: { title: { default: "" }, content: { default: "" }, icon: { default: "" }, status: { default: "" } }, setup(U) {
+  const l = F(-1), t = G("LayStep"), s = M(), y = (e) => {
+    t.change(e);
+  }, b = a(() => t.steps.value.length), v = a(() => t.props.currentStatus), S = a(() => t.props.simple), d = a(() => t.props.composition), f = a(() => t.props.active), L = a(() => t.props.active + 1), $ = a(() => t.props.space), h = a(() => t.props.direction === "vertical"), c = a(() => d.value === "default" && t.props.center), z = a(() => l.value <= t.props.active - 1), I = a(() => l.value === t.props.active + 1), E = a(() => l.value - 1 <= t.props.active), r = a(() => l.value <= t.props.active), w = a(() => {
+    var e;
+    return ((e = t.steps.value[b.value - 1]) == null ? void 0 : e.itemId) === s.uid;
+  }), _ = a(() => {
+    var e;
+    return ((e = t.steps.value[0]) == null ? void 0 : e.itemId) === s.uid;
+  }), j = N({ itemId: a(() => s == null ? void 0 : s.uid), setIndex: (e) => {
+    l.value = e;
+  } });
+  return t.steps.value = [...t.steps.value, j], V(() => {
+  }), q(() => {
+    t.steps.value = t.steps.value.filter((e) => e.itemId !== s.uid);
+  }), (e, i) => S.value ? (p(), m("div", { key: 1, class: u(["lay-step-item", "lay-step-simple", _.value ? "" : "lay-step-item-simple", "lay-step-item-simple-border", r.value ? "lay-step-item-simple-active" : "", f.value === l.value ? `lay-step-item-simple-${v.value}` : "", L.value === l.value ? `lay-step-item-simple-${v.value}-border` : "", E.value ? "lay-step-item-simple-active-border" : ""]), onClick: i[2] || (i[2] = (x) => y(l.value + 1)) }, [k(e.$slots, "default", {}, () => [J(n(l.value + 1) + "." + n(e.title), 1)])], 2)) : (p(), m("div", { key: 0, class: u(["lay-step-item", w.value && !c.value && d.value !== "row" ? "lay-step-item-last" : "", c.value ? "is-item-center" : "", h.value ? "is-vertical" : ""]), style: A({ flexBasis: $.value, flexGrow: $.value === "auto" ? 1 : 0 }) }, [o("div", { class: u([w.value ? "" : z.value ? `lay-step-item-line lay-step-item-line-${e.status || "active"}` : "lay-step-item-line", c.value ? "is-line-center" : ""]) }, [o("div", { class: u(["lay-step-item-pace", r.value ? "lay-step-item-active" : "", f.value === l.value ? `lay-step-item--${v.value}` : "", e.status ? `lay-step-item-${e.status}` : "", I.value ? "lay-step-item-wait" : "", c.value ? "is-center" : ""]), onClick: i[0] || (i[0] = (x) => y(l.value + 1)) }, [k(e.$slots, "pace", {}, () => [e.icon ? (p(), C(g(B), { key: 0, type: e.icon }, null, 8, ["type"])) : (p(), m(H, { key: 1 }, [r.value ? (p(), C(g(B), { key: 1, type: e.status === "fail" ? "layui-icon-close" : "layui-icon-ok" }, null, 8, ["type"])) : (p(), m("span", K, n(l.value + 1), 1))], 64))])], 2)], 2), o("div", { class: u(["lay-step-item-content", d.value === "row" ? "lay-step-item-content-row" : "", r.value ? "lay-step-item-content-active" : "", f.value === l.value ? `lay-step-item-content--${v.value}` : "", e.status ? `lay-step-item-content-${e.status}` : "", I.value ? "lay-step-item-content-wait" : ""]), onClick: i[1] || (i[1] = (x) => y(l.value + 1)) }, [k(e.$slots, "default", {}, () => [o("div", T, n(e.title), 1), o("p", null, n(e.content), 1)])], 2)], 6));
+} });
+export {
+  Q as default
+};

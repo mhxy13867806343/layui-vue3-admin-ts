@@ -1,0 +1,4 @@
+import o from "./content.js";
+export {
+  o as default
+};

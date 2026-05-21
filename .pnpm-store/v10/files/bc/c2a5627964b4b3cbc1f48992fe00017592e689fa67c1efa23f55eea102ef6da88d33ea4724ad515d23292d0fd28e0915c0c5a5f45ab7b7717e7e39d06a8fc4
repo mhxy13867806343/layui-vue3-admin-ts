@@ -1,0 +1,13 @@
+import { defineComponent as m, inject as u, shallowRef as c, ref as d, getCurrentInstance as f, computed as n, reactive as I, onBeforeUnmount as v, openBlock as y, createElementBlock as E, normalizeClass as P, renderSlot as _ } from "vue";
+import { SPLITPANEL_INJECTION_KEY as C } from "../splitPanel/interface.js";
+const B = m({ name: "LaySplitPanelItem", __name: "index", props: { space: { default: "" } }, setup(p) {
+  const s = p, t = u(C), l = c(null), o = d(-1), a = f(), r = n(() => /^\d+$/.test(s.space + "") ? s.space + "px" : s.space), i = I({ itemId: n(() => a == null ? void 0 : a.uid), setIndex: (e) => {
+    o.value = e;
+  }, space: r, itemEl: l });
+  return t.steps.value.push(i), v(() => {
+    t.steps.value = t.steps.value.filter((e) => e.itemId.value !== a.uid);
+  }), (e, S) => (y(), E("div", { ref_key: "laySplitPanelItem", ref: l, class: P(["lay-split-panel-item"]) }, [_(e.$slots, "default")], 512));
+} });
+export {
+  B as default
+};

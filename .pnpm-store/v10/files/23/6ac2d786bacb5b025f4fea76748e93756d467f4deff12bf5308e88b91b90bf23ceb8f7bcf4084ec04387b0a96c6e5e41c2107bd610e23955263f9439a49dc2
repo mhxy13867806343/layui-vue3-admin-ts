@@ -1,0 +1,94 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        text: {
+            type: import("vue").PropType<string>;
+            required: true;
+        };
+        backgroundColor: {
+            type: import("vue").PropType<string>;
+        };
+        width: {
+            type: import("vue").PropType<number>;
+        };
+        color: {
+            type: import("vue").PropType<string>;
+        };
+        options: {
+            type: import("vue").PropType<Record<string, any>>;
+        };
+        images: {
+            type: import("vue").PropType<string | string[] | import("./index.vue").QrcodeImageProps[]>;
+        };
+    }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        text: {
+            type: import("vue").PropType<string>;
+            required: true;
+        };
+        backgroundColor: {
+            type: import("vue").PropType<string>;
+        };
+        width: {
+            type: import("vue").PropType<number>;
+        };
+        color: {
+            type: import("vue").PropType<string>;
+        };
+        options: {
+            type: import("vue").PropType<Record<string, any>>;
+        };
+        images: {
+            type: import("vue").PropType<string | string[] | import("./index.vue").QrcodeImageProps[]>;
+        };
+    }>>, {}, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        text: {
+            type: import("vue").PropType<string>;
+            required: true;
+        };
+        backgroundColor: {
+            type: import("vue").PropType<string>;
+        };
+        width: {
+            type: import("vue").PropType<number>;
+        };
+        color: {
+            type: import("vue").PropType<string>;
+        };
+        options: {
+            type: import("vue").PropType<Record<string, any>>;
+        };
+        images: {
+            type: import("vue").PropType<string | string[] | import("./index.vue").QrcodeImageProps[]>;
+        };
+    }>>, {}, {}, {}, {}, {}>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    text: {
+        type: import("vue").PropType<string>;
+        required: true;
+    };
+    backgroundColor: {
+        type: import("vue").PropType<string>;
+    };
+    width: {
+        type: import("vue").PropType<number>;
+    };
+    color: {
+        type: import("vue").PropType<string>;
+    };
+    options: {
+        type: import("vue").PropType<Record<string, any>>;
+    };
+    images: {
+        type: import("vue").PropType<string | string[] | import("./index.vue").QrcodeImageProps[]>;
+    };
+}>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & import("vue").Plugin<any[]>;
+export default component;

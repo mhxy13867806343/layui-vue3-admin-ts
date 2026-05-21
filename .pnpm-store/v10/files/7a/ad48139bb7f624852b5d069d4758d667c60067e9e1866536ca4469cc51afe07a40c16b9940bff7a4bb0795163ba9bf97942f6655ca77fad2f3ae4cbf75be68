@@ -1,0 +1,8 @@
+import { computed as a } from "vue";
+import { clsPrefix as o } from "../../utils/common.js";
+function e(t) {
+  return { classTab: a(() => [o("tab"), { [`is-${t.tabPosition}`]: t.tabPosition, [`${o(`tab-${t.type}`)}`]: t.type }]) };
+}
+export {
+  e as useTab
+};

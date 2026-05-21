@@ -1,0 +1,15 @@
+import { defineComponent as i, provide as d, toRef as p, openBlock as f, createElementBlock as u, normalizeClass as t, unref as e, createVNode as l, mergeProps as c, createElementVNode as b } from "vue";
+import T from "../_components/render.js";
+import V from "./components/TabHeader.js";
+import { LAY_TAB_CONTEXT as v } from "./constant.js";
+import { useTab as B } from "./hooks/useTab.js";
+import { useTabSlot as y } from "./hooks/useTabSlot.js";
+/* empty css           */
+import { clsPrefix as C } from "../utils/common.js";
+const h = i({ name: "LayTab", __name: "index", props: { type: { default: "default" }, modelValue: {}, allowClose: { type: Boolean }, tabPosition: { default: "top" }, beforeClose: {}, beforeLeave: {}, activeBarTransition: { type: Boolean } }, emits: ["update:modelValue", "change", "close"], setup(s, { emit: r }) {
+  const o = s, m = r, { classTab: n } = B(o), { defaultSlot: a } = y();
+  return d(v, { emits: m, modelValue: p(() => o.modelValue) }), (_, x) => (f(), u("div", { class: t(e(n)) }, [l(V, c({ "default-slot": e(a) }, o), null, 16, ["default-slot"]), b("div", { class: t(e(C)("tab-content")) }, [l(e(T), { render: () => e(a) }, null, 8, ["render"])], 2)], 2));
+} });
+export {
+  h as default
+};

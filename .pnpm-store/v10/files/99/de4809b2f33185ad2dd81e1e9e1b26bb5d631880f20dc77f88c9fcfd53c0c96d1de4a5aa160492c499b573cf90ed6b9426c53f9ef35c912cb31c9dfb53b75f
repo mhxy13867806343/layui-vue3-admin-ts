@@ -1,0 +1,16 @@
+import { defineComponent as w, openBlock as e, createElementBlock as k, renderSlot as C, createElementVNode as b, createBlock as n, withCtx as l, createTextVNode as r, toDisplayString as i, unref as c, createCommentVNode as d } from "vue";
+import f from "../../../button/index2.js";
+import { useI18n as x } from "../../../language/index.js";
+const B = { class: "layui-laydate-footer" }, h = { class: "laydate-footer-btns" }, v = w({ name: "PanelFoot", __name: "Footer", props: { showNow: { type: Boolean, default: !0 }, showConfirm: { type: Boolean, default: !0 }, disabledConfirm: { type: Boolean } }, emits: ["confirm", "clear", "now"], setup(m, { emit: p }) {
+  const o = m, a = p, { t } = x();
+  function y() {
+    a("confirm");
+  }
+  function u() {
+    a("now");
+  }
+  return (s, N) => (e(), k("div", B, [C(s.$slots, "default"), b("div", h, [o.showNow ? (e(), n(f, { key: 0, "lay-type": "now", class: "laydate-btns-now", size: "xs", onClick: u }, { default: l(() => [r(i(c(t)("datePicker.now")), 1)]), _: 1 })) : d("", !0), o.showConfirm ? (e(), n(f, { key: 1, "lay-type": "confirm", class: "laydate-btns-confirm", size: "xs", disabled: s.disabledConfirm, onClick: y }, { default: l(() => [r(i(c(t)("datePicker.confirm")), 1)]), _: 1 }, 8, ["disabled"])) : d("", !0)])]));
+} });
+export {
+  v as default
+};

@@ -1,0 +1,82 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        type: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        time: {
+            type: import("vue").PropType<string | number>;
+            default: number;
+        };
+        enable: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+    }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        type: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        time: {
+            type: import("vue").PropType<string | number>;
+            default: number;
+        };
+        enable: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+    }>>, {
+        type: string;
+        time: string | number;
+        enable: boolean;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        type: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        time: {
+            type: import("vue").PropType<string | number>;
+            default: number;
+        };
+        enable: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+    }>>, {}, {}, {}, {}, {
+        type: string;
+        time: string | number;
+        enable: boolean;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    type: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    time: {
+        type: import("vue").PropType<string | number>;
+        default: number;
+    };
+    enable: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+}>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {
+    type: string;
+    time: string | number;
+    enable: boolean;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        default?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

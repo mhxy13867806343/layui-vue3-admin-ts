@@ -1,0 +1,31 @@
+/** __vue_virtual_code_placeholder */
+import "./index.less";
+export interface QrcodeImageProps {
+    image: string;
+    left?: number;
+    top?: number;
+    width?: number;
+    height?: number;
+    size?: number;
+    background?: boolean;
+    backgroundColor?: string;
+}
+export interface QrcodeProps {
+    text: string;
+    backgroundColor?: string;
+    width?: number;
+    color?: string;
+    options?: Record<string, any>;
+    images?: Array<QrcodeImageProps> | Array<string> | string;
+}
+declare const _default: import("vue").DefineComponent<__VLS_TypePropsToRuntimeProps<QrcodeProps>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<__VLS_TypePropsToRuntimeProps<QrcodeProps>>>, {}, {}>;
+export default _default;
+type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
+type __VLS_TypePropsToRuntimeProps<T> = {
+    [K in keyof T]-?: {} extends Pick<T, K> ? {
+        type: import('vue').PropType<__VLS_NonUndefinedable<T[K]>>;
+    } : {
+        type: import('vue').PropType<T[K]>;
+        required: true;
+    };
+};

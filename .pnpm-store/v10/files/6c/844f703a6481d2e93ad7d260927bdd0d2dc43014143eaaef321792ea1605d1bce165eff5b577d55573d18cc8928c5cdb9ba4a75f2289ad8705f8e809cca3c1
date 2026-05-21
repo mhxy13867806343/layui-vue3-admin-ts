@@ -1,0 +1,4 @@
+import o from "./pager.js";
+export {
+  o as default
+};

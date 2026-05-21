@@ -1,0 +1,12 @@
+import { defineComponent as u, inject as i, computed as m, unref as p, openBlock as t, createElementBlock as e, Fragment as f, renderList as h, toDisplayString as k, createCommentVNode as y } from "vue";
+import { DATE_PICKER_CONTEXT as d } from "../../interface.js";
+import { isValueArray as C } from "../../../utils/arrayUtil.js";
+const g = { key: 0, class: "layui-laydate-shortcut" }, E = ["onClick"], N = u({ __name: "Shortcuts", emits: ["change-shortcut"], setup(_, { emit: o }) {
+  const r = o, n = i(d), a = m(() => n.shortcuts || []);
+  return (v, T) => p(C)(a.value) ? (t(), e("ul", g, [(t(!0), e(f, null, h(a.value, (s, c) => (t(), e("li", { key: c, onClick: (x) => function(l) {
+    r("change-shortcut", l);
+  }(s) }, k(s.text), 9, E))), 128))])) : y("", !0);
+} });
+export {
+  N as default
+};

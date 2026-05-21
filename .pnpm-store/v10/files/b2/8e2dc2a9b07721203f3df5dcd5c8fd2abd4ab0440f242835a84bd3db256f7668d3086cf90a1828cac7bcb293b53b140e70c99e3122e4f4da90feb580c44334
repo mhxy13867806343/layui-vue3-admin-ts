@@ -1,0 +1,21 @@
+import { defineComponent as c, useSlots as u, computed as p, provide as f, openBlock as y, createElementBlock as m, normalizeClass as h, createVNode as B, mergeProps as k, unref as T } from "vue";
+import { LAY_TREE_CONTEXT as x } from "./constant.js";
+import { useTree as g } from "./hooks/useTree.js";
+import N from "./TreeNode.js";
+/* empty css           */
+const S = c({ name: "LayTree", __name: "index", props: { data: {}, checkedKeys: { default: () => [] }, expandKeys: { default: () => [] }, checkStrictly: { type: [Boolean, String], default: !1 }, collapseTransition: { type: Boolean, default: !0 }, onlyIconControl: { type: Boolean, default: !1 }, selectedKey: {}, showLine: { type: Boolean, default: !0 }, standalone: { type: Boolean, default: !1 }, showCheckbox: { type: Boolean, default: !1 }, replaceFields: {}, shouldIconBorder: {}, tailNodeIcon: { type: [String, Boolean, Function], default: "layui-icon-file" }, defaultExpandAll: { type: Boolean, default: void 0 }, cacheData: {}, lazy: { type: Boolean, default: !1 }, load: {}, loadOnCheck: { type: Boolean }, searchNodeMethod: {}, accordion: { type: Boolean } }, emits: ["update:selected-key", "update:checked-keys", "update:expand-keys", "node-click", "check-change", "node-double", "node-contextmenu"], setup(n, { expose: r, emit: d }) {
+  const o = n, l = d, s = u(), e = g(o, l), i = p(() => ["layui-tree", "layui-tree-" + (o.showLine ? "line" : "unline"), o.showCheckbox && "layui-form"]);
+  return f(x, { treeEmits: l, treeSlots: s, useTreeData: e }), r({ filter: function(t) {
+    if (!o.searchNodeMethod)
+      throw new Error("[Layui-vue/Tree] filterNodeMethod为空");
+    e.filter(t);
+  }, getTree: () => e.treeData, getFlatTree: () => e.flatTree, getNode: function() {
+    return (t) => {
+      const a = e.findNode(t);
+      return a && a.original;
+    };
+  } }), (t, a) => (y(), m("div", { class: h(i.value) }, [B(N, k(o, { tree: T(e).treeData.value }), null, 16, ["tree"])], 2));
+} });
+export {
+  S as default
+};

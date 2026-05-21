@@ -1,0 +1,330 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        reverse: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        vertical: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        range: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        modelValue: {
+            type: import("vue").PropType<number | number[]>;
+            default: number;
+        };
+        max: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        min: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        tooltipProps: {
+            type: import("vue").PropType<import("./types/sliderType").SliderTooltipProps>;
+            default: () => {
+                disabled: boolean;
+                placement: string;
+                isDark: boolean;
+            };
+        };
+        step: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        marks: {
+            type: import("vue").PropType<Record<number, any>>;
+        };
+        formatTooltip: {
+            type: import("vue").PropType<(val: number) => string | number>;
+        };
+        rangeValue: {
+            type: import("vue").PropType<number[]>;
+            default: () => never[];
+        };
+        showDots: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        isFollowMark: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        alwayShowTooltip: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+        onChange?: ((...args: any[]) => any) | undefined;
+        "onUpdate:rangeValue"?: ((...args: any[]) => any) | undefined;
+    }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("change" | "update:modelValue" | "update:rangeValue")[], import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        reverse: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        vertical: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        range: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        modelValue: {
+            type: import("vue").PropType<number | number[]>;
+            default: number;
+        };
+        max: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        min: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        tooltipProps: {
+            type: import("vue").PropType<import("./types/sliderType").SliderTooltipProps>;
+            default: () => {
+                disabled: boolean;
+                placement: string;
+                isDark: boolean;
+            };
+        };
+        step: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        marks: {
+            type: import("vue").PropType<Record<number, any>>;
+        };
+        formatTooltip: {
+            type: import("vue").PropType<(val: number) => string | number>;
+        };
+        rangeValue: {
+            type: import("vue").PropType<number[]>;
+            default: () => never[];
+        };
+        showDots: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        isFollowMark: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        alwayShowTooltip: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+        onChange?: ((...args: any[]) => any) | undefined;
+        "onUpdate:rangeValue"?: ((...args: any[]) => any) | undefined;
+    }, {
+        reverse: boolean;
+        disabled: boolean;
+        vertical: boolean;
+        range: boolean;
+        modelValue: number | number[];
+        max: number;
+        min: number;
+        tooltipProps: import("./types/sliderType").SliderTooltipProps;
+        step: number;
+        rangeValue: number[];
+        showDots: boolean;
+        isFollowMark: boolean;
+        alwayShowTooltip: boolean;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        reverse: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        disabled: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        vertical: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        range: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        modelValue: {
+            type: import("vue").PropType<number | number[]>;
+            default: number;
+        };
+        max: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        min: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        tooltipProps: {
+            type: import("vue").PropType<import("./types/sliderType").SliderTooltipProps>;
+            default: () => {
+                disabled: boolean;
+                placement: string;
+                isDark: boolean;
+            };
+        };
+        step: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        marks: {
+            type: import("vue").PropType<Record<number, any>>;
+        };
+        formatTooltip: {
+            type: import("vue").PropType<(val: number) => string | number>;
+        };
+        rangeValue: {
+            type: import("vue").PropType<number[]>;
+            default: () => never[];
+        };
+        showDots: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        isFollowMark: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        alwayShowTooltip: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+        onChange?: ((...args: any[]) => any) | undefined;
+        "onUpdate:rangeValue"?: ((...args: any[]) => any) | undefined;
+    }, {}, {}, {}, {}, {
+        reverse: boolean;
+        disabled: boolean;
+        vertical: boolean;
+        range: boolean;
+        modelValue: number | number[];
+        max: number;
+        min: number;
+        tooltipProps: import("./types/sliderType").SliderTooltipProps;
+        step: number;
+        rangeValue: number[];
+        showDots: boolean;
+        isFollowMark: boolean;
+        alwayShowTooltip: boolean;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    reverse: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    disabled: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    vertical: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    range: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    modelValue: {
+        type: import("vue").PropType<number | number[]>;
+        default: number;
+    };
+    max: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    min: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    tooltipProps: {
+        type: import("vue").PropType<import("./types/sliderType").SliderTooltipProps>;
+        default: () => {
+            disabled: boolean;
+            placement: string;
+            isDark: boolean;
+        };
+    };
+    step: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    marks: {
+        type: import("vue").PropType<Record<number, any>>;
+    };
+    formatTooltip: {
+        type: import("vue").PropType<(val: number) => string | number>;
+    };
+    rangeValue: {
+        type: import("vue").PropType<number[]>;
+        default: () => never[];
+    };
+    showDots: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    isFollowMark: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    alwayShowTooltip: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+}>> & {
+    "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+    onChange?: ((...args: any[]) => any) | undefined;
+    "onUpdate:rangeValue"?: ((...args: any[]) => any) | undefined;
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("change" | "update:modelValue" | "update:rangeValue")[], "change" | "update:modelValue" | "update:rangeValue", {
+    reverse: boolean;
+    disabled: boolean;
+    vertical: boolean;
+    range: boolean;
+    modelValue: number | number[];
+    max: number;
+    min: number;
+    tooltipProps: import("./types/sliderType").SliderTooltipProps;
+    step: number;
+    rangeValue: number[];
+    showDots: boolean;
+    isFollowMark: boolean;
+    alwayShowTooltip: boolean;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        thumb?(_: {}): any;
+        custom?(_: any): any;
+        mark?(_: any): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

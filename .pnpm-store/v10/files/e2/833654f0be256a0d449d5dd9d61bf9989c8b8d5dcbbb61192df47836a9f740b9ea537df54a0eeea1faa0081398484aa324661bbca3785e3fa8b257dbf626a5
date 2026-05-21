@@ -1,0 +1,8 @@
+import { defineComponent as p, provide as r, openBlock as t, createElementBlock as m, Fragment as d, createBlock as o, withCtx as l, renderSlot as a, createCommentVNode as s } from "vue";
+import f from "./transitions/collapseTransition.js";
+import i from "./transitions/fadeTransition.js";
+/* empty css                            */
+const _ = p({ name: "LayTransition", __name: "index", props: { type: { default: "collapse" }, enable: { type: Boolean, default: !0 }, time: { default: 0.3 } }, setup: (n) => (r("time", n.time), (e, u) => e.enable ? (t(), m(d, { key: 0 }, [e.type === "collapse" ? (t(), o(f, { key: 0 }, { default: l(() => [a(e.$slots, "default")]), _: 3 })) : s("", !0), e.type === "fade" ? (t(), o(i, { key: 1 }, { default: l(() => [a(e.$slots, "default")]), _: 3 })) : s("", !0)], 64)) : a(e.$slots, "default", { key: 1 })) });
+export {
+  _ as default
+};

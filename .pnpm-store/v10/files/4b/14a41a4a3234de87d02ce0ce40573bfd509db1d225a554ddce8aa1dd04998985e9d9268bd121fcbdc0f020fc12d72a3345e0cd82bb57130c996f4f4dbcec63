@@ -1,0 +1,22 @@
+import { defineComponent as j, inject as k, computed as x, createVNode as d, Fragment as E } from "vue";
+import L from "../../../icon/index.js";
+import { LAY_TABLE_CONTEXT as O, columnsTypeList as z } from "../../constant.js";
+import { isString as B } from "../../../utils/type.js";
+const F = j({ name: "LayTableMainTd", inheritAttrs: !1, props: { data: { type: Object, default: () => ({}) }, dataIndex: { type: Number, default: 0 }, column: { type: Object, default: () => ({}) }, columnIndex: { type: Number, default: 0 }, expandSpace: { type: Boolean }, expandIndex: { type: Number, default: 0 }, currentIndentSize: { type: Number, default: 0 } }, emits: ["update:expandKeys"], setup({ data: n, column: e, dataIndex: s, columnIndex: t, expandSpace: y, expandIndex: r, currentIndentSize: v }, { slots: i }) {
+  const { tableProps: o, tableSlots: b, tableEmits: f, expandState: I, commonGetClasses: C, commonGetStylees: w } = k(O), m = (a, c, u, p) => {
+    const l = o.spanMethod(a, c, u, p);
+    return Array.isArray(l) ? { rowspan: l[0], colspan: l[1] } : l instanceof Object ? l : { rowspan: 1, colspan: 1 };
+  }, g = (a, { data: c, column: u, dataIndex: p, columnIndex: l }) => B(o[a]) ? o[a] : o[a](c, u, p, l), S = x(() => I.checkExpand(n[o.id])), A = x(() => S.value ? "layui-icon-subtraction" : "layui-icon-addition"), T = (a) => {
+    I.toggleExpand(n[o.id], !S.value), f("expand-change", n, a);
+  }, N = () => {
+    var a;
+    return d(E, null, [y && t === r && d("span", { style: { marginRight: `${v}px` } }, null), y && !n[o.childrenColumnName] && !b.expand && t === r && d("span", { class: "layui-table-cell-expand-icon-spaced" }, null), (b.expand || n[o.childrenColumnName]) && t === r && d(L, { class: "layui-table-cell-expand-icon", type: A.value, onClick: T }, null), (a = i.default) == null ? void 0 : a.call(i)]);
+  }, h = x(() => e.type && z.includes(e.type));
+  return () => ((a, c, u, p) => {
+    const l = m(a, c, u, p);
+    return l.colspan !== 0 || l.rowspan !== 0;
+  })(n, e, s, t) && d("td", { class: C(e, g("cellClassName", { data: n, column: e, dataIndex: s, columnIndex: t })), style: w(e, { whiteSpace: e.ellipsisTooltip ? "nowrap" : "normal" }, g("cellStyle", { data: n, column: e, dataIndex: s, columnIndex: t })), colspan: m(n, e, s, t).colspan, rowspan: m(n, e, s, t).rowspan, onDblclick: h.value ? (a) => f("cell-double", e.key ? n[e.key] : void 0, a) : void 0 }, [h.value ? d(N, null, null) : d("div", { class: "layui-table-cell-content", style: { textAlign: e.align, justifyContent: e.align } }, [d(N, null, null)])]);
+} });
+export {
+  F as default
+};

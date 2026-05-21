@@ -1,0 +1,166 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        center: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        space: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        active: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        simple: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        direction: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        currentStatus: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        composition: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+    }>> & {
+        onOnChange?: ((...args: any[]) => any) | undefined;
+    }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "onChange"[], import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        center: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        space: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        active: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        simple: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        direction: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        currentStatus: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        composition: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+    }>> & {
+        onOnChange?: ((...args: any[]) => any) | undefined;
+    }, {
+        center: boolean;
+        space: string;
+        active: number;
+        simple: boolean;
+        direction: string;
+        currentStatus: string;
+        composition: string;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        center: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        space: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        active: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        simple: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        direction: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        currentStatus: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        composition: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+    }>> & {
+        onOnChange?: ((...args: any[]) => any) | undefined;
+    }, {}, {}, {}, {}, {
+        center: boolean;
+        space: string;
+        active: number;
+        simple: boolean;
+        direction: string;
+        currentStatus: string;
+        composition: string;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    center: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    space: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    active: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    simple: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    direction: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    currentStatus: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    composition: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+}>> & {
+    onOnChange?: ((...args: any[]) => any) | undefined;
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "onChange"[], "onChange", {
+    center: boolean;
+    space: string;
+    active: number;
+    simple: boolean;
+    direction: string;
+    currentStatus: string;
+    composition: string;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        default?(_: {}): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

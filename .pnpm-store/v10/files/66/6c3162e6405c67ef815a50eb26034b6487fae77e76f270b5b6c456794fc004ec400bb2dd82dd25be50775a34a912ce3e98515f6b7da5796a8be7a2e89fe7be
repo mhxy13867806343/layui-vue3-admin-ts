@@ -1,0 +1,89 @@
+import { defineComponent as q, inject as G, ref as V, computed as B, openBlock as m, createElementBlock as w, normalizeClass as H, createBlock as I, withCtx as S, renderSlot as D, createVNode as P, createElementVNode as J, toDisplayString as K } from "vue";
+import i from "dayjs";
+import U from "../../../dropdown/index2.js";
+import k from "../../../input/index2.js";
+import { DATE_PICKER_CONTEXT as X } from "../../interface.js";
+import { dayjsToString as T, checkRangeValue as _ } from "../../util.js";
+import { isNumber as L } from "../../../utils/type.js";
+import { isArray as p } from "../../../utils/arrayUtil.js";
+const Q = ["size"], W = { key: 1, class: "laydate-range-inputs" }, Y = { class: "range-separator" }, re = q({ __name: "InputBlock", props: { name: {}, modelValue: {}, type: {}, disabled: { type: Boolean }, readonly: { type: Boolean }, placeholder: {}, allowClear: { type: Boolean }, simple: { type: Boolean }, max: {}, min: {}, range: { type: Boolean }, rangeSeparator: {}, size: {}, prefixIcon: {}, suffixIcon: {}, timestamp: { type: Boolean }, format: {}, inputFormat: {}, defaultValue: {}, defaultTime: {}, contentStyle: { type: [Boolean, null, String, Object, Array] }, contentClass: {}, disabledDate: { type: Function }, yearPage: {}, shortcuts: {}, static: { type: Boolean }, teleportProps: {} }, emits: ["update:modelValue", "change", "focus", "blur", "clear"], setup(A, { emit: E }) {
+  const a = A, u = E, d = G(X), C = V(), F = B(() => ["layui-date-picker", { "layui-date-range-picker": a.range, "layui-date-picker-static": a.static }]), f = B(() => p(a.placeholder) ? a.placeholder : [a.placeholder, a.placeholder]), l = V(null), t = B(() => {
+    let e;
+    if (a.range)
+      e = (p(a.modelValue) ? a.modelValue : []).map((o) => T(o, a.format));
+    else {
+      let o = a.modelValue;
+      ["year", "month"].includes(a.type) && L(a.modelValue) && `${a.modelValue}`.length <= 4 && (o += ""), e = T(o, a.format);
+    }
+    return p(l.value) ? [l.value[0] || e && e[0] || "", l.value[1] || e && e[1] || ""] : l.value !== null ? l.value : e;
+  });
+  function O(e) {
+    l.value = e;
+  }
+  function j(e) {
+    l.value ? l.value = [e, l.value[1]] : l.value = [e, null];
+  }
+  function N(e) {
+    l.value ? l.value = [l.value[0], e] : l.value = [null, e];
+  }
+  function v(e) {
+    return a.disabledDate ? a.disabledDate(e.toDate()) : !(!a.min || !e.isBefore(d.min)) || !(!a.max || !e.isAfter(d.max));
+  }
+  function R() {
+    if (l.value) {
+      const e = i(t.value, a.format);
+      e.isValid() && !v(e) && (u("update:modelValue", c(e)), l.value = null);
+    } else
+      u("update:modelValue", ""), l.value = null;
+  }
+  function $() {
+    var o, n, r;
+    const e = i(l.value && l.value[0], a.format);
+    if (e.isValid() && (!((o = t.value) != null && o[1]) || e.isBefore((n = t.value) == null ? void 0 : n[1]))) {
+      l.value = [e.format(a.format), ((r = t.value) == null ? void 0 : r[1]) || null];
+      const s = [e, i(l.value[1] || null, a.format)];
+      _(s) && s.every((g) => !v(g)) && (u("update:modelValue", c(s)), l.value = null);
+    }
+  }
+  function M() {
+    var o, n, r;
+    const e = i(l.value && l.value[1], a.format);
+    if (e.isValid() && (!((o = t.value) != null && o[0]) || e.isAfter((n = t.value) == null ? void 0 : n[0]))) {
+      l.value = [((r = t.value) == null ? void 0 : r[0]) || null, e.format(a.format)];
+      const s = [i(l.value[0] || null, a.format), e];
+      _(s) && s.every((g) => !v(g)) && (u("update:modelValue", c(s)), l.value = null);
+    }
+  }
+  function z() {
+    l.value = null, u("update:modelValue", a.range ? [] : ""), u("clear");
+  }
+  const y = V(!1);
+  function h(e) {
+    y.value = !1, setTimeout(() => {
+      y.value || (l.value = null, u("blur", e));
+    }, 0);
+  }
+  function b(e) {
+    y.value = !0, u("focus", e);
+  }
+  function c(e) {
+    if (p(e)) {
+      const [o, n] = e;
+      return o && n ? [o, n].map((r) => r.format(d.format)) : [];
+    }
+    if (["date", "datetime"].includes(a.type) && a.timestamp) {
+      const o = a.type === "date" ? e.startOf("day").valueOf() : e.valueOf();
+      return 1e3 * Math.floor(o / 1e3);
+    }
+    return e.format(d.format);
+  }
+  function x(e) {
+    var n;
+    const o = c(e);
+    u("update:modelValue", o), u("change", o), (n = C.value) == null || n.hide();
+  }
+  return (e, o) => (m(), w("div", { class: H(F.value), size: e.size }, [e.static ? D(e.$slots, "default", { key: 1, onPick: x }) : (m(), I(U, { key: 0, ref_key: "dropdownRef", ref: C, disabled: e.disabled, "auto-fit-min-width": !1, "click-to-close": !1, "content-class": e.contentClass, "content-style": e.contentStyle, "teleport-props": e.teleportProps }, { content: S(() => [D(e.$slots, "default", { onPick: x })]), default: S(() => [e.range ? (m(), w("div", W, [P(k, { readonly: e.readonly, name: e.name, "model-value": t.value && t.value[0], placeholder: f.value[0], disabled: e.disabled, class: "start-input", size: e.size, onInput: j, onChange: $, onBlur: h, onFocus: b }, null, 8, ["readonly", "name", "model-value", "placeholder", "disabled", "size"]), J("span", Y, K(e.rangeSeparator), 1), P(k, { readonly: e.readonly, name: e.name, "allow-clear": !e.disabled && e.allowClear, placeholder: f.value[1], "model-value": t.value && t.value[1], disabled: e.disabled, class: "end-input", size: e.size, onInput: N, onChange: M, onBlur: h, onFocus: b, onClear: z }, null, 8, ["readonly", "name", "allow-clear", "placeholder", "model-value", "disabled", "size"])])) : (m(), I(k, { key: 0, name: e.name, readonly: e.readonly, placeholder: f.value[0], "prefix-icon": e.prefixIcon, "suffix-icon": e.suffixIcon, disabled: e.disabled, "model-value": t.value, "allow-clear": !e.disabled && e.allowClear, size: e.size, onInput: O, onChange: R, onBlur: h, onFocus: b, onClear: z }, null, 8, ["name", "readonly", "placeholder", "prefix-icon", "suffix-icon", "disabled", "model-value", "allow-clear", "size"]))]), _: 3 }, 8, ["disabled", "content-class", "content-style", "teleport-props"]))], 10, Q));
+} });
+export {
+  re as default
+};

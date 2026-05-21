@@ -1,0 +1,20 @@
+import { isFunction as s } from "../../utils/type.js";
+const v = 100, c = 600, m = { beforeMount(i, r) {
+  const e = r.value, { interval: d = v, delay: l = c } = s(e) ? {} : e;
+  let t, o;
+  const n = () => s(e) ? e() : e.handler(), a = () => {
+    o && (clearTimeout(o), o = void 0), t && (clearInterval(t), t = void 0);
+  };
+  i.addEventListener("mousedown", (u) => {
+    u.button === 0 && (a(), n(), document.addEventListener("mouseup", () => a(), { once: !0 }), o = setTimeout(() => {
+      t = setInterval(() => {
+        n();
+      }, d);
+    }, l));
+  });
+} };
+export {
+  c as REPEAT_DELAY,
+  v as REPEAT_INTERVAL,
+  m as vRepeatClick
+};

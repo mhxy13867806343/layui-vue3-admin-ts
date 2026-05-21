@@ -1,0 +1,9 @@
+import { defineComponent as o, openBlock as s, createElementBlock as n, normalizeClass as l, renderSlot as p } from "vue";
+/* empty css           */
+const m = o({ name: "LayQuote", __name: "index", props: { type: {} }, setup(t) {
+  const a = t;
+  return (e, r) => (s(), n("div", { class: l(["layui-quote", [e.type ? `layui-quote-${a.type}` : ""]]) }, [p(e.$slots, "default")], 2));
+} });
+export {
+  m as default
+};

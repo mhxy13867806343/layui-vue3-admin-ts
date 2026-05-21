@@ -1,0 +1,5 @@
+const e = ["", "asc", "desc"], c = ["change", "sort-change", "update:expandKeys", "update:selectedKeys", "update:selectedKey", "row-contextmenu", "row-double", "row", "cell-double", "expand-change", "checkbox", "checkbox-all"];
+export {
+  e as sortType,
+  c as tableEmits
+};

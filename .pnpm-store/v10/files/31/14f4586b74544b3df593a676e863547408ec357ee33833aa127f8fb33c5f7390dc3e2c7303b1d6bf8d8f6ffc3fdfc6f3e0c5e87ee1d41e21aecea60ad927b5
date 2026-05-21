@@ -1,0 +1,6 @@
+import { defineComponent as a, openBlock as o, createElementBlock as t, createElementVNode as l, toDisplayString as s, renderSlot as p } from "vue";
+/* empty css           */
+const n = { class: "layui-select-option-group" }, i = { class: "layui-select-option-group-label" }, m = a({ name: "LaySelectOptionGroup", __name: "index", props: { label: { default: "Group Name" } }, setup: (r) => (e, u) => (o(), t("div", n, [l("dt", i, s(e.label), 1), p(e.$slots, "default")])) });
+export {
+  m as default
+};

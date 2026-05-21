@@ -1,0 +1,4 @@
+import o from "./index2.js";
+export {
+  o as default
+};

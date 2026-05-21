@@ -1,0 +1,29 @@
+import { defineComponent as C, useSlots as D, computed as N, provide as z, openBlock as d, createElementBlock as c, normalizeClass as h, createElementVNode as n, renderSlot as v, createTextVNode as b, toDisplayString as x, createCommentVNode as B, Fragment as S, renderList as _, createBlock as I, unref as $, h as w, reactive as O } from "vue";
+/* empty css           */
+import { reactiveOmit as T } from "@vueuse/core";
+import { DESCRIPTIONS_INJECTION_KEY as V } from "./descriptions3.js";
+import j from "../descriptionsItem/index.js";
+import F from "./descriptions-row.js";
+import { flattedChildren as J } from "../utils/domUtil.js";
+const K = { key: 0, class: "layui-descriptions-header" }, P = { class: "layui-descriptions-header-title" }, R = { class: "layui-descriptions-header-extra" }, Y = { class: "layui-descriptions-body" }, W = C({ name: "LayDescriptions", __name: "descriptions", props: { dataList: {}, title: {}, extra: {}, border: { type: Boolean, default: !1 }, column: { default: 3 }, direction: { default: "horizontal" }, size: { default: "md" } }, setup(L) {
+  const t = L, p = D(), E = N(() => ["layui-descriptions", `layui-descriptions-${t.size}`]), u = (e, i, o, a = !1) => (e.props || (e.props = {}), i > o && (e.props.span = o), a && (e.props.span = i), e), g = () => {
+    let e = [];
+    var i;
+    t.dataList && t.dataList.length ? (i = t.dataList, e = i.map((s) => w(j, { ...T(O(s), "label", "content") }, { default: () => s.content, label: () => s.label }))) : p != null && p.default && (e = J(p.default()).filter((s) => s.type.name === "LayDescriptionsItem"));
+    const o = [];
+    let a = [], r = t.column, m = 0;
+    return e.forEach((s, f) => {
+      var y;
+      const l = ((y = s.props) == null ? void 0 : y.span) || 1;
+      if (f < e.length - 1 && (m += l > r ? r : l), f === e.length - 1) {
+        const k = t.column - m % t.column;
+        return a.push(u(s, k, r, !0)), void o.push(a);
+      }
+      l < r ? (r -= l, a.push(s)) : (a.push(u(s, l, r)), o.push(a), r = t.column, a = []);
+    }), o;
+  };
+  return z(V, { ...t }), (e, i) => (d(), c("div", { class: h(E.value) }, [e.title || e.extra ? (d(), c("div", K, [n("div", P, [v(e.$slots, "title", {}, () => [b(x(e.title), 1)])]), n("div", R, [v(e.$slots, "extra", {}, () => [b(x(e.extra), 1)])])])) : B("", !0), n("div", Y, [n("table", { class: h({ "is-border": e.border }) }, [n("tbody", null, [(d(!0), c(S, null, _(g(), (o, a) => (d(), I($(F), { key: a, row: o }, null, 8, ["row"]))), 128))])], 2)])], 2));
+} });
+export {
+  W as default
+};

@@ -1,0 +1,9 @@
+import { defineComponent as n, computed as l, openBlock as s, createElementBlock as i, normalizeClass as r, renderSlot as u } from "vue";
+/* empty css           */
+const c = n({ name: "LayContainer", __name: "index", props: { fluid: { type: [Boolean, String], default: !1 } }, setup(e) {
+  const a = e, o = l(() => a.fluid ? "layui-fluid" : "layui-container");
+  return (t, d) => (s(), i("div", { class: r(o.value) }, [u(t.$slots, "default")], 2));
+} });
+export {
+  c as default
+};

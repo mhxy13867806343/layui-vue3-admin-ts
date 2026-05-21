@@ -1,0 +1,9 @@
+import { defineComponent as t, useCssVars as n, inject as o, ref as r, openBlock as i, createBlock as d, Transition as f, withCtx as l, renderSlot as u } from "vue";
+const C = t({ __name: "fadeTransition", setup(c) {
+  n((e) => ({ "16a05dd5": s.value }));
+  const a = o("time"), s = r(`opacity ${a}s ease`);
+  return (e, m) => (i(), d(f, { name: "fade" }, { default: l(() => [u(e.$slots, "default")]), _: 3 }));
+} });
+export {
+  C as default
+};

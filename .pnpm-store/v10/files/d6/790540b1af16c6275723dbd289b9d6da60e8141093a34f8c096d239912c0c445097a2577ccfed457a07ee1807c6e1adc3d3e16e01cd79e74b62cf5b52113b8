@@ -1,0 +1,58 @@
+import { defineComponent as O, computed as M, ref as d, openBlock as m, createBlock as R, withCtx as C, createElementVNode as a, createElementBlock as w, createVNode as B, createCommentVNode as P, Fragment as q, renderList as G, normalizeClass as r, toDisplayString as V, unref as j, withModifiers as J } from "vue";
+/* empty css           */
+import { LayIconList as i, LayIcon as K } from "@layui/icons-vue";
+import Q from "../dropdown/index2.js";
+import T from "../scroll/index2.js";
+import U from "../input/index2.js";
+import W from "./index.hooks.js";
+const X = ["size"], Y = { class: "layui-iconpicker-main" }, Z = { class: "layui-icon-picker-clear" }, $ = { class: "layui-iconpicker-suffix" }, aa = { class: "layui-iconpicker-view layui-iconpicker-scroll" }, la = { key: 0, class: "layui-iconpicker-search" }, ea = a("i", { class: "layui-icon layui-icon-search" }, null, -1), ia = { class: "layui-iconpicker-list" }, sa = ["onClick"], oa = { class: "layui-elip" }, ta = { key: 1, class: "layui-iconpicker-page" }, ua = { id: "layui-laypage-1", class: "layui-laypage layui-laypage-default" }, na = { class: "layui-laypage-count" }, ca = [a("i", { class: "layui-icon layui-icon-left" }, null, -1)], ra = { class: "layui-laypage-curr" }, pa = a("em", { class: "layui-laypage-em" }, null, -1), ya = a("span", { class: "layui-laypage-spr" }, "…", -1), va = a("a", { href: "javascript:;", class: "layui-laypage-last", title: "尾页" }, "14", -1), da = [a("i", { class: "layui-icon layui-icon-right" }, null, -1)], wa = O({ name: "LayIconPicker", __name: "index", props: { modelValue: { default: "layui-icon-face-smile" }, page: { type: Boolean, default: !1 }, size: {}, showSearch: { type: Boolean }, disabled: { type: Boolean, default: !1 }, allowClear: { type: Boolean }, contentClass: {}, contentStyle: { type: [Boolean, null, String, Object, Array] }, teleportProps: {} }, emits: ["update:modelValue", "change"], setup(I, { emit: A }) {
+  const n = I, { size: N } = W(n), S = A, _ = M(() => n.modelValue), z = d(null), x = d(!1), E = function() {
+    S("update:modelValue", "");
+  }, D = M(() => n.modelValue != null && n.modelValue != ""), u = d([]), f = d(i.length), p = d(Math.ceil(f.value / 12)), o = d(1);
+  n.page ? u.value = i.slice(0, 12) : u.value = i;
+  const F = () => {
+    const l = 12 * (o.value - 1), e = l + 12;
+    n.page ? (u.value = i.slice(l, e), f.value = i.length, p.value = Math.ceil(i.length / 12)) : u.value = i;
+  }, H = (l) => {
+    o.value = 1;
+    const e = 12 * (o.value - 1), s = e + 12, t = l;
+    t ? n.page ? (u.value = h(t, i).slice(e, s), f.value = h(t, i).length, p.value = Math.ceil(h(t, i).length / 12)) : u.value = h(t, i) : n.page ? (u.value = i.slice(e, s), f.value = i.length, p.value = Math.ceil(i.length / 12)) : u.value = i;
+  }, h = (l, e) => {
+    for (var s = [], t = l.charAt(0), c = l.length, y = 0; y < e.length; y++) {
+      var v = e[y], L = !1;
+      for (var g in v)
+        if (typeof v[g] == "function")
+          v[g]();
+        else {
+          var k = "";
+          v[g] != null && (k = v[g]);
+          for (var b = 0; b < k.length; b++)
+            if (k.charAt(b) == t && k.substring(b).substring(0, c) == l) {
+              L = !0;
+              break;
+            }
+        }
+      L && s.push(v);
+    }
+    return s;
+  };
+  return (l, e) => (m(), R(Q, { ref_key: "dropdownRef", ref: z, disabled: l.disabled, contentClass: l.contentClass, contentStyle: l.contentStyle, teleportProps: l.teleportProps, onHide: e[2] || (e[2] = (s) => x.value = !1), onShow: e[3] || (e[3] = (s) => x.value = !0) }, { content: C(() => [a("div", aa, [l.showSearch ? (m(), w("div", la, [B(U, { onInput: H, onClear: F, autocomplete: "true", "allow-clear": !0 }, { prefix: C(() => [ea]), _: 1 })])) : P("", !0), a("div", ia, [B(T, { style: { height: "200px" }, thumbColor: "rgb(238, 238, 238)" }, { default: C(() => [a("ul", null, [(m(!0), w(q, null, G(u.value, (s) => (m(), w("li", { key: s, class: r([_.value === s.class ? "layui-this" : ""]), onClick: (t) => function(c) {
+    var y;
+    S("update:modelValue", c), S("change", c), (y = z.value) == null || y.hide();
+  }(s.class) }, [a("i", { class: r(["layui-icon", [s.class]]) }, null, 2), a("p", oa, V(s.name), 1)], 10, sa))), 128))])]), _: 1 })]), l.page ? (m(), w("div", ta, [a("div", ua, [a("span", na, "共 " + V(f.value) + " 个", 1), a("a", { href: "javascript:;", class: r(["layui-laypage-prev", [o.value === 1 ? "layui-disabled" : ""]]), onClick: e[0] || (e[0] = (s) => (() => {
+    if (o.value === 1)
+      return;
+    o.value = o.value - 1;
+    const t = 12 * (o.value - 1), c = t + 12;
+    u.value = i.slice(t, c);
+  })()) }, ca, 2), a("span", ra, [pa, a("em", null, V(o.value) + " / " + V(p.value), 1)]), ya, va, a("a", { href: "javascript:;", class: r([[o.value === p.value ? "layui-disabled" : ""], "layui-laypage-next"]), onClick: e[1] || (e[1] = (s) => (() => {
+    if (o.value === p.value)
+      return;
+    o.value = o.value + 1;
+    const t = 12 * (o.value - 1), c = t + 12;
+    u.value = i.slice(t, c);
+  })()) }, da, 2)])])) : P("", !0)])]), default: C(() => [a("div", { class: r(["layui-border-box layui-iconpicker layui-iconpicker-split", [{ "layui-iconpicker-disabled": l.disabled, "has-content": D.value, "has-clear": !l.disabled && l.allowClear }]]), size: j(N) }, [a("div", Y, [a("i", { class: r(["layui-icon", [_.value]]) }, null, 2)]), a("span", Z, [B(j(K), { type: "layui-icon-close-fill", onClick: J(E, ["stop"]) })]), a("span", $, [a("i", { class: r(["layui-icon layui-icon-down", [x.value ? "transform" : ""]]) }, null, 2)])], 10, X)]), _: 1 }, 8, ["disabled", "contentClass", "contentStyle", "teleportProps"]));
+} });
+export {
+  wa as default
+};

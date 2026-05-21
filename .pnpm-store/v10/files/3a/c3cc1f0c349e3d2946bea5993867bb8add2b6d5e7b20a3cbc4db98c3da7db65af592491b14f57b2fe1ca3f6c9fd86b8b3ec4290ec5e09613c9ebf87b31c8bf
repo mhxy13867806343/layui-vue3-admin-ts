@@ -1,0 +1,6 @@
+import { defineComponent as t, provide as o, openBlock as s, createElementBlock as l, renderSlot as i } from "vue";
+import { LAYUI_AVATAR_KEY as r } from "./use-avatar-list.js";
+const d = { class: "layui-avatar-list" }, m = t({ name: "LayAvatarList", __name: "index", props: { size: { default: "md" }, radius: { type: Boolean, default: !1 }, autoFixSize: { type: Boolean, default: !0 } }, setup: (a) => (o(r, { ...a }), (e, n) => (s(), l("div", d, [i(e.$slots, "default")]))) });
+export {
+  m as default
+};

@@ -1,0 +1,230 @@
+declare const component: {
+    new (...args: any[]): import("vue").CreateComponentPublicInstance<Readonly<import("vue").ExtractPropTypes<{
+        length: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        text: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        modelValue: {
+            type: import("vue").PropType<number>;
+            required: true;
+            default: number;
+        };
+        allowClear: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        readonly: {
+            type: import("vue").PropType<string | boolean>;
+            default: boolean;
+        };
+        theme: {
+            type: import("vue").PropType<string>;
+        };
+        half: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        isBlock: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        clearIcon: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        icons: {
+            type: import("vue").PropType<string[]>;
+            default: () => string[];
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+        onClear?: ((...args: any[]) => any) | undefined;
+        onSelect?: ((...args: any[]) => any) | undefined;
+    }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("select" | "clear" | "update:modelValue")[], import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        length: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        text: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        modelValue: {
+            type: import("vue").PropType<number>;
+            required: true;
+            default: number;
+        };
+        allowClear: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        readonly: {
+            type: import("vue").PropType<string | boolean>;
+            default: boolean;
+        };
+        theme: {
+            type: import("vue").PropType<string>;
+        };
+        half: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        isBlock: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        clearIcon: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        icons: {
+            type: import("vue").PropType<string[]>;
+            default: () => string[];
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+        onClear?: ((...args: any[]) => any) | undefined;
+        onSelect?: ((...args: any[]) => any) | undefined;
+    }, {
+        length: number;
+        text: boolean;
+        modelValue: number;
+        allowClear: boolean;
+        readonly: string | boolean;
+        half: boolean;
+        isBlock: boolean;
+        clearIcon: string;
+        icons: string[];
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import("vue").ExtractPropTypes<{
+        length: {
+            type: import("vue").PropType<number>;
+            default: number;
+        };
+        text: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        modelValue: {
+            type: import("vue").PropType<number>;
+            required: true;
+            default: number;
+        };
+        allowClear: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        readonly: {
+            type: import("vue").PropType<string | boolean>;
+            default: boolean;
+        };
+        theme: {
+            type: import("vue").PropType<string>;
+        };
+        half: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        isBlock: {
+            type: import("vue").PropType<boolean>;
+            default: boolean;
+        };
+        clearIcon: {
+            type: import("vue").PropType<string>;
+            default: string;
+        };
+        icons: {
+            type: import("vue").PropType<string[]>;
+            default: () => string[];
+        };
+    }>> & {
+        "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+        onClear?: ((...args: any[]) => any) | undefined;
+        onSelect?: ((...args: any[]) => any) | undefined;
+    }, {}, {}, {}, {}, {
+        length: number;
+        text: boolean;
+        modelValue: number;
+        allowClear: boolean;
+        readonly: string | boolean;
+        half: boolean;
+        isBlock: boolean;
+        clearIcon: string;
+        icons: string[];
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+    length: {
+        type: import("vue").PropType<number>;
+        default: number;
+    };
+    text: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    modelValue: {
+        type: import("vue").PropType<number>;
+        required: true;
+        default: number;
+    };
+    allowClear: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    readonly: {
+        type: import("vue").PropType<string | boolean>;
+        default: boolean;
+    };
+    theme: {
+        type: import("vue").PropType<string>;
+    };
+    half: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    isBlock: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
+    clearIcon: {
+        type: import("vue").PropType<string>;
+        default: string;
+    };
+    icons: {
+        type: import("vue").PropType<string[]>;
+        default: () => string[];
+    };
+}>> & {
+    "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+    onClear?: ((...args: any[]) => any) | undefined;
+    onSelect?: ((...args: any[]) => any) | undefined;
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("select" | "clear" | "update:modelValue")[], "select" | "clear" | "update:modelValue", {
+    length: number;
+    text: boolean;
+    modelValue: number;
+    allowClear: boolean;
+    readonly: string | boolean;
+    half: boolean;
+    isBlock: boolean;
+    clearIcon: string;
+    icons: string[];
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    $slots: {
+        default?(_: {
+            value: any;
+        }): any;
+    };
+}) & import("vue").Plugin<any[]>;
+export default component;

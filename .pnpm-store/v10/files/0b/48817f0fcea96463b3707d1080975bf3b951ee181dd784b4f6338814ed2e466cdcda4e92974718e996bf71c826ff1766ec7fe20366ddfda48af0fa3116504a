@@ -1,0 +1,37 @@
+import type { PropType } from "vue";
+import type { DescriptionsContext } from "./descriptions";
+import type { DescriptionsItemsNode } from "../descriptionsItem/interface";
+declare const _default: import("vue").DefineComponent<{
+    cell: {
+        type: PropType<DescriptionsItemsNode>;
+        default: () => {};
+    };
+    tag: {
+        type: StringConstructor;
+        default: string;
+    };
+    type: {
+        type: StringConstructor;
+        default: string;
+    };
+}, {
+    descriptionsContext: DescriptionsContext;
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+    cell: {
+        type: PropType<DescriptionsItemsNode>;
+        default: () => {};
+    };
+    tag: {
+        type: StringConstructor;
+        default: string;
+    };
+    type: {
+        type: StringConstructor;
+        default: string;
+    };
+}>>, {
+    type: string;
+    cell: DescriptionsItemsNode;
+    tag: string;
+}, {}>;
+export default _default;

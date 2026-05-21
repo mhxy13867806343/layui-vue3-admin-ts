@@ -1,0 +1,34 @@
+import { defineComponent as h, ref as g, computed as b, onMounted as w, nextTick as H, onUnmounted as S, openBlock as k, createElementBlock as B, normalizeStyle as L, renderSlot as C } from "vue";
+/* empty css           */
+const _ = h({ name: "LayAffix", __name: "index", props: { offset: { default: 0 }, target: { default: () => document.body }, position: { default: "top" } }, emits: ["scroll"], setup(c, { emit: x }) {
+  const e = c, y = x, a = g(!1), o = g();
+  let n = 0, u = 0, p = 0, d = 0, m = 0, s = 0;
+  const T = b(() => {
+    if (a.value && o.value) {
+      let t = { position: "fixed !important", top: "unset", bottom: "unset", left: u - p + "px" };
+      return e.position === "top" ? t.top = s - d + "px" : t.bottom = s - m + "px", t;
+    }
+  }), r = () => {
+    var t;
+    if (o.value) {
+      let f = o.value.offsetTop, l = (t = e.target) == null ? void 0 : t.scrollTop;
+      if (e.position === "top")
+        f - l + e.target.offsetTop < s && (a.value ? l <= n && (a.value = !1) : (n = l, a.value = !0));
+      else {
+        let v = (e.target.offsetHeight > window.innerHeight ? window.innerHeight : e.target.offsetHeight) + l - f - o.value.offsetHeight;
+        a.value ? l >= n && (a.value = !1) : v < s && (n = l - v + e.offset, a.value = !0);
+      }
+      y("scroll", { targetScroll: l, affixed: a.value, offset: a.value ? Math.abs(l - n) : 0 });
+    }
+  }, i = (t, f) => t.currentStyle ? t.currentStyle[f] : document.defaultView.getComputedStyle(t, null)[f];
+  return w(() => {
+    H(() => {
+      o.value.offsetTop, e.target.offsetTop, u = o.value.getBoundingClientRect().left, p = parseFloat(i(o.value, "marginLeft") || 0), d = parseFloat(i(o.value, "marginTop") || 0), m = parseFloat(i(o.value, "marginBottom") || 0), s = e.offset + e.target.offsetTop, e.position === "bottom" && (s = e.offset), e.target.addEventListener("scroll", r, !0), r();
+    });
+  }), S(() => {
+    e.target.removeEventListener("scroll", r);
+  }), (t, f) => (k(), B("div", { class: "layui-affix", style: L(T.value), ref_key: "dom", ref: o }, [C(t.$slots, "default")], 4));
+} });
+export {
+  _ as default
+};

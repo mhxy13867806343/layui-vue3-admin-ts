@@ -75,9 +75,11 @@
 
 ## 🚀 本地开发
 
+> 本项目使用 pnpm 作为包管理器，请确保已安装 pnpm >= 8。
+
 ```bash
-npm install
-npm run dev          # 默认 http://localhost:5173
+pnpm install
+pnpm dev          # 默认 http://localhost:5173
 ```
 
 预置账号（mock 模式）：
@@ -90,17 +92,17 @@ npm run dev          # 默认 http://localhost:5173
 ## 🛠 脚本
 
 ```bash
-npm run dev            # Vite 开发服务器
-npm run build          # 类型检查 + 生产构建
-npm run preview        # 预览构建产物
-npm run lint           # ESLint
-npm run type-check     # vue-tsc 严格类型检查
-npm run test           # Vitest 一次性
-npm run test:watch     # Vitest 监听
-npm run test:coverage  # 覆盖率报告
+pnpm dev            # Vite 开发服务器
+pnpm build          # 类型检查 + 生产构建
+pnpm preview        # 预览构建产物
+pnpm lint           # ESLint
+pnpm type-check     # vue-tsc 严格类型检查
+pnpm test           # Vitest 一次性
+pnpm test:watch     # Vitest 监听
+pnpm test:coverage  # 覆盖率报告
 ```
 
-CI 推荐顺序：`npm run type-check && npm run lint && npm run test && npm run build`，任一失败中断流水线。
+CI 推荐顺序：`pnpm type-check && pnpm lint && pnpm test && pnpm build`，任一失败中断流水线。
 
 ## ⚙️ 环境变量
 
@@ -169,7 +171,7 @@ http.get('/long-poll', { tag: 'long-poll' })
 ## 🤝 贡献
 
 1. Fork 后建分支：`feat/xxx` / `fix/xxx`
-2. 本地通过 `npm run type-check && npm run lint && npm run test`
+2. 本地通过 `pnpm type-check && pnpm lint && pnpm test`
 3. 提交 PR / MR，描述变更点与测试结论
 
 ## 📄 License

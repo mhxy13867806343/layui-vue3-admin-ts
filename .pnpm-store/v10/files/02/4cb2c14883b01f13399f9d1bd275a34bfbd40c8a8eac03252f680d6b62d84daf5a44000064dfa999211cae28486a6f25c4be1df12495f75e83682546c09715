@@ -1,0 +1,14 @@
+import { defineComponent as t, useSlots as u, computed as p, h as r, openBlock as l, createElementBlock as d, createVNode as m, unref as c } from "vue";
+const i = { class: "layui-menu layui-dropdown-menu" }, w = t({ name: "LayDropdownMenu", __name: "index", setup(f) {
+  const a = u(), s = p(() => {
+    const n = a.default ? a.default() : [];
+    return r("div", null, n.map((e) => {
+      var o;
+      return ((o = e == null ? void 0 : e.type) == null ? void 0 : o.name) === "LayDropdownSubMenu" && (e.props = { ...e.props, teleportProps: { disabled: !1 } }), e;
+    }));
+  });
+  return (n, e) => (l(), d("ul", i, [m(c(s))]));
+} });
+export {
+  w as default
+};

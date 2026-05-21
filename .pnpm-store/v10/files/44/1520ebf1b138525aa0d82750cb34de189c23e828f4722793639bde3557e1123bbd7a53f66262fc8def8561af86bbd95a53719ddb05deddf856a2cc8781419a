@@ -1,0 +1,67 @@
+import { defineComponent as b, watch as i, renderSlot as m } from "vue";
+import { useI18n as g } from "../language/index.js";
+import { setFetchMethod as h, enable as f, disable as p, auto as v } from "@umijs/ssr-darkreader";
+const S = b({ name: "lay-config-provider", props: { locale: { default: "zh_CN" }, locales: {}, theme: { default: "light" }, themeVariable: {}, darkPartial: {} }, setup(n) {
+  const r = n, { locale: s, setLocaleMessage: c, mergeLocaleMessage: d } = g(), y = [".layui-colorpicker-trigger-span", "div.layui-color-picker *"];
+  return i(() => r.locale, (t) => {
+    ((e) => {
+      s.value = e;
+    })(t);
+  }, { immediate: !0 }), i(() => r.locales, (t) => {
+    t == null || t.forEach((e) => {
+      var a, l;
+      a = e.name, l = e.locale, e.merge ? d(a, l) : c(a, l);
+    });
+  }, { immediate: !0, deep: !0 }), i(() => r.theme, (t) => {
+    ((e) => {
+      const a = { mode: 1, brightness: 100, contrast: 90, sepia: 0, grayscale: 0 }, l = { css: `
+  .lay-progress-circle svg {
+    filter: invert(98%) hue-rotate(180deg) contrast(80%) !important;
+  }
+  .layui-tab-card > .layui-tab-head > .layui-tab-title.is-top .layui-this::after, 
+  .layui-tab-title .layui-this::after {
+    border-bottom-color: rgb(34, 36, 37);
+  }
+  .layui-tab-card > .layui-tab-head > .layui-tab-title.is-bottom .layui-this::after,
+  .layui-tab-card > .layui-tab-head > .layui-tab-title.is-top .layui-this::after{
+    border-left-color: #3c4042;
+    border-right-color: #3c4042;
+  }
+  .layui-tab-card > .layui-tab-head > .layui-tab-title.is-bottom .layui-this::after {
+    border-top-color: rgb(34, 36, 37);
+  }
+  .layui-tab-card > .layui-tab-head > .layui-tab-title.is-left .layui-this::after,
+  .layui-tab-card > .layui-tab-head > .layui-tab-title.is-right .layui-this::after {
+    border-top-color: #3c4042;
+    border-bottom-color: #3c4042;
+  }
+  .layui-tab-title.is-left .layui-this::after {
+    border-right-color: rgb(34, 36, 37);
+    border-top-color: #3c4042;
+    border-bottom-color: #3c4042;
+    border-left-color: #3c4042;
+  }
+  .layui-tab-title.is-right .layui-this::after {
+    border-left-color: rgb(34, 36, 37);
+    border-top-color: #3c4042;
+    border-bottom-color: #3c4042;
+    border-right-color: #3c4042;
+  }
+`, invert: [".lay-progress-circle svg", ".layui-layer-loading .layui-layer-loading1", ".layui-layer-loading .layui-layer-loading2", ".layui-loading img", ".layui-layer-ico", ".layui-layer-min", ".layer-icon-ico16"], ignoreInlineStyle: y, disableStyleSheetsProxy: !1, ignoreImageAnalysis: ["*"] };
+      Object.assign(a, r.darkPartial), e === "dark" ? (window && h(window.fetch), f(a, l)) : e === "light" ? p() : e === "auto" && v(a, l);
+    })(t);
+  }, { immediate: !0 }), i(() => r.themeVariable, (t) => {
+    ((e) => {
+      if (e != null) {
+        const a = Object.keys(e);
+        for (let l = 0; l < a.length; l++) {
+          const o = a[l], u = e[o];
+          document.documentElement.style.setProperty(o, u);
+        }
+      }
+    })(t);
+  }, { immediate: !0, deep: !0 }), (t, e) => m(t.$slots, "default");
+} });
+export {
+  S as default
+};

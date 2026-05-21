@@ -1,0 +1,89 @@
+import { defineComponent as I, useSlots as J, ref as u, watch as V, computed as K, openBlock as r, createElementBlock as s, createElementVNode as o, normalizeStyle as T, createVNode as m, withCtx as p, renderSlot as y, createTextVNode as w, toDisplayString as M, createCommentVNode as _, Fragment as C, renderList as B, unref as E } from "vue";
+/* empty css           */
+import L from "../input/index2.js";
+import z from "../button/index2.js";
+import $ from "../checkbox/index2.js";
+const P = { class: "layui-transfer layui-form layui-border-box" }, Q = { class: "layui-transfer-header" }, R = { key: 0, class: "layui-transfer-search" }, W = { class: "layui-transfer-data" }, X = { key: 1, class: "layui-transfer-footer" }, Y = { class: "layui-transfer-active" }, Z = { class: "layui-transfer-button-group" }, ee = o("i", { class: "layui-icon layui-icon-next" }, null, -1), ae = o("i", { class: "layui-icon layui-icon-prev" }, null, -1), le = { class: "layui-transfer-header" }, te = { key: 0, class: "layui-transfer-search" }, ue = { class: "layui-transfer-data" }, ie = { key: 1, class: "layui-transfer-footer" }, ve = I({ name: "LayTransfer", __name: "index", props: { id: { default: "id" }, title: { default: () => ["主列表", "副列表"] }, width: { default: "200px" }, height: { default: "360px" }, showSearch: { type: [Boolean, String], default: !1 }, dataSource: { default: () => [] }, modelValue: { default: () => [] }, searchMethod: {} }, emits: ["update:modelValue", "change"], setup(D, { emit: j }) {
+  const x = J(), t = D, k = j, n = u([]), v = u([]), O = u([]), g = u([]), i = u([]), d = u([]), U = u(!1), F = u(!1), b = u(!1), S = u(!1), f = u(""), h = u(""), q = (a) => {
+    if (a) {
+      const l = n.value.filter((e) => !e.disabled).map((e) => e[t.id]);
+      i.value = [...l];
+    } else
+      i.value = [];
+  };
+  V(() => [t.modelValue, t.dataSource], () => {
+    let a = [], l = [];
+    t.dataSource.forEach((e) => {
+      t.modelValue.includes(e[t.id]) && a.push(e);
+    }), t.dataSource.forEach((e) => {
+      t.modelValue.includes(e[t.id]) || l.push(e);
+    }), f.value != "" ? n.value = l.filter((e) => {
+      var c;
+      if (t.searchMethod) {
+        if (t.searchMethod(f.value, e))
+          return e;
+      } else if (((c = e.title) == null ? void 0 : c.indexOf(f.value)) != -1)
+        return e;
+    }) : n.value = [...l], h.value != "" ? v.value = a.filter((e) => {
+      var c;
+      if (t.searchMethod) {
+        if (t.searchMethod(h.value, e))
+          return e;
+      } else if (((c = e.title) == null ? void 0 : c.indexOf(h.value)) != -1)
+        return e;
+    }) : v.value = [...a], O.value = [...l], g.value = [...a];
+  }, { immediate: !0 }), V(i, () => {
+    n.value.length === i.value.length && n.value.length != 0 ? U.value = !0 : U.value = !1, i.value.length > 0 && n.value.length != 0 ? b.value = !0 : b.value = !1;
+  }, { deep: !0 });
+  const A = (a) => {
+    if (a) {
+      const l = v.value.filter((e) => !e.disabled).map((e) => e[t.id]);
+      d.value = [...l];
+    } else
+      d.value = [];
+  };
+  V(d, () => {
+    v.value.length === d.value.length && v.value.length > 0 ? F.value = !0 : F.value = !1, d.value.length > 0 && v.value.length != 0 ? S.value = !0 : S.value = !1;
+  }, { deep: !0 });
+  const G = () => {
+    if (i.value.length === 0)
+      return;
+    let a = [];
+    n.value.forEach((l) => {
+      i.value.indexOf(l[t.id]) != -1 && a.push(l[t.id]);
+    }), g.value.forEach((l) => {
+      a.push(l[t.id]);
+    }), k("change", a), k("update:modelValue", a), i.value = [];
+  }, H = () => {
+    if (d.value.length === 0)
+      return;
+    let a = [];
+    g.value.forEach((l) => {
+      d.value.indexOf(l[t.id]) == -1 && a.push(l[t.id]);
+    }), k("change", a), k("update:modelValue", a), d.value = [];
+  };
+  V(f, () => {
+    f.value === "" && (n.value = O.value), n.value = O.value.filter((a) => {
+      var l;
+      if (t.searchMethod) {
+        if (t.searchMethod(f.value, a))
+          return a;
+      } else if (((l = a.title) == null ? void 0 : l.indexOf(f.value)) != -1)
+        return a;
+    });
+  }), V(h, () => {
+    h.value === "" && (v.value = g.value), v.value = g.value.filter((a) => {
+      var l;
+      if (t.searchMethod) {
+        if (t.searchMethod(h.value, a))
+          return a;
+      } else if (((l = a.title) == null ? void 0 : l.indexOf(h.value)) != -1)
+        return a;
+    });
+  });
+  const N = K(() => ({ width: t.width, height: t.height, flex: `0 0 ${t.width}` }));
+  return (a, l) => (r(), s("div", null, [o("div", P, [o("div", { class: "layui-transfer-box", style: T(N.value) }, [o("div", Q, [m($, { modelValue: b.value, "onUpdate:modelValue": l[0] || (l[0] = (e) => b.value = e), "is-indeterminate": !U.value, skin: "primary", value: "all", onChange: q }, { default: p(() => [y(a.$slots, "leftTitle", {}, () => [w(M(a.title[0]), 1)])]), _: 3 }, 8, ["modelValue", "is-indeterminate"])]), a.showSearch ? (r(), s("div", R, [m(L, { modelValue: f.value, "onUpdate:modelValue": l[1] || (l[1] = (e) => f.value = e), "prefix-icon": "layui-icon-search", placeholder: "关键词搜索" }, null, 8, ["modelValue"])])) : _("", !0), o("ul", W, [(r(!0), s(C, null, B(n.value, (e) => (r(), s("li", { key: e }, [m($, { modelValue: i.value, "onUpdate:modelValue": l[2] || (l[2] = (c) => i.value = c), skin: "primary", disabled: e.disabled, value: e[a.id] }, { default: p(() => [E(x).item ? y(a.$slots, "item", { key: 0, data: e }) : (r(), s(C, { key: 1 }, [w(M(e.title), 1)], 64))]), _: 2 }, 1032, ["modelValue", "disabled", "value"])]))), 128))]), E(x).leftFooter ? (r(), s("div", X, [y(a.$slots, "leftFooter")])) : _("", !0)], 4), o("div", Y, [o("div", Z, [m(z, { type: "primary", disabled: i.value.length == 0, onClick: G }, { default: p(() => [ee]), _: 1 }, 8, ["disabled"]), m(z, { type: "primary", disabled: d.value.length == 0, onClick: H }, { default: p(() => [ae]), _: 1 }, 8, ["disabled"])])]), o("div", { class: "layui-transfer-box", style: T(N.value) }, [o("div", le, [m($, { modelValue: S.value, "onUpdate:modelValue": l[3] || (l[3] = (e) => S.value = e), "is-indeterminate": !F.value, skin: "primary", value: "all", onChange: A }, { default: p(() => [y(a.$slots, "rightTitle", {}, () => [w(M(a.title[1]), 1)])]), _: 3 }, 8, ["modelValue", "is-indeterminate"])]), a.showSearch ? (r(), s("div", te, [m(L, { modelValue: h.value, "onUpdate:modelValue": l[4] || (l[4] = (e) => h.value = e), "prefix-icon": "layui-icon-search", placeholder: "关键词搜索" }, null, 8, ["modelValue"])])) : _("", !0), o("ul", ue, [(r(!0), s(C, null, B(v.value, (e) => (r(), s("li", { key: e }, [m($, { skin: "primary", modelValue: d.value, "onUpdate:modelValue": l[5] || (l[5] = (c) => d.value = c), disabled: e.disabled, value: e[a.id] }, { default: p(() => [E(x).item ? y(a.$slots, "item", { key: 0, data: e }) : (r(), s(C, { key: 1 }, [w(M(e.title), 1)], 64))]), _: 2 }, 1032, ["modelValue", "disabled", "value"])]))), 128))]), E(x).rightFooter ? (r(), s("div", ie, [y(a.$slots, "rightFooter")])) : _("", !0)], 4)])]));
+} });
+export {
+  ve as default
+};

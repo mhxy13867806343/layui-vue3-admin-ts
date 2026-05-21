@@ -1,0 +1,6 @@
+import { defineComponent as o, openBlock as t, createElementBlock as a, renderSlot as s } from "vue";
+/* empty css           */
+const n = { class: "layui-footer" }, d = o({ name: "LayFooter", __name: "index", setup: (l) => (e, r) => (t(), a("div", n, [s(e.$slots, "default")])) });
+export {
+  d as default
+};

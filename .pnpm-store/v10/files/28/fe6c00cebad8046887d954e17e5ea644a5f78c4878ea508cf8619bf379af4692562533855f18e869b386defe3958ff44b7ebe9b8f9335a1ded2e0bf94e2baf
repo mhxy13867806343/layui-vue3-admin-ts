@@ -1,0 +1,4 @@
+import o from "./DatePickerRender.js";
+export {
+  o as default
+};

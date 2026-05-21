@@ -1,0 +1,37 @@
+import { defineComponent as C, ref as v, watch as P, openBlock as _, createElementBlock as T, createElementVNode as s, createVNode as n, withCtx as i, toDisplayString as m, unref as y, createTextVNode as b } from "vue";
+import { useI18n as A } from "../../language/index.js";
+import l from "dayjs";
+import { useShortcutsRange as F } from "../hook/useShortcutsRange.js";
+import O from "./common/DatePickerRender.js";
+import I from "./common/Footer.js";
+import N from "./common/Shortcuts.js";
+import h from "./common/Time.js";
+const j = { class: "layui-laydate layui-laydate-range" }, D = { class: "layui-laydate-range-main" }, E = { class: "laydate-time-text" }, R = { class: "laydate-time-text" }, Q = C({ __name: "TimeRange", props: { modelValue: {}, size: {}, type: {}, disabled: { type: Boolean }, readonly: { type: Boolean }, allowClear: { type: Boolean }, simple: { type: Boolean }, range: { type: Boolean }, rangeSeparator: {}, prefixIcon: {}, suffixIcon: {}, timestamp: { type: Boolean }, yearPage: {}, name: {}, placeholder: {}, max: {}, min: {}, format: {}, inputFormat: {}, defaultValue: {}, defaultTime: {}, contentStyle: { type: [Boolean, null, String, Object, Array] }, contentClass: {}, disabledDate: {}, shortcuts: {}, static: { type: Boolean }, teleportProps: {} }, emits: ["pick"], setup(B, { emit: g }) {
+  const a = B, x = g, { t: u } = A(), w = F(), t = v(l()), o = v(l());
+  function d(e) {
+    return e.isBefore(l(a.min, a.format)) ? l(a.min, a.format) : e.isAfter(l(a.max, a.format)) ? l(a.max, a.format) : e;
+  }
+  function S(e) {
+    e.isSameOrAfter(o.value) ? (t.value = o.value, o.value = e) : t.value = e;
+  }
+  function k(e) {
+    e.isSameOrBefore(t.value) ? (o.value = t.value, t.value = e) : o.value = e;
+  }
+  function V(e) {
+    const r = w(e);
+    t.value = r[0], o.value = r[1], a.simple && p();
+  }
+  function p() {
+    x("pick", [t.value, o.value]);
+  }
+  return P(() => a.modelValue, () => {
+    const [e, r] = a.modelValue;
+    t.value = e || d(l()), o.value = r || d(l().add(1, "hour"));
+  }, { immediate: !0 }), (e, r) => (_(), T("div", j, [s("div", D, [n(N, { onChangeShortcut: V }), n(h, { "model-value": t.value, "show-date": t.value, onPick: S }, { header: i(() => [s("span", E, m(y(u)("datePicker.startTime")), 1)]), _: 1 }, 8, ["model-value", "show-date"]), n(h, { "model-value": o.value, "show-date": o.value, onPick: k }, { header: i(() => [s("span", R, m(y(u)("datePicker.endTime")), 1)]), _: 1 }, 8, ["model-value", "show-date"])]), n(I, { "show-now": !1, onConfirm: p }, { default: i(() => [n(O, { render: "footer", start: t.value, end: o.value }, { default: i(() => {
+    var f, c;
+    return [b(m((f = t.value) == null ? void 0 : f.format(a.inputFormat)) + " " + m(a.rangeSeparator) + " " + m((c = o.value) == null ? void 0 : c.format(a.inputFormat)), 1)];
+  }), _: 1 }, 8, ["start", "end"])]), _: 1 })]));
+} });
+export {
+  Q as default
+};

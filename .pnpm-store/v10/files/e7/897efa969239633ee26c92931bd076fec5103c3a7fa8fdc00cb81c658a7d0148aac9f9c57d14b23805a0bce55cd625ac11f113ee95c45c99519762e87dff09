@@ -1,0 +1,103 @@
+/** __vue_virtual_code_placeholder */
+import type { CascaderPanelItemProps, CascaderPanelItemPropsInternal, CascaderPanelProps } from "./interface";
+import "./index.less";
+declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<CascaderPanelProps>, {
+    options: () => never[];
+    alwaysLazy: boolean;
+    multiple: boolean;
+    onlyLastLevel: boolean;
+    lazy: boolean;
+    load: undefined;
+    style: () => {
+        stripe: boolean;
+        loadingTheme: string;
+    };
+    replaceFields: () => {
+        label: string;
+        value: string;
+        children: string;
+    };
+    modelValue: () => never[];
+    decollator: () => "/";
+    height: string;
+    checkStrictly: boolean;
+    changeOnSelect: boolean;
+    fullpath: boolean;
+}>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+    "update:modelValue": (value: string[]) => void;
+    "update:multipleSelectItem": (value: Map<string, CascaderPanelItemPropsInternal>) => void;
+    change: (value: string[]) => void;
+}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<CascaderPanelProps>, {
+    options: () => never[];
+    alwaysLazy: boolean;
+    multiple: boolean;
+    onlyLastLevel: boolean;
+    lazy: boolean;
+    load: undefined;
+    style: () => {
+        stripe: boolean;
+        loadingTheme: string;
+    };
+    replaceFields: () => {
+        label: string;
+        value: string;
+        children: string;
+    };
+    modelValue: () => never[];
+    decollator: () => "/";
+    height: string;
+    checkStrictly: boolean;
+    changeOnSelect: boolean;
+    fullpath: boolean;
+}>>> & {
+    "onUpdate:modelValue"?: ((value: string[]) => any) | undefined;
+    onChange?: ((value: string[]) => any) | undefined;
+    "onUpdate:multipleSelectItem"?: ((value: Map<string, CascaderPanelItemPropsInternal>) => any) | undefined;
+}, {
+    style: {
+        stripe?: boolean | undefined;
+        loadingTheme?: string | undefined;
+    };
+    multiple: boolean;
+    load: import("./interface").CascaderPanelLazyloadFunction;
+    options: CascaderPanelItemProps[];
+    modelValue: string | string[];
+    replaceFields: {
+        label?: string | undefined;
+        value?: string | undefined;
+        children?: string | undefined;
+    };
+    height: string | number;
+    decollator: string;
+    onlyLastLevel: boolean;
+    lazy: boolean;
+    alwaysLazy: boolean;
+    checkStrictly: boolean;
+    changeOnSelect: boolean;
+    fullpath: boolean;
+}, {}>, Partial<Record<any, (_: {}) => any>> & {
+    default?(_: {}): any;
+}>;
+export default _default;
+type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
+type __VLS_TypePropsToRuntimeProps<T> = {
+    [K in keyof T]-?: {} extends Pick<T, K> ? {
+        type: import('vue').PropType<__VLS_NonUndefinedable<T[K]>>;
+    } : {
+        type: import('vue').PropType<T[K]>;
+        required: true;
+    };
+};
+type __VLS_WithDefaults<P, D> = {
+    [K in keyof Pick<P, keyof P>]: K extends keyof D ? __VLS_Prettify<P[K] & {
+        default: D[K];
+    }> : P[K];
+};
+type __VLS_WithTemplateSlots<T, S> = T & {
+    new (): {
+        $slots: S;
+    };
+};
+type __VLS_Prettify<T> = {
+    [K in keyof T]: T[K];
+} & {};
