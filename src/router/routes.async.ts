@@ -208,6 +208,12 @@ export const asyncRoutes: RouteRecordRaw[] = [
             meta: { title: '瀑布流布局' },
           },
           {
+            path: 'advanced/flash-sale',
+            name: 'ExampleFlashSale',
+            component: () => import('@/views/example/advanced/flash-sale.vue'),
+            meta: { title: '秒杀活动' },
+          },
+          {
             path: 'advanced/tabbar-config',
             name: 'ExampleTabbarConfig',
             component: () => import('@/views/example/advanced/tabbar-config.vue'),
