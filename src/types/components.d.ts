@@ -24,6 +24,7 @@ declare module 'vue' {
     LayForm: typeof import('@layui/layui-vue')['LayForm']
     LayFormItem: typeof import('@layui/layui-vue')['LayFormItem']
     LayInput: typeof import('@layui/layui-vue')['LayInput']
+    LayInputNumber: typeof import('@layui/layui-vue')['LayInputNumber']
     LayLayer: typeof import('@layui/layer-vue')['LayLayer']
     LayPage: typeof import('@layui/layui-vue')['LayPage']
     LayProgress: typeof import('@layui/layui-vue')['LayProgress']
