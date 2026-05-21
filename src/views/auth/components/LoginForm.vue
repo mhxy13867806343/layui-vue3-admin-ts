@@ -19,6 +19,17 @@ import { useUserStore } from '@/store/modules/user'
 import { usePermissionStore } from '@/store/modules/permission'
 import { storage } from '@/utils/storage'
 
+// 浏览器检测
+const showBrowserWarning = ref(false)
+function detectBrowser() {
+  const ua = navigator.userAgent
+  const isChrome = /Chrome/.test(ua) && !/Edg/.test(ua)
+  const isEdge = /Edg/.test(ua)
+  if (!isChrome && !isEdge) {
+    showBrowserWarning.value = true
+  }
+}
+
 type LoginTab = 'account' | 'qrcode'
 
 interface FormState {
@@ -223,6 +234,7 @@ function goRegister(): void {
 
 onMounted(() => {
   loadRemembered()
+  detectBrowser()
   // 延迟绘制验证码，确保 canvas 已挂载
   setTimeout(() => drawCaptcha(), 50)
 })
@@ -230,6 +242,16 @@ onMounted(() => {
 
 <template>
   <div class="lva-login-form">
+    <!-- 浏览器检测警告 -->
+    <div v-if="showBrowserWarning" class="lva-browser-warning">
+      <i class="layui-icon layui-icon-about" />
+      <span>为了更好的体验，建议使用 Chrome 或 Edge 浏览器</span>
+      <div class="lva-browser-warning__links">
+        <a href="https://www.google.com/chrome/" target="_blank" rel="noopener">下载 Chrome</a>
+        <a href="https://www.microsoft.com/edge" target="_blank" rel="noopener">下载 Edge</a>
+      </div>
+    </div>
+
     <!-- Tab 切换：账号 / 二维码 -->
     <div class="lva-login-tabs">
       <span
@@ -617,6 +639,37 @@ onMounted(() => {
   margin-top: 16px;
   font-size: 13px;
   color: #999;
+}
+
+/* ===== Browser Warning ===== */
+.lva-browser-warning {
+  background: #fff7e6;
+  border: 1px solid #ffd591;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #d46b08;
+}
+.lva-browser-warning i {
+  font-size: 16px;
+}
+.lva-browser-warning__links {
+  display: flex;
+  gap: 12px;
+  margin-left: auto;
+}
+.lva-browser-warning__links a {
+  color: #1890ff;
+  text-decoration: none;
+  font-size: 12px;
+}
+.lva-browser-warning__links a:hover {
+  text-decoration: underline;
 }
 
 /* ===== Dark mode ===== */

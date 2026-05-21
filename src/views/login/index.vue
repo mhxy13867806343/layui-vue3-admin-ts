@@ -8,6 +8,7 @@
 import { onMounted, ref, watch } from 'vue'
 import AuthFrame from '@/views/auth/AuthFrame.vue'
 import LoginForm from '@/views/auth/components/LoginForm.vue'
+import BrowserDetect from '@/components/BrowserDetect.vue'
 import { storage } from '@/utils/storage'
 import { DEFAULT_AUTH_TEMPLATE, type AuthTemplateKey } from '@/types/auth-template'
 
@@ -26,9 +27,12 @@ watch(templateKey, (v) => {
 </script>
 
 <template>
-  <AuthFrame v-model:template-key="templateKey" mode="login">
-    <template #form>
-      <LoginForm />
-    </template>
-  </AuthFrame>
+  <div>
+    <BrowserDetect />
+    <AuthFrame v-model:template-key="templateKey" mode="login">
+      <template #form>
+        <LoginForm />
+      </template>
+    </AuthFrame>
+  </div>
 </template>

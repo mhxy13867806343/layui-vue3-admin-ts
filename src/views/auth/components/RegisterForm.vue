@@ -6,7 +6,7 @@
  * - 校验：账号正则 `^[A-Za-z0-9_]{4,20}$`；昵称 1–20；密码 6–20；确认密码 === 密码
  * - 提交：调用 register API → 写入 store → 跳 /dashboard
  */
-import { computed, reactive, ref } from 'vue'
+import { computed, onMounted, reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useT } from '@/locales'
 import { layer } from '@layui/layui-vue'
@@ -14,6 +14,21 @@ import { register } from '@/api/auth'
 import { storage } from '@/utils/storage'
 import { useUserStore } from '@/store/modules/user'
 import { usePermissionStore } from '@/store/modules/permission'
+
+// 浏览器检测
+const showBrowserWarning = ref(false)
+function detectBrowser() {
+  const ua = navigator.userAgent
+  const isChrome = /Chrome/.test(ua) && !/Edg/.test(ua)
+  const isEdge = /Edg/.test(ua)
+  if (!isChrome && !isEdge) {
+    showBrowserWarning.value = true
+  }
+}
+
+onMounted(() => {
+  detectBrowser()
+})
 
 interface FormState {
   username: string
@@ -103,7 +118,18 @@ function goLogin(): void {
 </script>
 
 <template>
-  <form class="lva-reg-form" @submit.prevent="onSubmit">
+  <div class="lva-reg-form-wrapper">
+    <!-- 浏览器检测警告 -->
+    <div v-if="showBrowserWarning" class="lva-browser-warning">
+      <i class="layui-icon layui-icon-about" />
+      <span>为了更好的体验，建议使用 Chrome 或 Edge 浏览器</span>
+      <div class="lva-browser-warning__links">
+        <a href="https://www.google.com/chrome/" target="_blank" rel="noopener">下载 Chrome</a>
+        <a href="https://www.microsoft.com/edge" target="_blank" rel="noopener">下载 Edge</a>
+      </div>
+    </div>
+
+    <form class="lva-reg-form" @submit.prevent="onSubmit">
     <div class="lva-reg-form__field">
       <lay-input v-model="form.username" :placeholder="t('auth.inputUsername')" size="lg" />
       <p v-if="errors.username" class="lva-reg-form__err">{{ errors.username }}</p>
@@ -146,9 +172,40 @@ function goLogin(): void {
       <a class="lva-reg-form__link" @click="goLogin">{{ t('auth.toLogin') }}</a>
     </div>
   </form>
+  </div>
 </template>
 
 <style scoped>
+.lva-reg-form-wrapper { display: flex; flex-direction: column; gap: 0; }
+.lva-browser-warning {
+  background: #fff7e6;
+  border: 1px solid #ffd591;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #d46b08;
+}
+.lva-browser-warning i {
+  font-size: 16px;
+}
+.lva-browser-warning__links {
+  display: flex;
+  gap: 12px;
+  margin-left: auto;
+}
+.lva-browser-warning__links a {
+  color: #1890ff;
+  text-decoration: none;
+  font-size: 12px;
+}
+.lva-browser-warning__links a:hover {
+  text-decoration: underline;
+}
 .lva-reg-form { display: flex; flex-direction: column; gap: 16px; }
 .lva-reg-form__field { display: flex; flex-direction: column; gap: 4px; }
 .lva-reg-form__err { font-size: 12px; color: #ff5722; margin: 0; }

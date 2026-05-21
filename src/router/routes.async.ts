@@ -159,6 +159,24 @@ export const asyncRoutes: RouteRecordRaw[] = [
             component: () => import('@/views/example/advanced/print.vue'),
             meta: { title: '打印' },
           },
+          {
+            path: 'advanced/version-update',
+            name: 'ExampleVersionUpdate',
+            component: () => import('@/views/example/advanced/version-update.vue'),
+            meta: { title: '版本更新' },
+          },
+          {
+            path: 'advanced/feedback',
+            name: 'ExampleFeedback',
+            component: () => import('@/views/example/advanced/feedback.vue'),
+            meta: { title: '问题反馈' },
+          },
+          {
+            path: 'advanced/video',
+            name: 'ExampleVideo',
+            component: () => import('@/views/example/advanced/video.vue'),
+            meta: { title: '视频播放器' },
+          },
         ],
       },
 
