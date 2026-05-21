@@ -202,6 +202,12 @@ export const asyncRoutes: RouteRecordRaw[] = [
             meta: { title: '评论系统' },
           },
           {
+            path: 'advanced/waterfall-layout',
+            name: 'ExampleWaterfallLayout',
+            component: () => import('@/views/example/advanced/waterfall-layout.vue'),
+            meta: { title: '瀑布流布局' },
+          },
+          {
             path: 'advanced/tabbar-config',
             name: 'ExampleTabbarConfig',
             component: () => import('@/views/example/advanced/tabbar-config.vue'),
