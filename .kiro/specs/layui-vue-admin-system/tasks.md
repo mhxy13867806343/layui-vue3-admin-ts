@@ -173,7 +173,7 @@
   - [x] 15.3 实现 `views/redirect/index.vue` 用于路由刷新
     - _Requirements: 5.2_
 
-- [ ] 16. 测试基础设施与属性测试
+- [x] 16. 测试基础设施与属性测试
   - [x] 16.1 配置 `vitest.config.ts`、`tests/setup.ts`、`fast-check`、`axios-mock-adapter`、`@vue/test-utils`
     - _Requirements: 14.1, 14.2_
   - [x] 16.2 `tests/properties/storage.property.test.ts`（Property 3、4）
@@ -215,7 +215,7 @@
     - _Requirements: 18.5, 18.6_
   - [x] 18.7 新增 `src/views/auth/Register.vue` + `src/api/auth.ts` 增加 `register(payload)`；mock `auth.ts` 增加 `POST /api/auth/register`（用户名查重、写入 mock 数据；返回 `LoginResponse`）
     - _Requirements: 18.7, 18.8_
-  - [ ] 18.8 属性测试 `tests/properties/auth-template.property.test.ts`（Property 11：模板切换不丢失表单状态）
+  - [x] 18.8 属性测试 `tests/properties/auth-template.property.test.ts`（Property 11：模板切换不丢失表单状态）
     - _Properties: 11_
 
 - [x] 19. HTTP 客户端高级能力（重构 utils/http）
@@ -236,7 +236,7 @@
     - _Requirements: 19.7_
   - [x] 19.7 在 `router/index.ts` 的 `beforeEach` 起始处调用 `cancelByTag('route')`；并在 `useUserStore.logout` 中触发 `cancelAll()` + `cacheInvalidate()`
     - _Requirements: 19.4_
-  - [ ] 19.8 属性测试：`tests/properties/http-cache.property.test.ts`（Property 12）、`http-retry.property.test.ts`（Property 13）、`http-cancel.property.test.ts`（Property 14）
+  - [x] 19.8 属性测试：`tests/properties/http-cache.property.test.ts`（Property 12）、`http-retry.property.test.ts`（Property 13）、`http-cancel.property.test.ts`（Property 14）
     - _Properties: 12, 13, 14_
 
 - [x] 20. 国际化（i18n）
