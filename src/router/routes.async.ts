@@ -226,6 +226,12 @@ export const asyncRoutes: RouteRecordRaw[] = [
             meta: { title: '搜索索引' },
           },
           {
+            path: 'styles/css-arrows',
+            name: 'ExampleCssArrows',
+            component: () => import('@/views/example/styles/css-arrows.vue'),
+            meta: { title: 'CSS 样式集合' },
+          },
+          {
             path: 'advanced/tabbar-config',
             name: 'ExampleTabbarConfig',
             component: () => import('@/views/example/advanced/tabbar-config.vue'),
