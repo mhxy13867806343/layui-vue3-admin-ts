@@ -94,6 +94,12 @@ export const asyncRoutes: RouteRecordRaw[] = [
             meta: { title: 'Lodash' },
           },
           {
+            path: 'libs/format-demo',
+            name: 'ExampleFormatDemo',
+            component: () => import('@/views/example/libs/format-demo.vue'),
+            meta: { title: 'Format 工具库' },
+          },
+          {
             path: 'advanced/dynamic-form',
             name: 'ExampleDynamicForm',
             component: () => import('@/views/example/advanced/dynamic-form.vue'),
