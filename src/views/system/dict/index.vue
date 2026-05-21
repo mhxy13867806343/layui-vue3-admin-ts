@@ -192,6 +192,14 @@ const itemColumns = computed(() => [
 type PageLayout = ('count' | 'prev' | 'page' | 'next' | 'limits' | 'refresh' | 'skip')[]
 const pageLayout = computed<PageLayout>(() => ['count', 'prev', 'page', 'next', 'limits'])
 
+/** lay-page @change 回调，参数为 { current, limit } */
+function onPageChange(evt: { current: number; limit: number }): void {
+  if (evt.limit !== typeTable.pageSize.value) {
+    typeTable.pageSize.value = evt.limit
+    typeTable.page.value = 1
+  }
+}
+
 // 默认选中第一条字典类型
 watch(
   () => typeTable.list.value,
@@ -243,13 +251,12 @@ onMounted(() => {})
 
       <div class="lva-dict-page__pager">
         <lay-page
+          v-model="typeTable.page.value"
           :total="typeTable.total.value"
-          :current-page="typeTable.page.value"
           :limit="typeTable.pageSize.value"
           :limits="[10, 20]"
           :layout="pageLayout"
-          @change="(p: number) => (typeTable.page.value = p)"
-          @limit-change="(s: number) => { typeTable.pageSize.value = s; typeTable.page.value = 1 }"
+          @change="onPageChange"
         />
       </div>
     </div>

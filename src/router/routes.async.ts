@@ -189,6 +189,12 @@ export const asyncRoutes: RouteRecordRaw[] = [
             component: () => import('@/views/example/advanced/qrcode-config.vue'),
             meta: { title: '二维码配置' },
           },
+          {
+            path: 'advanced/tabbar-config',
+            name: 'ExampleTabbarConfig',
+            component: () => import('@/views/example/advanced/tabbar-config.vue'),
+            meta: { title: '底部导航配置' },
+          },
         ],
       },
 
