@@ -220,6 +220,12 @@ export const asyncRoutes: RouteRecordRaw[] = [
             meta: { title: '秒杀活动' },
           },
           {
+            path: 'advanced/search-index',
+            name: 'ExampleSearchIndex',
+            component: () => import('@/views/example/advanced/search-index.vue'),
+            meta: { title: '搜索索引' },
+          },
+          {
             path: 'advanced/tabbar-config',
             name: 'ExampleTabbarConfig',
             component: () => import('@/views/example/advanced/tabbar-config.vue'),
