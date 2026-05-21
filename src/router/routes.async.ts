@@ -196,6 +196,12 @@ export const asyncRoutes: RouteRecordRaw[] = [
             meta: { title: '多端动态' },
           },
           {
+            path: 'advanced/comment-system',
+            name: 'ExampleCommentSystem',
+            component: () => import('@/views/example/advanced/comment-system.vue'),
+            meta: { title: '评论系统' },
+          },
+          {
             path: 'advanced/tabbar-config',
             name: 'ExampleTabbarConfig',
             component: () => import('@/views/example/advanced/tabbar-config.vue'),
