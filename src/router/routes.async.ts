@@ -177,6 +177,18 @@ export const asyncRoutes: RouteRecordRaw[] = [
             component: () => import('@/views/example/advanced/video.vue'),
             meta: { title: '视频播放器' },
           },
+          {
+            path: 'advanced/mobile-rank',
+            name: 'ExampleMobileRank',
+            component: () => import('@/views/example/advanced/mobile-rank.vue'),
+            meta: { title: '移动端排行榜' },
+          },
+          {
+            path: 'advanced/qrcode-config',
+            name: 'ExampleQrcodeConfig',
+            component: () => import('@/views/example/advanced/qrcode-config.vue'),
+            meta: { title: '二维码配置' },
+          },
         ],
       },
 
@@ -287,6 +299,12 @@ export const asyncRoutes: RouteRecordRaw[] = [
             name: 'SystemKeys',
             component: () => import('@/views/system/keys/index.vue'),
             meta: { title: '密钥管理', permission: 'keys:view' },
+          },
+          {
+            path: 'audit-log',
+            name: 'SystemAuditLog',
+            component: () => import('@/views/system/audit-log/index.vue'),
+            meta: { title: '操作日志', permission: 'audit:view' },
           },
         ],
       },
