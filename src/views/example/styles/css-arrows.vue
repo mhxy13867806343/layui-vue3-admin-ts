@@ -59,6 +59,12 @@ const bubbleDefs: StyleDef[] = [
     css: (c) => `.bubble-left::after {\n  content: '';\n  position: absolute;\n  right: -8px;\n  top: 50%;\n  transform: translateY(-50%);\n  border-top: 8px solid transparent;\n  border-bottom: 8px solid transparent;\n  border-left: 8px solid ${c};\n}` },
   { name: '右侧气泡', html: () => '<div class="bubble bubble-right">提示内容</div>',
     css: (c) => `.bubble-right::after {\n  content: '';\n  position: absolute;\n  left: -8px;\n  top: 50%;\n  transform: translateY(-50%);\n  border-top: 8px solid transparent;\n  border-bottom: 8px solid transparent;\n  border-right: 8px solid ${c};\n}` },
+  { name: '搜索栏指示器(下三角)', html: () => '<div class="indicator-search">去哪儿</div>',
+    css: (c) => `/* 搜索栏下方指示三角，常用于"当前选中"标记 */\n.indicator-search {\n  position: relative;\n  background: ${c};\n  color: #fff;\n  padding: 16px 28px;\n  font-size: 16px;\n  border-radius: 4px;\n  display: inline-block;\n}\n.indicator-search::after {\n  content: '';\n  position: absolute;\n  bottom: -10px;\n  left: 50%;\n  transform: translateX(-50%);\n  border-left: 12px solid transparent;\n  border-right: 12px solid transparent;\n  border-top: 10px solid ${c};\n}` },
+  { name: '指示三角(纯三角)', html: () => '<div class="indicator-only"></div>',
+    css: (c) => `/* 单独的下三角指示器（不带气泡） */\n.indicator-only {\n  width: 0;\n  height: 0;\n  border-left: 12px solid transparent;\n  border-right: 12px solid transparent;\n  border-top: 12px solid ${c};\n}` },
+  { name: '描边气泡(上)', html: () => '<div class="bubble-border bubble-border-top">描边气泡</div>',
+    css: (c) => `.bubble-border {\n  position: relative;\n  background: #fff;\n  color: #333;\n  padding: 8px 16px;\n  border: 2px solid ${c};\n  border-radius: 6px;\n  font-size: 13px;\n}\n.bubble-border-top::before,\n.bubble-border-top::after {\n  content: '';\n  position: absolute;\n  left: 50%;\n  transform: translateX(-50%);\n  border-left: 8px solid transparent;\n  border-right: 8px solid transparent;\n}\n.bubble-border-top::before {\n  bottom: -10px;\n  border-top: 10px solid ${c};\n}\n.bubble-border-top::after {\n  bottom: -7px;\n  border-top: 8px solid #fff;\n}` },
 ]
 
 const shapeDefs: StyleDef[] = [
@@ -168,6 +174,13 @@ const currentDefs = computed(() => {
 :deep(.bubble-bottom)::after { content: ''; position: absolute; top: -8px; left: 50%; transform: translateX(-50%); border-left: 8px solid transparent; border-right: 8px solid transparent; border-bottom: 8px solid v-bind(mainColor); }
 :deep(.bubble-left)::after { content: ''; position: absolute; right: -8px; top: 50%; transform: translateY(-50%); border-top: 8px solid transparent; border-bottom: 8px solid transparent; border-left: 8px solid v-bind(mainColor); }
 :deep(.bubble-right)::after { content: ''; position: absolute; left: -8px; top: 50%; transform: translateY(-50%); border-top: 8px solid transparent; border-bottom: 8px solid transparent; border-right: 8px solid v-bind(mainColor); }
+:deep(.indicator-search) { position: relative; background: v-bind(mainColor); color: #fff; padding: 16px 28px; font-size: 16px; border-radius: 4px; display: inline-block; }
+:deep(.indicator-search)::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 10px solid v-bind(mainColor); }
+:deep(.indicator-only) { width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 12px solid v-bind(mainColor); }
+:deep(.bubble-border) { position: relative; background: #fff; color: #333; padding: 8px 16px; border: 2px solid v-bind(mainColor); border-radius: 6px; font-size: 13px; }
+:deep(.bubble-border-top)::before, :deep(.bubble-border-top)::after { content: ''; position: absolute; left: 50%; transform: translateX(-50%); border-left: 8px solid transparent; border-right: 8px solid transparent; }
+:deep(.bubble-border-top)::before { bottom: -10px; border-top: 10px solid v-bind(mainColor); }
+:deep(.bubble-border-top)::after { bottom: -7px; border-top: 8px solid #fff; }
 :deep(.s-circle) { width: 50px; height: 50px; background: v-bind(mainColor); border-radius: 50%; }
 :deep(.s-oval) { width: 80px; height: 50px; background: v-bind(mainColor); border-radius: 50%; }
 :deep(.s-diamond) { width: 40px; height: 40px; background: v-bind(mainColor); transform: rotate(45deg); }
