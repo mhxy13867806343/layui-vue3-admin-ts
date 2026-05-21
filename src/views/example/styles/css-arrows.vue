@@ -12,6 +12,8 @@ import { layer } from '@layui/layui-vue'
 type TabId = 'arrows' | 'bubbles' | 'shapes' | 'animations'
 const activeTab = ref<TabId>('arrows')
 const mainColor = ref('#16baaa')
+const borderColor = ref('#333333')
+const showBorder = ref(true)
 
 interface StyleDef {
   name: string
@@ -98,11 +100,20 @@ const currentDefs = computed(() => {
 
     <!-- 颜色选择器 -->
     <div class="lva-css__color-bar">
-      <span>主题颜色：</span>
-      <input type="color" v-model="mainColor" class="lva-css__color-picker" />
-      <span class="lva-css__color-value">{{ mainColor }}</span>
+      <div class="lva-css__color-group">
+        <span>主题颜色：</span>
+        <input type="color" v-model="mainColor" class="lva-css__color-picker" />
+        <span class="lva-css__color-value">{{ mainColor }}</span>
+      </div>
+      <div class="lva-css__color-group">
+        <span>边框：</span>
+        <lay-switch v-model="showBorder" size="sm" />
+        <input v-if="showBorder" type="color" v-model="borderColor" class="lva-css__color-picker" />
+        <span v-if="showBorder" class="lva-css__color-value">{{ borderColor }}</span>
+      </div>
       <div class="lva-css__color-presets">
-        <span v-for="c in ['#16baaa','#ff5722','#1e9fff','#a855f7','#f59e0b','#ec4899','#333333','#07c160']" :key="c" class="lva-css__color-dot" :style="{ background: c }" @click="mainColor = c" />
+        <span class="lva-css__preset-label">快选：</span>
+        <span v-for="c in ['#16baaa','#ff5722','#1e9fff','#a855f7','#f59e0b','#ec4899','#333333','#07c160','#ffffff']" :key="c" class="lva-css__color-dot" :style="{ background: c, borderColor: c === '#ffffff' ? '#ddd' : 'transparent' }" :title="c" @click="mainColor = c" />
       </div>
     </div>
 
@@ -116,7 +127,7 @@ const currentDefs = computed(() => {
     <div class="lva-css__grid">
       <div v-for="item in currentDefs" :key="item.name" class="lva-css__card">
         <!-- 预览 -->
-        <div class="lva-css__preview" v-html="item.html(mainColor)" />
+        <div class="lva-css__preview" :style="{ outline: showBorder ? `1px dashed ${borderColor}` : 'none' }" v-html="item.html(mainColor)" />
         <div class="lva-css__name">{{ item.name }}</div>
         <!-- CSS -->
         <div class="lva-css__code-section">
@@ -138,13 +149,15 @@ const currentDefs = computed(() => {
 .lva-css h2 { margin: 0 0 4px; font-size: 20px; color: #333; }
 .lva-css__desc { margin: 0 0 16px; color: #888; font-size: 13px; }
 
-.lva-css__color-bar { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: #f9fafb; border-radius: 8px; margin-bottom: 16px; flex-wrap: wrap; }
-.lva-css__color-bar > span { font-size: 13px; color: #555; font-weight: 500; }
-.lva-css__color-picker { width: 40px; height: 34px; border: none; border-radius: 6px; cursor: pointer; padding: 0; }
-.lva-css__color-value { font-size: 13px; color: #888; font-family: monospace; }
-.lva-css__color-presets { display: flex; gap: 6px; margin-left: 12px; }
+.lva-css__color-bar { display: flex; align-items: center; gap: 20px; padding: 12px 16px; background: #f9fafb; border-radius: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.lva-css__color-group { display: flex; align-items: center; gap: 8px; }
+.lva-css__color-group > span:first-child { font-size: 13px; color: #555; font-weight: 500; }
+.lva-css__color-picker { width: 40px; height: 32px; border: 1px solid #e5e7eb; border-radius: 6px; cursor: pointer; padding: 2px; background: #fff; }
+.lva-css__color-value { font-size: 12px; color: #888; font-family: monospace; min-width: 60px; }
+.lva-css__color-presets { display: flex; align-items: center; gap: 6px; }
+.lva-css__preset-label { font-size: 12px; color: #888; }
 .lva-css__color-dot { width: 22px; height: 22px; border-radius: 50%; cursor: pointer; border: 2px solid transparent; transition: all 0.15s; }
-.lva-css__color-dot:hover { transform: scale(1.2); border-color: #333; }
+.lva-css__color-dot:hover { transform: scale(1.2); border-color: #16baaa !important; }
 
 .lva-css__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin-top: 16px; }
 .lva-css__card { border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; background: #fff; }
